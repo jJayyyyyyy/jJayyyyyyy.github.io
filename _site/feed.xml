@@ -5,9 +5,20 @@
     <description></description>
     <link>https://jjayyyyyyy.github.io//</link>
     <atom:link href="https://jjayyyyyyy.github.io//feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 05 Oct 2016 09:08:08 +0800</pubDate>
-    <lastBuildDate>Wed, 05 Oct 2016 09:08:08 +0800</lastBuildDate>
+    <pubDate>Wed, 05 Oct 2016 12:40:29 +0800</pubDate>
+    <lastBuildDate>Wed, 05 Oct 2016 12:40:29 +0800</lastBuildDate>
     <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>License</title>
+        <description>&lt;h1 id=&quot;about-the-license&quot;&gt;About the License.&lt;/h1&gt;
+</description>
+        <pubDate>Wed, 05 Oct 2016 00:00:00 +0800</pubDate>
+        <link>https://jjayyyyyyy.github.io//2016/10/05/License.html</link>
+        <guid isPermaLink="true">https://jjayyyyyyy.github.io//2016/10/05/License.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Hello, world!</title>

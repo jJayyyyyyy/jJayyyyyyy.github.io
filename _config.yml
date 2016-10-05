@@ -25,7 +25,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 # twitter_username: jekyllrb
 url: "https://jjayyyyyyy.github.io/"
 github_username:  jJayyyyyyy
-# author: 
+author: FrozenMap
 # Build settings
 markdown: kramdown
 theme: minima
