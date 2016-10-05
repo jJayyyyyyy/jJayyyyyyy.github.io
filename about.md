@@ -11,9 +11,9 @@ permalink: /about/
 
 Hey there! This is FrozenMap. Hope you like this blog:)
 
-<p><a onclick="show('img1')" style="cursor:pointer"> Funny Moment </a></p>
+<p><a onclick="show('img1')" style="cursor:pointer"> And one more thing... there is a Labtocat from Octodex! </a></p>
 
-<img src="/assets/cat.gif" style='display:none' id="img1"/>
+<img width="360" src="/assets/Labtocat.png" style='display:none' id="img1"/>
 
 
 
@@ -31,7 +31,11 @@ Hey there! This is FrozenMap. Hope you like this blog:)
 function show(id)
 {
 	var img = document.getElementById(id);
-	document.getElementById(id).style.display = "block";
+	if(img.style.display == "none"){
+		img.style.display = "block";
+	}else{
+		img.style.display = "none";
+	}
 }
 </script>
 
