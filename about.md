@@ -11,7 +11,7 @@ permalink: /about/
 
 Hey there! This is FrozenMap. Hope you like this blog:)
 
-<p><a onclick="show('img1')" style="cursor:pointer"> And one more thing... there is a Labtocat from Octodex! </a></p>
+ And one more thing... there is a <a onclick="show('img1')" style="cursor:pointer">Labtocat </a>from [Octodex](https://octodex.github.com)! 
 
 <img width="360" src="/assets/Labtocat.png" style='display:none' id="img1"/>
 
