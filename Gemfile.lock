@@ -39,7 +39,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll (= 3.2.1)
+  jekyll (= 3.3.0)
   minima
   redcarpet
 
