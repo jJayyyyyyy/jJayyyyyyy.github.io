@@ -27,11 +27,8 @@ url: "https://jjayyyyyyy.github.io/"
 github_username:  jJayyyyyyy
 author: FrozenMap
 # Build settings
-# markdown: kramdown
+markdown: kramdown
 
-# kramdown:
-#  input: GFM
-
-markdown: redcarpet
+# markdown: redcarpet
 theme: minima
 # pageinate: 3
