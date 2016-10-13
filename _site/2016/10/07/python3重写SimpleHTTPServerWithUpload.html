@@ -52,142 +52,182 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2>注意</h2>
+    <h2 id="section">注意</h2>
 
 <ul>
-<li><p>为方便区分，以下用<code>py2</code>指代<code>python 2.7.6</code>，用<code>py3</code>指代<code>python 3.4.3</code></p></li>
-<li><p>代码在<a href="https://github.com/jJayyyyyyy/cs/tree/master/just%20for%20fun/file_transfer/http">这里</a></p></li>
+  <li>
+    <p>为方便区分，以下用<code class="highlighter-rouge">py2</code>指代<code class="highlighter-rouge">python 2.7.6</code>，用<code class="highlighter-rouge">py3</code>指代<code class="highlighter-rouge">python 3.4.3</code></p>
+  </li>
+  <li>
+    <p>代码在<a href="https://github.com/jJayyyyyyy/cs/tree/master/just%20for%20fun/file_transfer/http">这里</a></p>
+  </li>
 </ul>
 
-<p><br/></p>
+<p><br /></p>
 
-<h2>摘要</h2>
+<h2 id="section-1">摘要</h2>
 
-<p><a href="http://luy.li/2010/05/15/simplehttpserverwithupload/">bones7456</a>同学和<a href="http://buptguo.com/2015/11/07/simplehttpserver-with-upload-file/">BUPTGuo</a>同学制作和完善了<code>SimpleHTTPServerWithUpload</code>的<code>py2</code>版本。由于python的2.7和3.4有较多不同特性，因此我根据以上两位同学的思路，重写了很多函数，制作了基于<code>py3</code>的版本。主要改动如下：</p>
+<p><a href="http://luy.li/2010/05/15/simplehttpserverwithupload/">bones7456</a>同学和<a href="http://buptguo.com/2015/11/07/simplehttpserver-with-upload-file/">BUPTGuo</a>同学制作和完善了<code class="highlighter-rouge">SimpleHTTPServerWithUpload</code>的<code class="highlighter-rouge">py2</code>版本。由于python的2.7和3.4有较多不同特性，因此我根据以上两位同学的思路，重写了很多函数，制作了基于<code class="highlighter-rouge">py3</code>的版本。主要改动如下：</p>
 
 <ul>
-<li><p>改写为基于<code>py3</code>的版本</p></li>
-<li><p>移除了<code>StringIO</code>，不使用<code>copyfile()</code>。需要传输的信息全都用<code>str</code>。处理完逻辑后，再用<code>utf-8</code>编码为<code>bytes</code>，直接用<code>wfile.write()</code>进行网络传输。</p></li>
-<li><p>修改<code>html</code>的部分标签顺序</p></li>
+  <li>
+    <p>改写为基于<code class="highlighter-rouge">py3</code>的版本</p>
+  </li>
+  <li>
+    <p>移除了<code class="highlighter-rouge">StringIO</code>，不使用<code class="highlighter-rouge">copyfile()</code>。需要传输的信息全都用<code class="highlighter-rouge">str</code>。处理完逻辑后，再用<code class="highlighter-rouge">utf-8</code>编码为<code class="highlighter-rouge">bytes</code>，直接用<code class="highlighter-rouge">wfile.write()</code>进行网络传输。</p>
+  </li>
+  <li>
+    <p>修改<code class="highlighter-rouge">html</code>的部分标签顺序</p>
+  </li>
 </ul>
 
-<p><br/></p>
+<p><br /></p>
 
-<h2>正文</h2>
+<h2 id="section-2">正文</h2>
 
-<h2>1. 背景介绍</h2>
+<h2 id="section-3">1. 背景介绍</h2>
 
 <p>如同<a href="http://coolshell.cn/articles/1480.html">这篇文章</a>所说</p>
 
 <blockquote>
-<p>如果你急需一个简单的Web Server，但你又不想去下载并安装那些复杂的HTTP服务程序，那么Python是一个不错的选择。</p>
+  <p>如果你急需一个简单的Web Server，但你又不想去下载并安装那些复杂的HTTP服务程序，那么Python是一个不错的选择。</p>
 </blockquote>
 
-<p>在<code>py2</code>中内置了一个<code>SimpleHTTPServer</code>模块，从名字可以看出这是一个简单的HTTP服务器程序。在终端输入如下命令：</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="c">#if it is py2</span>
+<p>在<code class="highlighter-rouge">py2</code>中内置了一个<code class="highlighter-rouge">SimpleHTTPServer</code>模块，从名字可以看出这是一个简单的HTTP服务器程序。在终端输入如下命令：</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c">#if it is py2</span>
 <span class="gp">$ </span>python -m SimpleHTTPServer <span class="o">[</span>8000]
 
 <span class="c">#if it is py3</span>
 <span class="gp">$ </span>python3 -m http.server <span class="o">[</span>8000]
-</code></pre></div>
-<p>就可以在目录下快速建立一个HTTP服务器。用这个方法可以方便地共享文件，只需要在浏览器中输入<code>http://ip:8000</code>就可以访问并下载文件了，其中<code>ip</code>是你的<code>局域网ip</code>。不过python内置的模块并没有提供上传功能。如<a href="http://luy.li/2010/05/15/simplehttpserverwithupload/">这里</a>所说：</p>
+</code></pre>
+</div>
+
+<p>就可以在目录下快速建立一个HTTP服务器。用这个方法可以方便地共享文件，只需要在浏览器中输入<code class="highlighter-rouge">http://ip:8000</code>就可以访问并下载文件了，其中<code class="highlighter-rouge">ip</code>是你的<code class="highlighter-rouge">局域网ip</code>。不过python内置的模块并没有提供上传功能。如<a href="http://luy.li/2010/05/15/simplehttpserverwithupload/">这里</a>所说：</p>
 
 <blockquote>
-<p>但是，某一天，你需要从同学哪里复制一个文件到本机，然后你就会跟你同学说，XX，共享下某目录。当你以为可以用http来访问他的8000端口的时候，他却告诉你，不好意思，我是windows啦~~</p>
+  <p>但是，某一天，你需要从同学哪里复制一个文件到本机，然后你就会跟你同学说，XX，共享下某目录。当你以为可以用http来访问他的8000端口的时候，他却告诉你，不好意思，我是windows啦~~</p>
 </blockquote>
 
 <p>为此，<a href="http://luy.li/2010/05/15/simplehttpserverwithupload/">bones7456</a>同学对这个模块进行了改造，添加了上传功能，这样就让局域网内的分享变得更加方便了。后来<a href="http://buptguo.com/2015/11/07/simplehttpserver-with-upload-file/">BUPTGuo</a>同学进行了<a href="http://buptguo.com/2015/11/07/simplehttpserver-with-upload-file/">一些改进</a>。在这里再次感谢两位同学的成果和开源精神～</p>
 
-<p><br/></p>
+<p><br /></p>
 
-<h2>2. 基于py3的模块</h2>
+<h2 id="py3">2. 基于py3的模块</h2>
 
-<p>经过以上两位同学改造的模块是基于<code>py2</code>的，由于<code>py2</code>和<code>py3</code>有较多不同特性，直接用<code>$ python3 xxx</code>运行会产生很多错误。所以，让我们撸起袖子开始改造轮子吧~</p>
+<p>经过以上两位同学改造的模块是基于<code class="highlighter-rouge">py2</code>的，由于<code class="highlighter-rouge">py2</code>和<code class="highlighter-rouge">py3</code>有较多不同特性，直接用<code class="highlighter-rouge">$ python3 xxx</code>运行会产生很多错误。所以，让我们撸起袖子开始改造轮子吧~</p>
 
-<p>改造过程从分析输出的错误信息开始。先把<code>py2</code>的代码全部复制到一个文件<code>py3server.py</code>，然后根据错误信息一步步修改：</p>
+<p>改造过程从分析输出的错误信息开始。先把<code class="highlighter-rouge">py2</code>的代码全部复制到一个文件<code class="highlighter-rouge">py3server.py</code>，然后根据错误信息一步步修改：</p>
 
-<h3>2.1 实现访问和下载</h3>
+<h3 id="section-4">2.1 实现访问和下载</h3>
 
 <ul>
-<li><p>print</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">......
-  File <span class="s2">"py3server.py"</span>, line 57
-    print r, info, <span class="s2">"by: "</span>, self.client_address
-         ^
+  <li>
+    <p>print</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>......
+    File <span class="s2">"py3server.py"</span>, line 57
+        print r, info, <span class="s2">"by: "</span>, self.client_address
+              ^
 SyntaxError: Missing parentheses <span class="k">in </span>call to <span class="s1">'print'</span>
-</code></pre></div>
-<p>这个很明显，直接全部改成<code>print()</code>。</p></li>
-<li><p>BaseHTTPServer</p>
-<div class="highlight"><pre><code class="language-" data-lang="">......
-Traceback (most recent call last):
-  File "py3server.py", line 16, in &lt;module&gt;
-    import BaseHTTPServer
-ImportError: No module named 'BaseHTTPServer'
-</code></pre></div>
-<p><code>py2</code>的<code>BaseHTTPServer</code>模块在<code>py3</code>中变成了<code>http.server</code>模块。后面的<code>class SimpleHTTPRequestHandler</code>将要继承该模块下的一个<code>handler</code>，所以也要改。最后在定义<code>test()</code>的地方也要修改。</p>
+</code></pre>
+    </div>
 
-<p>ps：对于<code>handler</code>，从STM32开发的经历来看，我觉得应该是一种类似于中断处理程序的东西。</p></li>
-<li><p><code>stringIO</code></p>
+    <p>这个很明显，直接全部改成<code class="highlighter-rouge">print()</code>。</p>
+  </li>
+  <li>
+    <p>BaseHTTPServer</p>
 
-<p>通过google我们可以知道，<code>py3</code>区分了<code>BytesIO</code>和<code>StringIO</code>，而<code>py2</code>中只有<code>stringIO</code>。这个区别会带来很多问题。后面可以看到，为了代码不太丑陋，<code>xxIO</code>被愉快地弃用了。不过首先让我们<code>from io import StringIO, BytesIO</code>，看看接下来会发生什么。</p>
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>......
+Traceback <span class="o">(</span>most recent call last<span class="o">)</span>:
+    File <span class="s2">"py3server.py"</span>, line 16, <span class="k">in</span> &lt;module&gt;
+        import BaseHTTPServer
+ImportError: No module named <span class="s1">'BaseHTTPServer'</span>
+</code></pre>
+    </div>
 
-<p>以上这样改完之后，我们发现<code>$ python3 py3server.py</code>已经能运行了～再用浏览器来访问一下。结果。。是一大堆错误信息。。不用急，一步一步分析。</p></li>
-<li><p>unquote</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">......
-  File <span class="s2">"py3server.py"</span>, line 214, <span class="k">in </span>translate_path
-    path <span class="o">=</span> posixpath.normpath<span class="o">(</span>urllib.unquote<span class="o">(</span>path<span class="o">))</span>
+    <p><code class="highlighter-rouge">py2</code>的<code class="highlighter-rouge">BaseHTTPServer</code>模块在<code class="highlighter-rouge">py3</code>中变成了<code class="highlighter-rouge">http.server</code>模块。后面的<code class="highlighter-rouge">class SimpleHTTPRequestHandler</code>将要继承该模块下的一个<code class="highlighter-rouge">handler</code>，所以也要改。最后在定义<code class="highlighter-rouge">test()</code>的地方也要修改。</p>
+
+    <p>ps：对于<code class="highlighter-rouge">handler</code>，从STM32开发的经历来看，我觉得应该是一种类似于中断处理程序的东西。</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">stringIO</code></p>
+
+    <p>通过google我们可以知道，<code class="highlighter-rouge">py3</code>区分了<code class="highlighter-rouge">BytesIO</code>和<code class="highlighter-rouge">StringIO</code>，而<code class="highlighter-rouge">py2</code>中只有<code class="highlighter-rouge">stringIO</code>。这个区别会带来很多问题。后面可以看到，为了代码不太丑陋，<code class="highlighter-rouge">xxIO</code>被愉快地弃用了。不过首先让我们<code class="highlighter-rouge">from io import StringIO, BytesIO</code>，看看接下来会发生什么。</p>
+
+    <p>以上这样改完之后，我们发现<code class="highlighter-rouge">$ python3 py3server.py</code>已经能运行了～再用浏览器来访问一下。结果。。是一大堆错误信息。。不用急，一步一步分析。</p>
+  </li>
+  <li>
+    <p>unquote</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>......
+    File <span class="s2">"py3server.py"</span>, line 214, <span class="k">in </span>translate_path
+        path <span class="o">=</span> posixpath.normpath<span class="o">(</span>urllib.unquote<span class="o">(</span>path<span class="o">))</span>
 AttributeError: <span class="s1">'module'</span> object has no attribute <span class="s1">'unquote'</span>
-</code></pre></div>
-<p>错误信息中最关键的是最后的内容。这里是版本问题，<code>py3</code>中应当用<code>urllib.parse.unquote()</code>和<code>urllib.parse.quote()</code>，而不是直接<code>urllib.unquote()</code>。修改后运行，再通过浏览器访问。</p></li>
-<li><p>stringIO</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">.....
-  File <span class="s2">"py3server.py"</span>, line 42, <span class="k">in </span>do_GET
-    self.copyfile<span class="o">(</span>f, self.wfile<span class="o">)</span>
-  File <span class="s2">"py3server.py"</span>, line 236, <span class="k">in </span>copyfile
-    shutil.copyfileobj<span class="o">(</span><span class="nb">source</span>, outputfile<span class="o">)</span>
-  File <span class="s2">"/usr/lib/python3.4/shutil.py"</span>, line 70, <span class="k">in </span>copyfileobj
-    fdst.write<span class="o">(</span>buf<span class="o">)</span>
-  File <span class="s2">"/usr/lib/python3.4/socket.py"</span>, line 394, <span class="k">in </span>write
-    <span class="k">return </span>self._sock.send<span class="o">(</span>b<span class="o">)</span>
+</code></pre>
+    </div>
+
+    <p>错误信息中最关键的是最后的内容。这里是版本问题，<code class="highlighter-rouge">py3</code>中应当用<code class="highlighter-rouge">urllib.parse.unquote()</code>和<code class="highlighter-rouge">urllib.parse.quote()</code>，而不是直接<code class="highlighter-rouge">urllib.unquote()</code>。修改后运行，再通过浏览器访问。</p>
+  </li>
+  <li>
+    <p>stringIO</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>.....
+    File <span class="s2">"py3server.py"</span>, line 42, <span class="k">in </span>do_GET
+        self.copyfile<span class="o">(</span>f, self.wfile<span class="o">)</span>
+    File <span class="s2">"py3server.py"</span>, line 236, <span class="k">in </span>copyfile
+        shutil.copyfileobj<span class="o">(</span><span class="nb">source</span>, outputfile<span class="o">)</span>
+    File <span class="s2">"/usr/lib/python3.4/shutil.py"</span>, line 70, <span class="k">in </span>copyfileobj
+        fdst.write<span class="o">(</span>buf<span class="o">)</span>
+    File <span class="s2">"/usr/lib/python3.4/socket.py"</span>, line 394, <span class="k">in </span>write
+        <span class="k">return </span>self._sock.send<span class="o">(</span>b<span class="o">)</span>
 TypeError: <span class="s1">'str'</span> does not support the buffer interface
-</code></pre></div>
-<p>这是类型错误，发生在浏览器进入根目录的时候。错误信息的意思是说<code>copyfileobj()</code>只接受<code>buffer-like</code>对象，而不能用<code>str-like</code>对象作为参数传入。阅读代码，追踪出问题的<code>f</code>，它是由<code>do_GET()</code>得到的，后者又经历了<code>send_head()</code>。</p>
+</code></pre>
+    </div>
 
-<p>在<code>send_head()</code>的最后可以看到它<code>return</code>了一个<code>f</code>，而它是由上面几行的<code>f = open(path, &#39;rb&#39;)</code>得到的。按理来说，<code>f</code>一个二进制打开的的文件，应该是<code>buffer-like</code>的对象，应该不会错在这里才对。(补充一下，打开的文件<code>f=open(filname, &#39;rb&#39;)</code>可以算是<code>buffer-like</code>，但是如果用<code>data=f.read()</code>，那么<code>data</code>是一个<code>bytes</code>对象。如果用<code>copyfileobj()</code>，会报错提示缺少<code>read</code>属性。)</p>
+    <p>这是类型错误，发生在浏览器进入根目录的时候。错误信息的意思是说<code class="highlighter-rouge">copyfileobj()</code>只接受<code class="highlighter-rouge">buffer-like</code>对象，而不能用<code class="highlighter-rouge">str-like</code>对象作为参数传入。阅读代码，追踪出问题的<code class="highlighter-rouge">f</code>，它是由<code class="highlighter-rouge">do_GET()</code>得到的，后者又经历了<code class="highlighter-rouge">send_head()</code>。</p>
 
-<p>别急，我们再来仔细看看<code>send_head()</code>。可以发现，这个函数首先对所请求的<code>path</code>进行检查，如果<code>path</code>是目录则<code>return list_directory(path)</code>。如果<code>path</code>不是目录，那就说明已经定位到文件了(如果存在)，因此下半部分就是要展示(传输)文件了。</p>
+    <p>在<code class="highlighter-rouge">send_head()</code>的最后可以看到它<code class="highlighter-rouge">return</code>了一个<code class="highlighter-rouge">f</code>，而它是由上面几行的<code class="highlighter-rouge">f = open(path, 'rb')</code>得到的。按理来说，<code class="highlighter-rouge">f</code>一个二进制打开的的文件，应该是<code class="highlighter-rouge">buffer-like</code>的对象，应该不会错在这里才对。(补充一下，打开的文件<code class="highlighter-rouge">f=open(filname, 'rb')</code>可以算是<code class="highlighter-rouge">buffer-like</code>，但是如果用<code class="highlighter-rouge">data=f.read()</code>，那么<code class="highlighter-rouge">data</code>是一个<code class="highlighter-rouge">bytes</code>对象。如果用<code class="highlighter-rouge">copyfileobj()</code>，会报错提示缺少<code class="highlighter-rouge">read</code>属性。)</p>
 
-<p>在这儿我们可以简单验证一下。在根目录下新建一个<code>readme.txt</code>，里面输入<code>hello, world</code>，保存退出。然后在地址栏输入<code>http://ip:port:8000/</code>，这时还是会出现刚才的错误。但是如果输入<code>http://ip:port:8000/readme.txt</code>，就能发现屏幕上出现了<code>hello world</code>(另外可以看看终端的输出，不再是错误信息，而是<code>...&quot;GET /readme.txt HTTP/1.1&quot; 200 -</code>)。说明我们刚才的猜测是对的。</p>
+    <p>别急，我们再来仔细看看<code class="highlighter-rouge">send_head()</code>。可以发现，这个函数首先对所请求的<code class="highlighter-rouge">path</code>进行检查，如果<code class="highlighter-rouge">path</code>是目录则<code class="highlighter-rouge">return list_directory(path)</code>。如果<code class="highlighter-rouge">path</code>不是目录，那就说明已经定位到文件了(如果存在)，因此下半部分就是要展示(传输)文件了。</p>
 
-<p>至此，我们暂时把文件保存为<code>py3server_v1.py</code>，以便参照。接下来的<code>v2</code>，我们要让目录页也能正确显示。</p></li>
-<li><p>正确显示目录</p>
+    <p>在这儿我们可以简单验证一下。在根目录下新建一个<code class="highlighter-rouge">readme.txt</code>，里面输入<code class="highlighter-rouge">hello, world</code>，保存退出。然后在地址栏输入<code class="highlighter-rouge">http://ip:port:8000/</code>，这时还是会出现刚才的错误。但是如果输入<code class="highlighter-rouge">http://ip:port:8000/readme.txt</code>，就能发现屏幕上出现了<code class="highlighter-rouge">hello world</code>(另外可以看看终端的输出，不再是错误信息，而是<code class="highlighter-rouge">..."GET /readme.txt HTTP/1.1" 200 -</code>)。说明我们刚才的猜测是对的。</p>
 
-<p>接下来我们进入<code>list_directory()</code>内部，可以看到里面赫然写着<code>f = StringIO()</code>。好嘛，这不就是红果果的<code>str-like</code>对象吗！把这个传回给一个只接受<code>buffer-like</code>对象的家伙可不会出错嘛！从这里也能看出，<code>py3</code>对于数据类型的区分更严格了。另外，关于<code>py3</code>中<code>StringIO</code>和<code>BytesIO</code>的内容，可以参考<a href="http://www.kancloud.cn/thinkphp/python-guide/39358">这里</a>和<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431918785710e86a1a120ce04925bae155012c7fc71e000">这里</a>。</p>
+    <p>至此，我们暂时把文件保存为<code class="highlighter-rouge">py3server_v1.py</code>，以便参照。接下来的<code class="highlighter-rouge">v2</code>，我们要让目录页也能正确显示。</p>
+  </li>
+  <li>
+    <p>正确显示目录</p>
 
-<p>话不多说，我们先试着把这一行改成<code>f = BytesIO()</code>，重启服务，刷新网页。结果上一个错误没了，其他错误又冒出来一大堆。。</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash">......
-  File <span class="s2">"py3server.py"</span>, line 40, <span class="k">in </span>do_GET
-    f <span class="o">=</span> self.send_head<span class="o">()</span>
-  File <span class="s2">"py3server.py"</span>, line 144, <span class="k">in </span>send_head
-    <span class="k">return </span>self.list_directory<span class="o">(</span>path<span class="o">)</span>
-  File <span class="s2">"py3server.py"</span>, line 176, <span class="k">in </span>list_directory
-    f.write<span class="o">(</span><span class="s1">'&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;'</span><span class="o">)</span>
+    <p>接下来我们进入<code class="highlighter-rouge">list_directory()</code>内部，可以看到里面赫然写着<code class="highlighter-rouge">f = StringIO()</code>。好嘛，这不就是红果果的<code class="highlighter-rouge">str-like</code>对象吗！把这个传回给一个只接受<code class="highlighter-rouge">buffer-like</code>对象的家伙可不会出错嘛！从这里也能看出，<code class="highlighter-rouge">py3</code>对于数据类型的区分更严格了。另外，关于<code class="highlighter-rouge">py3</code>中<code class="highlighter-rouge">StringIO</code>和<code class="highlighter-rouge">BytesIO</code>的内容，可以参考<a href="http://www.kancloud.cn/thinkphp/python-guide/39358">这里</a>和<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431918785710e86a1a120ce04925bae155012c7fc71e000">这里</a>。</p>
+
+    <p>话不多说，我们先试着把这一行改成<code class="highlighter-rouge">f = BytesIO()</code>，重启服务，刷新网页。结果上一个错误没了，其他错误又冒出来一大堆。。</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>......
+    File <span class="s2">"py3server.py"</span>, line 40, <span class="k">in </span>do_GET
+        f <span class="o">=</span> self.send_head<span class="o">()</span>
+    File <span class="s2">"py3server.py"</span>, line 144, <span class="k">in </span>send_head
+        <span class="k">return </span>self.list_directory<span class="o">(</span>path<span class="o">)</span>
+    File <span class="s2">"py3server.py"</span>, line 176, <span class="k">in </span>list_directory
+        f.write<span class="o">(</span><span class="s1">'&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN"&gt;'</span><span class="o">)</span>
 TypeError: <span class="s1">'str'</span> does not support the buffer interface
-</code></pre></div>
-<p>阅读错误信息，又是刚才的<code>TypeError: &#39;str&#39; does not support the buffer interface</code>。得，这不又回来了？这刚才的力气白花了。。</p>
+</code></pre>
+    </div>
 
-<p>看官且慢！其实如果再往上读两行，发现出错地点是不一样滴～可以看到，错误出现在<code>f.write()</code>身上。原来的<code>f</code>是一个<code>StringIO</code>对象，用<code>f.write()</code>时的参数可以直接用字符串，比如<code>f.write(&#39;hi&#39;)</code>。不过当我们用了<code>f = BytesIO()</code>后，给<code>f</code>写值时就需要先进行编码了，也就是<code>f.write(&#39;hi&#39;.encode(&#39;utf-8&#39;))</code>，或者用<code>f.write(b&#39;hi&#39;)</code>。我试过用这种方式把相应的地方进行改动，包括<a href="http://blog.csdn.net/myjiayan/article/details/46366825">这里</a>提到的用<code>f.seek(0)</code>回到文件最开头，同时修改<code>do_POST()</code>的内容。不过，这里不打算对这样的修改再作进一步描述了，因为这种削足适履的方法会让代码变得很丑。。</p>
+    <p>阅读错误信息，又是刚才的<code class="highlighter-rouge">TypeError: 'str' does not support the buffer interface</code>。得，这不又回来了？这刚才的力气白花了。。</p>
 
-<p>让我们回想一下，最终不就是要把内容复制到<code>wfile</code>上吗(放到这上面的内容，应该会有一个<code>handler</code>把它带到网络上进行传输)？产生这些错误，都是因为<code>copyfileobj()</code>(躺枪<em>(:з」∠)</em>)。不用它，直接写入<code>wfile</code>怎么样？</p>
+    <p>看官且慢！其实如果再往上读两行，发现出错地点是不一样滴～可以看到，错误出现在<code class="highlighter-rouge">f.write()</code>身上。原来的<code class="highlighter-rouge">f</code>是一个<code class="highlighter-rouge">StringIO</code>对象，用<code class="highlighter-rouge">f.write()</code>时的参数可以直接用字符串，比如<code class="highlighter-rouge">f.write('hi')</code>。不过当我们用了<code class="highlighter-rouge">f = BytesIO()</code>后，给<code class="highlighter-rouge">f</code>写值时就需要先进行编码了，也就是<code class="highlighter-rouge">f.write('hi'.encode('utf-8'))</code>，或者用<code class="highlighter-rouge">f.write(b'hi')</code>。我试过用这种方式把相应的地方进行改动，包括<a href="http://blog.csdn.net/myjiayan/article/details/46366825">这里</a>提到的用<code class="highlighter-rouge">f.seek(0)</code>回到文件最开头，同时修改<code class="highlighter-rouge">do_POST()</code>的内容。不过，这里不打算对这样的修改再作进一步描述了，因为这种削足适履的方法会让代码变得很丑。。</p>
 
-<p>结果证明是可行的。从<a href="https://docs.python.org/3/library/socketserver.html">这里</a>可以看到可以用<code>wfile.write()</code>方法，写入类型为<code>bytes</code>的参数。现在问题就简单了，把<code>StringIO</code>还是<code>BytesIO</code>全部扔掉，然后把要传输的内容全都用字符串表示<code>f = &#39;hello&#39;</code>，接着<code>f.encode(&#39;utf-8&#39;)</code>，最后直接<code>self.wfile.write(f)</code>进行传输就行了。</p>
+    <p>让我们回想一下，最终不就是要把内容复制到<code class="highlighter-rouge">wfile</code>上吗(放到这上面的内容，应该会有一个<code class="highlighter-rouge">handler</code>把它带到网络上进行传输)？产生这些错误，都是因为<code class="highlighter-rouge">copyfileobj()</code>(躺枪_(:з」∠)_)。不用它，直接写入<code class="highlighter-rouge">wfile</code>怎么样？</p>
 
-<p>有了这些说明，再去读这部分重写的代码，应该就很容易了。结构是这样的:</p>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="c"># in list_directory()</span>
+    <p>结果证明是可行的。从<a href="https://docs.python.org/3/library/socketserver.html">这里</a>可以看到可以用<code class="highlighter-rouge">wfile.write()</code>方法，写入类型为<code class="highlighter-rouge">bytes</code>的参数。现在问题就简单了，把<code class="highlighter-rouge">StringIO</code>还是<code class="highlighter-rouge">BytesIO</code>全部扔掉，然后把要传输的内容全都用字符串表示<code class="highlighter-rouge">f = 'hello'</code>，接着<code class="highlighter-rouge">f.encode('utf-8')</code>，最后直接<code class="highlighter-rouge">self.wfile.write(f)</code>进行传输就行了。</p>
+
+    <p>有了这些说明，再去读这部分重写的代码，应该就很容易了。结构是这样的:</p>
+
+    <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c"># in list_directory()</span>
 <span class="o">...</span>
 <span class="n">f</span> <span class="o">=</span> <span class="p">(</span><span class="n">html_in_str</span><span class="p">)</span>
 <span class="n">f</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
-<span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span> <span class="c"># 注意, 内容长度是编码后的长度</span>
+<span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>	<span class="c"># 注意, 内容长度是编码后的长度</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">send_response</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">send_header</span><span class="p">(</span><span class="s">"Content-type"</span><span class="p">,</span> <span class="s">"text/html"</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">send_header</span><span class="p">(</span><span class="s">"Content-Length"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
@@ -197,120 +237,173 @@ TypeError: <span class="s1">'str'</span> does not support the buffer interface
 <span class="c"># in do_GET()</span>
 <span class="o">...</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">wfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</code></pre></div>
-<p>我们将这个文件定为<code>py3server_v2.py</code>，对应的改动有以下几点。</p>
+</code></pre>
+    </div>
 
-<ul>
-<li><p><code>do_GET()</code>现在的内容：</p>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send_head</span><span class="p">()</span>
+    <p>我们将这个文件定为<code class="highlighter-rouge">py3server_v2.py</code>，对应的改动有以下几点。</p>
+
+    <ul>
+      <li>
+        <p><code class="highlighter-rouge">do_GET()</code>现在的内容：</p>
+
+        <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send_head</span><span class="p">()</span>
 <span class="k">if</span> <span class="n">f</span><span class="p">:</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">wfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
-</code></pre></div></li>
-<li><p><code>do_HEAD()</code>现在的内容：</p>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send_head</span><span class="p">()</span>
-</code></pre></div></li>
-<li><p>在<code>send_head()</code>的最后，将<code>return f</code>改为</p>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+</code></pre>
+        </div>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">do_HEAD()</code>现在的内容：</p>
+
+        <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">f</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">send_head</span><span class="p">()</span>
+</code></pre>
+        </div>
+      </li>
+      <li>
+        <p>在<code class="highlighter-rouge">send_head()</code>的最后，将<code class="highlighter-rouge">return f</code>改为</p>
+
+        <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">data</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 <span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 <span class="k">return</span> <span class="n">data</span>
-</code></pre></div></li>
-<li><p><code>list_directory()</code>改动较大，参考<code>py3server_v2.py</code>文件(包含<code>html</code>的修改)。</p></li>
-<li><p>去掉<code>copyfile()</code>，去掉<code>from io import StringIO, BytesIO</code>，减少冗余。</p></li>
-</ul></li>
-<li><p><code>py3</code>原生版本的方法</p>
+</code></pre>
+        </div>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">list_directory()</code>改动较大，参考<code class="highlighter-rouge">py3server_v2.py</code>文件(包含<code class="highlighter-rouge">html</code>的修改)。</p>
+      </li>
+      <li>
+        <p>去掉<code class="highlighter-rouge">copyfile()</code>，去掉<code class="highlighter-rouge">from io import StringIO, BytesIO</code>，减少冗余。</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">py3</code>原生版本的方法</p>
 
-<p><code>http.server</code>模块的思路是这样：    </p>
+    <p><code class="highlighter-rouge">http.server</code>模块的思路是这样：</p>
 
-<blockquote>
-<p>建立一个<code>list</code>对象<code>r</code>---&gt;元素为字符串，分别写入<code>html</code>---&gt;用<code>join</code>连成字符串---&gt;编码成<code>r_encoded</code>---&gt;...</p>
-</blockquote>
+    <blockquote>
+      <p>建立一个<code class="highlighter-rouge">list</code>对象<code class="highlighter-rouge">r</code>—&gt;元素为字符串，分别写入<code class="highlighter-rouge">html</code>—&gt;用<code class="highlighter-rouge">join</code>连成字符串—&gt;编码成<code class="highlighter-rouge">r_encoded</code>—&gt;…</p>
+    </blockquote>
 
-<p>到这一步两者总体思路是类似的。但是下一步，<code>py3</code>的原生版本还是做了<code>f = BytesIO()</code>，然后 <code>f.write(r_encoded)</code>。</p>
+    <p>到这一步两者总体思路是类似的。但是下一步，<code class="highlighter-rouge">py3</code>的原生版本还是做了<code class="highlighter-rouge">f = BytesIO()</code>，然后 <code class="highlighter-rouge">f.write(r_encoded)</code>。</p>
 
-<p><strong>我没有想明白，为什么一定要用<code>BytesIO</code>呢？直接新建字符串对象，然后编码传入<code>wfile</code>，同样是在内存中操作数据啊。</strong></p>
+    <p><strong>我没有想明白，为什么一定要用<code class="highlighter-rouge">BytesIO</code>呢？直接新建字符串对象，然后编码传入<code class="highlighter-rouge">wfile</code>，同样是在内存中操作数据啊。</strong></p>
 
-<p><strong>可能是存在内存操作分配更加方便，整存整取，回收等原因？那也不应该啊，因为str和list都是很常见的对象，如果有很多缺点那还得了。。还是有其他原因？另一方面，<code>py3server.py</code>的方式目前也能工作正常。我在知乎提到了<a href="https://www.zhihu.com/question/50716575?from=profile_question_card">这个问题</a>，希望能够得到解答。</strong></p></li>
+    <p><strong>可能是存在内存操作分配更加方便，整存整取，回收等原因？那也不应该啊，因为str和list都是很常见的对象，如果有很多缺点那还得了。。还是有其他原因？另一方面，<code class="highlighter-rouge">py3server.py</code>的方式目前也能工作正常。我在知乎提到了<a href="https://www.zhihu.com/question/50716575?from=profile_question_card">这个问题</a>，希望能够得到解答。</strong></p>
+  </li>
 </ul>
 
-<p>如果抛开这个问题不管，现在介个基于<code>py3</code>的<code>py3server_v2.py</code>服务端已经可以用浏览器正常访问和下载了。还有一些细节，比如<code>fs = os.fstat(f.fileno())</code>，这里不再详细描述，通过搜索引擎可以很快了解。让我们先去吃点东西。下一节，我们通过重写<code>do_POST()</code>来实现上传功能。</p>
+<p>如果抛开这个问题不管，现在介个基于<code class="highlighter-rouge">py3</code>的<code class="highlighter-rouge">py3server_v2.py</code>服务端已经可以用浏览器正常访问和下载了。还有一些细节，比如<code class="highlighter-rouge">fs = os.fstat(f.fileno())</code>，这里不再详细描述，通过搜索引擎可以很快了解。让我们先去吃点东西。下一节，我们通过重写<code class="highlighter-rouge">do_POST()</code>来实现上传功能。</p>
 
-<h3>2.2 实现上传</h3>
+<h3 id="section-5">2.2 实现上传</h3>
 
 <p>有了上面一节的说明，又有前面两位同学的思路和框架，重写上传功能应该是驾轻就熟了。所以下面直接进入重点。</p>
 
-<p>在<code>py3server_v2.py</code>中，我们已经写好了一个简单的用于上传的前端部件。</p>
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;form</span> <span class="na">ENCTYPE=</span><span class="s">"multipart/form-data"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"file"</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"upload"</span><span class="nt">/&gt;</span>
+<p>在<code class="highlighter-rouge">py3server_v2.py</code>中，我们已经写好了一个简单的用于上传的前端部件。</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;form</span> <span class="na">ENCTYPE=</span><span class="s">"multipart/form-data"</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+	<span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"file"</span> <span class="na">type=</span><span class="s">"file"</span><span class="nt">/&gt;</span>
+	<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"upload"</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/form&gt;</span>
-</code></pre></div>
+</code></pre>
+</div>
+
 <p>下面还要进行一些修改</p>
 
 <ul>
-<li><p><code>do_POST()</code>处理POST请求</p>
+  <li>
+    <p><code class="highlighter-rouge">do_POST()</code>处理POST请求</p>
 
-<p>首先去掉<code>f=StringIO()</code>，直接用字符串，写入一个基本的<code>html</code>页面，用于呈现<code>upload</code>之后的信息(上传成功/失败)，并和响应头信息一起发回给浏览器。</p></li>
-<li><p><code>deal_post_data()</code>处理POST数据</p>
+    <p>首先去掉<code class="highlighter-rouge">f=StringIO()</code>，直接用字符串，写入一个基本的<code class="highlighter-rouge">html</code>页面，用于呈现<code class="highlighter-rouge">upload</code>之后的信息(上传成功/失败)，并和响应头信息一起发回给浏览器。</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">deal_post_data()</code>处理POST数据</p>
 
-<p>如果不逐行<em>研究其意义</em>的话，改起来也是很快的，找到<code>py2</code>和<code>py3</code>的区别，同时注意编码即可。具体代码可以参见<code>py3server_v3.py</code></p></li>
-<li><p><em>还是想理解这几段代码？</em></p>
+    <p>如果不逐行<em>研究其意义</em>的话，改起来也是很快的，找到<code class="highlighter-rouge">py2</code>和<code class="highlighter-rouge">py3</code>的区别，同时注意编码即可。具体代码可以参见<code class="highlighter-rouge">py3server_v3.py</code></p>
+  </li>
+  <li>
+    <p><em>还是想理解这几段代码？</em></p>
 
-<p><code>do_POST()</code>的代码还好，只要懂一点<code>HTML</code>和<code>HTTP</code>就能看懂。而<code>deal_post_data()</code>一开始我也看不太懂。幸好之前测试的时候发现了<code>wfile</code>和<code>rfile</code>的秘密，我们可以用这个来看看这个函数到底是<code>deal</code>了什么数据：</p>
+    <p><code class="highlighter-rouge">do_POST()</code>的代码还好，只要懂一点<code class="highlighter-rouge">HTML</code>和<code class="highlighter-rouge">HTTP</code>就能看懂。而<code class="highlighter-rouge">deal_post_data()</code>一开始我也看不太懂。幸好之前测试的时候发现了<code class="highlighter-rouge">wfile</code>和<code class="highlighter-rouge">rfile</code>的秘密，我们可以用这个来看看这个函数到底是<code class="highlighter-rouge">deal</code>了什么数据：</p>
 
-<p>首先在服务端，我们注释掉<code>do_POST()</code>和<code>deal_post_data()</code>两个函数。然后重新写一个<code>do_POST()</code>读出准备接收的所有数据:</p>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">do_POST</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <p>首先在服务端，我们注释掉<code class="highlighter-rouge">do_POST()</code>和<code class="highlighter-rouge">deal_post_data()</code>两个函数。然后重新写一个<code class="highlighter-rouge">do_POST()</code>读出准备接收的所有数据:</p>
+
+    <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">do_POST</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
         <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rfile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">))</span>
-</code></pre></div>
-<p>接着我们在客户端新建一个准备上传的文件，命名为<code>1.txt</code>，里面写入内容<code>test</code>。打开chrome开发者工具的<code>Network</code>。<code>Choose File</code>选择<code>1.txt</code>，点击<code>upload</code>。看看发生了什么有意思的事～</p>
+</code></pre>
+    </div>
 
-<p>终端输出的内容+<code>Network</code>中的内容，有这些做参照，加上<code>py3server_v3.py</code>中的小注释，代码比较很容易懂了。这个算作思考题吧:)</p></li>
+    <p>接着我们在客户端新建一个准备上传的文件，命名为<code class="highlighter-rouge">1.txt</code>，里面写入内容<code class="highlighter-rouge">test</code>。打开chrome开发者工具的<code class="highlighter-rouge">Network</code>。<code class="highlighter-rouge">Choose File</code>选择<code class="highlighter-rouge">1.txt</code>，点击<code class="highlighter-rouge">upload</code>。看看发生了什么有意思的事～</p>
+
+    <p>终端输出的内容+<code class="highlighter-rouge">Network</code>中的内容，有这些做参照，加上<code class="highlighter-rouge">py3server_v3.py</code>中的小注释，代码比较很容易懂了。这个算作思考题吧:)</p>
+  </li>
 </ul>
 
-<p>至此，我们完成了上传功能的重写。<code>py3_SimpleHTTPServerWithUpload.py</code>大功告成。我们也可以像<a href="http://luy.li/2010/05/15/simplehttpserverwithupload/">bones7456</a>同学一样，喂它做一个<code>alias</code>，以后就可以方便地在局域网中共享文件了～</p>
+<p>至此，我们完成了上传功能的重写。<code class="highlighter-rouge">py3_SimpleHTTPServerWithUpload.py</code>大功告成。我们也可以像<a href="http://luy.li/2010/05/15/simplehttpserverwithupload/">bones7456</a>同学一样，喂它做一个<code class="highlighter-rouge">alias</code>，以后就可以方便地在局域网中共享文件了～</p>
 
-<h2>3. 其他内容</h2>
+<h2 id="section-6">3. 其他内容</h2>
 
 <ul>
-<li><p><a href="https://github.com/jJayyyyyyy/cs/tree/master/just%20for%20fun/file_transfer">这里</a>还有另外几个文件传输的小脚本可以作为参考或者练练手。</p></li>
-<li><p><code>GitHub</code>的通过网站新建文件时的<code>preview</code>貌似要去访问服务器，而没有像<a href="http://mahua.jser.me/">jser</a>一样用js本地化的预览。</p></li>
-<li><p>BUPTGuo同学还在gist上面留了几个<a href="https://gist.github.com/BUPTGuo/007a6e589c0d2e48aac6">TODO</a>，</p>
+  <li>
+    <p><a href="https://github.com/jJayyyyyyy/cs/tree/master/just%20for%20fun/file_transfer">这里</a>还有另外几个文件传输的小脚本可以作为参考或者练练手。</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">GitHub</code>的通过网站新建文件时的<code class="highlighter-rouge">preview</code>貌似要去访问服务器，而没有像<a href="http://mahua.jser.me/">jser</a>一样用js本地化的预览。</p>
+  </li>
+  <li>
+    <p>BUPTGuo同学还在gist上面留了几个<a href="https://gist.github.com/BUPTGuo/007a6e589c0d2e48aac6">TODO</a>，</p>
 
-<blockquote>
-<p>TODO: 点击中文目录时，终端输出为 unicode 编码，回头尝试修改</p>
+    <blockquote>
+      <p>TODO: 点击中文目录时，终端输出为 unicode 编码，回头尝试修改</p>
 
-<p>TODO: 尝试 ipv6支持</p>
-</blockquote></li>
+      <p>TODO: 尝试 ipv6支持</p>
+    </blockquote>
+  </li>
 </ul>
 
-<p>以下是对于<code>TODO</code>的一些思考和尝试。</p>
+<p>以下是对于<code class="highlighter-rouge">TODO</code>的一些思考和尝试。</p>
 
 <ol>
-<li><p>终端输出的可能不算是unicode。根据<a href="http://stackoverflow.com/questions/912811/what-is-the-proper-way-to-url-encode-unicode-characters">这里</a>和<a href="https://en.wikipedia.org/wiki/Percent-encoding">这里</a>，称其为<code>percent-encoding</code>或<code>url-encoding</code>比较合适。</p>
+  <li>
+    <p>终端输出的可能不算是unicode。根据<a href="http://stackoverflow.com/questions/912811/what-is-the-proper-way-to-url-encode-unicode-characters">这里</a>和<a href="https://en.wikipedia.org/wiki/Percent-encoding">这里</a>，称其为<code class="highlighter-rouge">percent-encoding</code>或<code class="highlighter-rouge">url-encoding</code>比较合适。</p>
 
-<p>以<code>中文</code>这两个字为例。根据<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431664106267f12e9bef7ee14cf6a8776a479bdec9b9000">这里</a>: python3中的字符串是以Unicode编码的。如果知道字符的整数编码，还可以用十六进制这么写str：</p>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="s">'</span><span class="se">\u4e2d\u6587</span><span class="s">'</span> <span class="c">#this is unicode</span>
+    <p>以<code class="highlighter-rouge">中文</code>这两个字为例。根据<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431664106267f12e9bef7ee14cf6a8776a479bdec9b9000">这里</a>: python3中的字符串是以Unicode编码的。如果知道字符的整数编码，还可以用十六进制这么写str：</p>
+
+    <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="s">'</span><span class="se">\u4e2d\u6587</span><span class="s">'</span> <span class="c">#this is unicode</span>
 <span class="s">'中文'</span>
-</code></pre></div>
-<p>以<code>Unicode</code>表示的<code>str</code>通过<code>encode()</code>方法可以编码为指定的<code>bytes</code>，以便在网络上传输。</p>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="o">&gt;&gt;&gt;</span> <span class="s">'中文'</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
+</code></pre>
+    </div>
+
+    <p>以<code class="highlighter-rouge">Unicode</code>表示的<code class="highlighter-rouge">str</code>通过<code class="highlighter-rouge">encode()</code>方法可以编码为指定的<code class="highlighter-rouge">bytes</code>，以便在网络上传输。</p>
+
+    <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span> <span class="s">'中文'</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">)</span>
 <span class="n">b</span><span class="s">'</span><span class="se">\xe4\xb8\xad\xe6\x96\x87</span><span class="s">'</span>
-</code></pre></div>
-<p>如果在server的根目录下建立一个叫做<code>中文</code>的目录，然后在浏览器中访问。通过观察Chrome的开发者工具，可以看到<code>Request Header</code>里面的<code>url</code>对应的<code>中文</code>是这样的</p>
-<div class="highlight"><pre><code class="language-" data-lang="">%E4%B8%AD%E6%96%87
-</code></pre></div>
-<p>通过对比可以看到，<code>utf-8-encoding</code>之后的编码的<code>\x</code>变成了<code>%</code>。在<a href="http://baike.baidu.com/view/73.htm">这里</a>可以看到，两者都是<code>转义字符</code>，只不过应用场景不一样。</p>
+</code></pre>
+    </div>
 
-<p>另一方面，利用Chrome的开发者工具，可以看到在<code>Request Headers</code>里面，不管是用<code>GET</code>还是<code>POST</code>，如果路径是中文，<code>url</code>那一段就会被<code>percent-encoding</code>。所以我觉得，这一步编码应该是浏览器做的，在服务端的终端只是把收到的<code>GET</code>或者<code>POST</code>的<code>url</code>打印出来了。</p>
+    <p>如果在server的根目录下建立一个叫做<code class="highlighter-rouge">中文</code>的目录，然后在浏览器中访问。通过观察Chrome的开发者工具，可以看到<code class="highlighter-rouge">Request Header</code>里面的<code class="highlighter-rouge">url</code>对应的<code class="highlighter-rouge">中文</code>是这样的</p>
 
-<p>阅读代码后发现，不管是在<code>py2</code>的<code>BaseHTTPServer.py</code>还是在<code>py3</code>的<code>http.server.py</code>，打印这行信息靠的是<code>log_message()</code>中用的<code>sys.stderr.write()</code>函数(方法)。</p>
+    <div class="highlighter-rouge"><pre class="highlight"><code>%E4%B8%AD%E6%96%87
+</code></pre>
+    </div>
 
-<p>同时也发现，请求信息存放于<code>self.requestline</code>，其中包含了路径信息，可以用正则表达式路径提取出来。比如在<code>do_GET()</code>的最后加上这么几行：</p>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">path</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">r'.* /(.*)/ HTTP'</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">requestline</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="k">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> 
-</code></pre></div>
-<p>至于如何实现，和<code>do_GET()</code>一样，我们可以重写<code>log_message()</code>或者调用它的<code>log_request()</code>。后者如下：</p>
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">log_request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="s">'-'</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s">'-'</span><span class="p">):</span>
+    <p>通过对比可以看到，<code class="highlighter-rouge">utf-8-encoding</code>之后的编码的<code class="highlighter-rouge">\x</code>变成了<code class="highlighter-rouge">%</code>。在<a href="http://baike.baidu.com/view/73.htm">这里</a>可以看到，两者都是<code class="highlighter-rouge">转义字符</code>，只不过应用场景不一样。</p>
+
+    <p>另一方面，利用Chrome的开发者工具，可以看到在<code class="highlighter-rouge">Request Headers</code>里面，不管是用<code class="highlighter-rouge">GET</code>还是<code class="highlighter-rouge">POST</code>，如果路径是中文，<code class="highlighter-rouge">url</code>那一段就会被<code class="highlighter-rouge">percent-encoding</code>。所以我觉得，这一步编码应该是浏览器做的，在服务端的终端只是把收到的<code class="highlighter-rouge">GET</code>或者<code class="highlighter-rouge">POST</code>的<code class="highlighter-rouge">url</code>打印出来了。</p>
+
+    <p>阅读代码后发现，不管是在<code class="highlighter-rouge">py2</code>的<code class="highlighter-rouge">BaseHTTPServer.py</code>还是在<code class="highlighter-rouge">py3</code>的<code class="highlighter-rouge">http.server.py</code>，打印这行信息靠的是<code class="highlighter-rouge">log_message()</code>中用的<code class="highlighter-rouge">sys.stderr.write()</code>函数(方法)。</p>
+
+    <p>同时也发现，请求信息存放于<code class="highlighter-rouge">self.requestline</code>，其中包含了路径信息，可以用正则表达式路径提取出来。比如在<code class="highlighter-rouge">do_GET()</code>的最后加上这么几行：</p>
+
+    <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">path</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">r'.* /(.*)/ HTTP'</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">requestline</span><span class="p">)</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+</code></pre>
+    </div>
+
+    <p>至于如何实现，和<code class="highlighter-rouge">do_GET()</code>一样，我们可以重写<code class="highlighter-rouge">log_message()</code>或者调用它的<code class="highlighter-rouge">log_request()</code>。后者如下：</p>
+
+    <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">log_request</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="o">=</span><span class="s">'-'</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="s">'-'</span><span class="p">):</span>
     <span class="n">path1</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">requestline</span>
     <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s">r'.* /(.*)/ HTTP'</span><span class="p">,</span> <span class="n">path1</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">m</span><span class="p">:</span>
@@ -318,27 +411,40 @@ TypeError: <span class="s1">'str'</span> does not support the buffer interface
         <span class="n">path3</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">parse</span><span class="o">.</span><span class="n">unquote</span><span class="p">(</span><span class="n">path2</span><span class="p">)</span>
         <span class="n">path4</span> <span class="o">=</span> <span class="n">path1</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">path2</span><span class="p">,</span> <span class="n">path3</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">requestline</span> <span class="o">=</span> <span class="n">path4</span>
-
     <span class="bp">self</span><span class="o">.</span><span class="n">log_message</span><span class="p">(</span><span class="s">'"</span><span class="si">%</span><span class="s">s" </span><span class="si">%</span><span class="s">s </span><span class="si">%</span><span class="s">s'</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">requestline</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">code</span><span class="p">),</span> <span class="nb">str</span><span class="p">(</span><span class="n">size</span><span class="p">))</span>
-</code></pre></div>
-<p>不过感觉这个没有必要，终端输出反正没人看。。复杂了还容易出错。另外，英文路径编码前后是一样的。</p></li>
-<li><p>【ipv6支持】估计要牵涉到更底层吧，到<code>BaseHTTPServer</code>这一层才import了<code>socket</code>，相当于对<code>SimpleHTTPServer</code>隐藏了<code>socket</code>。从<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001432004374523e495f640612f4b08975398796939ec3c000">这里</a>我们可以知道，如果要用<code>ipv6</code>，则需要<code>s = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)</code>。</p>
+</code></pre>
+    </div>
 
-<p>所以我们的目的就是要修改socket的参数，首先找到<code>test()</code>这个函数，然后找到它的参数<code>ServerClass = http.server.HTTPServer</code>，在python目录中找到<code>http</code>这个文件夹中的<code>server.py</code>，搜索<code>HTTPServer</code>，得知它是继承了<code>socketserver.TCPServer</code>这个类，再去<code>python目录</code>下找到<code>socketserver.py</code>这个文件，在<code>TCPServer</code>这个类中可以看到<code>address_family = socket.AF_INET</code>(第415行)，也就是默认用的<code>ipv4</code>。如果修改为<code>AF_INET6</code>(可能需要sudo)并保存，然后在浏览器地址栏输入<code>http://[::1]:8000</code>，就可以通过ipv6访问了(<code>[::1]</code>是ipv6形式的localhost)。同时也注意到，ipv4仍然能够访问。(以上内容基于<code>py3</code>，但<code>py2</code>类似)</p>
+    <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">do_POST</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">8</span><span class="p">):</span>
+        <span class="k">print</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">rfile</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s">'utf-8'</span><span class="p">))</span>
+</code></pre>
+    </div>
 
-<p>还有其他测试方法：</p>
-<div class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>ping6 xxxx%eth0:8000
+    <p>不过感觉这个没有必要，终端输出反正没人看。。复杂了还容易出错。另外，英文路径编码前后是一样的。</p>
+  </li>
+  <li>
+    <p>【ipv6支持】估计要牵涉到更底层吧，到<code class="highlighter-rouge">BaseHTTPServer</code>这一层才import了<code class="highlighter-rouge">socket</code>，相当于对<code class="highlighter-rouge">SimpleHTTPServer</code>隐藏了<code class="highlighter-rouge">socket</code>。从<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001432004374523e495f640612f4b08975398796939ec3c000">这里</a>我们可以知道，如果要用<code class="highlighter-rouge">ipv6</code>，则需要<code class="highlighter-rouge">s = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)</code>。</p>
+
+    <p>所以我们的目的就是要修改socket的参数，首先找到<code class="highlighter-rouge">test()</code>这个函数，然后找到它的参数<code class="highlighter-rouge">ServerClass = http.server.HTTPServer</code>，在python目录中找到<code class="highlighter-rouge">http</code>这个文件夹中的<code class="highlighter-rouge">server.py</code>，搜索<code class="highlighter-rouge">HTTPServer</code>，得知它是继承了<code class="highlighter-rouge">socketserver.TCPServer</code>这个类，再去<code class="highlighter-rouge">python目录</code>下找到<code class="highlighter-rouge">socketserver.py</code>这个文件，在<code class="highlighter-rouge">TCPServer</code>这个类中可以看到<code class="highlighter-rouge">address_family = socket.AF_INET</code>(第415行)，也就是默认用的<code class="highlighter-rouge">ipv4</code>。如果修改为<code class="highlighter-rouge">AF_INET6</code>(可能需要sudo)并保存，然后在浏览器地址栏输入<code class="highlighter-rouge">http://[::1]:8000</code>，就可以通过ipv6访问了(<code class="highlighter-rouge">[::1]</code>是ipv6形式的localhost)。同时也注意到，ipv4仍然能够访问。(以上内容基于<code class="highlighter-rouge">py3</code>，但<code class="highlighter-rouge">py2</code>类似)</p>
+
+    <p>还有其他测试方法：</p>
+
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="gp">$ </span>ping6 xxxx%eth0:8000
 <span class="gp">$ </span>nc -zv -6 localhost 8000
 <span class="gp">$ </span>nc -zv -6 ::1 8000
-</code></pre></div>
-<p>不过话又说回来，要这么往下改就比较复杂了，失去了原来的轻便。</p></li>
+</code></pre>
+    </div>
+
+    <p>不过话又说回来，要这么往下改就比较复杂了，失去了原来的轻便。</p>
+  </li>
 </ol>
 
-<p><br/><br/></p>
+<p><br /><br /></p>
 
-<h2>4. 参考</h2>
+<h2 id="section-7">4. 参考</h2>
 
-<p><a href="http://luy.li/2010/05/15/simplehttpserverwithupload/">bones</a>同学</p>
+<p><a href="http://luy.li/2010/05/15/simplehttpserverwithupload/">bones7456</a>同学</p>
 
 <p><a href="http://buptguo.com/2015/11/07/simplehttpserver-with-upload-file/">BUPTGuo</a>同学</p>
 
@@ -360,23 +466,44 @@ TypeError: <span class="s1">'str'</span> does not support the buffer interface
 
 <p>由于前期一些搜索内容忘了保存地址了，所以参考资料的出处可能有一些遗漏。。。</p>
 
-<p><br/><br/></p>
+<p><br /><br /></p>
 
-<h2>后记</h2>
+<h2 id="section-8">后记(20161009 更新)</h2>
 
-<p><code>Jekyll</code>默认使用的<code>kramdown</code>并不能很好地支持<code>markdown</code>的代码段，也就是类似下面这种形式的<code>code block</code>。</p>
-<div class="highlight"><pre><code class="language-" data-lang="">    ```
-    code
-    ```
-</code></pre></div>
+<p><del><code class="highlighter-rouge">Jekyll</code>默认使用的<code class="highlighter-rouge">kramdown</code>并不能很好地支持<code class="highlighter-rouge">markdown</code>的代码段，也就是类似下面这种形式的<code class="highlighter-rouge">code block</code>。</del></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code> ```
+ code
+ ```
+</code></pre>
+</div>
+
 <p>一番寻觅之后找到了<a href="https://george-hawkins.github.io/basic-gfm-jekyll/redcarpet-extensions.html">Redcarpet</a>， 食用方式如下：</p>
 
 <ol>
-<li><p><code>$ gem install redcarpet</code></p></li>
-<li><p>修改<code>_config.yml</code>，注释掉<code>markdown: kramdown</code>，下面加上一行<code>markdown: redcarpet</code></p></li>
-<li><p>如果有<code>Gemfile</code>，则添加一行<code>gem &quot;redcarpet&quot;</code></p></li>
-<li><p><code>$ jekyll build</code> + <code>$ Jekyll serve</code></p></li>
+  <li>
+    <p><code class="highlighter-rouge">$ gem install redcarpet</code></p>
+  </li>
+  <li>
+    <p>修改<code class="highlighter-rouge">_config.yml</code>，注释掉<code class="highlighter-rouge">markdown: kramdown</code>，下面加上一行<code class="highlighter-rouge">markdown: redcarpet</code></p>
+  </li>
+  <li>
+    <p>如果有<code class="highlighter-rouge">Gemfile</code>，则添加一行<code class="highlighter-rouge">gem "redcarpet"</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">$ jekyll build</code> + <code class="highlighter-rouge">$ Jekyll serve</code></p>
+  </li>
 </ol>
+
+<p><br /></p>
+
+<h2 id="section-9">后后记(2016.10.10 00:12更新)</h2>
+
+<p>替换为<code class="highlighter-rouge">Redcarpet</code>后，GitHub竟然给我发来一封邮件说不再支持<code class="highlighter-rouge">Redcarpet</code>，而且可能随时停用这个markdown的渲染引擎，让我使用默认的<code class="highlighter-rouge">kramdown</code>，因为它已经支持了全部特效(包括我需要的<code class="highlighter-rouge">code block</code>)。无语了，难道要我全都使用Liquid的<code class="highlighter-rouge">highlight-code-language</code>这样的语法吗(这在原生的markdown语法中是没有的)。。。</p>
+
+<p>后来无意中发现，其实<code class="highlighter-rouge">kramdown</code>还是支持<code class="highlighter-rouge">code block</code>的，只是它对<code class="highlighter-rouge">markdown</code>进行<code class="highlighter-rouge">parse</code>要求更加严格了，有点像python靠是否对齐来判断是否属于同一级。具体来说，就是在<code class="highlighter-rouge">*</code>或者<code class="highlighter-rouge">1.</code>后面不能接空格<code class="highlighter-rouge"> </code>，而应该用<code class="highlighter-rouge">tab</code>对齐，否则下面用<code class="highlighter-rouge">tab</code>缩进的<code class="highlighter-rouge">code block</code>就不能正常显示。</p>
+
+<p>目前已经换回<code class="highlighter-rouge">kramdown</code>，行首空格全部换为<code class="highlighter-rouge">tab</code>。</p>
 
   </div>
 

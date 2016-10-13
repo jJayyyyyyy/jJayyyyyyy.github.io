@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="fXCqEVcHdJt50axIq7sCTxtZUh5gDHkj2usDwI_66gE" />
   <title>Reply to GitHub</title>
-  <meta name="description" content="">
+  <meta name="description" content="Notice">
 
  <!--  
    -->
@@ -52,7 +52,164 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    
+    <h3 id="noticehttpwwwcatborgesrfaqssmart-questionshtml"><a href="http://www.catb.org/~esr/faqs/smart-questions.html">Notice</a></h3>
+
+<ul>
+  <li>
+    <p>English is not my native language, please excuse my missplet or misuse.</p>
+  </li>
+  <li>
+    <p>I may need assistance translating this post. My email is <code class="highlighter-rouge">ljjdbd123@hotmail.com</code> and your help means a lot to me:)</p>
+  </li>
+  <li>
+    <p>Some slang expressions and idioms may be difficult for me…</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<h2 id="abstract">Abstract</h2>
+
+<p><strong>It is important to use <code class="highlighter-rouge">TAB</code> instead of <code class="highlighter-rouge">SPACE</code> as indent, so that your markdown-content can be recognized and rendered correctly by kramdown.</strong></p>
+
+<p><br /></p>
+
+<h2 id="origin-of-this-issue">Origin of this issue</h2>
+
+<p>A couple of days ago, I found that Jekyll(3.2.1), or kramdown(1.11.1) exactly, did not fully support the <code class="highlighter-rouge">syntax of markdown</code>, i.e., <code class="highlighter-rouge">code blocks</code> could not be rendered properly.</p>
+
+<p>For example, the following markdown-content</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>* print hello in python for three times
+
+	```python
+	for i in range(3):
+		print('hello')
+	```
+</code></pre>
+</div>
+
+<p>became</p>
+
+<ul>
+  <li>
+    <p>print hello in python for three times</p>
+
+    <p><code class="highlighter-rouge">python
+  for i in range(3):
+      print('hello')
+ </code></p>
+  </li>
+</ul>
+
+<p>And when I pushed this to <code class="highlighter-rouge">GitHub Pages</code>, it’s still rendered like that. It’s weird… because on my local markdown editor <code class="highlighter-rouge">MacDown</code> and on <code class="highlighter-rouge">GitHub---&gt;Repo---&gt;Create_New_File---&gt;Preview</code>, it’s something like this:</p>
+
+<ul>
+  <li>
+    <p>print hello in python for three times</p>
+
+    <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'hello'</span><span class="p">)</span>
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<p>Note that the former block has been misunderstood</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>	```python 
+	
+</code></pre>
+</div>
+
+<p>and then the code has been mixed up in a single line.</p>
+
+<p><br /></p>
+
+<p>I’ve googled it, and didn’t find much helpful information. I added this to my <code class="highlighter-rouge">_config.yml</code>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>kramdown:
+ input: GFM
+</code></pre>
+</div>
+
+<p>yet it didn’t seem to help. Then I found <code class="highlighter-rouge">Redcarpet</code>, with which my code block was finally displayed correctly like below:</p>
+
+<ul>
+  <li>
+    <p>print hello in python for three times</p>
+
+    <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'hello'</span><span class="p">)</span>
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<p>So I replaced <code class="highlighter-rouge">Kramdown</code> with <code class="highlighter-rouge">Redcarpet</code> and push it up to the <code class="highlighter-rouge">GitHub Pages</code>. But after that I received an email from <code class="highlighter-rouge">GitHub Support</code>, which said:</p>
+
+<blockquote>
+  <p>The page build completed successfully, but returned the following warning:</p>
+
+  <p>You are currently using the ‘redcarpet’ Markdown engine, which is no longer supported by GitHub Pages and may cease working at any time. To ensure your site continues to build, remove the ‘markdown’ setting in your site’s ‘_config.yml’ file and confirm your site renders as expected. For more information, see https://help.github.com/articles/updating-your-markdown-processor-to-kramdown.</p>
+
+  <p>For information on troubleshooting Jekyll see:</p>
+
+  <p>https://help.github.com/articles/troubleshooting-jekyll-builds</p>
+
+  <p>If you have any questions you can contact us by replying to this email.</p>
+</blockquote>
+
+<p>I checked the two sites and it’s something like that:</p>
+
+<blockquote>
+  <p>GitHub Pages only supports kramdown as a Markdown processor…</p>
+
+  <p>… so you can use Markdown with GitHub Pages the same way you use Markdown on GitHub…</p>
+</blockquote>
+
+<p>As you can see, I used the <code class="highlighter-rouge">the same way you use Markdown on GitHub</code>, but my <code class="highlighter-rouge">code block</code> didn’t work.  I updated Jekyll to 3.3.0 and kramdown to 1.12.0 and tried again, but the problem still exsisted.</p>
+
+<p><br /></p>
+
+<h2 id="solution">Solution</h2>
+
+<p>Well, about two days later, I accidently found a solution. It turns out that kramdown support only strict indent, otherwise <code class="highlighter-rouge">markdown-syntax</code> won’t be rendered correctly.</p>
+
+<p>As in the above example:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>* print hello in python for three times
+ ^ it's a [SPACE] here as indent
+	```python
+	for i in range(3):
+		print('hello')
+	```
+^ it's a [TAB] here as indent
+</code></pre>
+</div>
+
+<p>If I change the <code class="highlighter-rouge">*[SPACE]print ...</code> to <code class="highlighter-rouge">*[TAB]print</code>, and voila, the <code class="highlighter-rouge">code block</code> appears!</p>
+
+<ul>
+  <li>
+    <p>print hello in python for three times</p>
+
+    <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">'hello'</span><span class="p">)</span>
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p>The problem has been solved at last, though by accident. I’ve glanced over the content again in the two sites and, if I didn’t miss anything, there was no hint for this problem. And because a paragraph starts with <code class="highlighter-rouge">*[TAB]blablabla</code> do works for its following code blocks on GitHub, I think there should be some kind of explaination for newbies like me:</p>
+
+<blockquote>
+  <p>It is important to use [TAB] instead of [SPACE] as indent, so that your markdown-content can be recognized and rendered properly by kramdown.</p>
+</blockquote>
+
+
   </div>
 
   <div>

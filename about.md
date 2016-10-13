@@ -13,7 +13,7 @@ Hey there! This is FrozenMap. Hope you like this blog:)
 
  And one more thing... there is a <a onclick="show('img1')" style="cursor:pointer">Labtocat </a>from [Octodex](https://octodex.github.com)! 
 
-<img width="360" src="/assets/Labtocat.png" style='display:none' id="img1"/>
+<img width="300" src="/assets/Labtocat.png" style='display:none' id="img1"/>
 
 
 

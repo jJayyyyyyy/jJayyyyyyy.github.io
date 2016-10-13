@@ -5,13 +5,170 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 11 Oct 2016 21:58:45 +0800</pubDate>
-    <lastBuildDate>Tue, 11 Oct 2016 21:58:45 +0800</lastBuildDate>
+    <pubDate>Fri, 14 Oct 2016 07:54:46 +0800</pubDate>
+    <lastBuildDate>Fri, 14 Oct 2016 07:54:46 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
         <title>Reply to GitHub</title>
-        <description></description>
+        <description>&lt;h3 id=&quot;noticehttpwwwcatborgesrfaqssmart-questionshtml&quot;&gt;&lt;a href=&quot;http://www.catb.org/~esr/faqs/smart-questions.html&quot;&gt;Notice&lt;/a&gt;&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;English is not my native language, please excuse my missplet or misuse.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I may need assistance translating this post. My email is &lt;code class=&quot;highlighter-rouge&quot;&gt;ljjdbd123@hotmail.com&lt;/code&gt; and your help means a lot to me:)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Some slang expressions and idioms may be difficult for me…&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;It is important to use &lt;code class=&quot;highlighter-rouge&quot;&gt;TAB&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;SPACE&lt;/code&gt; as indent, so that your markdown-content can be recognized and rendered correctly by kramdown.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;origin-of-this-issue&quot;&gt;Origin of this issue&lt;/h2&gt;
+
+&lt;p&gt;A couple of days ago, I found that Jekyll(3.2.1), or kramdown(1.11.1) exactly, did not fully support the &lt;code class=&quot;highlighter-rouge&quot;&gt;syntax of markdown&lt;/code&gt;, i.e., &lt;code class=&quot;highlighter-rouge&quot;&gt;code blocks&lt;/code&gt; could not be rendered properly.&lt;/p&gt;
+
+&lt;p&gt;For example, the following markdown-content&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;* print hello in python for three times
+
+	```python
+	for i in range(3):
+		print('hello')
+	```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;became&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;print hello in python for three times&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;python
+  for i in range(3):
+      print('hello')
+ &lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And when I pushed this to &lt;code class=&quot;highlighter-rouge&quot;&gt;GitHub Pages&lt;/code&gt;, it’s still rendered like that. It’s weird… because on my local markdown editor &lt;code class=&quot;highlighter-rouge&quot;&gt;MacDown&lt;/code&gt; and on &lt;code class=&quot;highlighter-rouge&quot;&gt;GitHub---&amp;gt;Repo---&amp;gt;Create_New_File---&amp;gt;Preview&lt;/code&gt;, it’s something like this:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;print hello in python for three times&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Note that the former block has been misunderstood&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	```python 
+	
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;and then the code has been mixed up in a single line.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;I’ve googled it, and didn’t find much helpful information. I added this to my &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kramdown:
+ input: GFM
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;yet it didn’t seem to help. Then I found &lt;code class=&quot;highlighter-rouge&quot;&gt;Redcarpet&lt;/code&gt;, with which my code block was finally displayed correctly like below:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;print hello in python for three times&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So I replaced &lt;code class=&quot;highlighter-rouge&quot;&gt;Kramdown&lt;/code&gt; with &lt;code class=&quot;highlighter-rouge&quot;&gt;Redcarpet&lt;/code&gt; and push it up to the &lt;code class=&quot;highlighter-rouge&quot;&gt;GitHub Pages&lt;/code&gt;. But after that I received an email from &lt;code class=&quot;highlighter-rouge&quot;&gt;GitHub Support&lt;/code&gt;, which said:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The page build completed successfully, but returned the following warning:&lt;/p&gt;
+
+  &lt;p&gt;You are currently using the ‘redcarpet’ Markdown engine, which is no longer supported by GitHub Pages and may cease working at any time. To ensure your site continues to build, remove the ‘markdown’ setting in your site’s ‘_config.yml’ file and confirm your site renders as expected. For more information, see https://help.github.com/articles/updating-your-markdown-processor-to-kramdown.&lt;/p&gt;
+
+  &lt;p&gt;For information on troubleshooting Jekyll see:&lt;/p&gt;
+
+  &lt;p&gt;https://help.github.com/articles/troubleshooting-jekyll-builds&lt;/p&gt;
+
+  &lt;p&gt;If you have any questions you can contact us by replying to this email.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I checked the two sites and it’s something like that:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;GitHub Pages only supports kramdown as a Markdown processor…&lt;/p&gt;
+
+  &lt;p&gt;… so you can use Markdown with GitHub Pages the same way you use Markdown on GitHub…&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As you can see, I used the &lt;code class=&quot;highlighter-rouge&quot;&gt;the same way you use Markdown on GitHub&lt;/code&gt;, but my &lt;code class=&quot;highlighter-rouge&quot;&gt;code block&lt;/code&gt; didn’t work.  I updated Jekyll to 3.3.0 and kramdown to 1.12.0 and tried again, but the problem still exsisted.&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
+
+&lt;p&gt;Well, about two days later, I accidently found a solution. It turns out that kramdown support only strict indent, otherwise &lt;code class=&quot;highlighter-rouge&quot;&gt;markdown-syntax&lt;/code&gt; won’t be rendered correctly.&lt;/p&gt;
+
+&lt;p&gt;As in the above example:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;* print hello in python for three times
+ ^ it's a [SPACE] here as indent
+	```python
+	for i in range(3):
+		print('hello')
+	```
+^ it's a [TAB] here as indent
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;If I change the &lt;code class=&quot;highlighter-rouge&quot;&gt;*[SPACE]print ...&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;*[TAB]print&lt;/code&gt;, and voila, the &lt;code class=&quot;highlighter-rouge&quot;&gt;code block&lt;/code&gt; appears!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;print hello in python for three times&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;The problem has been solved at last, though by accident. I’ve glanced over the content again in the two sites and, if I didn’t miss anything, there was no hint for this problem. And because a paragraph starts with &lt;code class=&quot;highlighter-rouge&quot;&gt;*[TAB]blablabla&lt;/code&gt; do works for its following code blocks on GitHub, I think there should be some kind of explaination for newbies like me:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;It is important to use [TAB] instead of [SPACE] as indent, so that your markdown-content can be recognized and rendered properly by kramdown.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description>
         <pubDate>Tue, 11 Oct 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/10/11/Reply-to-GitHub.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/10/11/Reply-to-GitHub.html</guid>
@@ -21,142 +178,182 @@
     
       <item>
         <title>python3重写SimpleHTTPServerWithUpload</title>
-        <description>&lt;h2&gt;注意&lt;/h2&gt;
+        <description>&lt;h2 id=&quot;section&quot;&gt;注意&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;为方便区分，以下用&lt;code&gt;py2&lt;/code&gt;指代&lt;code&gt;python 2.7.6&lt;/code&gt;，用&lt;code&gt;py3&lt;/code&gt;指代&lt;code&gt;python 3.4.3&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;代码在&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/just%20for%20fun/file_transfer/http&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;为方便区分，以下用&lt;code class=&quot;highlighter-rouge&quot;&gt;py2&lt;/code&gt;指代&lt;code class=&quot;highlighter-rouge&quot;&gt;python 2.7.6&lt;/code&gt;，用&lt;code class=&quot;highlighter-rouge&quot;&gt;py3&lt;/code&gt;指代&lt;code class=&quot;highlighter-rouge&quot;&gt;python 3.4.3&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;代码在&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/just%20for%20fun/file_transfer/http&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2&gt;摘要&lt;/h2&gt;
+&lt;h2 id=&quot;section-1&quot;&gt;摘要&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://luy.li/2010/05/15/simplehttpserverwithupload/&quot;&gt;bones7456&lt;/a&gt;同学和&lt;a href=&quot;http://buptguo.com/2015/11/07/simplehttpserver-with-upload-file/&quot;&gt;BUPTGuo&lt;/a&gt;同学制作和完善了&lt;code&gt;SimpleHTTPServerWithUpload&lt;/code&gt;的&lt;code&gt;py2&lt;/code&gt;版本。由于python的2.7和3.4有较多不同特性，因此我根据以上两位同学的思路，重写了很多函数，制作了基于&lt;code&gt;py3&lt;/code&gt;的版本。主要改动如下：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://luy.li/2010/05/15/simplehttpserverwithupload/&quot;&gt;bones7456&lt;/a&gt;同学和&lt;a href=&quot;http://buptguo.com/2015/11/07/simplehttpserver-with-upload-file/&quot;&gt;BUPTGuo&lt;/a&gt;同学制作和完善了&lt;code class=&quot;highlighter-rouge&quot;&gt;SimpleHTTPServerWithUpload&lt;/code&gt;的&lt;code class=&quot;highlighter-rouge&quot;&gt;py2&lt;/code&gt;版本。由于python的2.7和3.4有较多不同特性，因此我根据以上两位同学的思路，重写了很多函数，制作了基于&lt;code class=&quot;highlighter-rouge&quot;&gt;py3&lt;/code&gt;的版本。主要改动如下：&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;改写为基于&lt;code&gt;py3&lt;/code&gt;的版本&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;移除了&lt;code&gt;StringIO&lt;/code&gt;，不使用&lt;code&gt;copyfile()&lt;/code&gt;。需要传输的信息全都用&lt;code&gt;str&lt;/code&gt;。处理完逻辑后，再用&lt;code&gt;utf-8&lt;/code&gt;编码为&lt;code&gt;bytes&lt;/code&gt;，直接用&lt;code&gt;wfile.write()&lt;/code&gt;进行网络传输。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;修改&lt;code&gt;html&lt;/code&gt;的部分标签顺序&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;改写为基于&lt;code class=&quot;highlighter-rouge&quot;&gt;py3&lt;/code&gt;的版本&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;移除了&lt;code class=&quot;highlighter-rouge&quot;&gt;StringIO&lt;/code&gt;，不使用&lt;code class=&quot;highlighter-rouge&quot;&gt;copyfile()&lt;/code&gt;。需要传输的信息全都用&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;。处理完逻辑后，再用&lt;code class=&quot;highlighter-rouge&quot;&gt;utf-8&lt;/code&gt;编码为&lt;code class=&quot;highlighter-rouge&quot;&gt;bytes&lt;/code&gt;，直接用&lt;code class=&quot;highlighter-rouge&quot;&gt;wfile.write()&lt;/code&gt;进行网络传输。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;修改&lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt;的部分标签顺序&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2&gt;正文&lt;/h2&gt;
+&lt;h2 id=&quot;section-2&quot;&gt;正文&lt;/h2&gt;
 
-&lt;h2&gt;1. 背景介绍&lt;/h2&gt;
+&lt;h2 id=&quot;section-3&quot;&gt;1. 背景介绍&lt;/h2&gt;
 
 &lt;p&gt;如同&lt;a href=&quot;http://coolshell.cn/articles/1480.html&quot;&gt;这篇文章&lt;/a&gt;所说&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;如果你急需一个简单的Web Server，但你又不想去下载并安装那些复杂的HTTP服务程序，那么Python是一个不错的选择。&lt;/p&gt;
+  &lt;p&gt;如果你急需一个简单的Web Server，但你又不想去下载并安装那些复杂的HTTP服务程序，那么Python是一个不错的选择。&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;在&lt;code&gt;py2&lt;/code&gt;中内置了一个&lt;code&gt;SimpleHTTPServer&lt;/code&gt;模块，从名字可以看出这是一个简单的HTTP服务器程序。在终端输入如下命令：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;c&quot;&gt;#if it is py2&lt;/span&gt;
+&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;py2&lt;/code&gt;中内置了一个&lt;code class=&quot;highlighter-rouge&quot;&gt;SimpleHTTPServer&lt;/code&gt;模块，从名字可以看出这是一个简单的HTTP服务器程序。在终端输入如下命令：&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;#if it is py2&lt;/span&gt;
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;python -m SimpleHTTPServer &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;8000]
 
 &lt;span class=&quot;c&quot;&gt;#if it is py3&lt;/span&gt;
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;python3 -m http.server &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;8000]
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;就可以在目录下快速建立一个HTTP服务器。用这个方法可以方便地共享文件，只需要在浏览器中输入&lt;code&gt;http://ip:8000&lt;/code&gt;就可以访问并下载文件了，其中&lt;code&gt;ip&lt;/code&gt;是你的&lt;code&gt;局域网ip&lt;/code&gt;。不过python内置的模块并没有提供上传功能。如&lt;a href=&quot;http://luy.li/2010/05/15/simplehttpserverwithupload/&quot;&gt;这里&lt;/a&gt;所说：&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;就可以在目录下快速建立一个HTTP服务器。用这个方法可以方便地共享文件，只需要在浏览器中输入&lt;code class=&quot;highlighter-rouge&quot;&gt;http://ip:8000&lt;/code&gt;就可以访问并下载文件了，其中&lt;code class=&quot;highlighter-rouge&quot;&gt;ip&lt;/code&gt;是你的&lt;code class=&quot;highlighter-rouge&quot;&gt;局域网ip&lt;/code&gt;。不过python内置的模块并没有提供上传功能。如&lt;a href=&quot;http://luy.li/2010/05/15/simplehttpserverwithupload/&quot;&gt;这里&lt;/a&gt;所说：&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;但是，某一天，你需要从同学哪里复制一个文件到本机，然后你就会跟你同学说，XX，共享下某目录。当你以为可以用http来访问他的8000端口的时候，他却告诉你，不好意思，我是windows啦~~&lt;/p&gt;
+  &lt;p&gt;但是，某一天，你需要从同学哪里复制一个文件到本机，然后你就会跟你同学说，XX，共享下某目录。当你以为可以用http来访问他的8000端口的时候，他却告诉你，不好意思，我是windows啦~~&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;为此，&lt;a href=&quot;http://luy.li/2010/05/15/simplehttpserverwithupload/&quot;&gt;bones7456&lt;/a&gt;同学对这个模块进行了改造，添加了上传功能，这样就让局域网内的分享变得更加方便了。后来&lt;a href=&quot;http://buptguo.com/2015/11/07/simplehttpserver-with-upload-file/&quot;&gt;BUPTGuo&lt;/a&gt;同学进行了&lt;a href=&quot;http://buptguo.com/2015/11/07/simplehttpserver-with-upload-file/&quot;&gt;一些改进&lt;/a&gt;。在这里再次感谢两位同学的成果和开源精神～&lt;/p&gt;
 
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2&gt;2. 基于py3的模块&lt;/h2&gt;
+&lt;h2 id=&quot;py3&quot;&gt;2. 基于py3的模块&lt;/h2&gt;
 
-&lt;p&gt;经过以上两位同学改造的模块是基于&lt;code&gt;py2&lt;/code&gt;的，由于&lt;code&gt;py2&lt;/code&gt;和&lt;code&gt;py3&lt;/code&gt;有较多不同特性，直接用&lt;code&gt;$ python3 xxx&lt;/code&gt;运行会产生很多错误。所以，让我们撸起袖子开始改造轮子吧~&lt;/p&gt;
+&lt;p&gt;经过以上两位同学改造的模块是基于&lt;code class=&quot;highlighter-rouge&quot;&gt;py2&lt;/code&gt;的，由于&lt;code class=&quot;highlighter-rouge&quot;&gt;py2&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;py3&lt;/code&gt;有较多不同特性，直接用&lt;code class=&quot;highlighter-rouge&quot;&gt;$ python3 xxx&lt;/code&gt;运行会产生很多错误。所以，让我们撸起袖子开始改造轮子吧~&lt;/p&gt;
 
-&lt;p&gt;改造过程从分析输出的错误信息开始。先把&lt;code&gt;py2&lt;/code&gt;的代码全部复制到一个文件&lt;code&gt;py3server.py&lt;/code&gt;，然后根据错误信息一步步修改：&lt;/p&gt;
+&lt;p&gt;改造过程从分析输出的错误信息开始。先把&lt;code class=&quot;highlighter-rouge&quot;&gt;py2&lt;/code&gt;的代码全部复制到一个文件&lt;code class=&quot;highlighter-rouge&quot;&gt;py3server.py&lt;/code&gt;，然后根据错误信息一步步修改：&lt;/p&gt;
 
-&lt;h3&gt;2.1 实现访问和下载&lt;/h3&gt;
+&lt;h3 id=&quot;section-4&quot;&gt;2.1 实现访问和下载&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;print&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;......
-  File &lt;span class=&quot;s2&quot;&gt;&quot;py3server.py&quot;&lt;/span&gt;, line 57
-    print r, info, &lt;span class=&quot;s2&quot;&gt;&quot;by: &quot;&lt;/span&gt;, self.client_address
-         ^
+  &lt;li&gt;
+    &lt;p&gt;print&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;......
+    File &lt;span class=&quot;s2&quot;&gt;&quot;py3server.py&quot;&lt;/span&gt;, line 57
+        print r, info, &lt;span class=&quot;s2&quot;&gt;&quot;by: &quot;&lt;/span&gt;, self.client_address
+              ^
 SyntaxError: Missing parentheses &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;call to &lt;span class=&quot;s1&quot;&gt;'print'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;这个很明显，直接全部改成&lt;code&gt;print()&lt;/code&gt;。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;BaseHTTPServer&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;......
-Traceback (most recent call last):
-  File &quot;py3server.py&quot;, line 16, in &amp;lt;module&amp;gt;
-    import BaseHTTPServer
-ImportError: No module named 'BaseHTTPServer'
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;&lt;code&gt;py2&lt;/code&gt;的&lt;code&gt;BaseHTTPServer&lt;/code&gt;模块在&lt;code&gt;py3&lt;/code&gt;中变成了&lt;code&gt;http.server&lt;/code&gt;模块。后面的&lt;code&gt;class SimpleHTTPRequestHandler&lt;/code&gt;将要继承该模块下的一个&lt;code&gt;handler&lt;/code&gt;，所以也要改。最后在定义&lt;code&gt;test()&lt;/code&gt;的地方也要修改。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
 
-&lt;p&gt;ps：对于&lt;code&gt;handler&lt;/code&gt;，从STM32开发的经历来看，我觉得应该是一种类似于中断处理程序的东西。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;stringIO&lt;/code&gt;&lt;/p&gt;
+    &lt;p&gt;这个很明显，直接全部改成&lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;BaseHTTPServer&lt;/p&gt;
 
-&lt;p&gt;通过google我们可以知道，&lt;code&gt;py3&lt;/code&gt;区分了&lt;code&gt;BytesIO&lt;/code&gt;和&lt;code&gt;StringIO&lt;/code&gt;，而&lt;code&gt;py2&lt;/code&gt;中只有&lt;code&gt;stringIO&lt;/code&gt;。这个区别会带来很多问题。后面可以看到，为了代码不太丑陋，&lt;code&gt;xxIO&lt;/code&gt;被愉快地弃用了。不过首先让我们&lt;code&gt;from io import StringIO, BytesIO&lt;/code&gt;，看看接下来会发生什么。&lt;/p&gt;
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;......
+Traceback &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;most recent call last&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;:
+    File &lt;span class=&quot;s2&quot;&gt;&quot;py3server.py&quot;&lt;/span&gt;, line 16, &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt; &amp;lt;module&amp;gt;
+        import BaseHTTPServer
+ImportError: No module named &lt;span class=&quot;s1&quot;&gt;'BaseHTTPServer'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
 
-&lt;p&gt;以上这样改完之后，我们发现&lt;code&gt;$ python3 py3server.py&lt;/code&gt;已经能运行了～再用浏览器来访问一下。结果。。是一大堆错误信息。。不用急，一步一步分析。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;unquote&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;......
-  File &lt;span class=&quot;s2&quot;&gt;&quot;py3server.py&quot;&lt;/span&gt;, line 214, &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;translate_path
-    path &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; posixpath.normpath&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;urllib.unquote&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;path&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;py2&lt;/code&gt;的&lt;code class=&quot;highlighter-rouge&quot;&gt;BaseHTTPServer&lt;/code&gt;模块在&lt;code class=&quot;highlighter-rouge&quot;&gt;py3&lt;/code&gt;中变成了&lt;code class=&quot;highlighter-rouge&quot;&gt;http.server&lt;/code&gt;模块。后面的&lt;code class=&quot;highlighter-rouge&quot;&gt;class SimpleHTTPRequestHandler&lt;/code&gt;将要继承该模块下的一个&lt;code class=&quot;highlighter-rouge&quot;&gt;handler&lt;/code&gt;，所以也要改。最后在定义&lt;code class=&quot;highlighter-rouge&quot;&gt;test()&lt;/code&gt;的地方也要修改。&lt;/p&gt;
+
+    &lt;p&gt;ps：对于&lt;code class=&quot;highlighter-rouge&quot;&gt;handler&lt;/code&gt;，从STM32开发的经历来看，我觉得应该是一种类似于中断处理程序的东西。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;stringIO&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;通过google我们可以知道，&lt;code class=&quot;highlighter-rouge&quot;&gt;py3&lt;/code&gt;区分了&lt;code class=&quot;highlighter-rouge&quot;&gt;BytesIO&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;StringIO&lt;/code&gt;，而&lt;code class=&quot;highlighter-rouge&quot;&gt;py2&lt;/code&gt;中只有&lt;code class=&quot;highlighter-rouge&quot;&gt;stringIO&lt;/code&gt;。这个区别会带来很多问题。后面可以看到，为了代码不太丑陋，&lt;code class=&quot;highlighter-rouge&quot;&gt;xxIO&lt;/code&gt;被愉快地弃用了。不过首先让我们&lt;code class=&quot;highlighter-rouge&quot;&gt;from io import StringIO, BytesIO&lt;/code&gt;，看看接下来会发生什么。&lt;/p&gt;
+
+    &lt;p&gt;以上这样改完之后，我们发现&lt;code class=&quot;highlighter-rouge&quot;&gt;$ python3 py3server.py&lt;/code&gt;已经能运行了～再用浏览器来访问一下。结果。。是一大堆错误信息。。不用急，一步一步分析。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;unquote&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;......
+    File &lt;span class=&quot;s2&quot;&gt;&quot;py3server.py&quot;&lt;/span&gt;, line 214, &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;translate_path
+        path &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; posixpath.normpath&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;urllib.unquote&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;path&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
 AttributeError: &lt;span class=&quot;s1&quot;&gt;'module'&lt;/span&gt; object has no attribute &lt;span class=&quot;s1&quot;&gt;'unquote'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;错误信息中最关键的是最后的内容。这里是版本问题，&lt;code&gt;py3&lt;/code&gt;中应当用&lt;code&gt;urllib.parse.unquote()&lt;/code&gt;和&lt;code&gt;urllib.parse.quote()&lt;/code&gt;，而不是直接&lt;code&gt;urllib.unquote()&lt;/code&gt;。修改后运行，再通过浏览器访问。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;stringIO&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;.....
-  File &lt;span class=&quot;s2&quot;&gt;&quot;py3server.py&quot;&lt;/span&gt;, line 42, &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;do_GET
-    self.copyfile&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;f, self.wfile&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-  File &lt;span class=&quot;s2&quot;&gt;&quot;py3server.py&quot;&lt;/span&gt;, line 236, &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;copyfile
-    shutil.copyfileobj&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt;, outputfile&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-  File &lt;span class=&quot;s2&quot;&gt;&quot;/usr/lib/python3.4/shutil.py&quot;&lt;/span&gt;, line 70, &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;copyfileobj
-    fdst.write&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;buf&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-  File &lt;span class=&quot;s2&quot;&gt;&quot;/usr/lib/python3.4/socket.py&quot;&lt;/span&gt;, line 394, &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;write
-    &lt;span class=&quot;k&quot;&gt;return &lt;/span&gt;self._sock.send&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;b&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;错误信息中最关键的是最后的内容。这里是版本问题，&lt;code class=&quot;highlighter-rouge&quot;&gt;py3&lt;/code&gt;中应当用&lt;code class=&quot;highlighter-rouge&quot;&gt;urllib.parse.unquote()&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;urllib.parse.quote()&lt;/code&gt;，而不是直接&lt;code class=&quot;highlighter-rouge&quot;&gt;urllib.unquote()&lt;/code&gt;。修改后运行，再通过浏览器访问。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;stringIO&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.....
+    File &lt;span class=&quot;s2&quot;&gt;&quot;py3server.py&quot;&lt;/span&gt;, line 42, &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;do_GET
+        self.copyfile&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;f, self.wfile&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    File &lt;span class=&quot;s2&quot;&gt;&quot;py3server.py&quot;&lt;/span&gt;, line 236, &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;copyfile
+        shutil.copyfileobj&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt;, outputfile&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    File &lt;span class=&quot;s2&quot;&gt;&quot;/usr/lib/python3.4/shutil.py&quot;&lt;/span&gt;, line 70, &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;copyfileobj
+        fdst.write&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;buf&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    File &lt;span class=&quot;s2&quot;&gt;&quot;/usr/lib/python3.4/socket.py&quot;&lt;/span&gt;, line 394, &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;write
+        &lt;span class=&quot;k&quot;&gt;return &lt;/span&gt;self._sock.send&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;b&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 TypeError: &lt;span class=&quot;s1&quot;&gt;'str'&lt;/span&gt; does not support the buffer interface
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;这是类型错误，发生在浏览器进入根目录的时候。错误信息的意思是说&lt;code&gt;copyfileobj()&lt;/code&gt;只接受&lt;code&gt;buffer-like&lt;/code&gt;对象，而不能用&lt;code&gt;str-like&lt;/code&gt;对象作为参数传入。阅读代码，追踪出问题的&lt;code&gt;f&lt;/code&gt;，它是由&lt;code&gt;do_GET()&lt;/code&gt;得到的，后者又经历了&lt;code&gt;send_head()&lt;/code&gt;。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
 
-&lt;p&gt;在&lt;code&gt;send_head()&lt;/code&gt;的最后可以看到它&lt;code&gt;return&lt;/code&gt;了一个&lt;code&gt;f&lt;/code&gt;，而它是由上面几行的&lt;code&gt;f = open(path, &amp;#39;rb&amp;#39;)&lt;/code&gt;得到的。按理来说，&lt;code&gt;f&lt;/code&gt;一个二进制打开的的文件，应该是&lt;code&gt;buffer-like&lt;/code&gt;的对象，应该不会错在这里才对。(补充一下，打开的文件&lt;code&gt;f=open(filname, &amp;#39;rb&amp;#39;)&lt;/code&gt;可以算是&lt;code&gt;buffer-like&lt;/code&gt;，但是如果用&lt;code&gt;data=f.read()&lt;/code&gt;，那么&lt;code&gt;data&lt;/code&gt;是一个&lt;code&gt;bytes&lt;/code&gt;对象。如果用&lt;code&gt;copyfileobj()&lt;/code&gt;，会报错提示缺少&lt;code&gt;read&lt;/code&gt;属性。)&lt;/p&gt;
+    &lt;p&gt;这是类型错误，发生在浏览器进入根目录的时候。错误信息的意思是说&lt;code class=&quot;highlighter-rouge&quot;&gt;copyfileobj()&lt;/code&gt;只接受&lt;code class=&quot;highlighter-rouge&quot;&gt;buffer-like&lt;/code&gt;对象，而不能用&lt;code class=&quot;highlighter-rouge&quot;&gt;str-like&lt;/code&gt;对象作为参数传入。阅读代码，追踪出问题的&lt;code class=&quot;highlighter-rouge&quot;&gt;f&lt;/code&gt;，它是由&lt;code class=&quot;highlighter-rouge&quot;&gt;do_GET()&lt;/code&gt;得到的，后者又经历了&lt;code class=&quot;highlighter-rouge&quot;&gt;send_head()&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;别急，我们再来仔细看看&lt;code&gt;send_head()&lt;/code&gt;。可以发现，这个函数首先对所请求的&lt;code&gt;path&lt;/code&gt;进行检查，如果&lt;code&gt;path&lt;/code&gt;是目录则&lt;code&gt;return list_directory(path)&lt;/code&gt;。如果&lt;code&gt;path&lt;/code&gt;不是目录，那就说明已经定位到文件了(如果存在)，因此下半部分就是要展示(传输)文件了。&lt;/p&gt;
+    &lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;send_head()&lt;/code&gt;的最后可以看到它&lt;code class=&quot;highlighter-rouge&quot;&gt;return&lt;/code&gt;了一个&lt;code class=&quot;highlighter-rouge&quot;&gt;f&lt;/code&gt;，而它是由上面几行的&lt;code class=&quot;highlighter-rouge&quot;&gt;f = open(path, 'rb')&lt;/code&gt;得到的。按理来说，&lt;code class=&quot;highlighter-rouge&quot;&gt;f&lt;/code&gt;一个二进制打开的的文件，应该是&lt;code class=&quot;highlighter-rouge&quot;&gt;buffer-like&lt;/code&gt;的对象，应该不会错在这里才对。(补充一下，打开的文件&lt;code class=&quot;highlighter-rouge&quot;&gt;f=open(filname, 'rb')&lt;/code&gt;可以算是&lt;code class=&quot;highlighter-rouge&quot;&gt;buffer-like&lt;/code&gt;，但是如果用&lt;code class=&quot;highlighter-rouge&quot;&gt;data=f.read()&lt;/code&gt;，那么&lt;code class=&quot;highlighter-rouge&quot;&gt;data&lt;/code&gt;是一个&lt;code class=&quot;highlighter-rouge&quot;&gt;bytes&lt;/code&gt;对象。如果用&lt;code class=&quot;highlighter-rouge&quot;&gt;copyfileobj()&lt;/code&gt;，会报错提示缺少&lt;code class=&quot;highlighter-rouge&quot;&gt;read&lt;/code&gt;属性。)&lt;/p&gt;
 
-&lt;p&gt;在这儿我们可以简单验证一下。在根目录下新建一个&lt;code&gt;readme.txt&lt;/code&gt;，里面输入&lt;code&gt;hello, world&lt;/code&gt;，保存退出。然后在地址栏输入&lt;code&gt;http://ip:port:8000/&lt;/code&gt;，这时还是会出现刚才的错误。但是如果输入&lt;code&gt;http://ip:port:8000/readme.txt&lt;/code&gt;，就能发现屏幕上出现了&lt;code&gt;hello world&lt;/code&gt;(另外可以看看终端的输出，不再是错误信息，而是&lt;code&gt;...&amp;quot;GET /readme.txt HTTP/1.1&amp;quot; 200 -&lt;/code&gt;)。说明我们刚才的猜测是对的。&lt;/p&gt;
+    &lt;p&gt;别急，我们再来仔细看看&lt;code class=&quot;highlighter-rouge&quot;&gt;send_head()&lt;/code&gt;。可以发现，这个函数首先对所请求的&lt;code class=&quot;highlighter-rouge&quot;&gt;path&lt;/code&gt;进行检查，如果&lt;code class=&quot;highlighter-rouge&quot;&gt;path&lt;/code&gt;是目录则&lt;code class=&quot;highlighter-rouge&quot;&gt;return list_directory(path)&lt;/code&gt;。如果&lt;code class=&quot;highlighter-rouge&quot;&gt;path&lt;/code&gt;不是目录，那就说明已经定位到文件了(如果存在)，因此下半部分就是要展示(传输)文件了。&lt;/p&gt;
 
-&lt;p&gt;至此，我们暂时把文件保存为&lt;code&gt;py3server_v1.py&lt;/code&gt;，以便参照。接下来的&lt;code&gt;v2&lt;/code&gt;，我们要让目录页也能正确显示。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;正确显示目录&lt;/p&gt;
+    &lt;p&gt;在这儿我们可以简单验证一下。在根目录下新建一个&lt;code class=&quot;highlighter-rouge&quot;&gt;readme.txt&lt;/code&gt;，里面输入&lt;code class=&quot;highlighter-rouge&quot;&gt;hello, world&lt;/code&gt;，保存退出。然后在地址栏输入&lt;code class=&quot;highlighter-rouge&quot;&gt;http://ip:port:8000/&lt;/code&gt;，这时还是会出现刚才的错误。但是如果输入&lt;code class=&quot;highlighter-rouge&quot;&gt;http://ip:port:8000/readme.txt&lt;/code&gt;，就能发现屏幕上出现了&lt;code class=&quot;highlighter-rouge&quot;&gt;hello world&lt;/code&gt;(另外可以看看终端的输出，不再是错误信息，而是&lt;code class=&quot;highlighter-rouge&quot;&gt;...&quot;GET /readme.txt HTTP/1.1&quot; 200 -&lt;/code&gt;)。说明我们刚才的猜测是对的。&lt;/p&gt;
 
-&lt;p&gt;接下来我们进入&lt;code&gt;list_directory()&lt;/code&gt;内部，可以看到里面赫然写着&lt;code&gt;f = StringIO()&lt;/code&gt;。好嘛，这不就是红果果的&lt;code&gt;str-like&lt;/code&gt;对象吗！把这个传回给一个只接受&lt;code&gt;buffer-like&lt;/code&gt;对象的家伙可不会出错嘛！从这里也能看出，&lt;code&gt;py3&lt;/code&gt;对于数据类型的区分更严格了。另外，关于&lt;code&gt;py3&lt;/code&gt;中&lt;code&gt;StringIO&lt;/code&gt;和&lt;code&gt;BytesIO&lt;/code&gt;的内容，可以参考&lt;a href=&quot;http://www.kancloud.cn/thinkphp/python-guide/39358&quot;&gt;这里&lt;/a&gt;和&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431918785710e86a1a120ce04925bae155012c7fc71e000&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+    &lt;p&gt;至此，我们暂时把文件保存为&lt;code class=&quot;highlighter-rouge&quot;&gt;py3server_v1.py&lt;/code&gt;，以便参照。接下来的&lt;code class=&quot;highlighter-rouge&quot;&gt;v2&lt;/code&gt;，我们要让目录页也能正确显示。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;正确显示目录&lt;/p&gt;
 
-&lt;p&gt;话不多说，我们先试着把这一行改成&lt;code&gt;f = BytesIO()&lt;/code&gt;，重启服务，刷新网页。结果上一个错误没了，其他错误又冒出来一大堆。。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;......
-  File &lt;span class=&quot;s2&quot;&gt;&quot;py3server.py&quot;&lt;/span&gt;, line 40, &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;do_GET
-    f &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; self.send_head&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
-  File &lt;span class=&quot;s2&quot;&gt;&quot;py3server.py&quot;&lt;/span&gt;, line 144, &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;send_head
-    &lt;span class=&quot;k&quot;&gt;return &lt;/span&gt;self.list_directory&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;path&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
-  File &lt;span class=&quot;s2&quot;&gt;&quot;py3server.py&quot;&lt;/span&gt;, line 176, &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;list_directory
-    f.write&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&amp;lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 3.2 Final//EN&quot;&amp;gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    &lt;p&gt;接下来我们进入&lt;code class=&quot;highlighter-rouge&quot;&gt;list_directory()&lt;/code&gt;内部，可以看到里面赫然写着&lt;code class=&quot;highlighter-rouge&quot;&gt;f = StringIO()&lt;/code&gt;。好嘛，这不就是红果果的&lt;code class=&quot;highlighter-rouge&quot;&gt;str-like&lt;/code&gt;对象吗！把这个传回给一个只接受&lt;code class=&quot;highlighter-rouge&quot;&gt;buffer-like&lt;/code&gt;对象的家伙可不会出错嘛！从这里也能看出，&lt;code class=&quot;highlighter-rouge&quot;&gt;py3&lt;/code&gt;对于数据类型的区分更严格了。另外，关于&lt;code class=&quot;highlighter-rouge&quot;&gt;py3&lt;/code&gt;中&lt;code class=&quot;highlighter-rouge&quot;&gt;StringIO&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;BytesIO&lt;/code&gt;的内容，可以参考&lt;a href=&quot;http://www.kancloud.cn/thinkphp/python-guide/39358&quot;&gt;这里&lt;/a&gt;和&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431918785710e86a1a120ce04925bae155012c7fc71e000&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+
+    &lt;p&gt;话不多说，我们先试着把这一行改成&lt;code class=&quot;highlighter-rouge&quot;&gt;f = BytesIO()&lt;/code&gt;，重启服务，刷新网页。结果上一个错误没了，其他错误又冒出来一大堆。。&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;......
+    File &lt;span class=&quot;s2&quot;&gt;&quot;py3server.py&quot;&lt;/span&gt;, line 40, &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;do_GET
+        f &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; self.send_head&lt;span class=&quot;o&quot;&gt;()&lt;/span&gt;
+    File &lt;span class=&quot;s2&quot;&gt;&quot;py3server.py&quot;&lt;/span&gt;, line 144, &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;send_head
+        &lt;span class=&quot;k&quot;&gt;return &lt;/span&gt;self.list_directory&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;path&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+    File &lt;span class=&quot;s2&quot;&gt;&quot;py3server.py&quot;&lt;/span&gt;, line 176, &lt;span class=&quot;k&quot;&gt;in &lt;/span&gt;list_directory
+        f.write&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'&amp;lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 3.2 Final//EN&quot;&amp;gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 TypeError: &lt;span class=&quot;s1&quot;&gt;'str'&lt;/span&gt; does not support the buffer interface
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;阅读错误信息，又是刚才的&lt;code&gt;TypeError: &amp;#39;str&amp;#39; does not support the buffer interface&lt;/code&gt;。得，这不又回来了？这刚才的力气白花了。。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
 
-&lt;p&gt;看官且慢！其实如果再往上读两行，发现出错地点是不一样滴～可以看到，错误出现在&lt;code&gt;f.write()&lt;/code&gt;身上。原来的&lt;code&gt;f&lt;/code&gt;是一个&lt;code&gt;StringIO&lt;/code&gt;对象，用&lt;code&gt;f.write()&lt;/code&gt;时的参数可以直接用字符串，比如&lt;code&gt;f.write(&amp;#39;hi&amp;#39;)&lt;/code&gt;。不过当我们用了&lt;code&gt;f = BytesIO()&lt;/code&gt;后，给&lt;code&gt;f&lt;/code&gt;写值时就需要先进行编码了，也就是&lt;code&gt;f.write(&amp;#39;hi&amp;#39;.encode(&amp;#39;utf-8&amp;#39;))&lt;/code&gt;，或者用&lt;code&gt;f.write(b&amp;#39;hi&amp;#39;)&lt;/code&gt;。我试过用这种方式把相应的地方进行改动，包括&lt;a href=&quot;http://blog.csdn.net/myjiayan/article/details/46366825&quot;&gt;这里&lt;/a&gt;提到的用&lt;code&gt;f.seek(0)&lt;/code&gt;回到文件最开头，同时修改&lt;code&gt;do_POST()&lt;/code&gt;的内容。不过，这里不打算对这样的修改再作进一步描述了，因为这种削足适履的方法会让代码变得很丑。。&lt;/p&gt;
+    &lt;p&gt;阅读错误信息，又是刚才的&lt;code class=&quot;highlighter-rouge&quot;&gt;TypeError: 'str' does not support the buffer interface&lt;/code&gt;。得，这不又回来了？这刚才的力气白花了。。&lt;/p&gt;
 
-&lt;p&gt;让我们回想一下，最终不就是要把内容复制到&lt;code&gt;wfile&lt;/code&gt;上吗(放到这上面的内容，应该会有一个&lt;code&gt;handler&lt;/code&gt;把它带到网络上进行传输)？产生这些错误，都是因为&lt;code&gt;copyfileobj()&lt;/code&gt;(躺枪&lt;em&gt;(:з」∠)&lt;/em&gt;)。不用它，直接写入&lt;code&gt;wfile&lt;/code&gt;怎么样？&lt;/p&gt;
+    &lt;p&gt;看官且慢！其实如果再往上读两行，发现出错地点是不一样滴～可以看到，错误出现在&lt;code class=&quot;highlighter-rouge&quot;&gt;f.write()&lt;/code&gt;身上。原来的&lt;code class=&quot;highlighter-rouge&quot;&gt;f&lt;/code&gt;是一个&lt;code class=&quot;highlighter-rouge&quot;&gt;StringIO&lt;/code&gt;对象，用&lt;code class=&quot;highlighter-rouge&quot;&gt;f.write()&lt;/code&gt;时的参数可以直接用字符串，比如&lt;code class=&quot;highlighter-rouge&quot;&gt;f.write('hi')&lt;/code&gt;。不过当我们用了&lt;code class=&quot;highlighter-rouge&quot;&gt;f = BytesIO()&lt;/code&gt;后，给&lt;code class=&quot;highlighter-rouge&quot;&gt;f&lt;/code&gt;写值时就需要先进行编码了，也就是&lt;code class=&quot;highlighter-rouge&quot;&gt;f.write('hi'.encode('utf-8'))&lt;/code&gt;，或者用&lt;code class=&quot;highlighter-rouge&quot;&gt;f.write(b'hi')&lt;/code&gt;。我试过用这种方式把相应的地方进行改动，包括&lt;a href=&quot;http://blog.csdn.net/myjiayan/article/details/46366825&quot;&gt;这里&lt;/a&gt;提到的用&lt;code class=&quot;highlighter-rouge&quot;&gt;f.seek(0)&lt;/code&gt;回到文件最开头，同时修改&lt;code class=&quot;highlighter-rouge&quot;&gt;do_POST()&lt;/code&gt;的内容。不过，这里不打算对这样的修改再作进一步描述了，因为这种削足适履的方法会让代码变得很丑。。&lt;/p&gt;
 
-&lt;p&gt;结果证明是可行的。从&lt;a href=&quot;https://docs.python.org/3/library/socketserver.html&quot;&gt;这里&lt;/a&gt;可以看到可以用&lt;code&gt;wfile.write()&lt;/code&gt;方法，写入类型为&lt;code&gt;bytes&lt;/code&gt;的参数。现在问题就简单了，把&lt;code&gt;StringIO&lt;/code&gt;还是&lt;code&gt;BytesIO&lt;/code&gt;全部扔掉，然后把要传输的内容全都用字符串表示&lt;code&gt;f = &amp;#39;hello&amp;#39;&lt;/code&gt;，接着&lt;code&gt;f.encode(&amp;#39;utf-8&amp;#39;)&lt;/code&gt;，最后直接&lt;code&gt;self.wfile.write(f)&lt;/code&gt;进行传输就行了。&lt;/p&gt;
+    &lt;p&gt;让我们回想一下，最终不就是要把内容复制到&lt;code class=&quot;highlighter-rouge&quot;&gt;wfile&lt;/code&gt;上吗(放到这上面的内容，应该会有一个&lt;code class=&quot;highlighter-rouge&quot;&gt;handler&lt;/code&gt;把它带到网络上进行传输)？产生这些错误，都是因为&lt;code class=&quot;highlighter-rouge&quot;&gt;copyfileobj()&lt;/code&gt;(躺枪_(:з」∠)_)。不用它，直接写入&lt;code class=&quot;highlighter-rouge&quot;&gt;wfile&lt;/code&gt;怎么样？&lt;/p&gt;
 
-&lt;p&gt;有了这些说明，再去读这部分重写的代码，应该就很容易了。结构是这样的:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;c&quot;&gt;# in list_directory()&lt;/span&gt;
+    &lt;p&gt;结果证明是可行的。从&lt;a href=&quot;https://docs.python.org/3/library/socketserver.html&quot;&gt;这里&lt;/a&gt;可以看到可以用&lt;code class=&quot;highlighter-rouge&quot;&gt;wfile.write()&lt;/code&gt;方法，写入类型为&lt;code class=&quot;highlighter-rouge&quot;&gt;bytes&lt;/code&gt;的参数。现在问题就简单了，把&lt;code class=&quot;highlighter-rouge&quot;&gt;StringIO&lt;/code&gt;还是&lt;code class=&quot;highlighter-rouge&quot;&gt;BytesIO&lt;/code&gt;全部扔掉，然后把要传输的内容全都用字符串表示&lt;code class=&quot;highlighter-rouge&quot;&gt;f = 'hello'&lt;/code&gt;，接着&lt;code class=&quot;highlighter-rouge&quot;&gt;f.encode('utf-8')&lt;/code&gt;，最后直接&lt;code class=&quot;highlighter-rouge&quot;&gt;self.wfile.write(f)&lt;/code&gt;进行传输就行了。&lt;/p&gt;
+
+    &lt;p&gt;有了这些说明，再去读这部分重写的代码，应该就很容易了。结构是这样的:&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# in list_directory()&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;html_in_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# 注意, 内容长度是编码后的长度&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;	&lt;span class=&quot;c&quot;&gt;# 注意, 内容长度是编码后的长度&lt;/span&gt;
 &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_response&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Content-type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;text/html&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_header&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Content-Length&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
@@ -166,120 +363,173 @@ TypeError: &lt;span class=&quot;s1&quot;&gt;'str'&lt;/span&gt; does not support 
 &lt;span class=&quot;c&quot;&gt;# in do_GET()&lt;/span&gt;
 &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
 &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wfile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;我们将这个文件定为&lt;code&gt;py3server_v2.py&lt;/code&gt;，对应的改动有以下几点。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
 
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;do_GET()&lt;/code&gt;现在的内容：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+    &lt;p&gt;我们将这个文件定为&lt;code class=&quot;highlighter-rouge&quot;&gt;py3server_v2.py&lt;/code&gt;，对应的改动有以下几点。&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;do_GET()&lt;/code&gt;现在的内容：&lt;/p&gt;
+
+        &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wfile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;do_HEAD()&lt;/code&gt;现在的内容：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;在&lt;code&gt;send_head()&lt;/code&gt;的最后，将&lt;code&gt;return f&lt;/code&gt;改为&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;do_HEAD()&lt;/code&gt;现在的内容：&lt;/p&gt;
+
+        &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;send_head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;send_head()&lt;/code&gt;的最后，将&lt;code class=&quot;highlighter-rouge&quot;&gt;return f&lt;/code&gt;改为&lt;/p&gt;
+
+        &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;close&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;list_directory()&lt;/code&gt;改动较大，参考&lt;code&gt;py3server_v2.py&lt;/code&gt;文件(包含&lt;code&gt;html&lt;/code&gt;的修改)。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;去掉&lt;code&gt;copyfile()&lt;/code&gt;，去掉&lt;code&gt;from io import StringIO, BytesIO&lt;/code&gt;，减少冗余。&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;py3&lt;/code&gt;原生版本的方法&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;list_directory()&lt;/code&gt;改动较大，参考&lt;code class=&quot;highlighter-rouge&quot;&gt;py3server_v2.py&lt;/code&gt;文件(包含&lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt;的修改)。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;去掉&lt;code class=&quot;highlighter-rouge&quot;&gt;copyfile()&lt;/code&gt;，去掉&lt;code class=&quot;highlighter-rouge&quot;&gt;from io import StringIO, BytesIO&lt;/code&gt;，减少冗余。&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;py3&lt;/code&gt;原生版本的方法&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;http.server&lt;/code&gt;模块的思路是这样：    &lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;http.server&lt;/code&gt;模块的思路是这样：&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;建立一个&lt;code&gt;list&lt;/code&gt;对象&lt;code&gt;r&lt;/code&gt;---&amp;gt;元素为字符串，分别写入&lt;code&gt;html&lt;/code&gt;---&amp;gt;用&lt;code&gt;join&lt;/code&gt;连成字符串---&amp;gt;编码成&lt;code&gt;r_encoded&lt;/code&gt;---&amp;gt;...&lt;/p&gt;
-&lt;/blockquote&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;建立一个&lt;code class=&quot;highlighter-rouge&quot;&gt;list&lt;/code&gt;对象&lt;code class=&quot;highlighter-rouge&quot;&gt;r&lt;/code&gt;—&amp;gt;元素为字符串，分别写入&lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt;—&amp;gt;用&lt;code class=&quot;highlighter-rouge&quot;&gt;join&lt;/code&gt;连成字符串—&amp;gt;编码成&lt;code class=&quot;highlighter-rouge&quot;&gt;r_encoded&lt;/code&gt;—&amp;gt;…&lt;/p&gt;
+    &lt;/blockquote&gt;
 
-&lt;p&gt;到这一步两者总体思路是类似的。但是下一步，&lt;code&gt;py3&lt;/code&gt;的原生版本还是做了&lt;code&gt;f = BytesIO()&lt;/code&gt;，然后 &lt;code&gt;f.write(r_encoded)&lt;/code&gt;。&lt;/p&gt;
+    &lt;p&gt;到这一步两者总体思路是类似的。但是下一步，&lt;code class=&quot;highlighter-rouge&quot;&gt;py3&lt;/code&gt;的原生版本还是做了&lt;code class=&quot;highlighter-rouge&quot;&gt;f = BytesIO()&lt;/code&gt;，然后 &lt;code class=&quot;highlighter-rouge&quot;&gt;f.write(r_encoded)&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;我没有想明白，为什么一定要用&lt;code&gt;BytesIO&lt;/code&gt;呢？直接新建字符串对象，然后编码传入&lt;code&gt;wfile&lt;/code&gt;，同样是在内存中操作数据啊。&lt;/strong&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;strong&gt;我没有想明白，为什么一定要用&lt;code class=&quot;highlighter-rouge&quot;&gt;BytesIO&lt;/code&gt;呢？直接新建字符串对象，然后编码传入&lt;code class=&quot;highlighter-rouge&quot;&gt;wfile&lt;/code&gt;，同样是在内存中操作数据啊。&lt;/strong&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;可能是存在内存操作分配更加方便，整存整取，回收等原因？那也不应该啊，因为str和list都是很常见的对象，如果有很多缺点那还得了。。还是有其他原因？另一方面，&lt;code&gt;py3server.py&lt;/code&gt;的方式目前也能工作正常。我在知乎提到了&lt;a href=&quot;https://www.zhihu.com/question/50716575?from=profile_question_card&quot;&gt;这个问题&lt;/a&gt;，希望能够得到解答。&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+    &lt;p&gt;&lt;strong&gt;可能是存在内存操作分配更加方便，整存整取，回收等原因？那也不应该啊，因为str和list都是很常见的对象，如果有很多缺点那还得了。。还是有其他原因？另一方面，&lt;code class=&quot;highlighter-rouge&quot;&gt;py3server.py&lt;/code&gt;的方式目前也能工作正常。我在知乎提到了&lt;a href=&quot;https://www.zhihu.com/question/50716575?from=profile_question_card&quot;&gt;这个问题&lt;/a&gt;，希望能够得到解答。&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;如果抛开这个问题不管，现在介个基于&lt;code&gt;py3&lt;/code&gt;的&lt;code&gt;py3server_v2.py&lt;/code&gt;服务端已经可以用浏览器正常访问和下载了。还有一些细节，比如&lt;code&gt;fs = os.fstat(f.fileno())&lt;/code&gt;，这里不再详细描述，通过搜索引擎可以很快了解。让我们先去吃点东西。下一节，我们通过重写&lt;code&gt;do_POST()&lt;/code&gt;来实现上传功能。&lt;/p&gt;
+&lt;p&gt;如果抛开这个问题不管，现在介个基于&lt;code class=&quot;highlighter-rouge&quot;&gt;py3&lt;/code&gt;的&lt;code class=&quot;highlighter-rouge&quot;&gt;py3server_v2.py&lt;/code&gt;服务端已经可以用浏览器正常访问和下载了。还有一些细节，比如&lt;code class=&quot;highlighter-rouge&quot;&gt;fs = os.fstat(f.fileno())&lt;/code&gt;，这里不再详细描述，通过搜索引擎可以很快了解。让我们先去吃点东西。下一节，我们通过重写&lt;code class=&quot;highlighter-rouge&quot;&gt;do_POST()&lt;/code&gt;来实现上传功能。&lt;/p&gt;
 
-&lt;h3&gt;2.2 实现上传&lt;/h3&gt;
+&lt;h3 id=&quot;section-5&quot;&gt;2.2 实现上传&lt;/h3&gt;
 
 &lt;p&gt;有了上面一节的说明，又有前面两位同学的思路和框架，重写上传功能应该是驾轻就熟了。所以下面直接进入重点。&lt;/p&gt;
 
-&lt;p&gt;在&lt;code&gt;py3server_v2.py&lt;/code&gt;中，我们已经写好了一个简单的用于上传的前端部件。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ENCTYPE=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;multipart/form-data&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;file&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;file&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;submit&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;upload&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;py3server_v2.py&lt;/code&gt;中，我们已经写好了一个简单的用于上传的前端部件。&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;form&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;ENCTYPE=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;multipart/form-data&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;method=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;post&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;name=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;file&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;file&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nt&quot;&gt;&amp;lt;input&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;submit&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;value=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;upload&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/form&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
 &lt;p&gt;下面还要进行一些修改&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;do_POST()&lt;/code&gt;处理POST请求&lt;/p&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;do_POST()&lt;/code&gt;处理POST请求&lt;/p&gt;
 
-&lt;p&gt;首先去掉&lt;code&gt;f=StringIO()&lt;/code&gt;，直接用字符串，写入一个基本的&lt;code&gt;html&lt;/code&gt;页面，用于呈现&lt;code&gt;upload&lt;/code&gt;之后的信息(上传成功/失败)，并和响应头信息一起发回给浏览器。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;deal_post_data()&lt;/code&gt;处理POST数据&lt;/p&gt;
+    &lt;p&gt;首先去掉&lt;code class=&quot;highlighter-rouge&quot;&gt;f=StringIO()&lt;/code&gt;，直接用字符串，写入一个基本的&lt;code class=&quot;highlighter-rouge&quot;&gt;html&lt;/code&gt;页面，用于呈现&lt;code class=&quot;highlighter-rouge&quot;&gt;upload&lt;/code&gt;之后的信息(上传成功/失败)，并和响应头信息一起发回给浏览器。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;deal_post_data()&lt;/code&gt;处理POST数据&lt;/p&gt;
 
-&lt;p&gt;如果不逐行&lt;em&gt;研究其意义&lt;/em&gt;的话，改起来也是很快的，找到&lt;code&gt;py2&lt;/code&gt;和&lt;code&gt;py3&lt;/code&gt;的区别，同时注意编码即可。具体代码可以参见&lt;code&gt;py3server_v3.py&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;em&gt;还是想理解这几段代码？&lt;/em&gt;&lt;/p&gt;
+    &lt;p&gt;如果不逐行&lt;em&gt;研究其意义&lt;/em&gt;的话，改起来也是很快的，找到&lt;code class=&quot;highlighter-rouge&quot;&gt;py2&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;py3&lt;/code&gt;的区别，同时注意编码即可。具体代码可以参见&lt;code class=&quot;highlighter-rouge&quot;&gt;py3server_v3.py&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;还是想理解这几段代码？&lt;/em&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;do_POST()&lt;/code&gt;的代码还好，只要懂一点&lt;code&gt;HTML&lt;/code&gt;和&lt;code&gt;HTTP&lt;/code&gt;就能看懂。而&lt;code&gt;deal_post_data()&lt;/code&gt;一开始我也看不太懂。幸好之前测试的时候发现了&lt;code&gt;wfile&lt;/code&gt;和&lt;code&gt;rfile&lt;/code&gt;的秘密，我们可以用这个来看看这个函数到底是&lt;code&gt;deal&lt;/code&gt;了什么数据：&lt;/p&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;do_POST()&lt;/code&gt;的代码还好，只要懂一点&lt;code class=&quot;highlighter-rouge&quot;&gt;HTML&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;HTTP&lt;/code&gt;就能看懂。而&lt;code class=&quot;highlighter-rouge&quot;&gt;deal_post_data()&lt;/code&gt;一开始我也看不太懂。幸好之前测试的时候发现了&lt;code class=&quot;highlighter-rouge&quot;&gt;wfile&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;rfile&lt;/code&gt;的秘密，我们可以用这个来看看这个函数到底是&lt;code class=&quot;highlighter-rouge&quot;&gt;deal&lt;/code&gt;了什么数据：&lt;/p&gt;
 
-&lt;p&gt;首先在服务端，我们注释掉&lt;code&gt;do_POST()&lt;/code&gt;和&lt;code&gt;deal_post_data()&lt;/code&gt;两个函数。然后重新写一个&lt;code&gt;do_POST()&lt;/code&gt;读出准备接收的所有数据:&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;do_POST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;p&gt;首先在服务端，我们注释掉&lt;code class=&quot;highlighter-rouge&quot;&gt;do_POST()&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;deal_post_data()&lt;/code&gt;两个函数。然后重新写一个&lt;code class=&quot;highlighter-rouge&quot;&gt;do_POST()&lt;/code&gt;读出准备接收的所有数据:&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;do_POST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rfile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;接着我们在客户端新建一个准备上传的文件，命名为&lt;code&gt;1.txt&lt;/code&gt;，里面写入内容&lt;code&gt;test&lt;/code&gt;。打开chrome开发者工具的&lt;code&gt;Network&lt;/code&gt;。&lt;code&gt;Choose File&lt;/code&gt;选择&lt;code&gt;1.txt&lt;/code&gt;，点击&lt;code&gt;upload&lt;/code&gt;。看看发生了什么有意思的事～&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
 
-&lt;p&gt;终端输出的内容+&lt;code&gt;Network&lt;/code&gt;中的内容，有这些做参照，加上&lt;code&gt;py3server_v3.py&lt;/code&gt;中的小注释，代码比较很容易懂了。这个算作思考题吧:)&lt;/p&gt;&lt;/li&gt;
+    &lt;p&gt;接着我们在客户端新建一个准备上传的文件，命名为&lt;code class=&quot;highlighter-rouge&quot;&gt;1.txt&lt;/code&gt;，里面写入内容&lt;code class=&quot;highlighter-rouge&quot;&gt;test&lt;/code&gt;。打开chrome开发者工具的&lt;code class=&quot;highlighter-rouge&quot;&gt;Network&lt;/code&gt;。&lt;code class=&quot;highlighter-rouge&quot;&gt;Choose File&lt;/code&gt;选择&lt;code class=&quot;highlighter-rouge&quot;&gt;1.txt&lt;/code&gt;，点击&lt;code class=&quot;highlighter-rouge&quot;&gt;upload&lt;/code&gt;。看看发生了什么有意思的事～&lt;/p&gt;
+
+    &lt;p&gt;终端输出的内容+&lt;code class=&quot;highlighter-rouge&quot;&gt;Network&lt;/code&gt;中的内容，有这些做参照，加上&lt;code class=&quot;highlighter-rouge&quot;&gt;py3server_v3.py&lt;/code&gt;中的小注释，代码比较很容易懂了。这个算作思考题吧:)&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;至此，我们完成了上传功能的重写。&lt;code&gt;py3_SimpleHTTPServerWithUpload.py&lt;/code&gt;大功告成。我们也可以像&lt;a href=&quot;http://luy.li/2010/05/15/simplehttpserverwithupload/&quot;&gt;bones7456&lt;/a&gt;同学一样，喂它做一个&lt;code&gt;alias&lt;/code&gt;，以后就可以方便地在局域网中共享文件了～&lt;/p&gt;
+&lt;p&gt;至此，我们完成了上传功能的重写。&lt;code class=&quot;highlighter-rouge&quot;&gt;py3_SimpleHTTPServerWithUpload.py&lt;/code&gt;大功告成。我们也可以像&lt;a href=&quot;http://luy.li/2010/05/15/simplehttpserverwithupload/&quot;&gt;bones7456&lt;/a&gt;同学一样，喂它做一个&lt;code class=&quot;highlighter-rouge&quot;&gt;alias&lt;/code&gt;，以后就可以方便地在局域网中共享文件了～&lt;/p&gt;
 
-&lt;h2&gt;3. 其他内容&lt;/h2&gt;
+&lt;h2 id=&quot;section-6&quot;&gt;3. 其他内容&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/just%20for%20fun/file_transfer&quot;&gt;这里&lt;/a&gt;还有另外几个文件传输的小脚本可以作为参考或者练练手。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;GitHub&lt;/code&gt;的通过网站新建文件时的&lt;code&gt;preview&lt;/code&gt;貌似要去访问服务器，而没有像&lt;a href=&quot;http://mahua.jser.me/&quot;&gt;jser&lt;/a&gt;一样用js本地化的预览。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;BUPTGuo同学还在gist上面留了几个&lt;a href=&quot;https://gist.github.com/BUPTGuo/007a6e589c0d2e48aac6&quot;&gt;TODO&lt;/a&gt;，&lt;/p&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/just%20for%20fun/file_transfer&quot;&gt;这里&lt;/a&gt;还有另外几个文件传输的小脚本可以作为参考或者练练手。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;GitHub&lt;/code&gt;的通过网站新建文件时的&lt;code class=&quot;highlighter-rouge&quot;&gt;preview&lt;/code&gt;貌似要去访问服务器，而没有像&lt;a href=&quot;http://mahua.jser.me/&quot;&gt;jser&lt;/a&gt;一样用js本地化的预览。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;BUPTGuo同学还在gist上面留了几个&lt;a href=&quot;https://gist.github.com/BUPTGuo/007a6e589c0d2e48aac6&quot;&gt;TODO&lt;/a&gt;，&lt;/p&gt;
 
-&lt;blockquote&gt;
-&lt;p&gt;TODO: 点击中文目录时，终端输出为 unicode 编码，回头尝试修改&lt;/p&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;TODO: 点击中文目录时，终端输出为 unicode 编码，回头尝试修改&lt;/p&gt;
 
-&lt;p&gt;TODO: 尝试 ipv6支持&lt;/p&gt;
-&lt;/blockquote&gt;&lt;/li&gt;
+      &lt;p&gt;TODO: 尝试 ipv6支持&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;以下是对于&lt;code&gt;TODO&lt;/code&gt;的一些思考和尝试。&lt;/p&gt;
+&lt;p&gt;以下是对于&lt;code class=&quot;highlighter-rouge&quot;&gt;TODO&lt;/code&gt;的一些思考和尝试。&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;终端输出的可能不算是unicode。根据&lt;a href=&quot;http://stackoverflow.com/questions/912811/what-is-the-proper-way-to-url-encode-unicode-characters&quot;&gt;这里&lt;/a&gt;和&lt;a href=&quot;https://en.wikipedia.org/wiki/Percent-encoding&quot;&gt;这里&lt;/a&gt;，称其为&lt;code&gt;percent-encoding&lt;/code&gt;或&lt;code&gt;url-encoding&lt;/code&gt;比较合适。&lt;/p&gt;
+  &lt;li&gt;
+    &lt;p&gt;终端输出的可能不算是unicode。根据&lt;a href=&quot;http://stackoverflow.com/questions/912811/what-is-the-proper-way-to-url-encode-unicode-characters&quot;&gt;这里&lt;/a&gt;和&lt;a href=&quot;https://en.wikipedia.org/wiki/Percent-encoding&quot;&gt;这里&lt;/a&gt;，称其为&lt;code class=&quot;highlighter-rouge&quot;&gt;percent-encoding&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;url-encoding&lt;/code&gt;比较合适。&lt;/p&gt;
 
-&lt;p&gt;以&lt;code&gt;中文&lt;/code&gt;这两个字为例。根据&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431664106267f12e9bef7ee14cf6a8776a479bdec9b9000&quot;&gt;这里&lt;/a&gt;: python3中的字符串是以Unicode编码的。如果知道字符的整数编码，还可以用十六进制这么写str：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\u4e2d\u6587&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#this is unicode&lt;/span&gt;
+    &lt;p&gt;以&lt;code class=&quot;highlighter-rouge&quot;&gt;中文&lt;/code&gt;这两个字为例。根据&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431664106267f12e9bef7ee14cf6a8776a479bdec9b9000&quot;&gt;这里&lt;/a&gt;: python3中的字符串是以Unicode编码的。如果知道字符的整数编码，还可以用十六进制这么写str：&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\u4e2d\u6587&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#this is unicode&lt;/span&gt;
 &lt;span class=&quot;s&quot;&gt;'中文'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;以&lt;code&gt;Unicode&lt;/code&gt;表示的&lt;code&gt;str&lt;/code&gt;通过&lt;code&gt;encode()&lt;/code&gt;方法可以编码为指定的&lt;code&gt;bytes&lt;/code&gt;，以便在网络上传输。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'中文'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;以&lt;code class=&quot;highlighter-rouge&quot;&gt;Unicode&lt;/code&gt;表示的&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;通过&lt;code class=&quot;highlighter-rouge&quot;&gt;encode()&lt;/code&gt;方法可以编码为指定的&lt;code class=&quot;highlighter-rouge&quot;&gt;bytes&lt;/code&gt;，以便在网络上传输。&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'中文'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\xe4\xb8\xad\xe6\x96\x87&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;如果在server的根目录下建立一个叫做&lt;code&gt;中文&lt;/code&gt;的目录，然后在浏览器中访问。通过观察Chrome的开发者工具，可以看到&lt;code&gt;Request Header&lt;/code&gt;里面的&lt;code&gt;url&lt;/code&gt;对应的&lt;code&gt;中文&lt;/code&gt;是这样的&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;%E4%B8%AD%E6%96%87
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;通过对比可以看到，&lt;code&gt;utf-8-encoding&lt;/code&gt;之后的编码的&lt;code&gt;\x&lt;/code&gt;变成了&lt;code&gt;%&lt;/code&gt;。在&lt;a href=&quot;http://baike.baidu.com/view/73.htm&quot;&gt;这里&lt;/a&gt;可以看到，两者都是&lt;code&gt;转义字符&lt;/code&gt;，只不过应用场景不一样。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
 
-&lt;p&gt;另一方面，利用Chrome的开发者工具，可以看到在&lt;code&gt;Request Headers&lt;/code&gt;里面，不管是用&lt;code&gt;GET&lt;/code&gt;还是&lt;code&gt;POST&lt;/code&gt;，如果路径是中文，&lt;code&gt;url&lt;/code&gt;那一段就会被&lt;code&gt;percent-encoding&lt;/code&gt;。所以我觉得，这一步编码应该是浏览器做的，在服务端的终端只是把收到的&lt;code&gt;GET&lt;/code&gt;或者&lt;code&gt;POST&lt;/code&gt;的&lt;code&gt;url&lt;/code&gt;打印出来了。&lt;/p&gt;
+    &lt;p&gt;如果在server的根目录下建立一个叫做&lt;code class=&quot;highlighter-rouge&quot;&gt;中文&lt;/code&gt;的目录，然后在浏览器中访问。通过观察Chrome的开发者工具，可以看到&lt;code class=&quot;highlighter-rouge&quot;&gt;Request Header&lt;/code&gt;里面的&lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt;对应的&lt;code class=&quot;highlighter-rouge&quot;&gt;中文&lt;/code&gt;是这样的&lt;/p&gt;
 
-&lt;p&gt;阅读代码后发现，不管是在&lt;code&gt;py2&lt;/code&gt;的&lt;code&gt;BaseHTTPServer.py&lt;/code&gt;还是在&lt;code&gt;py3&lt;/code&gt;的&lt;code&gt;http.server.py&lt;/code&gt;，打印这行信息靠的是&lt;code&gt;log_message()&lt;/code&gt;中用的&lt;code&gt;sys.stderr.write()&lt;/code&gt;函数(方法)。&lt;/p&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;%E4%B8%AD%E6%96%87
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
 
-&lt;p&gt;同时也发现，请求信息存放于&lt;code&gt;self.requestline&lt;/code&gt;，其中包含了路径信息，可以用正则表达式路径提取出来。比如在&lt;code&gt;do_GET()&lt;/code&gt;的最后加上这么几行：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;r'.* /(.*)/ HTTP'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requestline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;至于如何实现，和&lt;code&gt;do_GET()&lt;/code&gt;一样，我们可以重写&lt;code&gt;log_message()&lt;/code&gt;或者调用它的&lt;code&gt;log_request()&lt;/code&gt;。后者如下：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;log_request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'-'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'-'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;p&gt;通过对比可以看到，&lt;code class=&quot;highlighter-rouge&quot;&gt;utf-8-encoding&lt;/code&gt;之后的编码的&lt;code class=&quot;highlighter-rouge&quot;&gt;\x&lt;/code&gt;变成了&lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt;。在&lt;a href=&quot;http://baike.baidu.com/view/73.htm&quot;&gt;这里&lt;/a&gt;可以看到，两者都是&lt;code class=&quot;highlighter-rouge&quot;&gt;转义字符&lt;/code&gt;，只不过应用场景不一样。&lt;/p&gt;
+
+    &lt;p&gt;另一方面，利用Chrome的开发者工具，可以看到在&lt;code class=&quot;highlighter-rouge&quot;&gt;Request Headers&lt;/code&gt;里面，不管是用&lt;code class=&quot;highlighter-rouge&quot;&gt;GET&lt;/code&gt;还是&lt;code class=&quot;highlighter-rouge&quot;&gt;POST&lt;/code&gt;，如果路径是中文，&lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt;那一段就会被&lt;code class=&quot;highlighter-rouge&quot;&gt;percent-encoding&lt;/code&gt;。所以我觉得，这一步编码应该是浏览器做的，在服务端的终端只是把收到的&lt;code class=&quot;highlighter-rouge&quot;&gt;GET&lt;/code&gt;或者&lt;code class=&quot;highlighter-rouge&quot;&gt;POST&lt;/code&gt;的&lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt;打印出来了。&lt;/p&gt;
+
+    &lt;p&gt;阅读代码后发现，不管是在&lt;code class=&quot;highlighter-rouge&quot;&gt;py2&lt;/code&gt;的&lt;code class=&quot;highlighter-rouge&quot;&gt;BaseHTTPServer.py&lt;/code&gt;还是在&lt;code class=&quot;highlighter-rouge&quot;&gt;py3&lt;/code&gt;的&lt;code class=&quot;highlighter-rouge&quot;&gt;http.server.py&lt;/code&gt;，打印这行信息靠的是&lt;code class=&quot;highlighter-rouge&quot;&gt;log_message()&lt;/code&gt;中用的&lt;code class=&quot;highlighter-rouge&quot;&gt;sys.stderr.write()&lt;/code&gt;函数(方法)。&lt;/p&gt;
+
+    &lt;p&gt;同时也发现，请求信息存放于&lt;code class=&quot;highlighter-rouge&quot;&gt;self.requestline&lt;/code&gt;，其中包含了路径信息，可以用正则表达式路径提取出来。比如在&lt;code class=&quot;highlighter-rouge&quot;&gt;do_GET()&lt;/code&gt;的最后加上这么几行：&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;r'.* /(.*)/ HTTP'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requestline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;至于如何实现，和&lt;code class=&quot;highlighter-rouge&quot;&gt;do_GET()&lt;/code&gt;一样，我们可以重写&lt;code class=&quot;highlighter-rouge&quot;&gt;log_message()&lt;/code&gt;或者调用它的&lt;code class=&quot;highlighter-rouge&quot;&gt;log_request()&lt;/code&gt;。后者如下：&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;log_request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'-'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'-'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;path1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requestline&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;re&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;r'.* /(.*)/ HTTP'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;m&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
@@ -287,27 +537,40 @@ TypeError: &lt;span class=&quot;s1&quot;&gt;'str'&lt;/span&gt; does not support 
         &lt;span class=&quot;n&quot;&gt;path3&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urllib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unquote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;path4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;path2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
         &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requestline&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;path4&lt;/span&gt;
-
     &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;log_message&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&quot;&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s&quot; &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;requestline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;不过感觉这个没有必要，终端输出反正没人看。。复杂了还容易出错。另外，英文路径编码前后是一样的。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;【ipv6支持】估计要牵涉到更底层吧，到&lt;code&gt;BaseHTTPServer&lt;/code&gt;这一层才import了&lt;code&gt;socket&lt;/code&gt;，相当于对&lt;code&gt;SimpleHTTPServer&lt;/code&gt;隐藏了&lt;code&gt;socket&lt;/code&gt;。从&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001432004374523e495f640612f4b08975398796939ec3c000&quot;&gt;这里&lt;/a&gt;我们可以知道，如果要用&lt;code&gt;ipv6&lt;/code&gt;，则需要&lt;code&gt;s = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)&lt;/code&gt;。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
 
-&lt;p&gt;所以我们的目的就是要修改socket的参数，首先找到&lt;code&gt;test()&lt;/code&gt;这个函数，然后找到它的参数&lt;code&gt;ServerClass = http.server.HTTPServer&lt;/code&gt;，在python目录中找到&lt;code&gt;http&lt;/code&gt;这个文件夹中的&lt;code&gt;server.py&lt;/code&gt;，搜索&lt;code&gt;HTTPServer&lt;/code&gt;，得知它是继承了&lt;code&gt;socketserver.TCPServer&lt;/code&gt;这个类，再去&lt;code&gt;python目录&lt;/code&gt;下找到&lt;code&gt;socketserver.py&lt;/code&gt;这个文件，在&lt;code&gt;TCPServer&lt;/code&gt;这个类中可以看到&lt;code&gt;address_family = socket.AF_INET&lt;/code&gt;(第415行)，也就是默认用的&lt;code&gt;ipv4&lt;/code&gt;。如果修改为&lt;code&gt;AF_INET6&lt;/code&gt;(可能需要sudo)并保存，然后在浏览器地址栏输入&lt;code&gt;http://[::1]:8000&lt;/code&gt;，就可以通过ipv6访问了(&lt;code&gt;[::1]&lt;/code&gt;是ipv6形式的localhost)。同时也注意到，ipv4仍然能够访问。(以上内容基于&lt;code&gt;py3&lt;/code&gt;，但&lt;code&gt;py2&lt;/code&gt;类似)&lt;/p&gt;
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;do_POST&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rfile&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;decode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
 
-&lt;p&gt;还有其他测试方法：&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ping6 xxxx%eth0:8000
+    &lt;p&gt;不过感觉这个没有必要，终端输出反正没人看。。复杂了还容易出错。另外，英文路径编码前后是一样的。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;【ipv6支持】估计要牵涉到更底层吧，到&lt;code class=&quot;highlighter-rouge&quot;&gt;BaseHTTPServer&lt;/code&gt;这一层才import了&lt;code class=&quot;highlighter-rouge&quot;&gt;socket&lt;/code&gt;，相当于对&lt;code class=&quot;highlighter-rouge&quot;&gt;SimpleHTTPServer&lt;/code&gt;隐藏了&lt;code class=&quot;highlighter-rouge&quot;&gt;socket&lt;/code&gt;。从&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001432004374523e495f640612f4b08975398796939ec3c000&quot;&gt;这里&lt;/a&gt;我们可以知道，如果要用&lt;code class=&quot;highlighter-rouge&quot;&gt;ipv6&lt;/code&gt;，则需要&lt;code class=&quot;highlighter-rouge&quot;&gt;s = socket.socket(socket.AF_INET6, socket.SOCK_STREAM)&lt;/code&gt;。&lt;/p&gt;
+
+    &lt;p&gt;所以我们的目的就是要修改socket的参数，首先找到&lt;code class=&quot;highlighter-rouge&quot;&gt;test()&lt;/code&gt;这个函数，然后找到它的参数&lt;code class=&quot;highlighter-rouge&quot;&gt;ServerClass = http.server.HTTPServer&lt;/code&gt;，在python目录中找到&lt;code class=&quot;highlighter-rouge&quot;&gt;http&lt;/code&gt;这个文件夹中的&lt;code class=&quot;highlighter-rouge&quot;&gt;server.py&lt;/code&gt;，搜索&lt;code class=&quot;highlighter-rouge&quot;&gt;HTTPServer&lt;/code&gt;，得知它是继承了&lt;code class=&quot;highlighter-rouge&quot;&gt;socketserver.TCPServer&lt;/code&gt;这个类，再去&lt;code class=&quot;highlighter-rouge&quot;&gt;python目录&lt;/code&gt;下找到&lt;code class=&quot;highlighter-rouge&quot;&gt;socketserver.py&lt;/code&gt;这个文件，在&lt;code class=&quot;highlighter-rouge&quot;&gt;TCPServer&lt;/code&gt;这个类中可以看到&lt;code class=&quot;highlighter-rouge&quot;&gt;address_family = socket.AF_INET&lt;/code&gt;(第415行)，也就是默认用的&lt;code class=&quot;highlighter-rouge&quot;&gt;ipv4&lt;/code&gt;。如果修改为&lt;code class=&quot;highlighter-rouge&quot;&gt;AF_INET6&lt;/code&gt;(可能需要sudo)并保存，然后在浏览器地址栏输入&lt;code class=&quot;highlighter-rouge&quot;&gt;http://[::1]:8000&lt;/code&gt;，就可以通过ipv6访问了(&lt;code class=&quot;highlighter-rouge&quot;&gt;[::1]&lt;/code&gt;是ipv6形式的localhost)。同时也注意到，ipv4仍然能够访问。(以上内容基于&lt;code class=&quot;highlighter-rouge&quot;&gt;py3&lt;/code&gt;，但&lt;code class=&quot;highlighter-rouge&quot;&gt;py2&lt;/code&gt;类似)&lt;/p&gt;
+
+    &lt;p&gt;还有其他测试方法：&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ping6 xxxx%eth0:8000
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;nc -zv -6 localhost 8000
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;nc -zv -6 ::1 8000
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;不过话又说回来，要这么往下改就比较复杂了，失去了原来的轻便。&lt;/p&gt;&lt;/li&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;不过话又说回来，要这么往下改就比较复杂了，失去了原来的轻便。&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2&gt;4. 参考&lt;/h2&gt;
+&lt;h2 id=&quot;section-7&quot;&gt;4. 参考&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://luy.li/2010/05/15/simplehttpserverwithupload/&quot;&gt;bones&lt;/a&gt;同学&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://luy.li/2010/05/15/simplehttpserverwithupload/&quot;&gt;bones7456&lt;/a&gt;同学&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://buptguo.com/2015/11/07/simplehttpserver-with-upload-file/&quot;&gt;BUPTGuo&lt;/a&gt;同学&lt;/p&gt;
 
@@ -329,23 +592,44 @@ TypeError: &lt;span class=&quot;s1&quot;&gt;'str'&lt;/span&gt; does not support 
 
 &lt;p&gt;由于前期一些搜索内容忘了保存地址了，所以参考资料的出处可能有一些遗漏。。。&lt;/p&gt;
 
-&lt;p&gt;&lt;br/&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h2&gt;后记&lt;/h2&gt;
+&lt;h2 id=&quot;section-8&quot;&gt;后记(20161009 更新)&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;Jekyll&lt;/code&gt;默认使用的&lt;code&gt;kramdown&lt;/code&gt;并不能很好地支持&lt;code&gt;markdown&lt;/code&gt;的代码段，也就是类似下面这种形式的&lt;code&gt;code block&lt;/code&gt;。&lt;/p&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;    ```
-    code
-    ```
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;del&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt;默认使用的&lt;code class=&quot;highlighter-rouge&quot;&gt;kramdown&lt;/code&gt;并不能很好地支持&lt;code class=&quot;highlighter-rouge&quot;&gt;markdown&lt;/code&gt;的代码段，也就是类似下面这种形式的&lt;code class=&quot;highlighter-rouge&quot;&gt;code block&lt;/code&gt;。&lt;/del&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ```
+ code
+ ```
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
 &lt;p&gt;一番寻觅之后找到了&lt;a href=&quot;https://george-hawkins.github.io/basic-gfm-jekyll/redcarpet-extensions.html&quot;&gt;Redcarpet&lt;/a&gt;， 食用方式如下：&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;$ gem install redcarpet&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;修改&lt;code&gt;_config.yml&lt;/code&gt;，注释掉&lt;code&gt;markdown: kramdown&lt;/code&gt;，下面加上一行&lt;code&gt;markdown: redcarpet&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;如果有&lt;code&gt;Gemfile&lt;/code&gt;，则添加一行&lt;code&gt;gem &amp;quot;redcarpet&amp;quot;&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;&lt;code&gt;$ jekyll build&lt;/code&gt; + &lt;code&gt;$ Jekyll serve&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ gem install redcarpet&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;修改&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;，注释掉&lt;code class=&quot;highlighter-rouge&quot;&gt;markdown: kramdown&lt;/code&gt;，下面加上一行&lt;code class=&quot;highlighter-rouge&quot;&gt;markdown: redcarpet&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;如果有&lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;，则添加一行&lt;code class=&quot;highlighter-rouge&quot;&gt;gem &quot;redcarpet&quot;&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ jekyll build&lt;/code&gt; + &lt;code class=&quot;highlighter-rouge&quot;&gt;$ Jekyll serve&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-9&quot;&gt;后后记(2016.10.10 00:12更新)&lt;/h2&gt;
+
+&lt;p&gt;替换为&lt;code class=&quot;highlighter-rouge&quot;&gt;Redcarpet&lt;/code&gt;后，GitHub竟然给我发来一封邮件说不再支持&lt;code class=&quot;highlighter-rouge&quot;&gt;Redcarpet&lt;/code&gt;，而且可能随时停用这个markdown的渲染引擎，让我使用默认的&lt;code class=&quot;highlighter-rouge&quot;&gt;kramdown&lt;/code&gt;，因为它已经支持了全部特效(包括我需要的&lt;code class=&quot;highlighter-rouge&quot;&gt;code block&lt;/code&gt;)。无语了，难道要我全都使用Liquid的&lt;code class=&quot;highlighter-rouge&quot;&gt;highlight-code-language&lt;/code&gt;这样的语法吗(这在原生的markdown语法中是没有的)。。。&lt;/p&gt;
+
+&lt;p&gt;后来无意中发现，其实&lt;code class=&quot;highlighter-rouge&quot;&gt;kramdown&lt;/code&gt;还是支持&lt;code class=&quot;highlighter-rouge&quot;&gt;code block&lt;/code&gt;的，只是它对&lt;code class=&quot;highlighter-rouge&quot;&gt;markdown&lt;/code&gt;进行&lt;code class=&quot;highlighter-rouge&quot;&gt;parse&lt;/code&gt;要求更加严格了，有点像python靠是否对齐来判断是否属于同一级。具体来说，就是在&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;或者&lt;code class=&quot;highlighter-rouge&quot;&gt;1.&lt;/code&gt;后面不能接空格&lt;code class=&quot;highlighter-rouge&quot;&gt; &lt;/code&gt;，而应该用&lt;code class=&quot;highlighter-rouge&quot;&gt;tab&lt;/code&gt;对齐，否则下面用&lt;code class=&quot;highlighter-rouge&quot;&gt;tab&lt;/code&gt;缩进的&lt;code class=&quot;highlighter-rouge&quot;&gt;code block&lt;/code&gt;就不能正常显示。&lt;/p&gt;
+
+&lt;p&gt;目前已经换回&lt;code class=&quot;highlighter-rouge&quot;&gt;kramdown&lt;/code&gt;，行首空格全部换为&lt;code class=&quot;highlighter-rouge&quot;&gt;tab&lt;/code&gt;。&lt;/p&gt;
 </description>
         <pubDate>Fri, 07 Oct 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/10/07/python3%E9%87%8D%E5%86%99SimpleHTTPServerWithUpload.html</link>
@@ -357,39 +641,48 @@ TypeError: &lt;span class=&quot;s1&quot;&gt;'str'&lt;/span&gt; does not support 
       <item>
         <title>对于Jekyll的一些思考</title>
         <description>&lt;blockquote&gt;
-&lt;h4&gt;GitHub Pages are powered by Jekyll&lt;/h4&gt;
+  &lt;h4 id=&quot;github-pages-are-powered-by-jekyll&quot;&gt;GitHub Pages are powered by Jekyll&lt;/h4&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;不管这里的power是生成也好，渲染也罢，反正&lt;code&gt;GitHub Pages&lt;/code&gt;就是用的&lt;code&gt;Jekyll&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;不管这里的power是生成也好，渲染也罢，反正&lt;code class=&quot;highlighter-rouge&quot;&gt;GitHub Pages&lt;/code&gt;就是用的&lt;code class=&quot;highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt;。&lt;/p&gt;
 
-&lt;p&gt;从阮一峰老师的&lt;a href=&quot;http://ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html&quot;&gt;这篇文章&lt;/a&gt;来看，似乎不用安装&lt;code&gt;jekyll&lt;/code&gt;也可以写博客，只要按照这个&lt;a href=&quot;https://jekyllrb.com/docs/structure/&quot;&gt;目录结构&lt;/a&gt;填充内容，然后就能发布内容了，GitHub Pages能够识别。不过可能丑了点，需要调整。&lt;/p&gt;
+&lt;p&gt;从阮一峰老师的&lt;a href=&quot;http://ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html&quot;&gt;这篇文章&lt;/a&gt;来看，似乎不用安装&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt;也可以写博客，只要按照这个&lt;a href=&quot;https://jekyllrb.com/docs/structure/&quot;&gt;目录结构&lt;/a&gt;填充内容，然后就能发布内容了，GitHub Pages能够识别。不过可能丑了点，需要调整。&lt;/p&gt;
 
-&lt;p&gt;&lt;br/&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h4&gt;思考&lt;/h4&gt;
+&lt;h4 id=&quot;section&quot;&gt;思考&lt;/h4&gt;
 
 &lt;p&gt;标题用了思考，其实是我自己瞎琢磨的。&lt;/p&gt;
 
 &lt;p&gt;有了Jekyll&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;好像除了本地预览没啥用了，github pages可以识别&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;节省用户调试时间，本地0.x秒的x.x秒&lt;/p&gt;
+  &lt;li&gt;
+    &lt;p&gt;好像除了本地预览没啥用了，github pages可以识别&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;节省用户调试时间，本地0.x秒的x.x秒&lt;/p&gt;
 
-&lt;p&gt;对比 add commit push 再打开浏览器刷新获取远程主机内容&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;以上又引出了其他问题，&lt;/p&gt;
+    &lt;p&gt;对比 add commit push 再打开浏览器刷新获取远程主机内容&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;以上又引出了其他问题，&lt;/p&gt;
 
-&lt;p&gt;流量&lt;/p&gt;
+    &lt;p&gt;流量&lt;/p&gt;
 
-&lt;p&gt;存储空间&lt;/p&gt;
+    &lt;p&gt;存储空间&lt;/p&gt;
 
-&lt;p&gt;所有调整交给github的主机处理 vs 本地处理满意了，最后交给github发布，分摊成本。&lt;/p&gt;
+    &lt;p&gt;所有调整交给github的主机处理 vs 本地处理满意了，最后交给github发布，分摊成本。&lt;/p&gt;
 
-&lt;p&gt;对用户，对github，避免不必要的浪费。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;同时，这个学习成本，过滤掉一堆人。提高内容质量。&lt;/p&gt;
+    &lt;p&gt;对用户，对github，避免不必要的浪费。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;同时，这个学习成本，过滤掉一堆人。提高内容质量。&lt;/p&gt;
 
-&lt;p&gt;(相对昨天文章看到的，简单地靠点击率排名，又或者是知乎等平台，点赞太容易，生产很多无效信息。)&lt;/p&gt;&lt;/li&gt;
+    &lt;p&gt;(相对昨天文章看到的，简单地靠点击率排名，又或者是知乎等平台，点赞太容易，生产很多无效信息。)&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ol&gt;
+
 </description>
         <pubDate>Wed, 05 Oct 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/10/05/03-%E5%AF%B9%E4%BA%8EJekyll%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83.html</link>
@@ -403,95 +696,123 @@ TypeError: &lt;span class=&quot;s1&quot;&gt;'str'&lt;/span&gt; does not support 
         <description>&lt;p&gt;本博客利用Jekyll生成，并且放在GitHub Pages上面。&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;h3&gt;关于如何搭建&lt;/h3&gt;
+  &lt;li&gt;
+    &lt;h3 id=&quot;section&quot;&gt;关于如何搭建&lt;/h3&gt;
 
-&lt;p&gt;关于如何搭建，网络上已经有太多范例。这里不再赘述。&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;h3&gt;一些经验&lt;/h3&gt;&lt;/li&gt;
+    &lt;p&gt;关于如何搭建，网络上已经有太多范例。这里不再赘述。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;h3 id=&quot;section-1&quot;&gt;一些经验&lt;/h3&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;首先，网络状况要好。&lt;code class=&quot;highlighter-rouge&quot;&gt;gem&lt;/code&gt;不像&lt;code class=&quot;highlighter-rouge&quot;&gt;apt-get install&lt;/code&gt;一样会有进度提示，如果出网限制很严重，更会让人抓狂。&lt;/p&gt;
+
+        &lt;p&gt;早上比晚上稍微好点。不需要等太久。如果可以自由全速访问Google+Stack Overflow+GitHub，下面的问题都不是问题。&lt;/p&gt;
+
+        &lt;p&gt;当然也可以不用下载按照这么多软件，这些都是为了本地运行看效果用的。直接按照&lt;a href=&quot;https://jekyllrb.com/docs/structure/&quot;&gt;Jekyll的目录结构&lt;/a&gt;写好文件，然后上传到你的Pages项目，GitHub后台会帮你处理并生成网页。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Ruby原意是红宝石。Gem原意是宝石，在这里里它是软件包管理工具。&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Rubygems&lt;/code&gt;最好升级到最新。如果是老一点的版本，会提示你&lt;code class=&quot;highlighter-rouge&quot;&gt;Rubygems is not threadsafe, so your gem will be installed one at a time.&lt;/code&gt;&lt;/p&gt;
+
+        &lt;p&gt;升级后是否像迅雷一样多线程加快速度呢？我不知道，傻乎乎地下载安装完了所有组件之后才升级的。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Jekyll的出现，其本意是为了省时间(我猜的)。所以最快搭建的方法是搜索&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll theme&lt;/code&gt;然后选一个主题(模板)，修改&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;并标注主题出处就好了。&lt;/p&gt;
+
+        &lt;p&gt;另一方面，想要自己搭建博客的人，估计都有一颗爱折腾的心。如果时间充裕，倒是可以摸索一下。&lt;/p&gt;
+
+        &lt;p&gt;我试过一些主题，不过目前还是选择了原生的&lt;code class=&quot;highlighter-rouge&quot;&gt;minima&lt;/code&gt;，特点就是简洁。&lt;/p&gt;
+
+        &lt;blockquote&gt;
+          &lt;p&gt;Minima is a one-size-fits-all Jekyll theme for writers. It’s Jekyll’s default (and first) theme. It’s what you get when you run jekyll new.&lt;/p&gt;
+        &lt;/blockquote&gt;
+
+        &lt;p&gt;从github上下载&lt;a href=&quot;https://github.com/jekyll/minima&quot;&gt;minima&lt;/a&gt;，到处修修改改，配合浏览器的开发者工具看看效果即可。不过需要注意版本问题。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;版本问题&lt;/p&gt;
+
+        &lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;$ gem install jekyll bundler&lt;/code&gt;下载的可以理解为稳定版。从github上拿下来的是正在开发的，所以和稳定版稍有差别。&lt;/p&gt;
+
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ jekyll new .&lt;/code&gt;之后，利用&lt;code class=&quot;highlighter-rouge&quot;&gt;$ bundle show minima&lt;/code&gt;可以看到&lt;code class=&quot;highlighter-rouge&quot;&gt;minima&lt;/code&gt;的路径，这是默认的模板。&lt;/p&gt;
+
+        &lt;p&gt;从github上拿下&lt;a href=&quot;https://github.com/jekyll/minima&quot;&gt;minima&lt;/a&gt;的最新版，从中拿出&lt;code class=&quot;highlighter-rouge&quot;&gt;_includes/head.html&lt;/code&gt;，覆盖默认的&lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt;时，	发现网页的样式不见了！&lt;/p&gt;
+
+        &lt;p&gt;&lt;img src=&quot;http://newsimg.5054399.com/uploads/userup/1609/14145AK119.jpg&quot; alt=&quot;???&quot; /&gt;&lt;/p&gt;
+
+        &lt;p&gt;最终通过浏览器的Inspect，发现样式的路径不对，稳定版的&lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt;第11行是&lt;code class=&quot;highlighter-rouge&quot;&gt; ... &quot;/css/main.css&quot; ...&lt;/code&gt;，而最新的已经在5天前换到了&lt;code class=&quot;highlighter-rouge&quot;&gt;... &quot;/assets/main.css&quot; ... &lt;/code&gt;所以浏览器找不到这个&lt;code class=&quot;highlighter-rouge&quot;&gt;css&lt;/code&gt;了&lt;/p&gt;
+
+        &lt;p&gt;所以使用的时候要用github上的release版本，而不是直接在项目页clone或者download下来。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;其他问题&lt;/p&gt;
+
+        &lt;p&gt;想把所有步骤全都写下来，不过这太繁琐了。而且目前博客还没有完全定型。上面说道，只要有很好的网络，可以自由连接Google+Stack Overflow+GitHub，这些都不会是问题。需要的时候再找，没必要全部记下来。&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;TODO&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;接下来准备写的内容&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;改进: 支持upload文件的SimpleHTTPServer(py2+py3)&lt;/li&gt;
+          &lt;li&gt;newsflash.py: 利用python获取36kr新闻标题&lt;/li&gt;
+          &lt;li&gt;translate.py: 基于有道API的翻译工具&lt;/li&gt;
+          &lt;li&gt;weather.py: 获取天气情况&lt;/li&gt;
+          &lt;li&gt;nc+crontab+python: 定时批量扫描端口，邮件通知结果&lt;/li&gt;
+          &lt;li&gt;其他知识总结&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;基于&lt;多说&gt;的&lt;评论区&gt;&lt;/评论区&gt;&lt;/多说&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;文章底部增加: 上一篇 / 下一篇&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;同步微信公众号&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;增加&lt;邮箱&gt;&lt;/邮箱&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;关于&gt;，增加内容
+
+
+&lt;/关于&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;1. 首先，网络状况要好。`gem`不像`apt-get install`一样会有进度提示，如果出网限制很严重，更会让人抓狂。
-
-    早上比晚上稍微好点。不需要等太久。如果可以自由全速访问Google+Stack Overflow+GitHub，下面的问题都不是问题。
-
-    当然也可以不用下载按照这么多软件，这些都是为了本地运行看效果用的。直接按照[Jekyll的目录结构](https://jekyllrb.com/docs/structure/)写好文件，然后上传到你的Pages项目，GitHub后台会帮你处理并生成网页。
-
-2. Ruby原意是红宝石。Gem原意是宝石，在这里里它是软件包管理工具。
-
-    `Rubygems`最好升级到最新。如果是老一点的版本，会提示你`Rubygems is not threadsafe, so your gem will be installed one at a time.`
-
-    升级后是否像迅雷一样多线程加快速度呢？我不知道，傻乎乎地下载安装完了所有组件之后才升级的。
-
-3. Jekyll的出现，其本意是为了省时间(我猜的)。所以最快搭建的方法是搜索`jekyll theme`然后选一个主题(模板)，修改`_config.yml`并标注主题出处就好了。
-
-    另一方面，想要自己搭建博客的人，估计都有一颗爱折腾的心。如果时间充裕，倒是可以摸索一下。
-
-    我试过一些主题，不过目前还是选择了原生的`minima`，特点就是简洁。
-
-    &amp;gt; Minima is a one-size-fits-all Jekyll theme for writers. It's Jekyll's default (and first) theme. It's what you get when you run jekyll new.
-
-    从github上下载[minima](https://github.com/jekyll/minima)，到处修修改改，配合浏览器的开发者工具看看效果即可。不过需要注意版本问题。
-
-4. 版本问题
-
-    使用`$ gem install jekyll bundler`下载的可以理解为稳定版。从github上拿下来的是正在开发的，所以和稳定版稍有差别。
-
-    `$ jekyll new .`之后，利用`$ bundle show minima`可以看到`minima`的路径，这是默认的模板。
-
-    从github上拿下[minima](https://github.com/jekyll/minima)的最新版，从中拿出`_includes/head.html`，覆盖默认的`head.html`时， 发现网页的样式不见了！
-
-    ![???](http://newsimg.5054399.com/uploads/userup/1609/14145AK119.jpg)
-
-    最终通过浏览器的Inspect，发现样式的路径不对，稳定版的`head.html`第11行是` ... &quot;/css/main.css&quot; ...`，而最新的已经在5天前换到了`... &quot;/assets/main.css&quot; ... `所以浏览器找不到这个`css`了
-
-    所以使用的时候要用github上的release版本，而不是直接在项目页clone或者download下来。
-
-5. 其他问题
-
-    想把所有步骤全都写下来，不过这太繁琐了。而且目前博客还没有完全定型。上面说道，只要有很好的网络，可以自由连接Google+Stack Overflow+GitHub，这些都不会是问题。需要的时候再找，没必要全部记下来。
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;ul&gt;
-&lt;li&gt;TODO&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-&quot; data-lang=&quot;&quot;&gt;1. 接下来准备写的内容
-
-    * 改进: 支持upload文件的SimpleHTTPServer(py2+py3)
-    * newsflash.py: 利用python获取36kr新闻标题
-    * translate.py: 基于有道API的翻译工具
-    * weather.py: 获取天气情况
-    * nc+crontab+python: 定时批量扫描端口，邮件通知结果
-    * 其他知识总结
-
-2. 基于&amp;lt;多说&amp;gt;的&amp;lt;评论区&amp;gt;
-
-3. 文章底部增加: 上一篇 / 下一篇
-
-4. 同步微信公众号
-
-5. 增加&amp;lt;邮箱&amp;gt;
-
-6. &amp;lt;关于&amp;gt;，增加内容
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;本文参考链接(包括搭建博客时遇到的一些有意思的网站)&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html&quot;&gt;阮一峰的博客&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html&quot;&gt;阮一峰的博客&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.w3school.com.cn/index.html&quot;&gt;w3school&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href=&quot;http://www.w3school.com.cn/index.html&quot;&gt;w3school&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.color-hex.com&quot;&gt;hex code of colors&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href=&quot;http://www.color-hex.com&quot;&gt;hex code of colors&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://dev.w3.org/html5/html-author/charref&quot;&gt;Character Entity Reference Chart&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href=&quot;https://dev.w3.org/html5/html-author/charref&quot;&gt;Character Entity Reference Chart&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.nowamagic.net/librarys/veda/detail/1017&quot;&gt;基于图片显示与隐藏&lt;/a&gt; (Labtocat)&lt;/p&gt;
+  &lt;p&gt;&lt;a href=&quot;http://www.nowamagic.net/librarys/veda/detail/1017&quot;&gt;基于图片显示与隐藏&lt;/a&gt; (Labtocat)&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/jazywoo123/article/details/9866765&quot;&gt;HTML的footer置于页面最底部的方法&lt;/a&gt; (还没改好，只是在&lt;footer&gt;中添加了&lt;code&gt;style=&amp;quot;...&amp;quot;&lt;/code&gt;)&lt;/p&gt;
+  &lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/jazywoo123/article/details/9866765&quot;&gt;HTML的footer置于页面最底部的方法&lt;/a&gt; (还没改好，只是在&amp;lt;footer&amp;gt;中添加了&lt;code class=&quot;highlighter-rouge&quot;&gt;style=&quot;...&quot;&lt;/code&gt;)&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/28292322&quot;&gt;许可证-知乎&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/28292322&quot;&gt;许可证-知乎&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/ncore/p/3232294.html&quot;&gt;许可证-博客园&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/ncore/p/3232294.html&quot;&gt;许可证-博客园&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://newsimg.5054399.com/uploads/userup/1609/14145AK119.jpg&quot;&gt;黑人小哥&lt;/a&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;a href=&quot;http://newsimg.5054399.com/uploads/userup/1609/14145AK119.jpg&quot;&gt;黑人小哥&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
         <pubDate>Wed, 05 Oct 2016 00:00:00 +0800</pubDate>
@@ -503,7 +824,7 @@ TypeError: &lt;span class=&quot;s1&quot;&gt;'str'&lt;/span&gt; does not support 
     
       <item>
         <title>License</title>
-        <description>&lt;h1&gt;About the License.&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;about-the-license&quot;&gt;About the License.&lt;/h1&gt;
 </description>
         <pubDate>Wed, 05 Oct 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/10/05/01-License.html</link>

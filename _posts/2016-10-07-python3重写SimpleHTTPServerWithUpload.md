@@ -342,7 +342,7 @@ $ python3 -m http.server [8000]
 
 ##	4. 参考
 
-[bones](http://luy.li/2010/05/15/simplehttpserverwithupload/)同学
+[bones7456](http://luy.li/2010/05/15/simplehttpserverwithupload/)同学
 
 [BUPTGuo](http://buptguo.com/2015/11/07/simplehttpserver-with-upload-file/)同学
 
