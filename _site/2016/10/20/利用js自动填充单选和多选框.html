@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="fXCqEVcHdJt50axIq7sCTxtZUh5gDHkj2usDwI_66gE" />
+  <title>利用js自动填充单选和多选框</title>
+  <meta name="description" content="前言 申请某线上机器权限之前要考试。测试后发现该考试题目和选项固定，又因为题目数量很多，正式帐号重做比较麻烦，于是想用脚本自动填充。这篇文章仅作大致记录，可以进行相关扩展。利用python获取答案以及其他细节从略。">
+
+ <!--  
+   -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href= "/">
+  <link rel="alternate" type="application/rss+xml" title="FrozenMap" href="/feed.xml">
+  
+  
+</head>
+
+  <body>
+    <header class="site-header" role="banner" style="border-top:0px">
+  <div class="wrapper">
+    <a class="site-title" href="/">Home</a>
+    <img src="/assets/Labtocat.png" width="43">
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+      
+      <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <a class="page-link" href="/feed.xml">RSS</a>
+          <!-- <a class="page-link" href="/donate">Donate</a> -->
+      </div>
+    </nav>
+  </div>
+</header>
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">利用js自动填充单选和多选框</h1>
+    <p class="post-meta"> <time datetime="2016-10-20T00:00:00+08:00" itemprop="datePublished">Oct 20, 2016</time>
+      <!--  -->
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">FrozenMap</span></span>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="section">前言</h2>
+
+<p>申请某线上机器权限之前要考试。测试后发现该考试题目和选项固定，又因为题目数量很多，正式帐号重做比较麻烦，于是想用脚本自动填充。这篇文章仅作大致记录，可以进行相关扩展。利用python获取答案以及其他细节从略。</p>
+
+<p>另外，浏览器使用Chrome.</p>
+
+<p><br /><br /></p>
+
+<h2 id="section-1">单选框</h2>
+
+<div class="media-body well">
+	<label class="radio inline"><input type="radio" name="question[1]" rel="1" value="A" autocomplete="off" />A </label>
+	<label class="radio inline"><input type="radio" name="question[1]" rel="1" value="B" autocomplete="off" />B </label>
+	<label class="radio inline"><input type="radio" name="question[1]" rel="1" value="C" autocomplete="off" />C </label>
+	<label class="radio inline"><input type="radio" name="question[1]" rel="1" value="D" autocomplete="off" />D </label>
+</div>
+
+<p><br /></p>
+
+<p>上面是一个四个单选框。以A的选择框为例，右键—审查元素，可以看到关键部分：</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"radio"</span> <span class="na">name=</span><span class="s">"question[1]"</span> <span class="na">rel=</span><span class="s">"1"</span> <span class="na">value=</span><span class="s">"A"</span> <span class="na">autocomplete=</span><span class="s">"off"</span><span class="nt">&gt;</span>
+</code></pre>
+</div>
+
+<p>接下来利用js，在开发者工具中选择Console，逐行输入以下代码，即可依次选中单选题的ABCD：</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">single</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByName</span><span class="p">(</span><span class="s2">"question[1]"</span><span class="p">);</span>
+<span class="nx">single</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">checked</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nx">sinlge</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">click</span><span class="p">();</span>
+<span class="nx">sinlge</span><span class="p">[</span><span class="mi">2</span><span class="p">].</span><span class="nx">click</span><span class="p">();</span>
+<span class="nx">single</span><span class="p">[</span><span class="mi">3</span><span class="p">].</span><span class="nx">checked</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+</code></pre>
+</div>
+
+<p>注：Name是唯一的。</p>
+
+<p><br /><br /></p>
+
+<h2 id="section-2">多选框</h2>
+
+<div class="media-body well">
+	<label class="checkbox inline"><input type="checkbox" name="question[2][0]" rel="2" value="A" autocomplete="off" />A </label>
+	<label class="checkbox inline"><input type="checkbox" name="question[2][1]" rel="2" value="B" autocomplete="off" />B </label>
+	<label class="checkbox inline"><input type="checkbox" name="question[2][2]" rel="2" value="C" autocomplete="off" />C </label>
+	<label class="checkbox inline"><input type="checkbox" name="question[2][3]" rel="2" value="D" autocomplete="off" />D </label>
+	<label class="checkbox inline"><input type="checkbox" name="question[2][4]" rel="2" value="E" autocomplete="off" />E </label>
+</div>
+
+<p><br /></p>
+
+<p>上面是五个多选框。首先也是审查元素，关键代码如下：</p>
+
+<div class="language-html highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"checkbox"</span> <span class="na">name=</span><span class="s">"question[2][0]"</span> <span class="na">rel=</span><span class="s">"2"</span> <span class="na">value=</span><span class="s">"A"</span> <span class="na">autocomplete=</span><span class="s">"off"</span><span class="nt">&gt;</span>
+</code></pre>
+</div>
+
+<p>在上一节我们看到，单选题中可以利用<code class="highlighter-rouge">.click()</code>或者<code class="highlighter-rouge">.checked = 1</code>两种方式来勾选，效果似乎相同。然而在多选框中，这两种方式就有区别了。从名字来看，前者是模拟鼠标点击，后者是直接编辑状态。在多选框中，如果先勾选一个框，接着再点一下鼠标（相当于两个<code class="highlighter-rouge">.click()</code>），就是取消勾选。如果网页没有缓存，可以使用如下方法:</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByName</span><span class="p">(</span><span class="s2">"question[2][0]"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">click</span><span class="p">();</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByName</span><span class="p">(</span><span class="s2">"question[2][1]"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">checked</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByName</span><span class="p">(</span><span class="s2">"question[2][2]"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">checked</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByName</span><span class="p">(</span><span class="s2">"question[2][3]"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">checked</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByName</span><span class="p">(</span><span class="s2">"question[2][4]"</span><span class="p">)[</span><span class="mi">0</span><span class="p">].</span><span class="nx">click</span><span class="p">();</span>
+</code></pre>
+</div>
+
+<p>如果缓存了，可能会出现有的框已经被选中的情况。这时如果用<code class="highlighter-rouge">.click()</code>就会取消选中，而用<code class="highlighter-rouge">.checked = 1</code>则不受影响。所以需要按照实际情况使用。</p>
+
+<p>有了以上基础，就能扩展出很多自动化脚本啦~</p>
+
+  </div>
+
+  <div>
+    <br/><br/>
+    <div style="border-top: dotted #e8e8e8; border-width: 1px 0; padding-top: 10px;"></div>
+    <h2>License</h2>
+    <p>
+      The content of this project itself is licensed under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"> BY-NC-SA </a>, and the underlying source code used to format and display that content is licensed under the <a href="http://opensource.org/licenses/mit-license.php">MIT license</a>.
+    </p>
+    <p> 转载请保留作者和出处, 包括以上许可证信息, 谢谢!
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+  </body>
+</html>
