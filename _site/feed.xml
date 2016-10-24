@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 23 Oct 2016 23:52:28 +0800</pubDate>
-    <lastBuildDate>Sun, 23 Oct 2016 23:52:28 +0800</lastBuildDate>
+    <pubDate>Mon, 24 Oct 2016 23:19:55 +0800</pubDate>
+    <lastBuildDate>Mon, 24 Oct 2016 23:19:55 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -97,7 +97,7 @@
 
 &lt;p&gt;&lt;a href=&quot;https://github.com/python-excel/xlrd&quot;&gt;xlrd&lt;/a&gt;和&lt;a href=&quot;https://github.com/python-excel/xlwt&quot;&gt;xlwt&lt;/a&gt;是两个基于python的库(Package)，它们能够处理&lt;code class=&quot;highlighter-rouge&quot;&gt;.xls&lt;/code&gt;文件，前者可以读取Excel表格的数据，后者可以新建表格写入数据。&lt;/p&gt;
 
-&lt;p&gt;本文参考了&lt;a href=&quot;https://github.com/python-excel/tutorial&quot;&gt;python-excel-tutorial&lt;/a&gt;，并结合实践应用整理而成。内容仅针对数据处理，不包括格式的设置。更多内容可参考&lt;a href=&quot;http://www.python-excel.org/&quot;&gt;python-excel.org&lt;/a&gt;及其&lt;a href=&quot;https://github.com/python-excel&quot;&gt;GitHub&lt;/a&gt;项目页。在此感谢&lt;a href=&quot;https://github.com/cjw296&quot;&gt;cjw296&lt;/a&gt;和&lt;a href=&quot;https://github.com/sjmachin&quot;&gt;sjmachin&lt;/a&gt;两位同学的成果~&lt;/p&gt;
+&lt;p&gt;本文参考了&lt;a href=&quot;https://github.com/python-excel/tutorial&quot;&gt;python-excel tutorial&lt;/a&gt;，并结合实践应用整理而成。内容仅针对数据处理，不包括格式的设置。更多内容可参考&lt;a href=&quot;http://www.python-excel.org/&quot;&gt;python-excel.org&lt;/a&gt;及其&lt;a href=&quot;https://github.com/python-excel&quot;&gt;GitHub&lt;/a&gt;项目页。在此感谢&lt;a href=&quot;https://github.com/cjw296&quot;&gt;cjw296&lt;/a&gt;和&lt;a href=&quot;https://github.com/sjmachin&quot;&gt;sjmachin&lt;/a&gt;两位同学的成果~&lt;/p&gt;
 
 &lt;p&gt;ps: 其文档中存在部分小错误，整体理解即可。&lt;/p&gt;
 
@@ -125,13 +125,48 @@
 
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;安装&lt;code class=&quot;highlighter-rouge&quot;&gt;python2.7&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;python3.4&lt;/code&gt;，本文代码基于后者。&lt;/p&gt;
+    &lt;p&gt;第一步是安装&lt;code class=&quot;highlighter-rouge&quot;&gt;python2.7&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;python3.4&lt;/code&gt;，本文代码基于后者。&lt;/p&gt;
 
     &lt;p&gt;利用&lt;a href=&quot;https://pypi.python.org/pypi/pip&quot;&gt;pip&lt;/a&gt;安装&lt;code class=&quot;highlighter-rouge&quot;&gt;xlrd&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;xlwt&lt;/code&gt;&lt;/p&gt;
 
     &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip3 install xlrd xlwt
 &lt;/code&gt;&lt;/pre&gt;
     &lt;/div&gt;
+
+    &lt;p&gt;然后假设有如下这么一个表格&lt;code class=&quot;highlighter-rouge&quot;&gt;demo_read.xls&lt;/code&gt;&lt;/p&gt;
+
+    &lt;table&gt;
+      &lt;thead&gt;
+        &lt;tr&gt;
+          &lt;th style=&quot;text-align: left&quot;&gt;Name&lt;/th&gt;
+          &lt;th style=&quot;text-align: center&quot;&gt;Age&lt;/th&gt;
+        &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: left&quot;&gt;Emily&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;10&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: left&quot;&gt;Bob&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;11&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: left&quot;&gt;Xiaoming&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;9&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: left&quot;&gt;Monika&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;7&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+          &lt;td style=&quot;text-align: left&quot;&gt;Steve&lt;/td&gt;
+          &lt;td style=&quot;text-align: center&quot;&gt;8&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+
+    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;读取数据&lt;/p&gt;
@@ -210,13 +245,28 @@
 
 &lt;p&gt;原来是结合工作任务写的一些脚本，由于涉及保密数据，所以需要处理一下。过两天更新。&lt;/p&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;5. 参考&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/python-excel/tutorial&quot;&gt;python-excel tutorial&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;www.liaoxuefeng.com&quot;&gt;liaoxuefeng&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;hr /&gt;
 
-&lt;p&gt;写于2016.10.18&lt;/p&gt;
+&lt;p&gt;写于20161018&lt;/p&gt;
 
-&lt;p&gt;第一次完善和上传时间是2016.10.23&lt;/p&gt;
+&lt;p&gt;20161023第一次完善和上传&lt;/p&gt;
+
+&lt;p&gt;20161024第二次更新：增加表格，增加参考文献&lt;/p&gt;
 
 </description>
         <pubDate>Tue, 18 Oct 2016 00:00:00 +0800</pubDate>

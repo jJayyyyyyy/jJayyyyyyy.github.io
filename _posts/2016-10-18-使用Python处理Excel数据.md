@@ -10,7 +10,7 @@ title: 使用Python处理Excel数据
 
 [xlrd](https://github.com/python-excel/xlrd)和[xlwt](https://github.com/python-excel/xlwt)是两个基于python的库(Package)，它们能够处理`.xls`文件，前者可以读取Excel表格的数据，后者可以新建表格写入数据。
 
-本文参考了[python-excel-tutorial](https://github.com/python-excel/tutorial)，并结合实践应用整理而成。内容仅针对数据处理，不包括格式的设置。更多内容可参考[python-excel.org](http://www.python-excel.org/)及其[GitHub](https://github.com/python-excel)项目页。在此感谢[cjw296](https://github.com/cjw296)和[sjmachin](https://github.com/sjmachin)两位同学的成果~
+本文参考了[python-excel tutorial](https://github.com/python-excel/tutorial)，并结合实践应用整理而成。内容仅针对数据处理，不包括格式的设置。更多内容可参考[python-excel.org](http://www.python-excel.org/)及其[GitHub](https://github.com/python-excel)项目页。在此感谢[cjw296](https://github.com/cjw296)和[sjmachin](https://github.com/sjmachin)两位同学的成果~
 
 ps: 其文档中存在部分小错误，整体理解即可。
 
@@ -30,13 +30,25 @@ ps: 其文档中存在部分小错误，整体理解即可。
 
 ##	3. 如何食用
 
-1.	安装`python2.7`或`python3.4`，本文代码基于后者。
+1.	第一步是安装`python2.7`或`python3.4`，本文代码基于后者。
 
 	利用[pip](https://pypi.python.org/pypi/pip)安装`xlrd`和`xlwt`
 	
 	```bash
 	pip3 install xlrd xlwt
 	```
+	
+	然后假设有如下这么一个表格`demo_read.xls`
+
+	| Name | Age |
+	:--- |:---:|
+	Emily | 10 |
+	Bob | 11 |
+	Xiaoming | 9 |
+	Monika | 7 |
+	Steve | 8 |
+	
+	<br/>
 
 2.	读取数据
 
@@ -109,13 +121,23 @@ ps: 其文档中存在部分小错误，整体理解即可。
 
 原来是结合工作任务写的一些脚本，由于涉及保密数据，所以需要处理一下。过两天更新。
 
-<br/><br/>
+<br/>
+
+##	5. 参考
+
+1.	[python-excel tutorial](https://github.com/python-excel/tutorial)
+
+2.	[liaoxuefeng](www.liaoxuefeng.com)
+
+<br/>
 
 ---
 
-写于2016.10.18
+写于20161018
 
-第一次完善和上传时间是2016.10.23
+20161023第一次完善和上传
+
+20161024第二次更新：增加表格，增加参考文献
 
 
 
