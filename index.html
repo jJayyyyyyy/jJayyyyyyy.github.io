@@ -1,5 +1,5 @@
 ---
-title: my first blog
+title: FrozenMap
 layout: default
 ---
 
@@ -9,7 +9,7 @@ layout: default
     {% for post in site.posts %}
       <li>
         <span class="post-meta" style="margin-right: 60px;">{{ post.date | date: "%b %d, %Y" }}</span>
-        <a href="{{ post.url | prepend: site.baseurl }}" style="font-size: 21px;">{{ post.title | escape }}</a>
+        <a href="{{ post.url | prepend: site.baseurl }}" style="font-size: 18px;">{{ post.title | escape }}</a>
       </li>
     {% endfor %}
   </ul>

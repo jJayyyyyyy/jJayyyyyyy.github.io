@@ -1,21 +1,14 @@
 ---
 layout: default
 title: Donate
+permalink: /donate/
 ---
 
 
 Hi☀️
 
-如果您喜欢这个博客，读后感觉有收获，不妨小额赞助我一下~
+如果您喜欢这个博客，不妨小额打赏一下下，每天主页君早上就能多吃俩包子了~
 
----
+打赏方式 (微信扫一扫):
 
-赞助方式1 (微信扫一扫):
-
-<img src="/assets/wechat-donation.png" width="160">
-
-<br/>
-
-赞助方式2 (支付宝扫一扫):
-
-<img src="/assets/alipay-donation.png" width="160">
+<img src="/assets/wechat-donation.png" width="200">
