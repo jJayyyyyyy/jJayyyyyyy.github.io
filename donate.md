@@ -11,4 +11,4 @@ Hi☀️
 
 打赏方式 (微信扫一扫):
 
-<img src="/assets/wechat-donation.png" width="200">
+<img src="/assets/wechat-donation.png" width="128">
