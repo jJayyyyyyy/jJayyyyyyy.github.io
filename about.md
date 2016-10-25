@@ -9,34 +9,24 @@ permalink: /about/
 
 Hey there!
 
-This is a blog where something interesting is recorded. Hope you like it:)
+FrozenMap comes from two fantastic games full of my memories: The Frozen Throne & Maplestory. 
 
-<br/>
+And this is a blog where something interesting is recorded.
 
-PS:  
-Below is my WeChat Subscription Account with ID **sth_interesting**, which could be a shortcut to get these posts on your smart phone.
+Hope you like it:)
 
-<img width="128" src="/assets/wechat-blog-qrcode.jpg"/>
+<!--PS:  
+Below is my WeChat Subscription Account with ID **sth_interesting**, which could be a shortcut to get these posts on your smart phone.-->
 
-Yet there may be certain differences, for some well known reasons.
+<!--<img width="128" src="/assets/wechat-blog-qrcode.jpg"/>-->
 
-And one more thing... there is a <a onclick="show('img1')" style="cursor:pointer">Labtocat </a>from [Octodex](https://octodex.github.com)! 
+<!--Yet there may be certain differences, for some well known reasons.-->
 
-<img width="128" src="/assets/Labtocat.png" style='display:none' id="img1"/>
+<!--And one more thing... there is a <a onclick="show('img1')" style="cursor:pointer">Labtocat </a>from [Octodex](https://octodex.github.com)! -->
 
+<!--<img width="128" src="/assets/Labtocat.png" style='display:none' id="img1"/>-->
 
-
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript">
+<!--<script type="text/javascript">
 function show(id)
 {
 	var img = document.getElementById(id);
@@ -46,5 +36,5 @@ function show(id)
 		img.style.display = "none";
 	}
 }
-</script>
+</script>-->
 
