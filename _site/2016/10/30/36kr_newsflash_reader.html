@@ -61,11 +61,11 @@
   </li>
 </ul>
 
-<p>这篇文章，我们来学习如何用python写一个轻量级的资讯阅读器。我们的抓取目标是<a href="http://36kr.com/newsflashes">36Kr快讯</a>。可以看到，这是一个比较简洁的资讯网站，上面会更新一些科技时讯(以前质量不错，现在良莠不齐)。不过由于这个网站结构比较清晰，所以比较适合我们入门级的选手~</p>
+<p>这篇文章，我们来学习如何用python写一个轻量级的资讯阅读器。我们的抓取目标是<a href="http://36kr.com/newsflashes">36Kr快讯</a>。可以看到，这是一个比较简洁的资讯网站，上面会更新一些科技时讯(以前质量不错，现在良莠不齐)。不过由于这个网站结构比较清晰，所以比较适合作为我们的第一个栗子。</p>
 
 <p>我们要写的这个阅读器，可以算是一个蜘蛛(Spider)。Spider的特点是简单轻便目标明确，其实可以理解为针对某个网页的小爬虫(Crawler)。更多相关对比可见参考资料。</p>
 
-<p>下面开始进入正题</p>
+<p>下面开始进入正题。</p>
 
 <p><br /></p>
 
@@ -85,32 +85,32 @@
   </li>
 </ul>
 
-<p>有了目标，我们该怎么开始呢？这还要从浏览器开始说起。我们平时基本是用用浏览器看网页。浏览器工作的原理大致是这样：先通过HTTP等协议把内容从服务器取回本地，然后再进行渲染和呈现。我们的阅读器不需要复杂的渲染，只需要从服务器拿回内容，然后简单地输出文本即可。</p>
+<p>有了目标，我们该怎么开始呢？这还要从浏览器开始说起。我们平时基本是用浏览器看网页。浏览器工作的原理大致是这样：先通过HTTP等协议把内容从服务器取回本地，然后再进行渲染和呈现。我们的阅读器不需要复杂的渲染，只需要从服务器拿回内容，然后简单地输出文本即可。</p>
 
-<p>下一步，上面提到的【标题和简介】从哪里来呢？我们可以使用Chrome的开发者工具来寻找资源。首先按下F12，在选项卡中选择【Network】，然后刷新一下网页，在该选项卡中就能看到浏览器通过网络下载了很多资源。</p>
+<p>那么，上面提到的【标题和简介】从哪里来呢？我们可以使用Chrome的开发者工具来寻找资源。首先按下F12，在选项卡中选择【Network】，然后刷新一下网页，在该选项卡中就能看到浏览器通过网络下载了很多资源。</p>
 
-<p>在这么多资源中，寻找我们想要的内容有时候比较麻烦。当然有一种比较简单粗暴的方式是把整个网页下载下来，然后正则表达式等方式进行提取，也可以专门分析出某个资源的来源，然后针对性地下载。对于36kr，详细的寻找资源的过程大家可以当作 <strong>练习1</strong> (hint: 点击一下网页下方的【浏览更多】，再观察新的资源)。这儿就直接给出两个可以验证的结果：</p>
+<p>在这么多资源中，寻找我们想要的内容有时候比较麻烦。当然，有一种比较简单粗暴的方式：把整个网页下载下来，然后用正则表达式等方式进行提取。也可以专门分析出某个资源的来源，再针对性地下载。对于36kr，详细的寻找资源的过程大家可以当作 <strong>练习1</strong> (hint: 点击一下网页下方的【浏览更多】，再观察新的资源)。这儿就直接给出两个可以验证的结果:</p>
 
 <p><a href="http://36kr.com/newsflashes.json">地址1</a> <a href="http://36kr.com/api/newsflash">地址2</a></p>
 
-<p>我们可以看到，两者都是json形式的数据，内容包含了我们所需的【标题和简介】。其中地址1是比较早的接口。入口2是前段时间发现的，从地址中的这个api我们可以猜测这是正式的接口，短时间内不会取消，因此我们就用<a href="http://36kr.com/api/newsflash">地址2</a>作为获取资源的入口。</p>
+<p>我们可以看到，两者都是json形式的数据，内容包含了我们所需的【标题和简介】。其中地址1是比较早的接口。入口2是前段时间发现的，从地址中的这个<code class="highlighter-rouge">api</code>我们可以猜测这是正式的接口，短时间内不会取消。因此我们就用<a href="http://36kr.com/api/newsflash">地址2</a>作为获取资源的入口。</p>
 
 <p><br /></p>
 
 <h2 id="section-1">2. 获取网页内容</h2>
 
-<p>有了以上的分析作为基础，我们就可以使用python功能强大的网络库来获取和分析网页内容了。如果有兴趣，可以尝试一个叫做<a href="https://github.com/kennethreitz/requests">requests</a>的神器。不过这次我们就使用<code class="highlighter-rouge">python3.4</code>自带的包(Package)和模块(Module)：</p>
+<p>有了以上的分析作为基础，我们就可以使用python功能强大的网络库，来获取和分析网页内容了。如果有兴趣，可以尝试一个叫做<a href="https://github.com/kennethreitz/requests">requests</a>的神器。不过这次我们就使用<code class="highlighter-rouge">python3.4</code>自带的包(Package)和模块(Module):</p>
 
 <ul>
   <li>
-    <p><code class="highlighter-rouge">urllib.request</code>，用于下载资源。</p>
+    <p><code class="highlighter-rouge">urllib.request</code> 用于下载资源。</p>
   </li>
   <li>
-    <p><code class="highlighter-rouge">json</code>，用于解析json数据，也可以配合文件操作，将<a href="http://36kr.com/api/newsflash">地址2</a> 的数据保存为容易观察分析的格式。</p>
+    <p><code class="highlighter-rouge">json</code> 用于解析json数据，也可以配合文件操作，将<a href="http://36kr.com/api/newsflash">地址2</a> 的数据保存为容易观察分析的格式。</p>
   </li>
 </ul>
 
-<p>我们首先新建一个名为<code class="highlighter-rouge">newsflash.py</code>的文件，然后写入如下内容：</p>
+<p>我们首先新建一个名为<code class="highlighter-rouge">newsflash.py</code>的文件，然后写入如下内容:</p>
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="c">#!/usr/bin/env python3</span>
 <span class="c"># -*- coding: utf-8 -*-</span>
@@ -120,7 +120,7 @@
 
 <p>所谓下载资源，大体上就是一个客户端发出请求，然后服务端进行响应，客户端再接收的过程。我们要做的，就是回到Chrome点开主页资源<code class="highlighter-rouge">newsflashes</code>，结合开发者工具显示的信息，然后用Python来模拟浏览器的行为。</p>
 
-<p>我们先来构造一个http请求。因为不用登陆，所以简单地利用<code class="highlighter-rouge">url+UA</code>的方式构造请求头即可。<code class="highlighter-rouge">url</code>就是刚才的<code class="highlighter-rouge">地址2</code>，<code class="highlighter-rouge">UA</code>就是<code class="highlighter-rouge">User-Agent</code>。于是继续写如下代码：</p>
+<p>我们先来构造一个http请求。因为不用登陆，所以简单地利用<code class="highlighter-rouge">url+UA</code>的方式构造请求头即可。<code class="highlighter-rouge">url</code>就是刚才的<code class="highlighter-rouge">地址2</code>，<code class="highlighter-rouge">UA</code>就是<code class="highlighter-rouge">User-Agent</code>。于是乎:</p>
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">url</span> <span class="o">=</span> <span class="s">'http://36kr.com/api/newsflash'</span>
 <span class="n">req</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
@@ -128,13 +128,13 @@
 </code></pre>
 </div>
 
-<p>接着我们把这个请求发送出去，并把接收到的响应保存为resp，也就是response：</p>
+<p>接着我们把这个请求发送出去，并把接收到的响应保存为resp:</p>
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">resp</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">req</span><span class="p">)</span>
 </code></pre>
 </div>
 
-<p>再回到Chrome，我们可以看到成功接收响应的时候会返回一个200的状态码。所以我们可以以此作为依据，初步判断请求-响应是否成功：</p>
+<p>再回到Chrome，我们可以看到成功接收响应的时候会返回一个200的状态码。所以我们可以以此为依据，初步判断请求-响应是否成功:</p>
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">print</span><span class="p">(</span><span class="s">'Status:'</span><span class="p">,</span> <span class="n">resp</span><span class="o">.</span><span class="n">status</span><span class="p">,</span> <span class="n">resp</span><span class="o">.</span><span class="n">reason</span><span class="p">)</span>
 </code></pre>
@@ -152,19 +152,18 @@
 
 <p>这样，内容就保存到<code class="highlighter-rouge">data</code>中了。当然我们也可以将它保存为文件，然后打开看看里面到底是什么东西：</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'json_data.txt'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s">'data.txt'</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
 	<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </code></pre>
 </div>
 
-<p>保存退出后运行，然后打开<code class="highlighter-rouge">json_data.txt</code>。对比一下可以发现，里面的内容和<a href="http://36kr.com/api/newsflash">地址2</a>呈现的内容是一样的，第一个小目标完成~</p>
+<p>保存退出后运行，然后打开<code class="highlighter-rouge">data.txt</code>。对比一下可以发现，里面的内容和<a href="http://36kr.com/api/newsflash">地址2</a>呈现的内容是一样的。至此，我们完成了第一个小目标~</p>
 
 <p><br /></p>
 
 <h2 id="section-2">3. 解析数据，呈现内容</h2>
 
-<p>不过现在还有一个不小的问题，我们所看到的内容，目前还只是一个很长的字符串，很难观察，也不便于关键信息的提取。所以接下来我们将其转化为json格式的数据。首先在最上面导入<code class="highlighter-rouge">json</code>模块:</p>
+<p>不过现在还有一个比较大的问题。我们所看到的内容，目前还只是一个很长的字符串，很难观察，也不便于关键信息的提取。所以接下来我们将其转化为json格式的数据。首先在最上面导入<code class="highlighter-rouge">json</code>模块:</p>
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">json</span>
 </code></pre>
@@ -190,7 +189,7 @@
 </code></pre>
 </div>
 
-<p>保存退出后运行，可以看到屏幕上输出了标题，时间，还有描述。如果我们想要把所有的新闻都打印出来，可以用for循环的方式。另外，一般阅读的时候我们看看标题就好了，如果对某个标题感兴趣，再告诉阅读器来输出细节，包括时间和内容。这样，我们会有更好的阅读体验，不会像刚才一样，屏幕上一堆东西影响阅读。我们把上一段代码删掉，然后写一个循环：</p>
+<p>保存退出后运行，可以看到屏幕上输出了标题，时间，还有描述。如果我们想要把所有的新闻都打印出来，可以用for循环的方式。另外，一般阅读的时候我们看看标题就好了，如果对某个标题感兴趣，再告诉阅读器来输出细节，包括时间和内容。这样，我们会有更好的阅读体验，不会像刚才一样，屏幕上一堆东西影响阅读。我们回到编辑器，把上一段代码删掉，然后写一个循环:</p>
 
 <div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="k">for</span> <span class="n">news</span> <span class="ow">in</span> <span class="n">json_data</span><span class="p">[</span><span class="s">'data'</span><span class="p">][</span><span class="s">'items'</span><span class="p">]:</span>
 	<span class="n">us_input</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s">'</span><span class="se">\n</span><span class="s">'</span> <span class="o">+</span> <span class="n">news</span><span class="p">[</span><span class="s">'title'</span><span class="p">])</span>
@@ -205,7 +204,7 @@
 </code></pre>
 </div>
 
-<p>然后保存退出再运行，看看效果如何。输入回车可以输出一条新闻标题。输入<code class="highlighter-rouge">d</code>就可以得到时间和详细内容。如果看到一半不想看了，可以用<code class="highlighter-rouge">ctrl+c</code>结束。也可以输入<code class="highlighter-rouge">q</code>退出，屏幕上会打印一个<code class="highlighter-rouge">Done!</code>，表示完成。</p>
+<p>然后保存退出再运行，看看效果如何。按下回车可以输出一条新闻标题。输入<code class="highlighter-rouge">d</code>就可以得到时间和详细内容。如果看到一半不想看了，可以用<code class="highlighter-rouge">ctrl+c</code>结束。也可以输入<code class="highlighter-rouge">q</code>退出，屏幕上会打印一个<code class="highlighter-rouge">Done!</code>，表示完成。</p>
 
 <p>至此，我们这个简单的新闻阅读器已经差不多完成啦。不过我们发现，一次只能看10条新闻。如何才能显示更多呢？这个就当作留给大家的 <strong>练习2</strong> 吧 (hint: 和练习1有关)~</p>
 
