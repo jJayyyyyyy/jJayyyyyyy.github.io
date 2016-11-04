@@ -5,12 +5,95 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 30 Oct 2016 22:26:10 +0800</pubDate>
-    <lastBuildDate>Sun, 30 Oct 2016 22:26:10 +0800</lastBuildDate>
+    <pubDate>Fri, 04 Nov 2016 23:04:36 +0800</pubDate>
+    <lastBuildDate>Fri, 04 Nov 2016 23:04:36 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
-        <title>36kr_newsflash_reader</title>
+        <title>写一个天气预报</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;工具：python3.4 (re / bs4)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;目标：获取天气预报&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/just%20for%20fun/weather&quot;&gt;代码参考&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;有了&lt;a href=&quot;&quot;&gt;上一篇文章&lt;/a&gt;作为基础，我们不难写出更多基于python网络库的小程序。这次我们来写一个简单实用的脚本来获取天气预报，数据来源是&lt;a href=&quot;http://www.weather.com.cn/&quot;&gt;中国天气网&lt;/a&gt;。最终呈现在终端或者命令行的内容类似于:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+4号（明天） 多云 24 ~ 18℃
+
+5号（后天） 多云 26 ~ 19℃
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;1. 分析网页&lt;/h2&gt;
+
+&lt;p&gt;这次的脚本也是一个Spider，所以第一步当然也是分析网页结构。打开&lt;a href=&quot;http://www.weather.com.cn/&quot;&gt;中国天气网&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在搜索栏输入城市，这里以上海为例，可以看到地址栏变成了&lt;code class=&quot;highlighter-rouge&quot;&gt;http://www.weather.com.cn/weather/101020100.shtml&lt;/code&gt;. 接着右键点击&lt;code class=&quot;highlighter-rouge&quot;&gt;7天&lt;/code&gt;预报中的&lt;code class=&quot;highlighter-rouge&quot;&gt;今天&lt;/code&gt;，选择&lt;code class=&quot;highlighter-rouge&quot;&gt;检查元素(N)&lt;/code&gt;，可以看到这段代码&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sky skyid lv2 on&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;3日（今天）&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;big&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;png40 d00&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/big&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;big&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;png40 n00&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/big&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;晴&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wea&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;晴&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tem&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;18&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;/&lt;span class=&quot;nt&quot;&gt;&amp;lt;i&amp;gt;&lt;/span&gt;12℃&lt;span class=&quot;nt&quot;&gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;win&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;em&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;东风&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;E&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;东南风&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SE&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/em&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;i&amp;gt;&lt;/span&gt;微风&lt;span class=&quot;nt&quot;&gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;slid&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;第2~7天的内容结构也是这样。&lt;/p&gt;
+
+&lt;p&gt;我们要获取的内容是【时间】+【天气】+【气温】，当然这个可以根据需要自由选择。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;获取网页内容&lt;/h2&gt;
+
+&lt;p&gt;这次，我们利用&lt;code class=&quot;highlighter-rouge&quot;&gt;urllib.request&lt;/code&gt;获取网页内容，然后用&lt;a href=&quot;&quot;&gt;上一篇文章&lt;/a&gt;中提到的&lt;code class=&quot;highlighter-rouge&quot;&gt;re&lt;/code&gt;模块来暴力提取关键信息&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;暴力神器
+re&lt;/p&gt;
+
+&lt;p&gt;直观神器
+BeautifulSoup&lt;/p&gt;
+
+&lt;p&gt;另外，如果晚上使用，可以发现，预报的是明天加后天的天气。怎样获取今晚的天气（如气温）呢，这个就当作是练习啦。&lt;/p&gt;
+</description>
+        <pubDate>Fri, 04 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/11/04/get_weather.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/04/get_weather.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>36kr新闻阅读器</title>
         <description>&lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;环境：python3.4 + Chrome + terminal/cmd&lt;/p&gt;
@@ -1313,20 +1396,6 @@ TypeError: &lt;span class=&quot;s1&quot;&gt;'str'&lt;/span&gt; does not support 
         <pubDate>Wed, 05 Oct 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/10/05/01-License.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/10/05/01-License.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Hello, world!</title>
-        <description>&lt;h2&gt;Hello, world!&lt;/h2&gt;
-&lt;span class=&quot;post-meta&quot; style=&quot;margin-right: 60px;&quot;&gt;Oct 4, 2016&lt;/span&gt;
-&lt;br/&gt;&lt;br/&gt;
-&lt;h2&gt;This is my first post! 🍭&lt;/h2&gt;
-</description>
-        <pubDate>Tue, 04 Oct 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/10/04/Hello-World.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/04/Hello-World.html</guid>
         
         
       </item>

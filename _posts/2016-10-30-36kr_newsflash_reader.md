@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 36kr_newsflash_reader
+title: 36kr新闻阅读器
 ---
 
 
