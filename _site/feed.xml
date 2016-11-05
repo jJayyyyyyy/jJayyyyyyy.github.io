@@ -5,9 +5,122 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 04 Nov 2016 23:29:03 +0800</pubDate>
-    <lastBuildDate>Fri, 04 Nov 2016 23:29:03 +0800</lastBuildDate>
+    <pubDate>Sat, 05 Nov 2016 22:35:23 +0800</pubDate>
+    <lastBuildDate>Sat, 05 Nov 2016 22:35:23 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>写一个天气预报</title>
+        <description>&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;工具：python3.4 (re / bs4)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;目标：获取天气预报&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/just%20for%20fun/weather&quot;&gt;代码参考&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;有了&lt;a href=&quot;&quot;&gt;上一篇文章&lt;/a&gt;作为基础，我们不难写出更多基于python网络库的小程序。这次我们来写一个简单实用的脚本来获取天气预报，数据来源是&lt;a href=&quot;http://www.weather.com.cn/&quot;&gt;中国天气网&lt;/a&gt;。最终呈现在终端或者命令行的内容类似于:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+4号（明天） 多云 24 ~ 18℃
+
+5号（后天） 多云 26 ~ 19℃
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;1. 分析网页&lt;/h2&gt;
+
+&lt;p&gt;这次的脚本也是一个Spider，所以第一步当然也是分析网页结构。打开&lt;a href=&quot;http://www.weather.com.cn/&quot;&gt;中国天气网&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;在搜索栏输入城市，这里以上海为例，可以看到地址栏变成了&lt;code class=&quot;highlighter-rouge&quot;&gt;http://www.weather.com.cn/weather/101020100.shtml&lt;/code&gt;. 接着右键点击&lt;code class=&quot;highlighter-rouge&quot;&gt;7天&lt;/code&gt;预报中的&lt;code class=&quot;highlighter-rouge&quot;&gt;今天&lt;/code&gt;，选择&lt;code class=&quot;highlighter-rouge&quot;&gt;检查元素(N)&lt;/code&gt;，可以看到这段代码&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;li&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;sky skyid lv2 on&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;3日（今天）&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;big&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;png40 d00&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/big&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;big&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;png40 n00&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/big&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;晴&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;wea&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;晴&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;tem&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;span&amp;gt;&lt;/span&gt;18&lt;span class=&quot;nt&quot;&gt;&amp;lt;/span&amp;gt;&lt;/span&gt;/&lt;span class=&quot;nt&quot;&gt;&amp;lt;i&amp;gt;&lt;/span&gt;12℃&lt;span class=&quot;nt&quot;&gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;win&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;em&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;东风&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;E&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;span&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;title=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;东南风&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;SE&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/em&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;i&amp;gt;&lt;/span&gt;微风&lt;span class=&quot;nt&quot;&gt;&amp;lt;/i&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;slid&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;第2~7天的内容结构也是这样。&lt;/p&gt;
+
+&lt;p&gt;我们要获取的内容是【时间】+【天气】+【气温】，当然这个可以根据需要自由选择。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;获取网页内容&lt;/h2&gt;
+
+&lt;p&gt;这次，我们利用&lt;code class=&quot;highlighter-rouge&quot;&gt;urllib.request&lt;/code&gt;获取网页内容，然后用&lt;a href=&quot;&quot;&gt;上一篇文章&lt;/a&gt;中提到的&lt;code class=&quot;highlighter-rouge&quot;&gt;re&lt;/code&gt;模块来暴力提取关键信息&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;暴力神器
+re&lt;/p&gt;
+
+&lt;p&gt;直观神器
+BeautifulSoup&lt;/p&gt;
+
+&lt;p&gt;另外，如果晚上使用，可以发现，预报的是明天加后天的天气。怎样获取今晚的天气（如气温）呢，这个就当作是练习啦。&lt;/p&gt;
+</description>
+        <pubDate>Sat, 05 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/11/05/get_weather.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/05/get_weather.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>5th Nov. 'V for Vendetta'</title>
+        <description>&lt;blockquote&gt;
+  &lt;p&gt;Remember, remember, the 5th of November…&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;看到这段台词，是否有一些电影片段从你脑海中浮现呢？&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;没错，就是&lt;code class=&quot;highlighter-rouge&quot;&gt;V for Vendetta&lt;/code&gt;(中译名: &lt;a href=&quot;https://movie.douban.com/subject/1309046/&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;V字仇杀队&lt;/code&gt;&lt;/a&gt;)。今天是11月5日，而&lt;a href=&quot;http://www.imdb.com/list/ls063473199/videoplayer/vi669300249?ref_=hm_hp_i_1&quot;&gt;IMDb&lt;/a&gt;也推出了一个纪念视频:&lt;/p&gt;
+
+&lt;iframe src=&quot;http://www.imdb.com/videoembed/vi669300249&quot; allowfullscreen=&quot;&quot; width=&quot;854&quot; height=&quot;500&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;这部电影虽然是05年的，但是与百年前鲁迅先生的文字一样，很多内容折射到今天仍然是十分贴切。如果你还没看过，不妨加入这个周末的观影列表;)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;另外今天跑了12km，配速还行，但一下子加量这么多，而且路面又比预想的要渣，所以还是有点吃不消。本来想在今天写一篇文章，记录一下如何利用python获取天气预报，有点累写不动了0.0…留给明天吧。&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 05 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/11/05/V_for_Vendetta.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/05/V_for_Vendetta.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Rather Be</title>
@@ -1189,148 +1302,6 @@ TypeError: &lt;span class=&quot;s1&quot;&gt;'str'&lt;/span&gt; does not support 
         <pubDate>Wed, 05 Oct 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/10/05/03-%E5%AF%B9%E4%BA%8EJekyll%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/10/05/03-%E5%AF%B9%E4%BA%8EJekyll%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>使用Jekyll生成博客</title>
-        <description>&lt;p&gt;本博客利用Jekyll生成，并且放在GitHub Pages上面。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;h3 id=&quot;section&quot;&gt;关于如何搭建&lt;/h3&gt;
-
-    &lt;p&gt;关于如何搭建，网络上已经有太多范例。这里不再赘述。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;h3 id=&quot;section-1&quot;&gt;一些经验&lt;/h3&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;
-        &lt;p&gt;首先，网络状况要好。&lt;code class=&quot;highlighter-rouge&quot;&gt;gem&lt;/code&gt;不像&lt;code class=&quot;highlighter-rouge&quot;&gt;apt-get install&lt;/code&gt;一样会有进度提示，如果出网限制很严重，更会让人抓狂。&lt;/p&gt;
-
-        &lt;p&gt;早上比晚上稍微好点。不需要等太久。如果可以自由全速访问Google+Stack Overflow+GitHub，下面的问题都不是问题。&lt;/p&gt;
-
-        &lt;p&gt;当然也可以不用下载按照这么多软件，这些都是为了本地运行看效果用的。直接按照&lt;a href=&quot;https://jekyllrb.com/docs/structure/&quot;&gt;Jekyll的目录结构&lt;/a&gt;写好文件，然后上传到你的Pages项目，GitHub后台会帮你处理并生成网页。&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;Ruby原意是红宝石。Gem原意是宝石，在这里里它是软件包管理工具。&lt;/p&gt;
-
-        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Rubygems&lt;/code&gt;最好升级到最新。如果是老一点的版本，会提示你&lt;code class=&quot;highlighter-rouge&quot;&gt;Rubygems is not threadsafe, so your gem will be installed one at a time.&lt;/code&gt;&lt;/p&gt;
-
-        &lt;p&gt;升级后是否像迅雷一样多线程加快速度呢？我不知道，傻乎乎地下载安装完了所有组件之后才升级的。&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;Jekyll的出现，其本意是为了省时间(我猜的)。所以最快搭建的方法是搜索&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll theme&lt;/code&gt;然后选一个主题(模板)，修改&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;并标注主题出处就好了。&lt;/p&gt;
-
-        &lt;p&gt;另一方面，想要自己搭建博客的人，估计都有一颗爱折腾的心。如果时间充裕，倒是可以摸索一下。&lt;/p&gt;
-
-        &lt;p&gt;我试过一些主题，不过目前还是选择了原生的&lt;code class=&quot;highlighter-rouge&quot;&gt;minima&lt;/code&gt;，特点就是简洁。&lt;/p&gt;
-
-        &lt;blockquote&gt;
-          &lt;p&gt;Minima is a one-size-fits-all Jekyll theme for writers. It’s Jekyll’s default (and first) theme. It’s what you get when you run jekyll new.&lt;/p&gt;
-        &lt;/blockquote&gt;
-
-        &lt;p&gt;从github上下载&lt;a href=&quot;https://github.com/jekyll/minima&quot;&gt;minima&lt;/a&gt;，到处修修改改，配合浏览器的开发者工具看看效果即可。不过需要注意版本问题。&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;版本问题&lt;/p&gt;
-
-        &lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;$ gem install jekyll bundler&lt;/code&gt;下载的可以理解为稳定版。从github上拿下来的是正在开发的，所以和稳定版稍有差别。&lt;/p&gt;
-
-        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;$ jekyll new .&lt;/code&gt;之后，利用&lt;code class=&quot;highlighter-rouge&quot;&gt;$ bundle show minima&lt;/code&gt;可以看到&lt;code class=&quot;highlighter-rouge&quot;&gt;minima&lt;/code&gt;的路径，这是默认的模板。&lt;/p&gt;
-
-        &lt;p&gt;从github上拿下&lt;a href=&quot;https://github.com/jekyll/minima&quot;&gt;minima&lt;/a&gt;的最新版，从中拿出&lt;code class=&quot;highlighter-rouge&quot;&gt;_includes/head.html&lt;/code&gt;，覆盖默认的&lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt;时，	发现网页的样式不见了！&lt;/p&gt;
-
-        &lt;p&gt;&lt;img src=&quot;http://newsimg.5054399.com/uploads/userup/1609/14145AK119.jpg&quot; alt=&quot;???&quot; /&gt;&lt;/p&gt;
-
-        &lt;p&gt;最终通过浏览器的Inspect，发现样式的路径不对，稳定版的&lt;code class=&quot;highlighter-rouge&quot;&gt;head.html&lt;/code&gt;第11行是&lt;code class=&quot;highlighter-rouge&quot;&gt; ... &quot;/css/main.css&quot; ...&lt;/code&gt;，而最新的已经在5天前换到了&lt;code class=&quot;highlighter-rouge&quot;&gt;... &quot;/assets/main.css&quot; ... &lt;/code&gt;所以浏览器找不到这个&lt;code class=&quot;highlighter-rouge&quot;&gt;css&lt;/code&gt;了&lt;/p&gt;
-
-        &lt;p&gt;所以使用的时候要用github上的release版本，而不是直接在项目页clone或者download下来。&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;其他问题&lt;/p&gt;
-
-        &lt;p&gt;想把所有步骤全都写下来，不过这太繁琐了。而且目前博客还没有完全定型。上面说道，只要有很好的网络，可以自由连接Google+Stack Overflow+GitHub，这些都不会是问题。需要的时候再找，没必要全部记下来。&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;TODO&lt;/p&gt;
-
-    &lt;ol&gt;
-      &lt;li&gt;
-        &lt;p&gt;接下来准备写的内容&lt;/p&gt;
-
-        &lt;ul&gt;
-          &lt;li&gt;改进: 支持upload文件的SimpleHTTPServer(py2+py3)&lt;/li&gt;
-          &lt;li&gt;newsflash.py: 利用python获取36kr新闻标题&lt;/li&gt;
-          &lt;li&gt;translate.py: 基于有道API的翻译工具&lt;/li&gt;
-          &lt;li&gt;weather.py: 获取天气情况&lt;/li&gt;
-          &lt;li&gt;nc+crontab+python: 定时批量扫描端口，邮件通知结果&lt;/li&gt;
-          &lt;li&gt;其他知识总结&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;基于&lt;多说&gt;的&lt;评论区&gt;&lt;/评论区&gt;&lt;/多说&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;文章底部增加: 上一篇 / 下一篇&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;同步微信公众号&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;增加&lt;邮箱&gt;&lt;/邮箱&gt;&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;关于&gt;，增加内容
-
-
-&lt;/关于&gt;
-      &lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;本文参考链接(包括搭建博客时遇到的一些有意思的网站)&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html&quot;&gt;阮一峰的博客&lt;/a&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;https://pages.github.com/&quot;&gt;GitHub Pages&lt;/a&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;http://www.w3school.com.cn/index.html&quot;&gt;w3school&lt;/a&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;http://www.color-hex.com&quot;&gt;hex code of colors&lt;/a&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;https://dev.w3.org/html5/html-author/charref&quot;&gt;Character Entity Reference Chart&lt;/a&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;http://www.nowamagic.net/librarys/veda/detail/1017&quot;&gt;基于图片显示与隐藏&lt;/a&gt; (Labtocat)&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/jazywoo123/article/details/9866765&quot;&gt;HTML的footer置于页面最底部的方法&lt;/a&gt; (还没改好，只是在&amp;lt;footer&amp;gt;中添加了&lt;code class=&quot;highlighter-rouge&quot;&gt;style=&quot;...&quot;&lt;/code&gt;)&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/28292322&quot;&gt;许可证-知乎&lt;/a&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;http://www.cnblogs.com/ncore/p/3232294.html&quot;&gt;许可证-博客园&lt;/a&gt;&lt;/p&gt;
-
-  &lt;p&gt;&lt;a href=&quot;http://newsimg.5054399.com/uploads/userup/1609/14145AK119.jpg&quot;&gt;黑人小哥&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-        <pubDate>Wed, 05 Oct 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/10/05/02-Jekyll%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/05/02-Jekyll%E7%94%9F%E6%88%90%E5%8D%9A%E5%AE%A2.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>License</title>
-        <description>&lt;h1 id=&quot;about-the-license&quot;&gt;About the License.&lt;/h1&gt;
-</description>
-        <pubDate>Wed, 05 Oct 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/10/05/01-License.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/05/01-License.html</guid>
         
         
       </item>
