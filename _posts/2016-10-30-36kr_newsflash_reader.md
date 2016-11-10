@@ -79,7 +79,7 @@ print('Status:', resp.status, resp.reason)
 保存退出后运行，可以看到状态码是200，和Chrome上面一样，说明响应成功。以后在抓取其他网页的时候可能会遇到各种奇怪的问题，有时候用这个状态码可以帮助我们分析解决。下一步，我们把内容读取出来。由于网络上传输的内容都是编码后的bytes类型，我们要将其解码。解码方式可以看到Chrome中写明了是`utf-8`。当然，做这些的前提是响应成功，所以我们要加上一行判断：
 
 ```python
-if(200 == resp.status):
+if 200 == resp.status:
 	data = resp.read().decode('utf-8')
 else:
 	print('Status Error!\n')
@@ -144,7 +144,7 @@ print('\nDone!\n')
 
 至此，我们这个简单的新闻阅读器已经差不多完成啦。不过我们发现，一次只能看10条新闻。如何才能显示更多呢？这个就当作留给大家的 **练习2** 吧 (hint: 和练习1有关)~
 
-最后我们还可以做一下适当的封装，把这些都包裹成函数，只留下接口。代码就不在这儿贴了，请参考 [36kr_newsflash_reader](https://github.com/jJayyyyyyy/36kr_newsflash_reader/blob/master/36kr_newsflash_reader.py)
+最后我们还可以做一下适当的封装，把这些都包裹成函数，只留下接口。代码就不在这儿贴了，请参考 [36kr_newsflash_reader](https://github.com/jJayyyyyyy/36kr_newsflash_reader)
 
 这么二三十行代码就能完成一个简单的新闻阅读器，用python是不是很方便~以后我们还会用python做一些其他的好玩的东西，我们下次再见~
 
@@ -164,4 +164,18 @@ print('\nDone!\n')
 
 *	[liaoxuefeng](http://www.liaoxuefeng.com/)
 
-*	[more](https://github.com/jJayyyyyyy/36kr_newsflash_reader/blob/master/36kr_newsflash_reader.py)
+*	[more](https://github.com/jJayyyyyyy/36kr_newsflash_reader/)
+
+<br/>
+
+---
+
+*	20161110 更新(补充说明): 
+	
+	第2节中，我们用`if 200 == resp.status`来判断是否成功响应，虽然能够执行，但其实不是一个好的实践。
+	
+	反例1. 如果服务器直接返回`404`的状态码，比如输入错误的地址1: `http://36kr.com/newsflash.json`，那么python会直接抛出`urllib.error.HTTPError`
+	
+	反例2. 如果输入错误的地址2: `http://36kr.com/api/newsflashes`，服务器会返回`200`的状态码，但是响应的实际内容是一个`404`页面，其中肯定木有我们想要的数据。这时候再用`json.loads()`就会出现`ValueError`，因为内容格式不对。
+	
+	所以，更好的方式是利用`try...except...`，参见[这里](http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/00143191375461417a222c54b7e4d65b258f491c093a515000)。这样，程序运行异常时，会跳到错误处理代码，而不是直接退出。
