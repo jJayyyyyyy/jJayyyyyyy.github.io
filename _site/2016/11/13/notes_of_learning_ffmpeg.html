@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="fXCqEVcHdJt50axIq7sCTxtZUh5gDHkj2usDwI_66gE" />
+  <title>FFMPEG学习笔记</title>
+  <meta name="description" content="音频">
+
+ <!--  
+   -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href= "/">
+  <link rel="alternate" type="application/rss+xml" title="FrozenMap" href="/feed.xml">
+  
+  
+</head>
+
+  <body>
+    <header class="site-header" role="banner" style="border-top:0px">
+  <div class="wrapper">
+    <a class="site-title" href="/">Home</a>
+    <!-- <img src="/assets/Labtocat.png" width="43"> -->
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+      
+      <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <!-- <a class="page-link" href="/donate">Donate</a> -->
+          <a class="page-link" href="/feed.xml">RSS</a>
+      </div>
+    </nav>
+  </div>
+</header>
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">FFMPEG学习笔记</h1>
+    <p class="post-meta"> <time datetime="2016-11-13T00:00:00+08:00" itemprop="datePublished">Nov 13, 2016</time>
+      <!--  -->
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">FrozenMap</span></span>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="section">音频</h2>
+
+<ul>
+  <li>
+    <p>剪切音乐</p>
+
+    <p>比如有一首好听的歌，我们想把它作为铃声。但是整首歌太长，要截取最好听的那一段，就可以借助<code class="highlighter-rouge">ffmpeg</code>。根据<a href="https://segmentfault.com/a/1190000000414341">参考资料1</a>，如果是作用在视频上，需要的参数是截取部分的开始时间<code class="highlighter-rouge">start_time</code>和结束时间<code class="highlighter-rouge">stop_time</code>，单位是秒。【注意，<a href="https://segmentfault.com/a/1190000000414341">参考资料1</a>中原文的<code class="highlighter-rouge">剪切</code>一节，可能会由楼主所用起止时间变量名引起误解，具体说明可见链接中<code class="highlighter-rouge"> @_ljj110719</code>的回复】</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ ffmpeg -i input.mp4 -ss **START_TIME** -to **STOP_TIME** -acodec copy -vcodec copy output.mp4
+</code></pre>
+    </div>
+
+    <p>其中，参数<code class="highlighter-rouge">-to</code>表示定位到某个时间点，如果换成<code class="highlighter-rouge">-t</code>则表示持续时间。</p>
+
+    <p>实践发现，以上方法同样可以作用在音频上。假设我们要截取的音乐是<code class="highlighter-rouge">I_do.mp3</code>，从<code class="highlighter-rouge">00:00:25</code>到<code class="highlighter-rouge">00:01:25</code>的片段，也就是从<code class="highlighter-rouge">25</code>秒到<code class="highlighter-rouge">85</code>秒。由于现在我们只需要音频(audio)，因此可以不要后面的<code class="highlighter-rouge">-vcodec copy</code>。所以我们的目标可以用如下命令实现:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ ffmpeg -i I_do.mp3 -ss 25 -to 85 -acodec copy I_do__snippet.mp3
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h2 id="section-1">视频</h2>
+
+<ul>
+  <li>
+    <p>分离音频和图像</p>
+
+    <p>参考用途: 去掉美剧中的视频，仅保留音频，用于听力练习。方便携带，同时减小体积。假设要处理的视频是<code class="highlighter-rouge">input_video.mp4</code>，输出音频保存为<code class="highlighter-rouge">output_audio.mp3</code>，则:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>$ ffmpeg -i input_video.mp4 -vn -ab 256 output_audio.mp3
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p>(不断更新)</p>
+
+<p><br /></p>
+
+<h2 id="section-2">参考</h2>
+
+<ol>
+  <li>
+    <p><a href="https://segmentfault.com/a/1190000000414341">通过 ffmpeg 无损剪切/拼接视频</a></p>
+  </li>
+  <li>
+    <p><a href="http://www.labnol.org/internet/useful-ffmpeg-commands/28490/">Useful FFmpeg Commands</a></p>
+  </li>
+</ol>
+
+  </div>
+
+  <div>
+    <br/><br/>
+    <div style="border-top: dotted #e8e8e8; border-width: 1px 0; padding-top: 10px;"></div>
+    <h2>License</h2>
+    <p>
+      The content of this project itself is licensed under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"> BY-NC-SA </a>, and the underlying source code used to format and display that content is licensed under the <a href="http://opensource.org/licenses/mit-license.php">MIT license</a>.
+    </p>
+    <p> 转载请保留作者和出处, 包括以上许可证信息, 谢谢!
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+  </body>
+</html>

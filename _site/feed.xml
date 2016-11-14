@@ -5,9 +5,71 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 10 Nov 2016 22:37:41 +0800</pubDate>
-    <lastBuildDate>Thu, 10 Nov 2016 22:37:41 +0800</lastBuildDate>
+    <pubDate>Mon, 14 Nov 2016 22:01:25 +0800</pubDate>
+    <lastBuildDate>Mon, 14 Nov 2016 22:01:25 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>FFMPEG学习笔记</title>
+        <description>&lt;h2 id=&quot;section&quot;&gt;音频&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;剪切音乐&lt;/p&gt;
+
+    &lt;p&gt;比如有一首好听的歌，我们想把它作为铃声。但是整首歌太长，要截取最好听的那一段，就可以借助&lt;code class=&quot;highlighter-rouge&quot;&gt;ffmpeg&lt;/code&gt;。根据&lt;a href=&quot;https://segmentfault.com/a/1190000000414341&quot;&gt;参考资料1&lt;/a&gt;，如果是作用在视频上，需要的参数是截取部分的开始时间&lt;code class=&quot;highlighter-rouge&quot;&gt;start_time&lt;/code&gt;和结束时间&lt;code class=&quot;highlighter-rouge&quot;&gt;stop_time&lt;/code&gt;，单位是秒。【注意，&lt;a href=&quot;https://segmentfault.com/a/1190000000414341&quot;&gt;参考资料1&lt;/a&gt;中原文的&lt;code class=&quot;highlighter-rouge&quot;&gt;剪切&lt;/code&gt;一节，可能会由楼主所用起止时间变量名引起误解，具体说明可见链接中&lt;code class=&quot;highlighter-rouge&quot;&gt; @_ljj110719&lt;/code&gt;的回复】&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ffmpeg -i input.mp4 -ss **START_TIME** -to **STOP_TIME** -acodec copy -vcodec copy output.mp4
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;其中，参数&lt;code class=&quot;highlighter-rouge&quot;&gt;-to&lt;/code&gt;表示定位到某个时间点，如果换成&lt;code class=&quot;highlighter-rouge&quot;&gt;-t&lt;/code&gt;则表示持续时间。&lt;/p&gt;
+
+    &lt;p&gt;实践发现，以上方法同样可以作用在音频上。假设我们要截取的音乐是&lt;code class=&quot;highlighter-rouge&quot;&gt;I_do.mp3&lt;/code&gt;，从&lt;code class=&quot;highlighter-rouge&quot;&gt;00:00:25&lt;/code&gt;到&lt;code class=&quot;highlighter-rouge&quot;&gt;00:01:25&lt;/code&gt;的片段，也就是从&lt;code class=&quot;highlighter-rouge&quot;&gt;25&lt;/code&gt;秒到&lt;code class=&quot;highlighter-rouge&quot;&gt;85&lt;/code&gt;秒。由于现在我们只需要音频(audio)，因此可以不要后面的&lt;code class=&quot;highlighter-rouge&quot;&gt;-vcodec copy&lt;/code&gt;。所以我们的目标可以用如下命令实现:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ffmpeg -i I_do.mp3 -ss 25 -to 85 -acodec copy I_do__snippet.mp3
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;视频&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;分离音频和图像&lt;/p&gt;
+
+    &lt;p&gt;参考用途: 去掉美剧中的视频，仅保留音频，用于听力练习。方便携带，同时减小体积。假设要处理的视频是&lt;code class=&quot;highlighter-rouge&quot;&gt;input_video.mp4&lt;/code&gt;，输出音频保存为&lt;code class=&quot;highlighter-rouge&quot;&gt;output_audio.mp3&lt;/code&gt;，则:&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ ffmpeg -i input_video.mp4 -vn -ab 256 output_audio.mp3
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(不断更新)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;参考&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://segmentfault.com/a/1190000000414341&quot;&gt;通过 ffmpeg 无损剪切/拼接视频&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.labnol.org/internet/useful-ffmpeg-commands/28490/&quot;&gt;Useful FFmpeg Commands&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Sun, 13 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/11/13/notes_of_learning_ffmpeg.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/13/notes_of_learning_ffmpeg.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>使用python获取天气预报</title>
@@ -1400,59 +1462,6 @@ TypeError: &lt;span class=&quot;s1&quot;&gt;'str'&lt;/span&gt; does not support 
         <pubDate>Fri, 07 Oct 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/10/07/python3%E9%87%8D%E5%86%99SimpleHTTPServerWithUpload.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/10/07/python3%E9%87%8D%E5%86%99SimpleHTTPServerWithUpload.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>对于Jekyll的一些思考</title>
-        <description>&lt;blockquote&gt;
-  &lt;h4 id=&quot;github-pages-are-powered-by-jekyll&quot;&gt;GitHub Pages are powered by Jekyll&lt;/h4&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;不管这里的power是生成也好，渲染也罢，反正&lt;code class=&quot;highlighter-rouge&quot;&gt;GitHub Pages&lt;/code&gt;就是用的&lt;code class=&quot;highlighter-rouge&quot;&gt;Jekyll&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;从阮一峰老师的&lt;a href=&quot;http://ruanyifeng.com/blog/2012/08/blogging_with_jekyll.html&quot;&gt;这篇文章&lt;/a&gt;来看，似乎不用安装&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll&lt;/code&gt;也可以写博客，只要按照这个&lt;a href=&quot;https://jekyllrb.com/docs/structure/&quot;&gt;目录结构&lt;/a&gt;填充内容，然后就能发布内容了，GitHub Pages能够识别。不过可能丑了点，需要调整。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;section&quot;&gt;思考&lt;/h4&gt;
-
-&lt;p&gt;标题用了思考，其实是我自己瞎琢磨的。&lt;/p&gt;
-
-&lt;p&gt;有了Jekyll&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;好像除了本地预览没啥用了，github pages可以识别&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;节省用户调试时间，本地0.x秒的x.x秒&lt;/p&gt;
-
-    &lt;p&gt;对比 add commit push 再打开浏览器刷新获取远程主机内容&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;以上又引出了其他问题，&lt;/p&gt;
-
-    &lt;p&gt;流量&lt;/p&gt;
-
-    &lt;p&gt;存储空间&lt;/p&gt;
-
-    &lt;p&gt;所有调整交给github的主机处理 vs 本地处理满意了，最后交给github发布，分摊成本。&lt;/p&gt;
-
-    &lt;p&gt;对用户，对github，避免不必要的浪费。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;同时，这个学习成本，过滤掉一堆人。提高内容质量。&lt;/p&gt;
-
-    &lt;p&gt;(相对昨天文章看到的，简单地靠点击率排名，又或者是知乎等平台，点赞太容易，生产很多无效信息。)&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-</description>
-        <pubDate>Wed, 05 Oct 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/10/05/03-%E5%AF%B9%E4%BA%8EJekyll%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/05/03-%E5%AF%B9%E4%BA%8EJekyll%E7%9A%84%E4%B8%80%E4%BA%9B%E6%80%9D%E8%80%83.html</guid>
         
         
       </item>
