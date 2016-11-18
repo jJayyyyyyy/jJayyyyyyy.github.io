@@ -5,9 +5,65 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 16 Nov 2016 22:26:14 +0800</pubDate>
-    <lastBuildDate>Wed, 16 Nov 2016 22:26:14 +0800</lastBuildDate>
+    <pubDate>Fri, 18 Nov 2016 20:32:40 +0800</pubDate>
+    <lastBuildDate>Fri, 18 Nov 2016 20:32:40 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>Unix_Network_Programming_笔记</title>
+        <description>&lt;p&gt;今天开始啃Unix Network Programming Volume 1, Third Edition: The Sockets Networking API. 传说UNP是一本神书。英文版有1024页，看来要啃好久…&lt;/p&gt;
+
+&lt;p&gt;看了看前言，还好能看懂。其实在这部分就有许多有意思的内容。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Aloha nui loa&lt;/p&gt;
+
+    &lt;p&gt;2003年这一版的UNP，是基于&lt;code class=&quot;highlighter-rouge&quot;&gt;W. Richard Stevens&lt;/code&gt;的著作改进的。他老人家在1999年逝世(R.I.P.)。本书在&lt;strong&gt;Copyright&lt;/strong&gt;一节的最后有一个&lt;strong&gt;Dedication&lt;/strong&gt;，是对这位科学家的致敬，使用的祝福是&lt;strong&gt;Aloha nui load&lt;/strong&gt;:&lt;/p&gt;
+
+    &lt;p&gt;&lt;img src=&quot;https://static1.squarespace.com/static/55724a5be4b03d8a8c853678/55724e1fe4b0ee3a75ad8ff1/557e5a85e4b06b6897c0f00a/1434344069648/SPS-Aloha+nui+loa-01.jpg?format=1500w&quot; alt=&quot;Aloha nui loa&quot; /&gt;&lt;/p&gt;
+
+    &lt;p&gt;从&lt;a href=&quot;https://jacobmurdock.com/jacob-murdock/aloha-nui-loa/&quot;&gt;这里&lt;/a&gt;查到，这是夏威夷原住民的方言，&lt;code class=&quot;highlighter-rouge&quot;&gt;Aloha&lt;/code&gt;代表了问好、和平、爱等等，日用也可以近似于法语&lt;code class=&quot;highlighter-rouge&quot;&gt;Bonjour&lt;/code&gt;(你好)。&lt;code class=&quot;highlighter-rouge&quot;&gt;nui loa&lt;/code&gt;可以理解为英文中的&lt;code class=&quot;highlighter-rouge&quot;&gt;very much&lt;/code&gt;。所以连起来可以理解为对他老人家的祝福与怀念。&lt;/p&gt;
+
+    &lt;p&gt;除此以外，由Gary R. Wright代为照理的Stevens的&lt;a href=&quot;http://www.kohala.com/start/&quot;&gt;主页&lt;/a&gt;地址中的&lt;code class=&quot;highlighter-rouge&quot;&gt;Kohala&lt;/code&gt;也是夏威夷的一个岛名。夏威夷，应当是个神奇的地方吧。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;recipes, 菜谱&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;W. Richard Stevens&lt;/code&gt;自己也是个非常有趣的人(吃货)。他的&lt;a href=&quot;http://www.kohala.com/start/&quot;&gt;网站&lt;/a&gt;上，除了介绍生平之外，还专门摆放了一个栏目，叫做&lt;a href=&quot;http://www.kohala.com/start/recipes/recipes.html&quot;&gt;菜谱&lt;/a&gt;:&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;And you thought I only wrote computer books? During the 1980s, while working at HSI in Connecticut, I did a lot of baking on the weekends, probably as a stress reliever from working at a startup, and also because I am a confirmed chocoholic. On Monday morning I would always take in to work what was left over, often finding people waiting in the coffee room for me.&lt;/p&gt;
+    &lt;/blockquote&gt;
+
+    &lt;p&gt;大致意思就是，他喜欢用做饭(烘培)来缓解压力，另外他也非常喜欢巧克力。每当他星期一来上班，周围的同事总是虎视眈眈地看着他。别担心，这不是因为有啥深仇大恨，只是大家对着他带来的点心咽口水罢了(ˉ﹃ˉ)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这么看来，UNP这本神书啃起来味道应该不错。接下来，就让我们开始食用正餐吧。说不定里面还隐藏了其他的菜谱呢^3^&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;参考&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Unix Network Programming Volume 1, Third Edition: The Sockets Networking API&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://jacobmurdock.com/jacob-murdock/aloha-nui-loa/&quot;&gt;JacobMurdock-Aloha Nui Loa&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.kohala.com/start/&quot;&gt;W. Richard Stevens’ Home Page&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 17 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/11/17/Unix_Network_Programming_note01.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/17/Unix_Network_Programming_note01.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>翻译：Game Off Theme Announcement</title>
@@ -947,173 +1003,6 @@
         <pubDate>Tue, 18 Oct 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/10/18/%E4%BD%BF%E7%94%A8Python%E5%A4%84%E7%90%86Excel%E6%95%B0%E6%8D%AE.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/10/18/%E4%BD%BF%E7%94%A8Python%E5%A4%84%E7%90%86Excel%E6%95%B0%E6%8D%AE.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Reply to GitHub</title>
-        <description>&lt;h3 id=&quot;noticehttpwwwcatborgesrfaqssmart-questionshtml&quot;&gt;&lt;a href=&quot;http://www.catb.org/~esr/faqs/smart-questions.html&quot;&gt;Notice&lt;/a&gt;&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;English is not my native language, please excuse my missplet or misuse.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;I may need assistance translating this post. My email is &lt;code class=&quot;highlighter-rouge&quot;&gt;ljjdbd123@hotmail.com&lt;/code&gt; and your help means a lot to me:)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Some slang expressions and idioms may be difficult for me…&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;abstract&quot;&gt;Abstract&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;It is important to use &lt;code class=&quot;highlighter-rouge&quot;&gt;TAB&lt;/code&gt; instead of &lt;code class=&quot;highlighter-rouge&quot;&gt;SPACE&lt;/code&gt; as indent, so that your markdown-content can be recognized and rendered correctly by kramdown.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;origin-of-this-issue&quot;&gt;Origin of this issue&lt;/h2&gt;
-
-&lt;p&gt;A couple of days ago, I found that Jekyll(3.2.1), or kramdown(1.11.1) exactly, did not fully support the &lt;code class=&quot;highlighter-rouge&quot;&gt;syntax of markdown&lt;/code&gt;, i.e., &lt;code class=&quot;highlighter-rouge&quot;&gt;code blocks&lt;/code&gt; could not be rendered properly.&lt;/p&gt;
-
-&lt;p&gt;For example, the following markdown-content&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;* print hello in python for three times
-
-	```python
-	for i in range(3):
-		print('hello')
-	```
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;became&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;print hello in python for three times&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;python
-  for i in range(3):
-      print('hello')
- &lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;And when I pushed this to &lt;code class=&quot;highlighter-rouge&quot;&gt;GitHub Pages&lt;/code&gt;, it’s still rendered like that. It’s weird… because on my local markdown editor &lt;code class=&quot;highlighter-rouge&quot;&gt;MacDown&lt;/code&gt; and on &lt;code class=&quot;highlighter-rouge&quot;&gt;GitHub---&amp;gt;Repo---&amp;gt;Create_New_File---&amp;gt;Preview&lt;/code&gt;, it’s something like this:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;print hello in python for three times&lt;/p&gt;
-
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Note that the former block has been misunderstood&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;	```python 
-	
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;and then the code has been mixed up in a single line.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;I’ve googled it, and didn’t find much helpful information. I added this to my &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;kramdown:
- input: GFM
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;yet it didn’t seem to help. Then I found &lt;code class=&quot;highlighter-rouge&quot;&gt;Redcarpet&lt;/code&gt;, with which my code block was finally displayed correctly like below:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;print hello in python for three times&lt;/p&gt;
-
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;So I replaced &lt;code class=&quot;highlighter-rouge&quot;&gt;Kramdown&lt;/code&gt; with &lt;code class=&quot;highlighter-rouge&quot;&gt;Redcarpet&lt;/code&gt; and push it up to the &lt;code class=&quot;highlighter-rouge&quot;&gt;GitHub Pages&lt;/code&gt;. But after that I received an email from &lt;code class=&quot;highlighter-rouge&quot;&gt;GitHub Support&lt;/code&gt;, which said:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The page build completed successfully, but returned the following warning:&lt;/p&gt;
-
-  &lt;p&gt;You are currently using the ‘redcarpet’ Markdown engine, which is no longer supported by GitHub Pages and may cease working at any time. To ensure your site continues to build, remove the ‘markdown’ setting in your site’s ‘_config.yml’ file and confirm your site renders as expected. For more information, see https://help.github.com/articles/updating-your-markdown-processor-to-kramdown.&lt;/p&gt;
-
-  &lt;p&gt;For information on troubleshooting Jekyll see:&lt;/p&gt;
-
-  &lt;p&gt;https://help.github.com/articles/troubleshooting-jekyll-builds&lt;/p&gt;
-
-  &lt;p&gt;If you have any questions you can contact us by replying to this email.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I checked the two sites and it’s something like that:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;GitHub Pages only supports kramdown as a Markdown processor…&lt;/p&gt;
-
-  &lt;p&gt;… so you can use Markdown with GitHub Pages the same way you use Markdown on GitHub…&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;As you can see, I used the &lt;code class=&quot;highlighter-rouge&quot;&gt;the same way you use Markdown on GitHub&lt;/code&gt;, but my &lt;code class=&quot;highlighter-rouge&quot;&gt;code block&lt;/code&gt; didn’t work.  I updated Jekyll to 3.3.0 and kramdown to 1.12.0 and tried again, but the problem still exsisted.&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;solution&quot;&gt;Solution&lt;/h2&gt;
-
-&lt;p&gt;Well, about two days later, I accidently found a solution. It turns out that kramdown support only strict indent, otherwise &lt;code class=&quot;highlighter-rouge&quot;&gt;markdown-syntax&lt;/code&gt; won’t be rendered correctly.&lt;/p&gt;
-
-&lt;p&gt;As in the above example:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;* print hello in python for three times
- ^ it's a [SPACE] here as indent
-	```python
-	for i in range(3):
-		print('hello')
-	```
-^ it's a [TAB] here as indent
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;If I change the &lt;code class=&quot;highlighter-rouge&quot;&gt;*[SPACE]print ...&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;*[TAB]print&lt;/code&gt;, and voila, the &lt;code class=&quot;highlighter-rouge&quot;&gt;code block&lt;/code&gt; appears!&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;print hello in python for three times&lt;/p&gt;
-
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;The problem has been solved at last, though by accident. I’ve glanced over the content again in the two sites and, if I didn’t miss anything, there was no hint for this problem. And because a paragraph starts with &lt;code class=&quot;highlighter-rouge&quot;&gt;*[TAB]blablabla&lt;/code&gt; do works for its following code blocks on GitHub, I think there should be some kind of explaination for newbies like me:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;It is important to use [TAB] instead of [SPACE] as indent, so that your markdown-content can be recognized and rendered properly by kramdown.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-</description>
-        <pubDate>Tue, 11 Oct 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/10/11/Reply-to-GitHub.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/11/Reply-to-GitHub.html</guid>
         
         
       </item>

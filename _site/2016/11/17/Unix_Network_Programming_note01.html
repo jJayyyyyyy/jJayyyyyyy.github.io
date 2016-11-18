@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="fXCqEVcHdJt50axIq7sCTxtZUh5gDHkj2usDwI_66gE" />
+  <title>Unix_Network_Programming_笔记</title>
+  <meta name="description" content="今天开始啃Unix Network Programming Volume 1, Third Edition: The Sockets Networking API. 传说UNP是一本神书。英文版有1024页，看来要啃好久…">
+
+ <!--  
+   -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href= "/">
+  <link rel="alternate" type="application/rss+xml" title="FrozenMap" href="/feed.xml">
+  
+  
+</head>
+
+  <body>
+    <header class="site-header" role="banner" style="border-top:0px">
+  <div class="wrapper">
+    <a class="site-title" href="/">Home</a>
+    <!-- <img src="/assets/Labtocat.png" width="43"> -->
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+      
+      <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <!-- <a class="page-link" href="/donate">Donate</a> -->
+          <a class="page-link" href="/feed.xml">RSS</a>
+      </div>
+    </nav>
+  </div>
+</header>
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Unix_Network_Programming_笔记</h1>
+    <p class="post-meta"> <time datetime="2016-11-17T00:00:00+08:00" itemprop="datePublished">Nov 17, 2016</time>
+      <!--  -->
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">FrozenMap</span></span>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>今天开始啃Unix Network Programming Volume 1, Third Edition: The Sockets Networking API. 传说UNP是一本神书。英文版有1024页，看来要啃好久…</p>
+
+<p>看了看前言，还好能看懂。其实在这部分就有许多有意思的内容。</p>
+
+<ul>
+  <li>
+    <p>Aloha nui loa</p>
+
+    <p>2003年这一版的UNP，是基于<code class="highlighter-rouge">W. Richard Stevens</code>的著作改进的。他老人家在1999年逝世(R.I.P.)。本书在<strong>Copyright</strong>一节的最后有一个<strong>Dedication</strong>，是对这位科学家的致敬，使用的祝福是<strong>Aloha nui load</strong>:</p>
+
+    <p><img src="https://static1.squarespace.com/static/55724a5be4b03d8a8c853678/55724e1fe4b0ee3a75ad8ff1/557e5a85e4b06b6897c0f00a/1434344069648/SPS-Aloha+nui+loa-01.jpg?format=1500w" alt="Aloha nui loa" /></p>
+
+    <p>从<a href="https://jacobmurdock.com/jacob-murdock/aloha-nui-loa/">这里</a>查到，这是夏威夷原住民的方言，<code class="highlighter-rouge">Aloha</code>代表了问好、和平、爱等等，日用也可以近似于法语<code class="highlighter-rouge">Bonjour</code>(你好)。<code class="highlighter-rouge">nui loa</code>可以理解为英文中的<code class="highlighter-rouge">very much</code>。所以连起来可以理解为对他老人家的祝福与怀念。</p>
+
+    <p>除此以外，由Gary R. Wright代为照理的Stevens的<a href="http://www.kohala.com/start/">主页</a>地址中的<code class="highlighter-rouge">Kohala</code>也是夏威夷的一个岛名。夏威夷，应当是个神奇的地方吧。</p>
+  </li>
+  <li>
+    <p>recipes, 菜谱</p>
+
+    <p><code class="highlighter-rouge">W. Richard Stevens</code>自己也是个非常有趣的人(吃货)。他的<a href="http://www.kohala.com/start/">网站</a>上，除了介绍生平之外，还专门摆放了一个栏目，叫做<a href="http://www.kohala.com/start/recipes/recipes.html">菜谱</a>:</p>
+
+    <blockquote>
+      <p>And you thought I only wrote computer books? During the 1980s, while working at HSI in Connecticut, I did a lot of baking on the weekends, probably as a stress reliever from working at a startup, and also because I am a confirmed chocoholic. On Monday morning I would always take in to work what was left over, often finding people waiting in the coffee room for me.</p>
+    </blockquote>
+
+    <p>大致意思就是，他喜欢用做饭(烘培)来缓解压力，另外他也非常喜欢巧克力。每当他星期一来上班，周围的同事总是虎视眈眈地看着他。别担心，这不是因为有啥深仇大恨，只是大家对着他带来的点心咽口水罢了(ˉ﹃ˉ)</p>
+  </li>
+</ul>
+
+<p>这么看来，UNP这本神书啃起来味道应该不错。接下来，就让我们开始食用正餐吧。说不定里面还隐藏了其他的菜谱呢^3^</p>
+
+<p><br /></p>
+
+<h2 id="section">参考</h2>
+
+<ul>
+  <li>
+    <p>Unix Network Programming Volume 1, Third Edition: The Sockets Networking API</p>
+  </li>
+  <li>
+    <p><a href="https://jacobmurdock.com/jacob-murdock/aloha-nui-loa/">JacobMurdock-Aloha Nui Loa</a></p>
+  </li>
+  <li>
+    <p><a href="http://www.kohala.com/start/">W. Richard Stevens’ Home Page</a></p>
+  </li>
+</ul>
+
+  </div>
+
+  <div>
+    <br/><br/>
+    <div style="border-top: dotted #e8e8e8; border-width: 1px 0; padding-top: 10px;"></div>
+    <h2>License</h2>
+    <p>
+      The content of this project itself is licensed under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"> BY-NC-SA </a>, and the underlying source code used to format and display that content is licensed under the <a href="http://opensource.org/licenses/mit-license.php">MIT license</a>.
+    </p>
+    <p> 转载请保留作者和出处, 包括以上许可证信息, 谢谢!
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+  </body>
+</html>
