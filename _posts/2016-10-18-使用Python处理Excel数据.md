@@ -127,7 +127,7 @@ ps: 其文档中存在部分小错误，整体理解即可。
 
 1.	[python-excel tutorial](https://github.com/python-excel/tutorial)
 
-2.	[liaoxuefeng](www.liaoxuefeng.com)
+2.	[liaoxuefeng](http://www.liaoxuefeng.com)
 
 <br/>
 
