@@ -5,9 +5,58 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 19 Nov 2016 21:05:22 +0800</pubDate>
-    <lastBuildDate>Sat, 19 Nov 2016 21:05:22 +0800</lastBuildDate>
+    <pubDate>Sun, 20 Nov 2016 13:59:20 +0800</pubDate>
+    <lastBuildDate>Sun, 20 Nov 2016 13:59:20 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>QUICK, DRAW!</title>
+        <description>&lt;p&gt;前几天看新闻，得知Google开发了这个叫做&lt;a href=&quot;https://quickdraw.withgoogle.com/&quot;&gt;QUICK, DRAW!&lt;/a&gt;的游戏(其实是作者和在Google工作的朋友开发的)。游戏名直译过来是&lt;em&gt;快画&lt;/em&gt;，也就是在规定时间内完成涂鸦。&lt;/p&gt;
+
+&lt;p&gt;玩法很简单:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;你会得到六个单词；&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;对于每个词，你可以在20秒内用画画的方式进行描述；&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;机器会对你的涂鸦进行识别，并判断与题目单词是否符合。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这个游戏其实是一个基于人工智能的项目，可以看到游戏主页中有如下文字说明:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Can a neural network learn to recognize doodles?
+See how well it does with your drawings and help teach it, just by playing.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;大意就是说: 试试让神经网络来识别涂鸦吧~玩一玩，画一画，对机器进行识别训练，看看人工智能的表现如何~&lt;/p&gt;
+
+&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;About this game&lt;/code&gt;中还有更为详细的描述:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;This is a game built with machine learning. You draw, and a neural network tries to guess what you’re drawing. Of course, it doesn’t always work. But the more you play with it, the more it will learn. So far we have trained it on a few hundred concepts, and we hope to add more over time. We made this as an example of how you can use machine learning in fun ways. Watch the video below to learn about how it works, and &lt;a href=&quot;https://aiexperiments.withgoogle.com/&quot;&gt;check out more A.I. Experiments here.&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;也就是说，这是一个基于机器学习的游戏。你画一些东西，然后神经网络会试着分析你画了啥。当然它现在还比较呆萌，不过你玩儿得越多，它学得也越多。现在机器已经学习了几百个词(及其对应的画风233)，今后我们还将教它认识更多。玩了这个游戏后你会发现，利用机器学习可以做很多有趣的事。下面的视频介绍了这个游戏的工作原理。更多信息还可以参考他们的&lt;a href=&quot;https://aiexperiments.withgoogle.com/&quot;&gt;A.I. Experiments&lt;/a&gt;主页。&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/X8v1GWzZYJ4&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;(视频中提到，游戏用到了和 &lt;strong&gt;Google翻译——手写输入识别&lt;/strong&gt;
+相同的技术。)&lt;/p&gt;
+
+&lt;p&gt;另外，这个&lt;a href=&quot;https://aiexperiments.withgoogle.com/&quot;&gt;A.I. Experiments&lt;/a&gt;主页上展示了许多有意思的项目，每一个都配有说明视频，大部分还公开了代码，放在&lt;a href=&quot;https://github.com/googlecreativelab&quot;&gt;GitHub-Google Creative Lab&lt;/a&gt;上。虽然目前还木有这个游戏的代码(估计还在实验阶段，也可能是因为涉及到关键技术，有的项目是利用了Google的API，而不是展现核心算法)，但是项目本身还是很有意思的。说不定玩着玩着，你就称为了一个灵魂画手:)&lt;/p&gt;
+</description>
+        <pubDate>Sun, 20 Nov 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/11/20/quick_draw.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/11/20/quick_draw.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Unix_Network_Programming_笔记</title>
@@ -816,193 +865,6 @@
         <pubDate>Thu, 20 Oct 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/10/20/%E5%88%A9%E7%94%A8js%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%85%85%E5%8D%95%E9%80%89%E5%92%8C%E5%A4%9A%E9%80%89%E6%A1%86.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/10/20/%E5%88%A9%E7%94%A8js%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%85%85%E5%8D%95%E9%80%89%E5%92%8C%E5%A4%9A%E9%80%89%E6%A1%86.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>使用Python处理Excel数据</title>
-        <description>&lt;h2 id=&quot;section&quot;&gt;1. 简介&lt;/h2&gt;
-
-&lt;p&gt;这篇文章将会介绍&lt;a href=&quot;https://github.com/python-excel/xlrd&quot;&gt;xlrd&lt;/a&gt;和&lt;a href=&quot;https://github.com/python-excel/xlwt&quot;&gt;xlwt&lt;/a&gt;，并利用它们进行Excel数据的读取和写入，以便实现复杂的但有规律的Excel数据处理逻辑。本文代码和示例托管于&lt;a href=&quot;https://github.com/jJayyyyyyy/python-excel__demo&quot;&gt;GitHub&lt;/a&gt;，可供参考。&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/python-excel/xlrd&quot;&gt;xlrd&lt;/a&gt;和&lt;a href=&quot;https://github.com/python-excel/xlwt&quot;&gt;xlwt&lt;/a&gt;是两个基于python的库(Package)，它们能够处理&lt;code class=&quot;highlighter-rouge&quot;&gt;.xls&lt;/code&gt;文件，前者可以读取Excel表格的数据，后者可以新建表格写入数据。&lt;/p&gt;
-
-&lt;p&gt;本文参考了&lt;a href=&quot;https://github.com/python-excel/tutorial&quot;&gt;python-excel tutorial&lt;/a&gt;，并结合实践应用整理而成。内容仅针对数据处理，不包括格式的设置。更多内容可参考&lt;a href=&quot;http://www.python-excel.org/&quot;&gt;python-excel.org&lt;/a&gt;及其&lt;a href=&quot;https://github.com/python-excel&quot;&gt;GitHub&lt;/a&gt;项目页。在此感谢&lt;a href=&quot;https://github.com/cjw296&quot;&gt;cjw296&lt;/a&gt;和&lt;a href=&quot;https://github.com/sjmachin&quot;&gt;sjmachin&lt;/a&gt;两位同学的成果~&lt;/p&gt;
-
-&lt;p&gt;ps: 其文档中存在部分小错误，整体理解即可。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;package&quot;&gt;2. 为什么要用这两个package&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;不知道你有没有这种经历：自己对于Excel的掌握一般，只会用菜单栏的基本功能对表格数据进行处理。但是如果更复杂的处理逻辑就非常蛋疼了，用基本功能很难描述，怎么问度娘都得不到合适的公式，对于VBA也不甚了解（反正我是完全不懂啊=.=）。但是需要处理的数据有很多，一次次地重复劳动简直是一种折磨啊。。&lt;/p&gt;
-
-    &lt;p&gt;这时候就该&lt;code class=&quot;highlighter-rouge&quot;&gt;python-excel&lt;/code&gt;出场了~我们要做的，就是把重复的但是有规律的数据处理动作，抽象成为固定的逻辑顺序，然后用python描述出来，这样即可一劳永逸。以后再遇到这个问题你就可以去泡一杯喝咖啡静静等待电脑帮你完成任务，而不用半天甚至整天都盯着屏幕一行一行地手动处理了。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;python方便灵活容易上手，不需要编译。开发省时，性能损失不大。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;这两个库的接口还行，其他的库没试过，可能有更好的。其次是有方便的接口可以读写某行某列，可以快速定位到某张表，某个单元格，etc…不需要自己重复造轮子。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;3. 如何食用&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;第一步是安装&lt;code class=&quot;highlighter-rouge&quot;&gt;python2.7&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;python3.4&lt;/code&gt;，本文代码基于后者。&lt;/p&gt;
-
-    &lt;p&gt;利用&lt;a href=&quot;https://pypi.python.org/pypi/pip&quot;&gt;pip&lt;/a&gt;安装&lt;code class=&quot;highlighter-rouge&quot;&gt;xlrd&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;xlwt&lt;/code&gt;&lt;/p&gt;
-
-    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pip3 install xlrd xlwt
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;p&gt;然后假设有如下这么一个表格&lt;code class=&quot;highlighter-rouge&quot;&gt;demo_read.xls&lt;/code&gt;&lt;/p&gt;
-
-    &lt;table&gt;
-      &lt;thead&gt;
-        &lt;tr&gt;
-          &lt;th style=&quot;text-align: left&quot;&gt;Name&lt;/th&gt;
-          &lt;th style=&quot;text-align: center&quot;&gt;Age&lt;/th&gt;
-        &lt;/tr&gt;
-      &lt;/thead&gt;
-      &lt;tbody&gt;
-        &lt;tr&gt;
-          &lt;td style=&quot;text-align: left&quot;&gt;Emily&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;10&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td style=&quot;text-align: left&quot;&gt;Bob&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;11&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td style=&quot;text-align: left&quot;&gt;Xiaoming&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;9&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td style=&quot;text-align: left&quot;&gt;Monika&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;7&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-          &lt;td style=&quot;text-align: left&quot;&gt;Steve&lt;/td&gt;
-          &lt;td style=&quot;text-align: center&quot;&gt;8&lt;/td&gt;
-        &lt;/tr&gt;
-      &lt;/tbody&gt;
-    &lt;/table&gt;
-
-    &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;读取数据&lt;/p&gt;
-
-    &lt;p&gt;首先引入模块&lt;/p&gt;
-
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;xlrd&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;open_workbook&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;p&gt;其次实例化一个&lt;code class=&quot;highlighter-rouge&quot;&gt;open_workbook&lt;/code&gt;对象，从&lt;code class=&quot;highlighter-rouge&quot;&gt;demo_read.xls&lt;/code&gt;读取文件信息&lt;/p&gt;
-
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;wb&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;open_workbook&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'demo_read.xls'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;p&gt;读取第一张表，得到表单名字，总行数和总列数&lt;/p&gt;
-
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sheet_0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;wb&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sheets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;total_rows&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sheet_0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nrows&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;total_cols&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sheet_0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ncols&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;p&gt;得到某个单元格的值，第2行第3列单元格坐标为(1, 2)&lt;/p&gt;
-
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;cell_value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sheet_0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;写入数据&lt;/p&gt;
-
-    &lt;p&gt;首先引入模块&lt;/p&gt;
-
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;xlwt&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Workbook&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;p&gt;其次实例化一个&lt;code class=&quot;highlighter-rouge&quot;&gt;Workbook&lt;/code&gt;对象，添加新表单&lt;/p&gt;
-
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;book&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Workbook&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;sheet_new&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;book&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;add_sheet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Sheet_new'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;p&gt;结合3.2节，如果我们要复制一个表单，可以这么做&lt;/p&gt;
-
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sheet_0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;nrows&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sheet_0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ncols&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sheet_0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cell&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;
-        &lt;span class=&quot;c&quot;&gt;# write into the new sheet&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;sheet_new&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;write&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;row&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;col&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;p&gt;最后保存&lt;/p&gt;
-
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;book&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'demo_write.xls'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;需要说明的是，读和写是两种不同的对象，只能通过中间变量联系，也就是3.3节中的&lt;code class=&quot;highlighter-rouge&quot;&gt;value&lt;/code&gt;. 另外，如果是在windows下开发，有时候会出现莫名其妙的编码问题（cmd打印的时候）。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;如果想让电脑更懂你，就需要在你的代码中结合条件判断，循环语句，字符串的&lt;code class=&quot;highlighter-rouge&quot;&gt;len()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;strip()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;lstrip()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;rstrip()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;split()&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;replace()&lt;/code&gt;等方法，如果掌握了&lt;code class=&quot;highlighter-rouge&quot;&gt;re&lt;/code&gt;神器就更好了~&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;下面一章，我们就用实例来说明如何让电脑更懂你的需求。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;4. 实例&lt;/h2&gt;
-
-&lt;p&gt;原来是结合工作任务写的一些脚本，由于涉及保密数据，所以需要处理一下。过两天更新。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-3&quot;&gt;5. 参考&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://github.com/python-excel/tutorial&quot;&gt;python-excel tutorial&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://www.liaoxuefeng.com&quot;&gt;liaoxuefeng&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;写于20161018&lt;/p&gt;
-
-&lt;p&gt;20161023第一次完善和上传&lt;/p&gt;
-
-&lt;p&gt;20161024第二次更新：增加表格，增加参考文献&lt;/p&gt;
-
-</description>
-        <pubDate>Tue, 18 Oct 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/10/18/%E4%BD%BF%E7%94%A8Python%E5%A4%84%E7%90%86Excel%E6%95%B0%E6%8D%AE.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/18/%E4%BD%BF%E7%94%A8Python%E5%A4%84%E7%90%86Excel%E6%95%B0%E6%8D%AE.html</guid>
         
         
       </item>
