@@ -5,9 +5,76 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 30 Nov 2016 21:30:35 +0800</pubDate>
-    <lastBuildDate>Wed, 30 Nov 2016 21:30:35 +0800</lastBuildDate>
+    <pubDate>Fri, 02 Dec 2016 23:39:39 +0800</pubDate>
+    <lastBuildDate>Fri, 02 Dec 2016 23:39:39 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>翻译：Join_the_latest_round_of_Google_Code-in</title>
+        <description>&lt;p&gt;这是&lt;strong&gt;翻译&lt;/strong&gt;系列的一篇文章。原文来自Google Blog的&lt;a href=&quot;https://blog.google/topics/education/calling-all-teens-join-latest-round-google-code-/&quot;&gt;Calling all teens: join the latest round of Google Code-in&lt;/a&gt;，发布于2016年11月29日。以下是译文。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://storage.googleapis.com/gweb-uniblog-publish-prod/images/GCI_student_pic.2e16d0ba.fill-2000x1126.jpg&quot; alt=&quot;GCI&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;google-code-in&quot;&gt;少年，来参加最新一届Google Code-in大赛吧！&lt;/h2&gt;
+
+&lt;p&gt;昨天(2016.11.28)，第七届&lt;a href=&quot;https://developers.google.com/open-source/gci/&quot;&gt;Google Code-in&lt;/a&gt;(GCI)正式开始。GCI一年举办一次，其目的是鼓励学生加入开源项目的发展。GCI面向全球的13-17岁的学生，并且完全通过网上进行。&lt;/p&gt;
+
+&lt;p&gt;现在这个时代，开源软件组成了互联网的基础。不管是服务器、路由器，还是你口袋里的手机，都与开源软件息息相关。而这些也是开源社区努力推动的结果。GCI的举办，不仅是为了更好地鼓励年轻开发者，同时也是在为开源社区增添新的活力。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://lh4.googleusercontent.com/jjfD_NPykRT-4LQjUT14IInO-BCOy1WRkuPlfENBvf73-tbeU_fPJtkVRdZMap-o8lEvfd2NhTsYKVq-e0HlIISb5EUc_L_el_bKKCGfRQxQBDqWRlqpnl53As0A0EQn_it3QuRc&quot; alt=&quot;GCI&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;比赛很简单，同学们只需要完成许多小任务(bite-sized tasks)就可以了。这些任务由17个开源组织设计，主题包括：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;编码&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;文档撰写/培训&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;探索/研究&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;质量保证&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;用户界面&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这些任务平均要花3-5小时完成，其中会有导师参与指导。每完成一个任务，你就能获得一个数字证书。如果完成了三个任务，就能得到一件谷歌的T恤。每个组织的导师会选出10位为其贡献最多的同学，他们将各自获得一件连帽衫，而最终的大奖获得者将有机会去参观谷歌在加州的总部。在那儿，他们可以和谷歌工程师、导师以及其他获奖者会面与交流。&lt;/p&gt;
+
+&lt;p&gt;第一届GCI共有来自45个国家的361位同学参赛。而到了2015年，已经有来自65个国家的980位同学的共同参与。以往参赛者的经历可以在&lt;a href=&quot;http://opensource.googleblog.com/2016/11/stories-from-google-code-in-2015.html&quot;&gt;谷歌开源博客&lt;/a&gt;上找到。在过去的六年中，来自99个国家的超过3000位同学完成了GCI的比赛任务。&lt;/p&gt;
+
+&lt;p&gt;曾经的参赛者&lt;a href=&quot;https://opensource.googleblog.com/2016/11/stories-from-google-code-in-2015.html&quot;&gt;Ahmed Sabie&lt;/a&gt;说过：“总体来说，Google Code-in是人生中的一次体验。这次参赛经历帮助我点亮了一些软件开发中关键的技能点，明确了我未来的发展方向。”&lt;/p&gt;
+
+&lt;p&gt;如果你认识一些对GCI感兴趣的同学，欢迎介绍他们来参赛~如果想要了解更多GCI的相关信息，可以点击查看&lt;a href=&quot;https://developers.google.com/open-source/gci/resources/contest-rules&quot;&gt;详细规则&lt;/a&gt;和&lt;a href=&quot;https://developers.google.com/open-source/gci/faq&quot;&gt;问答区&lt;/a&gt;，也可以在我们的&lt;a href=&quot;https://g.co/gci&quot;&gt;比赛主页&lt;/a&gt;上查看&lt;a href=&quot;https://developers.google.com/open-source/gci/resources/getting-started&quot;&gt;参赛指南&lt;/a&gt;。如果你是一位老师，请点击获取&lt;a href=&quot;https://developers.google.com/open-source/gci/resources/media&quot;&gt;更多相关资料&lt;/a&gt;，以便你的学生能够更好地参与比赛。&lt;/p&gt;
+
+&lt;p&gt;本文发布于&lt;a href=&quot;https://blog.google/topics/education/&quot;&gt;教育专区&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;相关阅读&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/Google_Code-in&quot;&gt;Wikipedia: Google Code-in&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 02 Dec 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/12/02/Google_Code-in.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/02/Google_Code-in.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>翻译：GitHub is headed to AWS re:Invent</title>
@@ -812,26 +879,6 @@ See how well it does with your drawings and help teach it, just by playing.&lt;/
         <pubDate>Sun, 30 Oct 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/10/30/36kr_newsflash_reader.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/10/30/36kr_newsflash_reader.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>推荐一首德语歌</title>
-        <description>&lt;p&gt;歌名: &lt;a href=&quot;http://music.163.com/#/song?id=34899194&quot;&gt;2:33&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;歌手: &lt;a href=&quot;http://music.163.com/#/artist?id=1055042&quot;&gt;Philipp Dittberner&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;中文歌词翻译: &lt;a href=&quot;http://music.163.com/#/user/home?id=62861396&quot;&gt;@SkyEngineMP&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;昨天网易云音乐给我推送了一首德语歌，听着很不错，于是关注了一下歌词，发现原来是我同学翻译的！中文对照的歌词很有感觉，很好地演绎了德文歌词中重复的语句，而整首歌的翻译也很有味道。&lt;/p&gt;
-
-&lt;p&gt;推荐下这首歌，同时也推荐一下&lt;a href=&quot;http://music.163.com/#/user/home?id=62861396&quot;&gt;@SkyEngineMP&lt;/a&gt; 同学的翻译。你会对德语歌有新的体验 :)&lt;/p&gt;
-
-</description>
-        <pubDate>Wed, 26 Oct 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/10/26/%E6%8E%A8%E8%8D%90%E4%B8%80%E9%A6%96%E5%BE%B7%E8%AF%AD%E6%AD%8C.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/10/26/%E6%8E%A8%E8%8D%90%E4%B8%80%E9%A6%96%E5%BE%B7%E8%AF%AD%E6%AD%8C.html</guid>
         
         
       </item>
