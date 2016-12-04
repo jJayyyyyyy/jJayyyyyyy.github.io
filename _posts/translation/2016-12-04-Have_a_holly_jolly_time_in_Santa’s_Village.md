@@ -50,6 +50,8 @@ title: 翻译：Have a holly jolly time in Santa’s Village — now open
 
 标签：[地图](https://blog.google/products/maps/)，节日，[教育](https://blog.google/topics/education/)
 
+<br/>
+
 (END)
 
 ---
