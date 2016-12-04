@@ -1,6 +1,6 @@
 ---
 layout: translation
-title: 翻译：Join_the_latest_round_of_Google_Code-in
+title: 翻译：Join the latest round of Google Code-in
 ---
 
 
