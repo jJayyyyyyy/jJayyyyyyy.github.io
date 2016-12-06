@@ -5,9 +5,60 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 04 Dec 2016 21:43:47 +0800</pubDate>
-    <lastBuildDate>Sun, 04 Dec 2016 21:43:47 +0800</lastBuildDate>
+    <pubDate>Tue, 06 Dec 2016 22:56:34 +0800</pubDate>
+    <lastBuildDate>Tue, 06 Dec 2016 22:56:34 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>你的名字</title>
+        <description>&lt;p&gt;[你的名字]是一部值得推荐的电影。经历波折之后，男女主最终再次相遇并且勇敢地相认了，应该会有好的发展吧。&lt;/p&gt;
+
+&lt;p&gt;转一篇知乎上的&lt;a href=&quot;https://www.zhihu.com/question/52299556/answer/134339754&quot;&gt;影评&lt;/a&gt;，已征得作者同意，下面是原文：&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;泷在喝下口嚼酒之后，相当于同时拥有了Adam和使徒之力，获得了超级管理员权限，但是他作为一个程序员，深知不能随便修改世界否则会引入更多bug造成混乱，于是使用了git reset进行版本回退，而不是直接不管原来的创建新的分支或者直接修改后commit(这样会明显地在git log中留下曾经的错误)&lt;/p&gt;
+
+&lt;p&gt;三叶还是之前的三叶。证据是，在黄昏相遇之前，三叶附身并认出了这是泷的身体，而且在看到被彗星毁坏的村庄之后说了一句“我…那个时候…死了吗”。由以上两点可以确定这时的三叶就是之前的三叶，至少灵魂是。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://pic4.zhimg.com/v2-7fd892aa05ce9858d7dc5e85798ee7bb_b.jpg&quot; alt=&quot;Taki&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/v2-853e7aa830949ffd2fd122bf41774449_b.jpg&quot; alt=&quot;no&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(图侵删)&lt;/p&gt;
+
+&lt;p&gt;接下来就是产品和研发沟通需求，然后回退到大灾难发生之前的版本，成功地修改了bug并进行commit。&lt;/p&gt;
+
+&lt;p&gt;此后由于git log里面已经没有出问题的时间线了。但是这同时也覆盖了上一次出问题之后提交的改动，因此也就是【记不起对方名字】了。&lt;/p&gt;
+
+&lt;p&gt;两人冥冥之中都感觉是要寻找谁，这是因为虽然【主线master只有一条】(dev 最终也要合并到master的)，但系统还是保留了部分之前的commit作为备用，并没有完全删除。通过git reflog，泷和三叶终于重逢并且慢慢提取并找回了从前的记忆，使得代码仓库进一步完善。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;——–2016.12.06更新———&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git add .
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git commit -m &lt;span class=&quot;s1&quot;&gt;'add two pictures'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;——–2016.12.06更新———&lt;/p&gt;
+
+&lt;p&gt;另外，这个故事也告诉我们做好备份以及写好规范说明文档的重要性，至少不要git commit -m “add something”，否则无法快速理清思路回退版本解决bug&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git add readme.md
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git commit -m &lt;span class=&quot;s1&quot;&gt;'update &amp;lt;readme.md&amp;gt; with additional content'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Tue, 06 Dec 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/12/06/your_name.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/06/your_name.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>翻译：Have a holly jolly time in Santa’s Village — now open</title>
@@ -713,24 +764,6 @@ See how well it does with your drawings and help teach it, just by playing.&lt;/
         <pubDate>Sat, 05 Nov 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/11/05/V_for_Vendetta.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/11/05/V_for_Vendetta.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Rather Be</title>
-        <description>&lt;p&gt;歌名: &lt;a href=&quot;http://music.163.com/#/song?id=34218195&quot;&gt;Rather Be&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;今天偶遇这首歌，接着就是一段回忆。&lt;/p&gt;
-
-&lt;p&gt;曾经，微博上有这么一条秒拍视频&lt;a href=&quot;http://video.weibo.com/show?fid=1034:1057a4d06bf228d27eacf0c1ac7644ef&quot;&gt;#每个食物自身最辉煌的瞬间#&lt;/a&gt;。挺好玩的，就转给了某个小盆友，然后得知了这首歌的名字。&lt;/p&gt;
-
-&lt;p&gt;仄仄声声，恍如昨日。&lt;/p&gt;
-
-</description>
-        <pubDate>Fri, 04 Nov 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/11/04/rather_be.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/04/rather_be.html</guid>
         
         
       </item>
