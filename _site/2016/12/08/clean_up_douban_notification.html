@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="fXCqEVcHdJt50axIq7sCTxtZUh5gDHkj2usDwI_66gE" />
+  <title>清理无用的【豆瓣活动提醒】</title>
+  <meta name="description" content="本文来自豆瓣，征得作者同意后转载(略有修改)。下面是原文。">
+
+ <!--  
+   -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href= "/">
+  <link rel="alternate" type="application/rss+xml" title="FrozenMap" href="/feed.xml">
+  
+  
+</head>
+
+  <body>
+    <header class="site-header" role="banner" style="border-top:0px">
+  <div class="wrapper">
+    <a class="site-title" href="/">Home</a>
+    <!-- <img src="/assets/Labtocat.png" width="43"> -->
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+      
+      <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <!-- <a class="page-link" href="/donate">Donate</a> -->
+          <a class="page-link" href="/feed.xml">RSS</a>
+      </div>
+    </nav>
+  </div>
+</header>
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">清理无用的【豆瓣活动提醒】</h1>
+    <p class="post-meta"> <time datetime="2016-12-08T00:00:00+08:00" itemprop="datePublished">Dec 8, 2016</time>
+      <!--  -->
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">FrozenMap</span></span>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>本文来自<a href="https://www.douban.com/note/595800779/">豆瓣</a>，征得作者同意后转载(略有修改)。下面是原文。</p>
+
+<hr />
+
+<p><br /></p>
+
+<p>关注了一些小站，时间一长，总会有许多无用的活动提醒，会覆盖一些重要的信息，比如消息回复，广播回复等等。</p>
+
+<p>为此，可以进入【我的提醒】页面，手动点击活动提醒的【忽略】，在刷新一下，这条提醒就没了。</p>
+
+<p>不过如果想要去掉所有的活动提醒，这样一个个手动点忽略的方法实在是不爽。</p>
+
+<p>我们可以用开发者工具分析一下页面结构，然后用js帮助我们去掉这些多余信息：</p>
+
+<div class="language-javascript highlighter-rouge"><pre class="highlight"><code><span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="mi">10</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByName</span><span class="p">(</span><span class="s2">"ignore"</span><span class="p">)[</span><span class="nx">i</span><span class="p">].</span><span class="nx">click</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>代码非常简单，而且不会删除广播回复等消息。可以把10换成更大的数字，然后在Chrome的Console执行，注意是在【我的提醒】页面下。多用几次，再刷新一下页面，整个世界就清净了。</p>
+
+  </div>
+
+  <div>
+    <br/><br/>
+    <div style="border-top: dotted #e8e8e8; border-width: 1px 0; padding-top: 10px;"></div>
+    <h2>License</h2>
+    <p>
+      The content of this project itself is licensed under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"> BY-NC-SA </a>, and the underlying source code used to format and display that content is licensed under the <a href="http://opensource.org/licenses/mit-license.php">MIT license</a>.
+    </p>
+    <p> 转载请保留作者和出处, 包括以上许可证信息, 谢谢!
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+  </body>
+</html>
