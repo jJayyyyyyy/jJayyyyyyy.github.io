@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="fXCqEVcHdJt50axIq7sCTxtZUh5gDHkj2usDwI_66gE" />
+  <title>How Google Wifi keeps your Wi-Fi fast</title>
+  <meta name="description" content="">
+
+ <!--  
+   -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href= "/">
+  <link rel="alternate" type="application/rss+xml" title="FrozenMap" href="/feed.xml">
+  
+  
+</head>
+
+  <body>
+    <header class="site-header" role="banner" style="border-top:0px">
+  <div class="wrapper">
+    <a class="site-title" href="/">Home</a>
+    <!-- <img src="/assets/Labtocat.png" width="43"> -->
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+      
+      <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <!-- <a class="page-link" href="/donate">Donate</a> -->
+          <a class="page-link" href="/feed.xml">RSS</a>
+      </div>
+    </nav>
+  </div>
+</header>
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">How Google Wifi keeps your Wi-Fi fast</h1>
+    <p class="post-meta"> <time datetime="2016-12-09T00:00:00+08:00" itemprop="datePublished">Dec 9, 2016</time>
+      <!--  -->
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">FrozenMap</span></span>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/ty0SGNZi81U" frameborder="0" allowfullscreen=""></iframe>
+
+<p>这是Youtube上的一个视频，所述内容如下:</p>
+
+<ul>
+  <li>
+    <p>The router in your home sends Wi-Fi through the air on a channel like a radio. But other routers nearby might be on the same channel. Let’s say those neighbor start streaming, gaming and downloading, all at the same time. Even if you have a fast Internet subscription, you may still be waiting for what you want. Come on… OK…</p>
+  </li>
+  <li>
+    <p>So there are three main channels most routers can use. Generally they pick the least congested one and stay there. But over time, that channel can get crowded. So we designed Google Wifi to work around that. We built in congestion sensing technology that checks for bottlenecks by scanning each channel every five minutes. Then when the time is right, Google Wifi quietly switches to the fastest, least congested channel making sure you get the best possible Wifi.</p>
+  </li>
+</ul>
+
+<p>大意是对标题进行解释，为啥用Google Wifi能够让你的无线网络更快。</p>
+
+<p>下面是一些草稿，现在书不在身边，等找到资料了再重新整理一遍。</p>
+
+<hr />
+
+<p>先说点别的。在《计算机网络》有专门一章是讲无线网络的，并对有线和无线进行了对比。其中重要的一点是防止碰撞。</p>
+
+<p>有线网络(以太网)是用的碰撞检测，时间，xxus</p>
+
+<p>而无线网络，由于种种原因，不能用xxxx，而采用了xxxx，它的目的就是没有碰撞，或者是碰撞后直接丢包？2.4GHz的xx，实际并不一定刚好是2.4G，而是有多个频道，比如在2.48G一个，xxx一个</p>
+
+<p>这样在不同频道，就不会碰撞了(信号影响还是会有)</p>
+
+<p>但是现在的网络环境比较复杂，比如小区里面，你一个房子，上下左右好多个路由器以及其他能收发2.4G信号的设备，导致干扰严重，经常跳频，以防冲撞。这个时候又要重新搜索与建立连接。。。</p>
+
+<p>再回到Google Wifi这个设备，与一般的路由器不同，它不是等到真的冲突了碰撞了才切换，而是进行定时检测，类似于CDN内部发送探测包，来检测网络环境一样。这样就可以自动更新到拥塞最少的频道，进而提高网络质量。</p>
+
+<p>根据视频所述，目前的路由器基本上都是固定在一个频道，然后堵塞了/碰撞了才会切？相比而言，Google Wifi的调优策略更有主动性。其算法还没有仔细研究过。不过。。我觉得在当前复杂的网络环境下，基本没有太多空闲的频道可言，这样的调优在人口密集的小区可能用处不大。可能需要拓展带宽，协议，</p>
+
+<p>5G？</p>
+
+  </div>
+
+  <div>
+    <br/><br/>
+    <div style="border-top: dotted #e8e8e8; border-width: 1px 0; padding-top: 10px;"></div>
+    <h2>License</h2>
+    <p>
+      The content of this project itself is licensed under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"> BY-NC-SA </a>, and the underlying source code used to format and display that content is licensed under the <a href="http://opensource.org/licenses/mit-license.php">MIT license</a>.
+    </p>
+    <p> 转载请保留作者和出处, 包括以上许可证信息, 谢谢!
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+  </body>
+</html>
