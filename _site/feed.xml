@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 10 Dec 2016 22:05:56 +0800</pubDate>
-    <lastBuildDate>Sat, 10 Dec 2016 22:05:56 +0800</lastBuildDate>
+    <pubDate>Mon, 12 Dec 2016 20:57:17 +0800</pubDate>
+    <lastBuildDate>Mon, 12 Dec 2016 20:57:17 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -177,15 +177,9 @@
     
       <item>
         <title>清理无用的【豆瓣活动提醒】</title>
-        <description>&lt;p&gt;本文来自&lt;a href=&quot;https://www.douban.com/note/595800779/&quot;&gt;豆瓣&lt;/a&gt;，征得作者同意后转载(略有修改)。下面是原文。&lt;/p&gt;
+        <description>&lt;p&gt;关注了一些小站，时间一长，总会有许多无用的活动提醒，会覆盖一些重要的信息，比如消息回复，广播回复等等。&lt;/p&gt;
 
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;关注了一些小站，时间一长，总会有许多无用的活动提醒，会覆盖一些重要的信息，比如消息回复，广播回复等等。&lt;/p&gt;
-
-&lt;p&gt;为此，可以进入【我的提醒】页面，手动点击活动提醒的【忽略】，在刷新一下，这条提醒就没了。&lt;/p&gt;
+&lt;p&gt;为此，可以进入【我的提醒】页面，手动点击活动提醒的【忽略】。再刷新一下，这条提醒就没了。&lt;/p&gt;
 
 &lt;p&gt;不过如果想要去掉所有的活动提醒，这样一个个手动点忽略的方法实在是不爽。&lt;/p&gt;
 
