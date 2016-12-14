@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 13 Dec 2016 22:50:05 +0800</pubDate>
-    <lastBuildDate>Tue, 13 Dec 2016 22:50:05 +0800</lastBuildDate>
+    <pubDate>Wed, 14 Dec 2016 22:04:14 +0800</pubDate>
+    <lastBuildDate>Wed, 14 Dec 2016 22:04:14 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -262,6 +262,10 @@
 &lt;/div&gt;
 
 &lt;p&gt;代码非常简单，而且不会删除广播回复等消息。可以把10换成更大的数字，然后在Chrome的Console执行，注意是在【我的提醒】页面下。多用几次，再刷新一下页面，整个世界就清净了。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
 </description>
         <pubDate>Thu, 08 Dec 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/12/08/clean_up_douban_notification.html</link>
@@ -393,6 +397,10 @@
 &lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git commit -m &lt;span class=&quot;s1&quot;&gt;'update &amp;lt;readme.md&amp;gt; with additional content'&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
 </description>
         <pubDate>Tue, 06 Dec 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/12/06/your_name.html</link>
@@ -623,6 +631,10 @@ See how well it does with your drawings and help teach it, just by playing.&lt;/
 相同的技术。)&lt;/p&gt;
 
 &lt;p&gt;另外，这个&lt;a href=&quot;https://aiexperiments.withgoogle.com/&quot;&gt;A.I. Experiments&lt;/a&gt;主页上展示了许多有意思的项目，每一个都配有说明视频，大部分还公开了代码，放在&lt;a href=&quot;https://github.com/googlecreativelab&quot;&gt;GitHub-Google Creative Lab&lt;/a&gt;上。虽然目前还木有这个游戏的代码(估计还在实验阶段，也可能是因为涉及到关键技术，有的项目是利用了Google的API，而不是展现核心算法)，但是项目本身还是很有意思的。说不定玩着玩着，你就称为了一个灵魂画手:)&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
 </description>
         <pubDate>Sun, 20 Nov 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/11/20/quick_draw.html</link>

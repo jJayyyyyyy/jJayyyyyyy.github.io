@@ -38,7 +38,7 @@ title: FFMPEG学习笔记
 
 <br/>
 
-##	参考
+##	参考资料
 
 1.	[通过 ffmpeg 无损剪切/拼接视频](https://segmentfault.com/a/1190000000414341)
 

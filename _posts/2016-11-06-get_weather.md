@@ -169,9 +169,13 @@ for i in range(2):
 
 2.	如果在晚上使用，可以发现屏幕上输出的是明天加后天的天气。那么，如何获取今晚的天气（如气温）呢？
 
-<br/><br/>
+<br/>
 
-##	参考
+(END)
+
+---
+
+##	参考资料
 
 1.	[Linux shell 正则表达式(BREs,EREs,PREs)差异比较](http://www.cnblogs.com/chengmo/archive/2010/10/10/1847287.html)
 

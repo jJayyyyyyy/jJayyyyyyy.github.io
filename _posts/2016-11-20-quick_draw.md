@@ -33,3 +33,7 @@ See how well it does with your drawings and help teach it, just by playing.
 相同的技术。)
 
 另外，这个[A.I. Experiments](https://aiexperiments.withgoogle.com/)主页上展示了许多有意思的项目，每一个都配有说明视频，大部分还公开了代码，放在[GitHub-Google Creative Lab](https://github.com/googlecreativelab)上。虽然目前还木有这个游戏的代码(估计还在实验阶段，也可能是因为涉及到关键技术，有的项目是利用了Google的API，而不是展现核心算法)，但是项目本身还是很有意思的。说不定玩着玩着，你就称为了一个灵魂画手:)
+
+<br/>
+
+(END)

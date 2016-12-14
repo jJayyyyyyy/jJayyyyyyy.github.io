@@ -46,6 +46,6 @@ title: Is It Okay to Touch Mars?
 
 ---
 
-##  相关阅读
+##	相关阅读
 
 *	[贝佐斯谈搬去火星上生活：没有威士忌没有熏肉 太无趣了](http://weibo.com/ttarticle/p/show?id=2309614021386820639105)
