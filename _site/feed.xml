@@ -5,9 +5,58 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 15 Dec 2016 23:11:25 +0800</pubDate>
-    <lastBuildDate>Thu, 15 Dec 2016 23:11:25 +0800</lastBuildDate>
+    <pubDate>Fri, 16 Dec 2016 22:28:24 +0800</pubDate>
+    <lastBuildDate>Fri, 16 Dec 2016 22:28:24 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>翻译：Atlas (mythology) via Wikipedia</title>
+        <description>&lt;p&gt;这是&lt;strong&gt;翻译&lt;/strong&gt;系列的一篇文章。原文来自Wikipedia的词条&lt;a href=&quot;https://en.wikipedia.org/wiki/Atlas_(mythology)&quot;&gt;Atlas (mythology)&lt;/a&gt;。因为背单词的时候遇到了atlas，翻译是地图集，一直没有很好的对应联想。于是查了下atlas，发现这是一个很有意思的词。不过在维基百科，神话故事atlas的&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%98%BF%E7%89%B9%E6%8B%89%E6%96%AF&quot;&gt;中文词条&lt;/a&gt;只是一个概述，并不完整。因此我想试着来把英文词条翻译成中文的。由于对包括希腊神话在内的西方文化不太了解，译文难免有问题，我尽量多查资料逐步改进哈。以下是译文，并参照&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%98%BF%E7%89%B9%E6%8B%89%E6%96%AF&quot;&gt;中文词条&lt;/a&gt;，将Atlas译作阿特拉斯。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;atlas-mythology&quot;&gt;&lt;strong&gt;Atlas (mythology)&lt;/strong&gt;&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;维基百科，自由的百科全书。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;其他用法，请参见&lt;a href=&quot;https://
+en.wikipedia.org/wiki/Atlas_(disambiguation)&quot;&gt;Atlas(地图集)&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;在希腊神话中，阿特拉斯是一个&lt;a href=&quot;https://en.wikipedia.org/wiki/Titan_(mythology)&quot;&gt;泰坦(神族)&lt;/a&gt;，在&lt;a href=&quot;https://en.wikipedia.org/wiki/Titanomachy&quot;&gt;泰坦之战&lt;/a&gt;后被(宙斯)降罪，要(用双肩)支撑苍天直到永远。&lt;/p&gt;
+
+&lt;p&gt;![Atlas 1](https://upload.wikimedia.org/wikipedia/commons/8/8c/MAN_Atlante_fronte_1040572.JPG&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;相关阅读&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Atlas_(mythology)&quot;&gt;Atlas (mythology)&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%98%BF%E7%89%B9%E6%8B%89%E6%96%AF&quot;&gt;阿特拉斯&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Titan_(mythology)&quot;&gt;泰坦&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Titanomachy&quot;&gt;泰坦之战&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 16 Dec 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/12/16/Atlas(mythology)_via_wikipedia.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/16/Atlas(mythology)_via_wikipedia.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Is It Okay to Touch Mars?</title>
@@ -586,59 +635,6 @@
         <pubDate>Wed, 30 Nov 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/11/30/GitHub_is_headed_to_AWS_re-Invent.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/11/30/GitHub_is_headed_to_AWS_re-Invent.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>QUICK, DRAW!</title>
-        <description>&lt;p&gt;前几天看新闻，得知Google开发了这个叫做&lt;a href=&quot;https://quickdraw.withgoogle.com/&quot;&gt;QUICK, DRAW!&lt;/a&gt;的游戏(其实是作者和在Google工作的朋友开发的)。游戏名直译过来是&lt;em&gt;快画&lt;/em&gt;，也就是在规定时间内完成涂鸦。&lt;/p&gt;
-
-&lt;p&gt;玩法很简单:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;你会得到六个单词；&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;对于每个词，你可以在20秒内用画画的方式进行描述；&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;机器会对你的涂鸦进行识别，并判断与题目单词是否符合。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;这个游戏其实是一个基于人工智能的项目，可以看到游戏主页中有如下文字说明:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Can a neural network learn to recognize doodles?
-See how well it does with your drawings and help teach it, just by playing.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;大意就是说: 试试让神经网络来识别涂鸦吧~玩一玩，画一画，对机器进行识别训练，看看人工智能的表现如何~&lt;/p&gt;
-
-&lt;p&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;About this game&lt;/code&gt;中还有更为详细的描述:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;This is a game built with machine learning. You draw, and a neural network tries to guess what you’re drawing. Of course, it doesn’t always work. But the more you play with it, the more it will learn. So far we have trained it on a few hundred concepts, and we hope to add more over time. We made this as an example of how you can use machine learning in fun ways. Watch the video below to learn about how it works, and &lt;a href=&quot;https://aiexperiments.withgoogle.com/&quot;&gt;check out more A.I. Experiments here.&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;也就是说，这是一个基于机器学习的游戏。你画一些东西，然后神经网络会试着分析你画了啥。当然它现在还比较呆萌，不过你玩儿得越多，它学得也越多。现在机器已经学习了几百个词(及其对应的画风233)，今后我们还将教它认识更多。玩了这个游戏后你会发现，利用机器学习可以做很多有趣的事。下面的视频介绍了这个游戏的工作原理。更多信息还可以参考他们的&lt;a href=&quot;https://aiexperiments.withgoogle.com/&quot;&gt;A.I. Experiments&lt;/a&gt;主页。&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/X8v1GWzZYJ4&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;(视频中提到，游戏用到了和 &lt;strong&gt;Google翻译——手写输入识别&lt;/strong&gt;
-相同的技术。)&lt;/p&gt;
-
-&lt;p&gt;另外，这个&lt;a href=&quot;https://aiexperiments.withgoogle.com/&quot;&gt;A.I. Experiments&lt;/a&gt;主页上展示了许多有意思的项目，每一个都配有说明视频，大部分还公开了代码，放在&lt;a href=&quot;https://github.com/googlecreativelab&quot;&gt;GitHub-Google Creative Lab&lt;/a&gt;上。虽然目前还木有这个游戏的代码(估计还在实验阶段，也可能是因为涉及到关键技术，有的项目是利用了Google的API，而不是展现核心算法)，但是项目本身还是很有意思的。说不定玩着玩着，你就称为了一个灵魂画手:)&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-</description>
-        <pubDate>Sun, 20 Nov 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/11/20/quick_draw.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/20/quick_draw.html</guid>
         
         
       </item>
