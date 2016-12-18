@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="fXCqEVcHdJt50axIq7sCTxtZUh5gDHkj2usDwI_66gE" />
+  <title>为什么空调的输入功率小于输出功率</title>
+  <meta name="description" content="要换插座，考虑到要匹配空调功率，于是看了下空调的铭牌和说明书。不看不知道，一看不得了，怎么这个空调的输出功率（不管是制热功率还是制冷功率）远大于输入功率呢？乍一看明显不符合能量守恒定律啊，这都超越永动机了。">
+
+ <!--  
+   -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href= "/">
+  <link rel="alternate" type="application/rss+xml" title="FrozenMap" href="/feed.xml">
+  
+  
+</head>
+
+  <body>
+    <header class="site-header" role="banner" style="border-top:0px">
+  <div class="wrapper">
+    <a class="site-title" href="/">Home</a>
+    <!-- <img src="/assets/Labtocat.png" width="43"> -->
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+      
+      <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <!-- <a class="page-link" href="/donate">Donate</a> -->
+          <a class="page-link" href="/feed.xml">RSS</a>
+      </div>
+    </nav>
+  </div>
+</header>
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">为什么空调的输入功率小于输出功率</h1>
+    <p class="post-meta"> <time datetime="2016-12-18T00:00:00+08:00" itemprop="datePublished">Dec 18, 2016</time>
+      <!--  -->
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">FrozenMap</span></span>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>要换插座，考虑到要匹配空调功率，于是看了下空调的铭牌和说明书。不看不知道，一看不得了，怎么这个空调的输出功率（不管是制热功率还是制冷功率）远大于输入功率呢？乍一看明显不符合能量守恒定律啊，这都超越永动机了。</p>
+
+<p>一番搜索之后发现，其实这里空调的输出功率不是由输入功率产生的。比如在制热的情况下，并不是靠输入的电力去直接产生热量输出（电辅热直接烧PTC除外），而是靠输入的电能去驱动其他设备（如压缩机），进而对空气中的能量进行搬运。也就是说输入的电能是用来搬东西的，而不是用来造东西的。</p>
+
+<p>好像把以前学的全还给老师了[捂脸]。下面还有几条答友的回答，作为补充说明。</p>
+
+<ol>
+  <li>
+    <p>知乎答友</p>
+
+    <ul>
+      <li>
+        <p><a href="http://zhihu.com/question/34365747/answer/61944913">Bigan W</a></p>
+
+        <blockquote>
+          <p>…空调功率1kW，制冷量3kW的意思是，这玩意儿在想定工况（也就是说实际上可能做不到）下能把3kW的热量从房间里扔出去…</p>
+        </blockquote>
+      </li>
+      <li>
+        <p><a href="https://www.zhihu.com/question/21530546">方国平</a></p>
+
+        <blockquote>
+          <p>…空调主要是利用了电力这种能源完成了热量这种能源的搬运，仍然遵守能量守恒定律。能效比就是这个搬运的效率，当室内外的温差不大时，被搬运热量的效率会很高…</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>知道答友</p>
+
+    <ul>
+      <li>
+        <p><a href="https://zhidao.baidu.com/question/30026301.html">炼狱天羊</a></p>
+
+        <blockquote>
+          <p>…简单通俗的说法：用较小的能量把较大的热量（能量）泵进或泵出（转移）。而不是用较小的能量来产生较大的热量（能量）。像人吃半斤米饭搬运几百斤大米。不是吐出几百斤米。因此热泵型空调输出功率和输入功率完全是二码事，不可混为一谈…</p>
+        </blockquote>
+      </li>
+      <li>
+        <p><a href="https://zhidao.baidu.com/question/30026301.html">heshiaio</a></p>
+
+        <blockquote>
+          <p>…空调的输入功率是指空调的单位小时的耗电量用电量。输出功率是指空调在单位小时内产生的制冷热量…</p>
+        </blockquote>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<p><br /></p>
+
+<p>(END)</p>
+
+<hr />
+
+<h2 id="section">相关阅读</h2>
+
+<ul>
+  <li>
+    <p><a href="https://www.zhihu.com/question/34365747">相同的电能，用空调的原理和焦耳定律，哪一个产生的热量更多？</a></p>
+  </li>
+  <li>
+    <p><a href="https://zhidao.baidu.com/question/30026301.html">空调的输出功率比输入功率还大?</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.zhihu.com/question/21530546">空调为什么输出功率大于输入功率?</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.zhihu.com/question/20346012">家用空调制冷和制热哪个耗电量大？</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.zhihu.com/question/34159248">空调的能效比是怎么换算的？</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.zhihu.com/question/19968302">用空调和电暖气哪个更省电？</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.zhihu.com/search?type=content&amp;q=%E7%A9%BA%E8%B0%83">知乎: 空调</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.zhihu.com/search?type=content&amp;q=%E7%A9%BA%E8%B0%83+%E5%8E%9F%E7%90%86">知乎: 空调 原理</a></p>
+  </li>
+</ul>
+
+  </div>
+
+  <div>
+    <br/><br/>
+    <div style="border-top: dotted #e8e8e8; border-width: 1px 0; padding-top: 10px;"></div>
+    <h2>License</h2>
+    <p>
+      The content of this project itself is licensed under the Creative Commons <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"> BY-NC-SA </a>, and the underlying source code used to format and display that content is licensed under the <a href="http://opensource.org/licenses/mit-license.php">MIT license</a>.
+    </p>
+    <p> 转载请保留作者和出处, 包括以上许可证信息, 谢谢!
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+  </body>
+</html>

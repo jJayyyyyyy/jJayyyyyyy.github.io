@@ -5,9 +5,102 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 16 Dec 2016 22:28:24 +0800</pubDate>
-    <lastBuildDate>Fri, 16 Dec 2016 22:28:24 +0800</lastBuildDate>
+    <pubDate>Sun, 18 Dec 2016 22:22:40 +0800</pubDate>
+    <lastBuildDate>Sun, 18 Dec 2016 22:22:40 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>为什么空调的输入功率小于输出功率</title>
+        <description>&lt;p&gt;要换插座，考虑到要匹配空调功率，于是看了下空调的铭牌和说明书。不看不知道，一看不得了，怎么这个空调的输出功率（不管是制热功率还是制冷功率）远大于输入功率呢？乍一看明显不符合能量守恒定律啊，这都超越永动机了。&lt;/p&gt;
+
+&lt;p&gt;一番搜索之后发现，其实这里空调的输出功率不是由输入功率产生的。比如在制热的情况下，并不是靠输入的电力去直接产生热量输出（电辅热直接烧PTC除外），而是靠输入的电能去驱动其他设备（如压缩机），进而对空气中的能量进行搬运。也就是说输入的电能是用来搬东西的，而不是用来造东西的。&lt;/p&gt;
+
+&lt;p&gt;好像把以前学的全还给老师了[捂脸]。下面还有几条答友的回答，作为补充说明。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;知乎答友&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;a href=&quot;http://zhihu.com/question/34365747/answer/61944913&quot;&gt;Bigan W&lt;/a&gt;&lt;/p&gt;
+
+        &lt;blockquote&gt;
+          &lt;p&gt;…空调功率1kW，制冷量3kW的意思是，这玩意儿在想定工况（也就是说实际上可能做不到）下能把3kW的热量从房间里扔出去…&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/21530546&quot;&gt;方国平&lt;/a&gt;&lt;/p&gt;
+
+        &lt;blockquote&gt;
+          &lt;p&gt;…空调主要是利用了电力这种能源完成了热量这种能源的搬运，仍然遵守能量守恒定律。能效比就是这个搬运的效率，当室内外的温差不大时，被搬运热量的效率会很高…&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;知道答友&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;a href=&quot;https://zhidao.baidu.com/question/30026301.html&quot;&gt;炼狱天羊&lt;/a&gt;&lt;/p&gt;
+
+        &lt;blockquote&gt;
+          &lt;p&gt;…简单通俗的说法：用较小的能量把较大的热量（能量）泵进或泵出（转移）。而不是用较小的能量来产生较大的热量（能量）。像人吃半斤米饭搬运几百斤大米。不是吐出几百斤米。因此热泵型空调输出功率和输入功率完全是二码事，不可混为一谈…&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;a href=&quot;https://zhidao.baidu.com/question/30026301.html&quot;&gt;heshiaio&lt;/a&gt;&lt;/p&gt;
+
+        &lt;blockquote&gt;
+          &lt;p&gt;…空调的输入功率是指空调的单位小时的耗电量用电量。输出功率是指空调在单位小时内产生的制冷热量…&lt;/p&gt;
+        &lt;/blockquote&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;相关阅读&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/34365747&quot;&gt;相同的电能，用空调的原理和焦耳定律，哪一个产生的热量更多？&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zhidao.baidu.com/question/30026301.html&quot;&gt;空调的输出功率比输入功率还大?&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/21530546&quot;&gt;空调为什么输出功率大于输入功率?&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/20346012&quot;&gt;家用空调制冷和制热哪个耗电量大？&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/34159248&quot;&gt;空调的能效比是怎么换算的？&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/question/19968302&quot;&gt;用空调和电暖气哪个更省电？&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/search?type=content&amp;amp;q=%E7%A9%BA%E8%B0%83&quot;&gt;知乎: 空调&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.zhihu.com/search?type=content&amp;amp;q=%E7%A9%BA%E8%B0%83+%E5%8E%9F%E7%90%86&quot;&gt;知乎: 空调 原理&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 18 Dec 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/12/18/Why_is_the_input_power_of_an_air_conditioner_lower_than_its_output_power.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/18/Why_is_the_input_power_of_an_air_conditioner_lower_than_its_output_power.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>翻译：Atlas (mythology) via Wikipedia</title>
@@ -588,53 +681,6 @@ en.wikipedia.org/wiki/Atlas_(disambiguation)&quot;&gt;Atlas(地图集)&lt;/a&gt;
         <pubDate>Fri, 02 Dec 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/12/02/Google_Code-in.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/12/02/Google_Code-in.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>翻译：GitHub is headed to AWS re:Invent</title>
-        <description>&lt;p&gt;这是&lt;strong&gt;翻译&lt;/strong&gt;系列的一篇文章。原文来自 &lt;a href=&quot;https://github.com/blog/2281-github-is-headed-to-aws-re-invent&quot;&gt;GitHub is headed to AWS re:Invent&lt;/a&gt;，发布于2016年11月11日。以下是译文。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/16549281/20196199/7d40e506-a74e-11e6-83ef-bc79a5cd92d2.jpg&quot; alt=&quot;GitHub at AWS re:Invent&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;GitHub团队已经为11月28日举行的亚马逊的AWS re:Invent大会做好了准备。届时，我们也期待与你相遇。&lt;/p&gt;
-
-&lt;p&gt;(注: 亚马逊的Amazon Web Services是目前最大的公有云服务，而re:Invent是一个类似&lt;code class=&quot;highlighter-rouge&quot;&gt;WWDC&lt;/code&gt;，或者&lt;code class=&quot;highlighter-rouge&quot;&gt;Google I/O&lt;/code&gt;的发布会)&lt;/p&gt;
-
-&lt;p&gt;GitHub和AWS一起，可以使代码的生产与提交更加快速与安全。而这个平台也可以更好地融入已有的工作流程，节省时间，因为你的团队可以使用自己熟悉的各种工具。在AWS re:Invent大会上，我们会进行为期一周的展示，以便大家更好地了解GitHub和AWS是如何共同工作的。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;devops&quot;&gt;升级你的DevOps程序&lt;/h2&gt;
-
-&lt;p&gt;DevOps是一个无底的坑(误)，有好的工具只是一个开端。来自Accenture Federal Service的Natalie Bradley和来自GitHub的Matthew McCullough会介绍GitHub企业版如何与AWS一起，形成DevOps程序的坚实后盾。它们的存在，不仅提升了代码质量和传输速率，也定义了如何衡量一个大众工具的好坏。更多内容可以查看&lt;a href=&quot;https://www.portal.reinvent.awsevents.com/connect/search.ww#loadSearch-searchPhrase=dev204&amp;amp;searchType=session&amp;amp;tc=0&amp;amp;sortBy=titleSort&amp;amp;p=&amp;amp;i(10042)=10481&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;休息时间&lt;/h2&gt;
-
-&lt;p&gt;11月29日周二，在TopGolf有一场聚会。在一整天的旅行、培训和会议之后，TopGolf可以说是一个放松自我的好地方。茶歇时间是下午七点半，在MGM大酒店。可以点&lt;a href=&quot;https://github.com/blog/2281-github-is-headed-to-aws-re-invent&quot;&gt;这里&lt;/a&gt;进行预约&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;github&quot;&gt;与GitHub的工程师们见面&lt;/h2&gt;
-
-&lt;p&gt;点击&lt;a href=&quot;https://www.universe.com/events/meet-github-at-aws-re-invent-tickets-TKGQL4&quot;&gt;这里&lt;/a&gt;进行预约，你就有机会和我们的Hubbers技术团队进行一对一的交流，获取深度建议。&lt;/p&gt;
-
-&lt;p&gt;当然你也可以来参观展览厅的Octobooth，观看直播展示，与我们的产品专家交流，也可以在展位上领取一些小礼品( &lt;a href=&quot;http://www.urbandictionary.com/define.php?page=3&amp;amp;term=SWAG&quot;&gt;grab some swag&lt;/a&gt;)。我们在#607展位等你，欢迎来撩:)&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/lN4Pu0CzUhQ&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-</description>
-        <pubDate>Wed, 30 Nov 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/11/30/GitHub_is_headed_to_AWS_re-Invent.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/11/30/GitHub_is_headed_to_AWS_re-Invent.html</guid>
         
         
       </item>
