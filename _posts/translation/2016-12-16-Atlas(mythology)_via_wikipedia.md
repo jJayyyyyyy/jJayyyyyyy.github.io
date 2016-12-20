@@ -6,8 +6,11 @@ title: 翻译：[Atlas(mythology)] via Wikipedia
 
 这是**翻译**系列的一篇文章。原文来自Wikipedia的词条[Atlas (mythology)](https://en.wikipedia.org/wiki/Atlas_(mythology))。因为背单词的时候遇到了atlas，翻译为地图集，一直没有很好的对应联想。于是查了下atlas，发现这个词来自希腊神话，故事也很有意思。不过在维基百科，Atlas的[中文词条](https://zh.wikipedia.org/wiki/%E9%98%BF%E7%89%B9%E6%8B%89%E6%96%AF)只是一个概述，并不完整(其实看完之后我觉得能有这个中文词条的概述已经很厉害了，因为英文词条对应了很多语言学和历史的东西，涉及的知识面很广，很难完整翻译)。因此我想试着来把英文词条翻译成中文的。由于对包括希腊神话在内的西方文化不太了解，译文难免有问题，我尽量多查资料逐步改进哈。以下是译文，并参照[中文词条](https://zh.wikipedia.org/wiki/%E9%98%BF%E7%89%B9%E6%8B%89%E6%96%AF)，将Atlas译作阿特拉斯，其他的神名和人名不作音译。另外，本文排版顺序和维基百科略有不同。
 
+---时间线---
+
 *	2016-12-16-第1次更新-开始写
-*	2016-12-19-第2次更新-格式修改。完成概述。
+*	2016-12-19-第2次更新-格式修改。完成概述。增加图片。
+*	2016-12-20-第3次更新-新增*惩罚*一节。
 
 <br/>
 
@@ -30,7 +33,7 @@ en.wikipedia.org/wiki/Atlas_(disambiguation))*
 
 <h3 id="Overview">1. 概述</h3>
 
-在[希腊神话](https://en.wikipedia.org/wiki/Greek_mythology)中，**阿特拉斯**(Atlas, 发音[/ˈætləs/](https://en.wikipedia.org/wiki/Help:IPA_for_English), [古希腊语](https://en.wikipedia.org/wiki/Ancient_Greek): Ἄτλας)是一个[泰坦](https://en.wikipedia.org/wiki/Titan_(mythology))(泰坦曾经是神)。在[泰坦之战](https://en.wikipedia.org/wiki/Titanomachy)(战败)后被众神之王Zeus降罪，要(用双肩)支撑苍天直到永远。虽然阿特拉斯这个名字出现在很多地方，但通常认为，非洲西北部的[阿特拉斯山脉](https://en.wikipedia.org/wiki/Atlas_Mountains)(Atlas Mountains, 在今天的[摩洛哥](https://en.wikipedia.org/wiki/Morocco)、[阿尔及利亚](https://en.wikipedia.org/wiki/Algeria)和[突尼斯](https://en.wikipedia.org/wiki/Tunisia)附近)是神话中的阿特拉斯擎天的地方，山的名字也由此而来。阿特拉斯的父亲是泰坦[Iapetus](https://en.wikipedia.org/wiki/Iapetus_(mythology))，母亲是[海之女神](https://en.wikipedia.org/wiki/Oceanid)[Asia](https://en.wikipedia.org/wiki/Asia_(mythology))或者[Clymene](https://en.wikipedia.org/wiki/Clymene_(mythology))。阿特拉斯有很多孩子，大多数是女儿，如[Hesperides](https://en.wikipedia.org/wiki/Hesperides), [Hyades](https://en.wikipedia.org/wiki/Hyades_(mythology)), [Pleiades](https://en.wikipedia.org/wiki/Pleiades_(Greek_mythology))和住在Ogygia岛上的女神[Calypso](https://en.wikipedia.org/wiki/Calypso_(mythology))。根据古希腊诗人[Hesiod](https://en.wikipedia.org/wiki/Hesiod)的描述，阿特拉斯擎天之处是地球的最西边。
+在[希腊神话](https://en.wikipedia.org/wiki/Greek_mythology)中，**阿特拉斯**(Atlas, 发音[/ˈætləs/](https://en.wikipedia.org/wiki/Help:IPA_for_English), [古希腊语](https://en.wikipedia.org/wiki/Ancient_Greek): Ἄτλας)是一个[泰坦](https://en.wikipedia.org/wiki/Titan_(mythology))(泰坦曾经是神)。在[泰坦之战](https://en.wikipedia.org/wiki/Titanomachy)(战败)后被众神之王Zeus降罪，要(用双肩)支撑苍天直到永远。虽然阿特拉斯这个名字出现在很多地方，但通常认为，非洲西北部的[阿特拉斯山脉](https://en.wikipedia.org/wiki/Atlas_Mountains)(Atlas Mountains, 在今天的[摩洛哥](https://en.wikipedia.org/wiki/Morocco)、[阿尔及利亚](https://en.wikipedia.org/wiki/Algeria)和[突尼斯](https://en.wikipedia.org/wiki/Tunisia)附近)是神话中的阿特拉斯擎天的地方，山的名字也由此而来。阿特拉斯的父亲是泰坦[Iapetus](https://en.wikipedia.org/wiki/Iapetus_(mythology))，母亲是[海之女神](https://en.wikipedia.org/wiki/Oceanid)[Asia](https://en.wikipedia.org/wiki/Asia_(mythology))或者[Clymene](https://en.wikipedia.org/wiki/Clymene_(mythology))。阿特拉斯有很多孩子，大多数是女儿，如[Hesperides](https://en.wikipedia.org/wiki/Hesperides)(看守赫拉金苹果圣园的几位仙女。半神英雄[赫拉克勒斯](https://zh.wikipedia.org/wiki/%E8%B5%AB%E6%8B%89%E5%85%8B%E5%8B%92%E6%96%AF)的十二伟业之一就是要摘取金苹果), [Hyades](https://en.wikipedia.org/wiki/Hyades_(mythology)), [Pleiades](https://en.wikipedia.org/wiki/Pleiades_(Greek_mythology))和住在Ogygia岛上的仙女[Calypso](https://en.wikipedia.org/wiki/Calypso_(mythology))。根据古希腊诗人[Hesiod](https://en.wikipedia.org/wiki/Hesiod)的描述，阿特拉斯擎天之处是地球的最西边。
 
 <img alt="MAN Atlante fronte 1040572.JPG" src="//upload.wikimedia.org/wikipedia/commons/thumb/8/8c/MAN_Atlante_fronte_1040572.JPG/220px-MAN_Atlante_fronte_1040572.JPG" width="220" height="293" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/8/8c/MAN_Atlante_fronte_1040572.JPG/330px-MAN_Atlante_fronte_1040572.JPG 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/8/8c/MAN_Atlante_fronte_1040572.JPG/440px-MAN_Atlante_fronte_1040572.JPG 2x" data-file-width="2112" data-file-height="2816">
 
@@ -55,6 +58,9 @@ en.wikipedia.org/wiki/Atlas_(disambiguation))*
 
 <h3 id="Punishment">3. 惩罚</h3>
 
+在[泰坦之战](https://en.wikipedia.org/wiki/Titanomachy)中，阿特拉斯和他的兄弟[Menoetius](https://en.wikipedia.org/wiki/Menoetius_(mythology))都站在泰坦一方，与[奥林匹亚众神(Olympians)](https://en.wikipedia.org/wiki/Twelve_Olympians)对抗。后来泰坦战败，包括Menoetius在内的众多泰坦被关进[塔耳塔罗斯地狱(Tartarus)](https://en.wikipedia.org/wiki/Tartarus)。不过宙斯为了惩罚阿特拉斯，便让他站在[Gaia](https://en.wikipedia.org/wiki/Gaia_(mythology))(盖亚，大地之母，世界始祖，也就是地球)的最西边，用双肩撑起天空，以防天地原始的融合(to prevent the two from resuming their primordial embrace. 至于为啥要防止天地融合，或者说是交合，根据[盖亚的中文词条](https://zh.wikipedia.org/wiki/%E7%9B%96%E4%BA%9A)，盖亚是大地之母，乌拉诺斯是天空之父，乌拉诺斯统治的时代，天和地没有分界，会不断交媾生下孩子...)
+
+TODO.
 
 <br/>
 
@@ -71,3 +77,5 @@ en.wikipedia.org/wiki/Atlas_(disambiguation))*
 *	[泰坦](https://en.wikipedia.org/wiki/Titan_(mythology))
 
 *	[泰坦之战](https://en.wikipedia.org/wiki/Titanomachy)
+
+*	[赫拉克勒斯](https://zh.wikipedia.org/wiki/%E8%B5%AB%E6%8B%89%E5%85%8B%E5%8B%92%E6%96%AF)

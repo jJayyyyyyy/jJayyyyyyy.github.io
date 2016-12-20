@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 19 Dec 2016 22:15:09 +0800</pubDate>
-    <lastBuildDate>Mon, 19 Dec 2016 22:15:09 +0800</lastBuildDate>
+    <pubDate>Tue, 20 Dec 2016 22:11:56 +0800</pubDate>
+    <lastBuildDate>Tue, 20 Dec 2016 22:11:56 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -106,9 +106,12 @@
         <title>翻译：[Atlas(mythology)] via Wikipedia</title>
         <description>&lt;p&gt;这是&lt;strong&gt;翻译&lt;/strong&gt;系列的一篇文章。原文来自Wikipedia的词条&lt;a href=&quot;https://en.wikipedia.org/wiki/Atlas_(mythology)&quot;&gt;Atlas (mythology)&lt;/a&gt;。因为背单词的时候遇到了atlas，翻译为地图集，一直没有很好的对应联想。于是查了下atlas，发现这个词来自希腊神话，故事也很有意思。不过在维基百科，Atlas的&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%98%BF%E7%89%B9%E6%8B%89%E6%96%AF&quot;&gt;中文词条&lt;/a&gt;只是一个概述，并不完整(其实看完之后我觉得能有这个中文词条的概述已经很厉害了，因为英文词条对应了很多语言学和历史的东西，涉及的知识面很广，很难完整翻译)。因此我想试着来把英文词条翻译成中文的。由于对包括希腊神话在内的西方文化不太了解，译文难免有问题，我尽量多查资料逐步改进哈。以下是译文，并参照&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%98%BF%E7%89%B9%E6%8B%89%E6%96%AF&quot;&gt;中文词条&lt;/a&gt;，将Atlas译作阿特拉斯，其他的神名和人名不作音译。另外，本文排版顺序和维基百科略有不同。&lt;/p&gt;
 
+&lt;p&gt;—时间线—&lt;/p&gt;
+
 &lt;ul&gt;
   &lt;li&gt;2016-12-16-第1次更新-开始写&lt;/li&gt;
-  &lt;li&gt;2016-12-19-第2次更新-格式修改。完成概述。&lt;/li&gt;
+  &lt;li&gt;2016-12-19-第2次更新-格式修改。完成概述。增加图片。&lt;/li&gt;
+  &lt;li&gt;2016-12-20-第3次更新-新增&lt;em&gt;惩罚&lt;/em&gt;一节。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -134,7 +137,7 @@ en.wikipedia.org/wiki/Atlas_(disambiguation)&quot;&gt;Atlas(地图集)&lt;/a&gt;
 
 &lt;h3 id=&quot;Overview&quot;&gt;1. 概述&lt;/h3&gt;
 
-&lt;p&gt;在&lt;a href=&quot;https://en.wikipedia.org/wiki/Greek_mythology&quot;&gt;希腊神话&lt;/a&gt;中，&lt;strong&gt;阿特拉斯&lt;/strong&gt;(Atlas, 发音&lt;a href=&quot;https://en.wikipedia.org/wiki/Help:IPA_for_English&quot;&gt;/ˈætləs/&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Ancient_Greek&quot;&gt;古希腊语&lt;/a&gt;: Ἄτλας)是一个&lt;a href=&quot;https://en.wikipedia.org/wiki/Titan_(mythology)&quot;&gt;泰坦&lt;/a&gt;(泰坦曾经是神)。在&lt;a href=&quot;https://en.wikipedia.org/wiki/Titanomachy&quot;&gt;泰坦之战&lt;/a&gt;(战败)后被众神之王Zeus降罪，要(用双肩)支撑苍天直到永远。虽然阿特拉斯这个名字出现在很多地方，但通常认为，非洲西北部的&lt;a href=&quot;https://en.wikipedia.org/wiki/Atlas_Mountains&quot;&gt;阿特拉斯山脉&lt;/a&gt;(Atlas Mountains, 在今天的&lt;a href=&quot;https://en.wikipedia.org/wiki/Morocco&quot;&gt;摩洛哥&lt;/a&gt;、&lt;a href=&quot;https://en.wikipedia.org/wiki/Algeria&quot;&gt;阿尔及利亚&lt;/a&gt;和&lt;a href=&quot;https://en.wikipedia.org/wiki/Tunisia&quot;&gt;突尼斯&lt;/a&gt;附近)是神话中的阿特拉斯擎天的地方，山的名字也由此而来。阿特拉斯的父亲是泰坦&lt;a href=&quot;https://en.wikipedia.org/wiki/Iapetus_(mythology)&quot;&gt;Iapetus&lt;/a&gt;，母亲是&lt;a href=&quot;https://en.wikipedia.org/wiki/Oceanid&quot;&gt;海之女神&lt;/a&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Asia_(mythology)&quot;&gt;Asia&lt;/a&gt;或者&lt;a href=&quot;https://en.wikipedia.org/wiki/Clymene_(mythology)&quot;&gt;Clymene&lt;/a&gt;。阿特拉斯有很多孩子，大多数是女儿，如&lt;a href=&quot;https://en.wikipedia.org/wiki/Hesperides&quot;&gt;Hesperides&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Hyades_(mythology)&quot;&gt;Hyades&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Pleiades_(Greek_mythology)&quot;&gt;Pleiades&lt;/a&gt;和住在Ogygia岛上的女神&lt;a href=&quot;https://en.wikipedia.org/wiki/Calypso_(mythology)&quot;&gt;Calypso&lt;/a&gt;。根据古希腊诗人&lt;a href=&quot;https://en.wikipedia.org/wiki/Hesiod&quot;&gt;Hesiod&lt;/a&gt;的描述，阿特拉斯擎天之处是地球的最西边。&lt;/p&gt;
+&lt;p&gt;在&lt;a href=&quot;https://en.wikipedia.org/wiki/Greek_mythology&quot;&gt;希腊神话&lt;/a&gt;中，&lt;strong&gt;阿特拉斯&lt;/strong&gt;(Atlas, 发音&lt;a href=&quot;https://en.wikipedia.org/wiki/Help:IPA_for_English&quot;&gt;/ˈætləs/&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Ancient_Greek&quot;&gt;古希腊语&lt;/a&gt;: Ἄτλας)是一个&lt;a href=&quot;https://en.wikipedia.org/wiki/Titan_(mythology)&quot;&gt;泰坦&lt;/a&gt;(泰坦曾经是神)。在&lt;a href=&quot;https://en.wikipedia.org/wiki/Titanomachy&quot;&gt;泰坦之战&lt;/a&gt;(战败)后被众神之王Zeus降罪，要(用双肩)支撑苍天直到永远。虽然阿特拉斯这个名字出现在很多地方，但通常认为，非洲西北部的&lt;a href=&quot;https://en.wikipedia.org/wiki/Atlas_Mountains&quot;&gt;阿特拉斯山脉&lt;/a&gt;(Atlas Mountains, 在今天的&lt;a href=&quot;https://en.wikipedia.org/wiki/Morocco&quot;&gt;摩洛哥&lt;/a&gt;、&lt;a href=&quot;https://en.wikipedia.org/wiki/Algeria&quot;&gt;阿尔及利亚&lt;/a&gt;和&lt;a href=&quot;https://en.wikipedia.org/wiki/Tunisia&quot;&gt;突尼斯&lt;/a&gt;附近)是神话中的阿特拉斯擎天的地方，山的名字也由此而来。阿特拉斯的父亲是泰坦&lt;a href=&quot;https://en.wikipedia.org/wiki/Iapetus_(mythology)&quot;&gt;Iapetus&lt;/a&gt;，母亲是&lt;a href=&quot;https://en.wikipedia.org/wiki/Oceanid&quot;&gt;海之女神&lt;/a&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Asia_(mythology)&quot;&gt;Asia&lt;/a&gt;或者&lt;a href=&quot;https://en.wikipedia.org/wiki/Clymene_(mythology)&quot;&gt;Clymene&lt;/a&gt;。阿特拉斯有很多孩子，大多数是女儿，如&lt;a href=&quot;https://en.wikipedia.org/wiki/Hesperides&quot;&gt;Hesperides&lt;/a&gt;(看守赫拉金苹果圣园的几位仙女。半神英雄&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E8%B5%AB%E6%8B%89%E5%85%8B%E5%8B%92%E6%96%AF&quot;&gt;赫拉克勒斯&lt;/a&gt;的十二伟业之一就是要摘取金苹果), &lt;a href=&quot;https://en.wikipedia.org/wiki/Hyades_(mythology)&quot;&gt;Hyades&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Pleiades_(Greek_mythology)&quot;&gt;Pleiades&lt;/a&gt;和住在Ogygia岛上的仙女&lt;a href=&quot;https://en.wikipedia.org/wiki/Calypso_(mythology)&quot;&gt;Calypso&lt;/a&gt;。根据古希腊诗人&lt;a href=&quot;https://en.wikipedia.org/wiki/Hesiod&quot;&gt;Hesiod&lt;/a&gt;的描述，阿特拉斯擎天之处是地球的最西边。&lt;/p&gt;
 
 &lt;p&gt;&lt;img alt=&quot;MAN Atlante fronte 1040572.JPG&quot; src=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/8/8c/MAN_Atlante_fronte_1040572.JPG/220px-MAN_Atlante_fronte_1040572.JPG&quot; width=&quot;220&quot; height=&quot;293&quot; srcset=&quot;//upload.wikimedia.org/wikipedia/commons/thumb/8/8c/MAN_Atlante_fronte_1040572.JPG/330px-MAN_Atlante_fronte_1040572.JPG 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/8/8c/MAN_Atlante_fronte_1040572.JPG/440px-MAN_Atlante_fronte_1040572.JPG 2x&quot; data-file-width=&quot;2112&quot; data-file-height=&quot;2816&quot; /&gt;&lt;/p&gt;
 
@@ -159,6 +162,10 @@ en.wikipedia.org/wiki/Atlas_(disambiguation)&quot;&gt;Atlas(地图集)&lt;/a&gt;
 
 &lt;h3 id=&quot;Punishment&quot;&gt;3. 惩罚&lt;/h3&gt;
 
+&lt;p&gt;在&lt;a href=&quot;https://en.wikipedia.org/wiki/Titanomachy&quot;&gt;泰坦之战&lt;/a&gt;中，阿特拉斯和他的兄弟&lt;a href=&quot;https://en.wikipedia.org/wiki/Menoetius_(mythology)&quot;&gt;Menoetius&lt;/a&gt;都站在泰坦一方，与&lt;a href=&quot;https://en.wikipedia.org/wiki/Twelve_Olympians&quot;&gt;奥林匹亚众神(Olympians)&lt;/a&gt;对抗。后来泰坦战败，包括Menoetius在内的众多泰坦被关进&lt;a href=&quot;https://en.wikipedia.org/wiki/Tartarus&quot;&gt;塔耳塔罗斯地狱(Tartarus)&lt;/a&gt;。不过宙斯为了惩罚阿特拉斯，便让他站在&lt;a href=&quot;https://en.wikipedia.org/wiki/Gaia_(mythology)&quot;&gt;Gaia&lt;/a&gt;(盖亚，大地之母，世界始祖，也就是地球)的最西边，用双肩撑起天空，以防天地原始的融合(to prevent the two from resuming their primordial embrace. 至于为啥要防止天地融合，或者说是交合，根据&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E7%9B%96%E4%BA%9A&quot;&gt;盖亚的中文词条&lt;/a&gt;，盖亚是大地之母，乌拉诺斯是天空之父，乌拉诺斯统治的时代，天和地没有分界，会不断交媾生下孩子…)&lt;/p&gt;
+
+&lt;p&gt;TODO.&lt;/p&gt;
+
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;(END)&lt;/p&gt;
@@ -179,6 +186,9 @@ en.wikipedia.org/wiki/Atlas_(disambiguation)&quot;&gt;Atlas(地图集)&lt;/a&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Titanomachy&quot;&gt;泰坦之战&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E8%B5%AB%E6%8B%89%E5%85%8B%E5%8B%92%E6%96%AF&quot;&gt;赫拉克勒斯&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>
