@@ -76,15 +76,15 @@ title: 翻译：New Google Allo stickers for Rogue One, A Star Wars Story
 *   [Stormtroopers](https://zh.wikipedia.org/wiki/%E5%B8%9D%E5%9C%8B%E9%A2%A8%E6%9A%B4%E5%85%B5)
 
 
-*   [Jyn](starwars.wikia.com/wiki/Jyn_Erso)
+*   [Jyn](https://starwars.wikia.com/wiki/Jyn_Erso)
 
     Jyn Erso was a human female soldier and former criminal who fought for the Alliance to Restore the Republic as a sergeant during the Galactic Civil War.
 
-*   [Captain Cassian Andor, 卡西安·安多上尉](starwars.wikia.com/wiki/Cassian_Andor)
+*   [Captain Cassian Andor, 卡西安·安多上尉](https://starwars.wikia.com/wiki/Cassian_Andor)
 
     Cassian Andor was a human male who served in the Alliance to Restore the Republic's Intelligence branch as a captain and intelligence officer
 
-*   [K-2SO](starwars.wikia.com/wiki/K-2SO)
+*   [K-2SO](https://starwars.wikia.com/wiki/K-2SO)
 
     经过重新编程的帝国保安机器人K-2S0 现效忠于联盟。
 
