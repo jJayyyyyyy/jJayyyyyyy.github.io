@@ -27,6 +27,11 @@ title: 一些有意思的事
 
 *	西班牙作家塞万提斯的作品[唐·吉诃(hē)德](http://baike.baidu.com/item/%E5%94%90%C2%B7%E5%90%89%E8%AF%83%E5%BE%B7/59900), 英文是**Don Quixote**, 引申出[quixotic](http://youdao.com/w/quixotic/#keyfrom=dict2.top)一词, 亦作quixotical, 意思是**狂想的**, **不切实际的**.
 
+*	bore这个词有**孔**, **钻孔**, **挖掘**的意思. 如这个[视频](https://www.youtube.com/watch?v=Qwd25JV-jnU)所述,
+>Boring a hole is a slow process requiring repetitive movements from	a tool that goes in circles, which may be why things that are slow and repetitive and don't appear to be going anywhere came to be described with the same word ---They're boring.
+
+	也就是说, 无趣或者无聊就是像钻孔一样一直重复地缓慢地做着相同的事. 虽然这不一定是boring的来源, 但这也是一个挺有意思的解释, 可以帮助记忆.
+
 <br/>
 
 (END)
