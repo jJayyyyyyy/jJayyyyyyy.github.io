@@ -5,13 +5,17 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 23 Dec 2016 18:36:16 +0800</pubDate>
-    <lastBuildDate>Fri, 23 Dec 2016 18:36:16 +0800</lastBuildDate>
+    <pubDate>Fri, 23 Dec 2016 18:38:09 +0800</pubDate>
+    <lastBuildDate>Fri, 23 Dec 2016 18:38:09 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
         <title>一些有意思的事</title>
         <description>&lt;p&gt;这篇博文将会不定期更新一些有意思的事.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;ul&gt;
   &lt;li&gt;

@@ -6,6 +6,10 @@ title: 一些有意思的事
 
 这篇博文将会不定期更新一些有意思的事.
 
+---
+
+<br/>
+
 *	阿迪达斯(Adidas)是德国的, 不是美国的. Adidas的名字来源于创始人Adolf Adi Dassler.
 
 *	澳大利亚的首都是堪培拉([Canberra](https://en.wikipedia.org/wiki/Canberra)), 不是悉尼, 不是墨尔本.
