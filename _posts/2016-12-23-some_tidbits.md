@@ -32,6 +32,18 @@ title: 一些有意思的事
 
 	也就是说, 无趣或者无聊就是像钻孔一样一直重复地缓慢地做着相同的事. 虽然这不一定是boring的来源, 但这也是一个挺有意思的解释, 可以帮助记忆.
 
+*	很多人都有拖延症, 其英文可以用*procrastination*来表示. 当遇到紧急情况需要马上做出决定时, 可以说:
+
+	>There is no time for procrastination. We need decisive action.
+
+*	今天(20161224), 这篇文章的目录名改为*some_tidbits*, *tidbit*读音类似*tasty bit*, 意思是*a small tasty bit of food*, 可以表示*something tasty, something interesting*.
+
+*	很多人喜欢吃奥利奥, 也就是*Oreo*, 是一种奶油夹心巧克力饼干. 
+
+	![Oreo](http://oimageb4.ydstatic.com/image?url=http://plnaugleclasswiki.wikispaces.com/file/view/oreos.jpg/81659151/oreos.jpg&product=PICDICT_EDIT&w=150)
+
+	这个词在美国俚语中有*"白心"黑人*的意思, 也就是奉行白人社会准则的或者讨好白人的黑人.
+
 <br/>
 
 (END)
@@ -49,3 +61,5 @@ title: 一些有意思的事
 *	[sublime via youdao](http://youdao.com/w/eng/sublime/#keyfrom=dict2.index)
 
 *	[浮士德](https://zh.wikipedia.org/wiki/%E6%B5%AE%E5%A3%AB%E5%BE%B7I)
+
+*	[Oreo](http://youdao.com/w/eng/oreo/#keyfrom=dict2.index)
