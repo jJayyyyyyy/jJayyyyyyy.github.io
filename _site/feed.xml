@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 24 Dec 2016 20:23:19 +0800</pubDate>
-    <lastBuildDate>Sat, 24 Dec 2016 20:23:19 +0800</lastBuildDate>
+    <pubDate>Sat, 24 Dec 2016 20:47:52 +0800</pubDate>
+    <lastBuildDate>Sat, 24 Dec 2016 20:47:52 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -69,6 +69,13 @@
 
     &lt;p&gt;这个词在美国俚语中有&lt;em&gt;“白心”黑人&lt;/em&gt;的意思, 也就是奉行白人社会准则的或者讨好白人的黑人.&lt;/p&gt;
   &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;滑铁卢&lt;/em&gt;译自&lt;em&gt;Waterloo&lt;/em&gt;, 是比利时的一个城镇. &lt;em&gt;滑铁卢战役&lt;/em&gt;是&lt;em&gt;The Battle of Waterloo&lt;/em&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;古代埃及的&lt;em&gt;法老&lt;/em&gt;是&lt;em&gt;Pharaoh&lt;/em&gt;的音译, 是对古埃及君主的尊称, 现在还有暴君的意思.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;resin&lt;/em&gt;意思是&lt;em&gt;树脂, 松香&lt;/em&gt;. &lt;a href=&quot;http://youdao.com/w/eng/resin/#keyfrom=dict2.index&quot;&gt;根据这里&lt;/a&gt;, &lt;em&gt;Resin&lt;/em&gt;还是一个用JAVA开发的&lt;em&gt;应用服务器&lt;/em&gt;, 对servlet和JSP提供了良好的支持, 性能也比较优良. 另外, 美俚中&lt;em&gt;kiss the resin&lt;/em&gt;表示拳击中被击倒.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -97,6 +104,9 @@
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;http://youdao.com/w/eng/oreo/#keyfrom=dict2.index&quot;&gt;Oreo&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%BB%91%E9%93%81%E5%8D%A2%E6%88%98%E5%BD%B9&quot;&gt;滑铁卢战役&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>

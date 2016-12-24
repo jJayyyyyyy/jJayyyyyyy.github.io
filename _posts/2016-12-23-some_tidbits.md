@@ -44,6 +44,12 @@ title: 一些有意思的事
 
 	这个词在美国俚语中有*"白心"黑人*的意思, 也就是奉行白人社会准则的或者讨好白人的黑人.
 
+*	*滑铁卢*译自*Waterloo*, 是比利时的一个城镇. *滑铁卢战役*是*The Battle of Waterloo*.
+
+*	古代埃及的*法老*是*Pharaoh*的音译, 是对古埃及君主的尊称, 现在还有暴君的意思.
+
+*	*resin*意思是*树脂, 松香*. [根据这里](http://youdao.com/w/eng/resin/#keyfrom=dict2.index), *Resin*还是一个用JAVA开发的*应用服务器*, 对servlet和JSP提供了良好的支持, 性能也比较优良. 另外, 美俚中*kiss the resin*表示拳击中被击倒.
+
 <br/>
 
 (END)
@@ -63,3 +69,5 @@ title: 一些有意思的事
 *	[浮士德](https://zh.wikipedia.org/wiki/%E6%B5%AE%E5%A3%AB%E5%BE%B7I)
 
 *	[Oreo](http://youdao.com/w/eng/oreo/#keyfrom=dict2.index)
+
+*	[滑铁卢战役](https://zh.wikipedia.org/wiki/%E6%BB%91%E9%93%81%E5%8D%A2%E6%88%98%E5%BD%B9)
