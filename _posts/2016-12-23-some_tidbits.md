@@ -44,11 +44,37 @@ title: 一些有意思的事
 
 	这个词在美国俚语中有*"白心"黑人*的意思, 也就是奉行白人社会准则的或者讨好白人的黑人.
 
+*	吃完奥利奥, 顺便再尝尝士力架, 也就是Snickers. 它的广告词一般是*You're not you when you're hungry.* 或者是*you ... when you're hungry.*的形式. 这里有一个[油管视频](https://www.youtube.com/watch?v=tDkTNMK1V50&t=7s), 是它的一个广告合辑. 我是看到封面的Mr. Bean点进去看的, 发现还是蛮有意思的.
+
 *	*滑铁卢*译自*Waterloo*, 是比利时的一个城镇. *滑铁卢战役*是*The Battle of Waterloo*.
 
 *	古代埃及的*法老*是*Pharaoh*的音译, 是对古埃及君主的尊称, 现在还有暴君的意思.
 
 *	*resin*意思是*树脂, 松香*. [根据这里](http://youdao.com/w/eng/resin/#keyfrom=dict2.index), *Resin*还是一个用JAVA开发的*应用服务器*, 对servlet和JSP提供了良好的支持, 性能也比较优良. 另外, 美俚中*kiss the resin*表示拳击中被击倒.
+
+*	polygon 多边形
+ 
+	triangle 三角形  
+	quadrangle 四边形  
+	rectangle 长方形  
+	square 正方形  
+	pentagon 五边形  
+	hexagon 六边形  
+	heptagon 七边形  
+	octagon 八边形  
+	nonagon 九边形  
+	decagon 十边形
+	
+*	游戏中常出现的*黑曜石*, 是一种自然产生的玻璃, 由火山熔岩迅速地冷却凝结而成. 其英文名是*obsidian*. 听力中出现了这句话: 
+
+	>Obsidian is black, volcanic, well, almost like glass. It flakes very nicely into really sharp points.
+
+
+*	the Near East, [近东](https://zh.wikipedia.org/wiki/%E8%BF%91%E6%9D%B1).
+
+	the Middle East, [中东](https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%9C).
+	
+	the Far East, [远东](https://zh.wikipedia.org/wiki/%E9%81%A0%E6%9D%B1).
 
 <br/>
 
@@ -71,3 +97,5 @@ title: 一些有意思的事
 *	[Oreo](http://youdao.com/w/eng/oreo/#keyfrom=dict2.index)
 
 *	[滑铁卢战役](https://zh.wikipedia.org/wiki/%E6%BB%91%E9%93%81%E5%8D%A2%E6%88%98%E5%BD%B9)
+
+*	[黑曜石](https://zh.wikipedia.org/wiki/%E9%BB%91%E6%9B%9C%E5%B2%A9)
