@@ -66,15 +66,13 @@ title: 一些有意思的事
 	decagon 十边形
 	
 *	游戏中常出现的*黑曜石*, 是一种自然产生的玻璃, 由火山熔岩迅速地冷却凝结而成. 其英文名是*obsidian*. 听力中出现了这句话: 
-
 	>Obsidian is black, volcanic, well, almost like glass. It flakes very nicely into really sharp points.
 
+*	the Near East, [近东](https://zh.wikipedia.org/wiki/%E8%BF%91%E6%9D%B1).  
+	the Middle East, [中东](https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%9C).  
+	the Far East, [远东](https://zh.wikipedia.org/wiki/%E9%81%A0%E6%9D%B1).  
 
-*	the Near East, [近东](https://zh.wikipedia.org/wiki/%E8%BF%91%E6%9D%B1).
-
-	the Middle East, [中东](https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%9C).
-	
-	the Far East, [远东](https://zh.wikipedia.org/wiki/%E9%81%A0%E6%9D%B1).
+*	[行星](https://jjayyyyyyy.github.io/2016/12/25/Planet.html), Planet, 单独写了一篇文章, 主要是其命名与来源.
 
 <br/>
 
