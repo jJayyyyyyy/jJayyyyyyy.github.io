@@ -5,9 +5,70 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 25 Dec 2016 14:59:19 +0800</pubDate>
-    <lastBuildDate>Sun, 25 Dec 2016 14:59:19 +0800</lastBuildDate>
+    <pubDate>Sun, 25 Dec 2016 17:01:50 +0800</pubDate>
+    <lastBuildDate>Sun, 25 Dec 2016 17:01:50 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>行星</title>
+        <description>&lt;p&gt;如果能够回到一千年前观看未受污染的星空, 我们会发现夜空中的星星都在我们的头顶旋转. 根据BBC纪录片&amp;lt;&lt;a href=&quot;http://www.bilibili.com/video/av4316358/index_2.html&quot;&gt;太阳系的奇迹&lt;/a&gt;&amp;gt;, 也正是因为如此, 古代的人们一直认为地球是宇宙的中心. 不过在星星堆中似乎有一些星星的运动轨迹十分异常, 在拉丁文中它们叫做&lt;em&gt;planeta&lt;/em&gt;, 也就是英文的&lt;em&gt;planet&lt;/em&gt;意思是到处游荡的星星(wanderer). 这些planet就是现在所说的&lt;em&gt;行星&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;由于地心说模型的不准确, 太阳系的行星和卫星在夜空中的运动轨迹和远方的恒星相比, 显得非常异常. 对此有一些神话故事的解释, 然而很多人还是心存疑惑, 最终出现了日心说之类的模型, 较好地描述了行星的运动. 后来有了望远镜等设备, 更加证实地球不是宇宙的中心, 并进一步修正了模型. 不过这些行星的名字仍然是有趣的.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%B0%B4%E6%98%9F&quot;&gt;水星&lt;/a&gt;, 英语&lt;em&gt;Mercury&lt;/em&gt;, 拉丁语&lt;em&gt;Mercurius&lt;/em&gt;, 由于其飞快的公转速度,它在罗马神话中被称为&lt;em&gt;墨丘利&lt;/em&gt;, 是快速飞行的信使神. 中国古代称其为辰星.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%87%91%E6%98%9F&quot;&gt;金星&lt;/a&gt;, 英文&lt;a href=&quot;https://en.wikipedia.org/wiki/Venus_(mythology)&quot;&gt;&lt;em&gt;Venus&lt;/em&gt;&lt;/a&gt;, 源自罗马神话的爱与美的女神维纳斯. 即希腊神话中爱与美的女神&lt;a href=&quot;https://en.wikipedia.org/wiki/Aphrodite&quot;&gt;&lt;em&gt;Aphrodite&lt;/em&gt;&lt;/a&gt;. 金星的天文符号♀是维纳斯的梳妆镜. 金星在中国古代称为太白, 另外早晨出现在东方称启明, 晚上出现在西方称长庚.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%9C%B0%E7%90%83#.E5.91.BD.E5.90.8D.E5.92.8C.E8.BE.AD.E6.BA.90&quot;&gt;地球&lt;/a&gt;, 英文Earth, 希腊神话中的大地之母&lt;a href=&quot;https://en.wikipedia.org/wiki/Gaia_(mythology)&quot;&gt;Gaia&lt;/a&gt;.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E7%81%AB%E6%98%9F&quot;&gt;火星&lt;/a&gt;, 英文为Mars, 来自罗马神话中的&lt;a href=&quot;https://en.wikipedia.org/wiki/Mars_(mythology)&quot;&gt;战神Mars&lt;/a&gt;. 古汉语中则因为它荧荧如火, 位置亮度时常变动让人无法捉摸而称之为荧惑.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%9C%A8%E6%98%9F#.E7.A5.9E.E8.A9.B1&quot;&gt;木星&lt;/a&gt;是太阳系中最大的行星, 英文Jupiter, 来自罗马神话的天神&lt;a href=&quot;https://en.wikipedia.org/wiki/Jupiter_(mythology)&quot;&gt;Jupiter&lt;/a&gt;, 相当于希腊神话中的&lt;a href=&quot;https://en.wikipedia.org/wiki/Zeus&quot;&gt;Zeus&lt;/a&gt;.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%9C%A8%E5%8D%AB%E4%BA%8C&quot;&gt;木卫二&lt;/a&gt;又称&lt;em&gt;Europa&lt;/em&gt;(希腊神话中的腓尼基公主), 被&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%BD%AE%E6%B1%90%E9%8E%96%E5%AE%9A&quot;&gt;潮汐锁定&lt;/a&gt;, 表面光滑, 可能存在液态海洋.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%9C%A8%E5%8D%AB%E4%B8%89&quot;&gt;木卫三&lt;/a&gt;是太阳系中最大的卫星, 其直径大于水星, 质量约为水星的一半. 木卫三是太阳系中已知的唯一一颗拥有磁场的卫星, 其磁场可能是由富铁的液态内核的对流运动所产生的.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%9C%9F%E6%98%9F&quot;&gt;土星&lt;/a&gt;, 英文Saturn, 源自罗马神话中的农业之神&lt;a href=&quot;https://en.wikipedia.org/wiki/Saturn_(mythology)&quot;&gt;Saturn&lt;/a&gt;, 土星的天文学符号是农业之神的镰刀♄.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%9C%9F%E5%8D%AB%E5%85%AD&quot;&gt;土卫六&lt;/a&gt;, 英文Titan(可参见&lt;a href=&quot;https://jjayyyyyyy.github.io/2016/12/16/Atlas(mythology)_via_wikipedia.html&quot;&gt;这篇文章&lt;/a&gt;), 拥有明显大气层, 其中的甲烷也可能成为生命形成的基础. 土卫六由&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%85%8B%E9%87%8C%E6%96%AF%E8%92%82%E5%AE%89%C2%B7%E6%83%A0%E6%9B%B4%E6%96%AF&quot;&gt;惠更斯&lt;/a&gt;在17世纪初发现. 由此命名的&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%83%A0%E6%9B%B4%E6%96%AF%E5%8F%B7&quot;&gt;惠更斯号&lt;/a&gt;于2004年12月25日圣诞节与搭载它的&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%8D%A1%E8%A5%BF%E5%B0%BC%EF%BC%8D%E6%83%A0%E6%9B%B4%E6%96%AF%E5%8F%B7&quot;&gt;卡西尼号土星探测器&lt;/a&gt;分离, 近半个月后进入土卫六大气, 最终成功登陆. 惠更斯号在土卫六上进行了约90分钟的探索并传回宝贵的数据之后, 因电池耗尽而结束历史使命.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%A4%A9%E7%8E%8B%E6%98%9F&quot;&gt;天王星&lt;/a&gt;, 英文Uranus, 是希腊神话中的天空之神, Zeus的祖父.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%B5%B7%E7%8E%8B%E6%98%9F&quot;&gt;海王星&lt;/a&gt;, 英文Neptune来自罗马神话中的海神Neptūnus, 对应于希腊神话的Poseidon. Neptune是Jupiter和Pluto的兄弟.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%86%A5%E7%8E%8B%E6%98%9F&quot;&gt;冥王星&lt;/a&gt;, 英文Pluto是罗马神话中的冥王, 对应于希腊神话的Hades. 冥王星是曾经的第九大行星.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;相关阅读&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E8%A1%8C%E6%98%9F#.E5.90.8D.E7.A7.B0.E5.8F.8A.E7.94.B1.E4.BE.86&quot;&gt;行星&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sun, 25 Dec 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/12/25/Planet.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/25/Planet.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>一些有意思的事</title>
@@ -95,20 +156,17 @@ octagon 八边形&lt;br /&gt;
 nonagon 九边形&lt;br /&gt;
 decagon 十边形&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;游戏中常出现的&lt;em&gt;黑曜石&lt;/em&gt;, 是一种自然产生的玻璃, 由火山熔岩迅速地冷却凝结而成. 其英文名是&lt;em&gt;obsidian&lt;/em&gt;. 听力中出现了这句话:&lt;/p&gt;
-
+  &lt;li&gt;游戏中常出现的&lt;em&gt;黑曜石&lt;/em&gt;, 是一种自然产生的玻璃, 由火山熔岩迅速地冷却凝结而成. 其英文名是&lt;em&gt;obsidian&lt;/em&gt;. 听力中出现了这句话:
     &lt;blockquote&gt;
       &lt;p&gt;Obsidian is black, volcanic, well, almost like glass. It flakes very nicely into really sharp points.&lt;/p&gt;
     &lt;/blockquote&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;the Near East, &lt;a href=&quot;https://zh.wikipedia.org/wiki/%E8%BF%91%E6%9D%B1&quot;&gt;近东&lt;/a&gt;.&lt;/p&gt;
-
-    &lt;p&gt;the Middle East, &lt;a href=&quot;https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%9C&quot;&gt;中东&lt;/a&gt;.&lt;/p&gt;
-
-    &lt;p&gt;the Far East, &lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%81%A0%E6%9D%B1&quot;&gt;远东&lt;/a&gt;.&lt;/p&gt;
+    &lt;p&gt;the Near East, &lt;a href=&quot;https://zh.wikipedia.org/wiki/%E8%BF%91%E6%9D%B1&quot;&gt;近东&lt;/a&gt;.&lt;br /&gt;
+the Middle East, &lt;a href=&quot;https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%9C&quot;&gt;中东&lt;/a&gt;.&lt;br /&gt;
+the Far East, &lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%81%A0%E6%9D%B1&quot;&gt;远东&lt;/a&gt;.&lt;/p&gt;
   &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://jjayyyyyyy.github.io/2016/12/25/Planet.html&quot;&gt;行星&lt;/a&gt;, Planet, 单独写了一篇文章, 主要是其命名与来源.&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -861,73 +919,6 @@ Polyeidos, Fragment 837; Ovid, Metamorphoses 4.627.
         <pubDate>Tue, 06 Dec 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/12/06/your_name.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/12/06/your_name.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>翻译：Have a holly jolly time in Santa’s Village — now open</title>
-        <description>&lt;p&gt;这是&lt;strong&gt;翻译&lt;/strong&gt;系列的一篇文章。原文来自Google Blog的&lt;a href=&quot;https://blog.google/products/maps/have-holly-jolly-time-santas-village-now-open/&quot;&gt;Have a holly jolly time in Santa’s Village — now open&lt;/a&gt;，发布于2016年12月2日。以下是译文。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://storage.googleapis.com/gweb-uniblog-publish-prod/images/st-blog-header.2e16d0ba.fill-1000x563.png&quot; alt=&quot;santa&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section&quot;&gt;圣诞村开放——一起来欢度时光吧&lt;/h1&gt;
-
-&lt;p&gt;小精灵们已经回到了北极，为圣诞老人的平安夜之旅&lt;a href=&quot;https://www.youtube.com/watch?v=zE_D9Vd69aw&amp;amp;index=1&amp;amp;list=PL590L5WQmH8ftab8SEtrKnz9f6iGQIVfD&quot;&gt;做准备&lt;/a&gt;了——同时这也意味着，&lt;a href=&quot;https://santatracker.google.com/&quot;&gt;圣诞村&lt;/a&gt;已经正式开放了！从今天开始到圣诞节之前的每一天，我们都会解锁一项新的游戏体验，即使是现在心情最差的人也能找回假日的乐趣！&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://lh5.googleusercontent.com/SdF0Qes9Snw-T1oSgioZPgjhseDKsYuIqYZbS6u99M5mq6JmwrLg9Q8X4pIu0OG5HskmY-DsgkgBIEkDlECw2uVCoAP-KszIMzOtviQ0umLHuPZ-i-vxrYQJU-bAjb15s1ZsCggU&quot; alt=&quot;Santa Tracker&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;从滑雪的企鹅到幻动的精灵，北极村的居民们正在享受他们的生活，现在你也可以和他们一起玩耍啦。今年你会在圣诞村发现许多新的游戏，包括四个&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.google.android.apps.santatracker&quot;&gt;安卓系统专属游戏&lt;/a&gt;——“寻找礼物”就是其中一个，在游戏中圣诞老爷爷可能会把礼物放错位置，这时就需要你帮忙喽。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://lh6.googleusercontent.com/U8ZeZIi99tZiRZssPd0SFA-IvTS2d0oRV9Wvup93eVJeotB7qYCV1HDiOzHJKInk6Y0wgpW2XITfdgkAf2m5LZhd2v2TYR_AoZ6epo48co-Y84iLW5vZ61Z4YPlxaKm5Ogp8TbrJ&quot; alt=&quot;app&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;另外，12月5日至12月11日刚好是&lt;a href=&quot;https://www.google.com/edu/resources/computerscience/learning/&quot;&gt;计算机科学教育周&lt;/a&gt;，我们还会解锁三个编程小游戏，来帮助孩子们学习最基础的编程知识。比如在Code Boogie这个游戏中，你可以帮助圣诞老人的小精灵们学习跳舞，孩子们在玩游戏的过程中，也能够通过图形化编程学到一些有意思的东西。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://lh6.googleusercontent.com/PTS2alzAT0NWChoVcUeqd6ILqRfs34-5fybDx9iyYo3HJjEjK9oTwn5r7AgUG4_rOZJT2m8Vc6rCpTmtcdNfrrJbL5gT_6aypfzTwGtk8_dN1BAdmLENkGe1FMoGDa3xJKeC8XXC&quot; alt=&quot;CSEdWeek&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;圣诞村中还增添了许多提供给教育者的&lt;a href=&quot;https://santatracker.google.com/educators.html&quot;&gt;资源&lt;/a&gt;。从计算机科学到地理学，各个领域的教育资源都有，内容则包括课程计划、教育类游戏等。教师和家长可以根据轻松地从目录选择，然后下载相应资源，并且在课堂或者家中使用。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/BMWry2RcNLvOX9AjEqQ6BBpf8r6uAHMLsUEVlUanpNjZBazYwOvj31j5tUtgGRZu6-FSYKIMWKw-WrqQg8Od_WrUQoqYjhxNj92sNGPV8eSdfb3YqMIT-u-uEHdQLIpPR7luYZFX&quot; alt=&quot;games for the classroom&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;别忘了在12月23日~12月24日回来哟(具体哪一天取决于你所在的时区)。届时我们将会一起追踪圣诞老人的旅程，他将会在世界各地派发礼物和快乐。在此之前，就让我们和圣诞村的居民们一起，享受这个圣诞月吧！&lt;/p&gt;
-
-&lt;p&gt;标签：&lt;a href=&quot;https://blog.google/products/maps/&quot;&gt;地图&lt;/a&gt;，节日，&lt;a href=&quot;https://blog.google/topics/education/&quot;&gt;教育&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;相关阅读&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Kris_Kringle&quot;&gt;Wikipedia: Kris Kringle&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sun, 04 Dec 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/12/04/Have_a_holly_jolly_time_in_Santa-s_Village.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/12/04/Have_a_holly_jolly_time_in_Santa-s_Village.html</guid>
         
         
       </item>
