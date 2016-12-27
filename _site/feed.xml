@@ -5,9 +5,173 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 26 Dec 2016 21:55:26 +0800</pubDate>
-    <lastBuildDate>Mon, 26 Dec 2016 21:55:26 +0800</lastBuildDate>
+    <pubDate>Tue, 27 Dec 2016 21:51:03 +0800</pubDate>
+    <lastBuildDate>Tue, 27 Dec 2016 21:51:03 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>希腊字母表</title>
+        <description>&lt;p&gt;数学和物理中，经常会用希腊字母表示常量（和变量）。然而除了α β Δ τ θ φ啥的，其他大多是凭感觉读的。最近找到了这张希腊字母表:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://image.sciencenet.cn/album/201107/24/182530l363h6d6h3drl6h3.png&quot; alt=&quot;Greek Alphabet&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;(图片来自科学网，原博客在[这里http://blog.sciencenet.cn/blog-109440-467978.html)，但已经被删除)&lt;/p&gt;
+
+&lt;p&gt;另外希腊字母在软键盘上按照横排从左到右从上到下排列的，即q→o，a→k，z→m，一共24个字母。&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Letter&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;Name&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;Sound&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Α α&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;alpha&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;…&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Β β&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;beta&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;…&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Γ γ&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;gamma&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;…&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Δ δ&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;delta&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;…&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Εε&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;epsilon&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ζζ&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;zeta&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ηη&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;eta&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Θθ&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;theta&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ιι&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;iota&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;/ai’out?0?5/&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Κκ&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;kappa&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Λλ&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;lambda&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Μμ&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;mu&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Νν&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;nu&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ξξ&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;xi&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;/ksai/ 克赛, /ksi:/ 柯西&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Οο&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;omicron&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;/ou’mi:kr?0?5n/&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ππ&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;pi&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ρρ&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;rho&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Σσ&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;sigma&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ττ&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;tau&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Υυ&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;upsilon&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Φφ&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;phi&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Χχ&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;chi&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;/kai/&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ψψ&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;psi&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ωω&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;omega&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;另外也可以参考维基百科的&lt;a href=&quot;https://en.wikipedia.org/wiki/Greek_alphabet&quot;&gt;Greek alphabet&lt;/a&gt;。希望以后少读错。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;相关阅读&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Greek_alphabet&quot;&gt;Greek Alphabet&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Tue, 27 Dec 2016 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2016/12/27/Greek_Alphabet.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2016/12/27/Greek_Alphabet.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>行星</title>
@@ -879,61 +1043,6 @@ Polyeidos, Fragment 837; Ovid, Metamorphoses 4.627.
         <pubDate>Wed, 07 Dec 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/12/07/100_percent_renewable_energy.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/12/07/100_percent_renewable_energy.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>你的名字</title>
-        <description>&lt;p&gt;[你的名字]是一部值得推荐的电影。经历波折之后，男女主最终再次相遇并且勇敢地相认了，应该会有好的发展吧。&lt;/p&gt;
-
-&lt;p&gt;转一篇知乎上的&lt;a href=&quot;https://www.zhihu.com/question/52299556/answer/134339754&quot;&gt;影评&lt;/a&gt;，已征得作者同意，下面是原文：&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;泷在喝下口嚼酒之后，相当于同时拥有了Adam和使徒之力，获得了超级管理员权限，但是他作为一个程序员，深知不能随便修改世界否则会引入更多bug造成混乱，于是使用了git reset进行版本回退，而不是直接不管原来的创建新的分支或者直接修改后commit(这样会明显地在git log中留下曾经的错误)&lt;/p&gt;
-
-&lt;p&gt;三叶还是之前的三叶。证据是，在黄昏相遇之前，三叶附身并认出了这是泷的身体，而且在看到被彗星毁坏的村庄之后说了一句“我…那个时候…死了吗”。由以上两点可以确定这时的三叶就是之前的三叶，至少灵魂是。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://pic4.zhimg.com/v2-7fd892aa05ce9858d7dc5e85798ee7bb_b.jpg&quot; alt=&quot;Taki&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://pic2.zhimg.com/v2-853e7aa830949ffd2fd122bf41774449_b.jpg&quot; alt=&quot;no&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;(图侵删)&lt;/p&gt;
-
-&lt;p&gt;接下来就是产品和研发沟通需求，然后回退到大灾难发生之前的版本，成功地修改了bug并进行commit。&lt;/p&gt;
-
-&lt;p&gt;此后由于git log里面已经没有出问题的时间线了。但是这同时也覆盖了上一次出问题之后提交的改动，因此也就是【记不起对方名字】了。&lt;/p&gt;
-
-&lt;p&gt;两人冥冥之中都感觉是要寻找谁，这是因为虽然【主线master只有一条】(dev 最终也要合并到master的)，但系统还是保留了部分之前的commit作为备用，并没有完全删除。通过git reflog，泷和三叶终于重逢并且慢慢提取并找回了从前的记忆，使得代码仓库进一步完善。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;——–2016.12.06更新———&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git add .
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git commit -m &lt;span class=&quot;s1&quot;&gt;'add two pictures'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;——–2016.12.06更新———&lt;/p&gt;
-
-&lt;p&gt;另外，这个故事也告诉我们做好备份以及写好规范说明文档的重要性，至少不要git commit -m “add something”，否则无法快速理清思路回退版本解决bug&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git add readme.md
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;git commit -m &lt;span class=&quot;s1&quot;&gt;'update &amp;lt;readme.md&amp;gt; with additional content'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-</description>
-        <pubDate>Tue, 06 Dec 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/12/06/your_name.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/12/06/your_name.html</guid>
         
         
       </item>
