@@ -6,6 +6,8 @@ title: 翻译：[Atlas(mythology)] via Wikipedia
 
 这是**翻译**系列的一篇文章。原文来自Wikipedia的词条[Atlas (mythology)](https://en.wikipedia.org/wiki/Atlas_(mythology))。要作这篇翻译是因为背单词的时候遇到了*atlas*这个词，被译为*地图集*，两者之间一直没有建立起很好的联想。于是Google了下atlas，发现这个词来自希腊神话，故事也很有意思。不过在维基百科，Atlas的[中文词条](https://zh.wikipedia.org/wiki/%E9%98%BF%E7%89%B9%E6%8B%89%E6%96%AF)只是一个概述，并不完整(其实看完之后我觉得能有这个中文词条的概述已经很厉害了，因为英文词条对应了很多语言学和历史的东西，涉及的知识面很广，很难完整翻译，而这个简述已经很好地概括了内容)。因此我想试着来把这个英文词条翻译成中文的，由于*atlas*还有其他很多意思和词条，本文仅限于神话故事中的*Atlas*。此外，因为我对包括希腊神话在内的西方文化不太了解，译文难免存在一些问题，我尽量多查资料逐步改进哈。以下是译文，并参照[中文词条](https://zh.wikipedia.org/wiki/%E9%98%BF%E7%89%B9%E6%8B%89%E6%96%AF)，将*Atlas*译作阿特拉斯，其他的神名和人名基本不译。另外，本文排版顺序和维基百科的略有不同。
 
+ps: 魔兽(电影版)的制作公司之一是[Atlas Entertainment](https://en.wikipedia.org/wiki/Atlas_Entertainment)，于片尾出现，是Atlas托着一个光球的形象。
+
 ---更新时间线---
 
 *	2016-12-16-第1次更新-开始写
@@ -13,6 +15,7 @@ title: 翻译：[Atlas(mythology)] via Wikipedia
 *	2016-12-20-第3次更新-新增*惩罚*一节。
 *	2016-12-21-第4次更新-修改格式与内容。将节名*惩罚*改为*受罚*。增加4, 5, 6, 7, 8节内容。格式与内容仍需修改。
 *	2016-12-22-第5次更新-修改格式与内容。补充完善*注解*和*相关阅读*。
+*	2017-01-02-第六次更新。补充增加*前言(ps)*。补充*注解2(ps)*。
 
 <br/>
 
@@ -121,6 +124,9 @@ Atlas, 发音: /ˈætləs/, <a href="https://en.wikipedia.org/wiki/Ancient_Greek
 
 <li id="Titan"><span><h5>
 泰坦是在原始神之后出现的神族, 在被奥林匹斯神系取代之前曾经统治世界. 在希腊神话中, <a href="https://en.wikipedia.org/wiki/Greek_primordial_deities">原始神</a>是创世的神祇(qí), 其中天神<a href="https://en.wikipedia.org/wiki/Uranus_(mythology)">Uranus</a>和地神<a href="https://en.wikipedia.org/wiki/Gaia_(mythology)">Gaia</a>生下了最初的12位泰坦, 包括<a href="https://en.wikipedia.org/wiki/Cronus">Cronus</a>和他姐姐——时光女神<a href="https://en.wikipedia.org/wiki/Rhea_(mythology)">Rhea</a>. 而Cronus和Reha生下了后来奥林匹斯神系的众神之王<a href="https://en.wikipedia.org/wiki/Zeus">Zeus</a>.
+<h5>
+ps: 魔兽历史中也有泰坦，如<a href="http://baike.baidu.com/link?url=WPn6WA7BXPAydNlEJBow0Qo1RwSp6sxo4AgfTk78oqKc43C3sZUaNlxfzyn8FBA5f1DkpGnpT6dOW9GA8brmqMy0TQvP5Z1ce-eikRAC5SmyscHCpCJVsTqgpfI5KSWU">萨格拉斯</a>。
+</h5>
 </h5></span></li>
 
 <li id="Atlas_Mountains"><span><h5>
