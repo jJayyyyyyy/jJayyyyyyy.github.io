@@ -5,9 +5,100 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 02 Jan 2017 21:15:17 +0800</pubDate>
-    <lastBuildDate>Mon, 02 Jan 2017 21:15:17 +0800</lastBuildDate>
+    <pubDate>Tue, 03 Jan 2017 21:14:24 +0800</pubDate>
+    <lastBuildDate>Tue, 03 Jan 2017 21:14:24 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>翻译：Leap second briefly catches out computer firm</title>
+        <description>&lt;p&gt;这是&lt;strong&gt;翻译&lt;/strong&gt;系列的一篇文章。原文来自BBC的新闻&lt;a href=&quot;http://www.bbc.com/news/technology-38488246&quot;&gt;Leap second briefly catches out computer firm&lt;/a&gt;，发布于2017年1月2日。以下是译文。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;由闰秒带来的故障&lt;/h2&gt;
+
+&lt;p&gt;&lt;img alt=&quot;leap second&quot; src=&quot;http://ichef.bbci.co.uk/news/660/cpsprodpb/1025A/production/_93183166_hi006664199.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;h6&gt;“闰秒”造成了Cloudflare公司的服务器出现故障。&lt;/h6&gt;
+
+&lt;p&gt;互联网公司Cloudflare提供的服务出现短暂故障，原来是闰秒惹的祸。&lt;/p&gt;
+
+&lt;p&gt;Cloudflare公司的少数服务器未能正确处理2016年的闰秒，导致故障出现，并使其部分客户在2017年最初的几个小时内无法接入互联网。&lt;/p&gt;
+
+&lt;p&gt;由于&lt;a href=&quot;https://en.wikipedia.org/wiki/Coordinated_Universal_Time&quot;&gt;UTC&lt;/a&gt;时间制和地球绕日公转周期之间存在误差，因此偶尔需要引入&lt;a href=&quot;https://en.wikipedia.org/wiki/Leap_second&quot;&gt;闰秒&lt;/a&gt;进行调整，并以此与使用GMT时间制的国家进行时间同步。&lt;/p&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;丢失的时间&lt;/h4&gt;
+
+&lt;p&gt;Cloudflare公司发表&lt;a href=&quot;https://blog.cloudflare.com/how-and-why-the-leap-second-affected-cloudflare-dns/&quot;&gt;声明&lt;/a&gt;，称其工程师已经在90分钟内修复了出现故障的机器。&lt;/p&gt;
+
+&lt;p&gt;如果当时用户想要访问受影响的服务器，可能会收到该页无法显示等错误。&lt;/p&gt;
+
+&lt;p&gt;Cloudflare公司提供CDN服务，可以加快用户访问网站的速度，也能防止恶意流量对源站的直接攻击。&lt;/p&gt;
+
+&lt;p&gt;据悉，在故障期间约1%的用户访问请求受到影响。&lt;/p&gt;
+
+&lt;p&gt;经过深入分析，不同网络之间的时间戳在闰秒前后存在差异，造成了内部系统的”恐慌”，最终引发了服务器故障。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h5&gt;注&lt;/h5&gt;
+
+&lt;ol&gt;&lt;span&gt;
+
+&lt;li&gt;&lt;span&gt;&lt;h5&gt;
+leap, 跳, 闰年的. leap second, 闰秒. 2016年的12月31日增加了一闰秒, 也就是说12月31日11点59分59秒之后不是2017年, 而是59分60秒.
+&lt;/h5&gt;&lt;/span&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;span&gt;&lt;h5&gt;
+GMT可以理解为以太阳为标准, 太阳直射格林尼治子午线时为正午, 两个正午可以确定一天; UTC可以理解为原子钟, 如1s定义可以被为铯原子最外层电子跃迁N次所经过的时间.
+&lt;/h5&gt;&lt;/span&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;span&gt;&lt;h5&gt;
+CDN, Content Delivery Network, 内容分发网络, 可以理解为分布式缓存, 这样用户可以就近获取网页内容, 而不需要每次都去访问源站. 这种做法加快了用户的访问速度并减小了源站压力. 提供CDN服务的公司, 国外有Cloudflare, Akamai等, 国内有网宿, 蓝汛, 七牛, 阿里, 腾讯等.
+&lt;/h5&gt;&lt;/span&gt;&lt;/li&gt;
+
+&lt;/span&gt;&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;相关阅读&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%97%B0%E7%A7%92&quot;&gt;闰秒, Leap Second&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%A0%BC%E6%9E%97%E5%B0%BC%E6%B2%BB%E5%B9%B3%E6%97%B6&quot;&gt;格林尼治标准时间, GMT&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%8D%8F%E8%B0%83%E4%B8%96%E7%95%8C%E6%97%B6&quot;&gt;协调世界时, UTC&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=IJhgZBn-LHg&quot;&gt;How Earth Moves&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.solidot.org/story?sid=50596&quot;&gt;文章1: Google公共NTP服务器将通过“降速”增加闰秒&lt;/a&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;今年的12月31日将增加一闰秒，也就是说12月31日11点59分59秒之后不是2017年，而是59分60秒。服务器通常无法处理有61秒的一分钟，因此闰秒曾经导致网站的服务器发生问题。Google云平台官方博客介绍了它的NTP时间服务器如何处理闰秒的方法：不是额外增加一秒，而是闰秒引入前后的10小时内让时钟速度减慢0.0014%，此种做法将在二十小时内使得时钟增加1秒。12月31日将和其他日子没有差别。Google的所有服务包括API将使用上面描述的方法同步闰秒。&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.solidot.org/story?sid=30309&quot;&gt;文章2: 闰秒导致部分Linux服务器高CPU使用率&lt;/a&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;国际地球自转和参考坐标系统服务（IERS）在2012年6月30日午夜(北京时间7月1号7点59分59秒)增加一闰秒（即出现7：59：60）。由于Linux kernel 2.6.29之前版本存在bug，在进行闰秒调整时可能会引起系统时钟服务ntpd进程死锁。Debian Lenny、RHEL/CentOS 5等旧发行版今天仍被广泛使用，部分供应商早已经发布了补丁。但除了Linux服务器外，一些服务器程序也因为闰秒出现了问题，如Reddit、Mozilla、FourSquare、Yelp、LinkedIn和Gawker等网站都短暂遭遇了技术问题，国内的一家云储存供应商发现运行在CentOS 6.2上的Java和MySQL因闰秒出现了不同程度的CPU利用率增长，猜测是JVM和MySQL试图通过CPU硬件晶振的数据获得当前精确的时间，由于闰秒的关系，这个时间和操作系统维持的墙上时间（Wall Time，也就是显示给用户看的时间）不一致，导致了这个问题。简单的修正方法是强制重置系统时间，让系统中所有时间回到同步的状态。&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Tue, 03 Jan 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/01/03/Leap_second_briefly_catches_out_computer_firm.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/03/Leap_second_briefly_catches_out_computer_firm.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>翻译：Primary school children make anti-smoking packaging</title>
@@ -954,128 +1045,6 @@ Polyeidos, Fragment 837; Ovid, Metamorphoses 4.627.
         <pubDate>Tue, 13 Dec 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/12/13/Is_It_Okay_to_Touch_Mars.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/12/13/Is_It_Okay_to_Touch_Mars.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>翻译：New Google Allo stickers for Rogue One, A Star Wars Story</title>
-        <description>&lt;p&gt;这是&lt;strong&gt;翻译&lt;/strong&gt;系列的一篇文章。原文来自Google Blog的&lt;a href=&quot;https://blog.google/products/allo/new-google-allo-stickers-will-help-you-get-ready-rogue-one-star-wars-story/&quot;&gt;New Google Allo stickers that will help you get ready for Rogue One: A Star Wars Story&lt;/a&gt;，发布于2016年12月9日。以下是译文。&lt;/p&gt;
-
-&lt;p&gt;(PS: 其实对于星战，我模糊的印象全都来自小时候，后来没怎么看过星战，求轻拍)&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Blog-Image-2880x1620_1.2e16d0ba.fill-1000x563.png&quot; alt=&quot;blog image: stickers&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;goole-allo&quot;&gt;&lt;strong&gt;Goole Allo推出全新的星战表情包&lt;/strong&gt;&lt;/h1&gt;
-
-&lt;p&gt;全地域装甲运输步行机(AT-AT)、钛战机(TIE fighter)、新的droid机器人
-，还有达斯维达(Darth Vader)，仅仅是听到这些名字，就让人对12月16日上映的 &lt;a href=&quot;http://www.starwars.com/films/rogue-one&quot;&gt;侠盗一号：星球大战外传&lt;/a&gt;(Rogue One: A Star Wars Story) 充满了期待。而在今天，Google Allo独家推出了星战表情包。就让我们提前开始星战之旅吧。&lt;/p&gt;
-
-&lt;p&gt;我们的表情包以&lt;a href=&quot;http://www.starwars.com/databank/jyn-erso&quot;&gt;Jyn&lt;/a&gt;、&lt;a href=&quot;http://www.starwars.com/databank/captain-cassian-andor&quot;&gt;Cassian&lt;/a&gt;和&lt;a href=&quot;http://www.starwars.com/databank/k-2so-kay-tuesso&quot;&gt;K-2SO&lt;/a&gt;为主，另外也有我们熟悉的帝国冲锋队(Stormtroopers)、达斯维达(Darth Vader)，以及全盛时期(in all its glory)的死星(Death Star)。下面是5个样例表情，可以帮你制定这几天的计划，或者表达接下来几天的心情(这两句 &lt;em&gt;Here are five stickers that help you make plans (even if they’re not to steal the plans to the Death Star)&lt;/em&gt; 没明白原文要表达什么意思):&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;当你的好机友有时间和你一起去看这场电影的时候，你的心情是这样的&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Jyn_-_correct_file.gif&quot; alt=&quot;Jyn&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;当你已经买到了票而不需要再去排队时，你的心情是这样的&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/The_Force_is_Strong.gif&quot; alt=&quot;The_Force_is_Strong&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;放映当天，你去吃晚饭的路上迟到了，你的状态是这样的&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/On_my_way.gif&quot; alt=&quot;On_my_way&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;看得正High呢，谁的手机响了。。xxxx&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Darth_Vader_-_correct_file.gif&quot; alt=&quot;Darth_Vader&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;在午夜场的电影结束后，第二天想要集中精力工作的你&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/Stormtrooper.gif&quot; alt=&quot;Stormtrooper&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;精彩远不止这些。从今天开始，我们的&lt;code class=&quot;highlighter-rouge&quot;&gt;侠盗一号&lt;/code&gt;系列表情包可以在Google Allo的表情商店获得，&lt;a href=&quot;https://play.google.com/store/apps/details?id=com.google.android.apps.fireball&amp;amp;referrer=utm_source%3Dkeyword%26utm_campaign%3Drogueone&quot;&gt;安卓&lt;/a&gt;和&lt;a href=&quot;https://itunes.apple.com/app/apple-store/id1096801294?pt=9008&amp;amp;ct=keyword_rogueone_post&amp;amp;mt=8&quot;&gt;iOS&lt;/a&gt;都有哦。&lt;/p&gt;
-
-&lt;p&gt;标签：&lt;a href=&quot;https://blog.google/products/allo/&quot;&gt;Google Allo&lt;/a&gt;, &lt;a href=&quot;https://blog.google/topics/entertainment/&quot;&gt;娱乐&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;相关阅读&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/Google_Allo&quot;&gt;Google Allo&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;Allo是Google开发的一个即时通讯应用，其内置了一个虚拟助手Google Assistant，提供了“智能回复”功能。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;strong&gt;sticker&lt;/strong&gt;, 本文译为&lt;strong&gt;表情&lt;/strong&gt;，因为FB上回复表情就是用的&lt;code class=&quot;highlighter-rouge&quot;&gt;post a sticker&lt;/code&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Rogue_One&quot;&gt;Wikipedia: Rogue One&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%AD%A5%E8%A1%8C%E6%9C%BA_(%E6%98%9F%E7%90%83%E5%A4%A7%E6%88%98)&quot;&gt;AT-AT 全地域装甲运输步行机&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/en/thumb/0/0f/All_Terrain_Armored_Transport_in_Star_Wars.JPG/350px-All_Terrain_Armored_Transport_in_Star_Wars.JPG&quot; alt=&quot;AT-AT&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%92%9B%E6%88%98%E6%9C%BA&quot;&gt;钛战机 (TIE fighter)&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/zh/d/d9/TIEfighter.jpg&quot; alt=&quot;TIE fighter&quot; /&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Droid_(robot)&quot;&gt;droid&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Darth_Vader&quot;&gt;Darth Vader, 达斯维达&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%B8%9D%E5%9C%8B%E9%A2%A8%E6%9A%B4%E5%85%B5&quot;&gt;Stormtroopers&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://starwars.wikia.com/wiki/Jyn_Erso&quot;&gt;Jyn&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;Jyn Erso was a human female soldier and former criminal who fought for the Alliance to Restore the Republic as a sergeant during the Galactic Civil War.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://starwars.wikia.com/wiki/Cassian_Andor&quot;&gt;Captain Cassian Andor, 卡西安·安多上尉&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;Cassian Andor was a human male who served in the Alliance to Restore the Republic’s Intelligence branch as a captain and intelligence officer&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://starwars.wikia.com/wiki/K-2SO&quot;&gt;K-2SO&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;经过重新编程的帝国保安机器人K-2S0 现效忠于联盟。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%AD%BB%E6%98%9F&quot;&gt;Death Star&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;死星。DS-1轨道战斗太空站（英语：DS-1 Orbital Battle Station[1]，俗称死星，英语：Death Star）是《星球大战》系列电影中的虚构太空要塞。第一颗死星出现于《星球大战IV：曙光乍现》、《侠盗一号：星球大战外传》中，第二颗未完工的死星二号则是出现在《星球大战VI：绝地归来》里。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;BFF, Best Friend Forever, 死党，闺蜜，好机油&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 10 Dec 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/12/10/New_Google_Allo_stickers_for_Rogue_One_A_Star_Wars_Story.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/12/10/New_Google_Allo_stickers_for_Rogue_One_A_Star_Wars_Story.html</guid>
         
         
       </item>
