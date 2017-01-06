@@ -364,6 +364,10 @@ $ python3 -m http.server [8000]
 
 由于前期一些搜索内容忘了保存地址了，所以参考资料的出处可能有一些遗漏。。。
 
+---20170106补充---
+
+[再谈python中的url编码](https://jjayyyyyyy.github.io/2017/01/06/url_encoding.html)
+
 <br/><br/>
 
 ##	后记(20161009 更新)
