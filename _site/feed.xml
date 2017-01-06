@@ -5,9 +5,168 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 03 Jan 2017 21:21:30 +0800</pubDate>
-    <lastBuildDate>Tue, 03 Jan 2017 21:21:30 +0800</lastBuildDate>
+    <pubDate>Fri, 06 Jan 2017 12:59:05 +0800</pubDate>
+    <lastBuildDate>Fri, 06 Jan 2017 12:59:05 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>再谈python中的url编码</title>
+        <description>&lt;p&gt;本文来自&lt;a href=&quot;https://github.com/ianva/vim-youdao-translater&quot;&gt;这个项目&lt;/a&gt;引出的问题。该项目是一个vim插件，可以利用有道词典翻译英文单词。挺棒的一个项目，不过代码中对url进行编码的部分可能存在一些问题，已提交Issue，这里进行记录备份与细节补充。&lt;/p&gt;
+
+&lt;p&gt;文中用&lt;code class=&quot;highlighter-rouge&quot;&gt;py2&lt;/code&gt;指代python2.7，用&lt;code class=&quot;highlighter-rouge&quot;&gt;py3&lt;/code&gt;指代python3.4。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;1. 问题描述&lt;/h2&gt;
+
+&lt;p&gt;对于url的编码，应该进行&lt;code class=&quot;highlighter-rouge&quot;&gt;percent-encoding&lt;/code&gt;，而不是&lt;code class=&quot;highlighter-rouge&quot;&gt;str.encode()&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;py3中应当用&lt;code class=&quot;highlighter-rouge&quot;&gt;urllib.parse.quote()&lt;/code&gt;进行&lt;code class=&quot;highlighter-rouge&quot;&gt;percent-encoding&lt;/code&gt;，py2中对应的方法是&lt;code class=&quot;highlighter-rouge&quot;&gt;urllib.pathname2url()&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;2. 问题定位&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ianva/vim-youdao-translater/blob/master/plugin/ydt.vim#LC53&quot;&gt;ydt.vim&lt;/a&gt;的第53行&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;3. 示例&lt;/h2&gt;
+
+&lt;p&gt;原项目中，主要通过&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'http://dict.youdao.com/fsearch?q='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;来获取翻译内容。下面以&lt;code class=&quot;highlighter-rouge&quot;&gt;word='hello'&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;word='你好'&lt;/code&gt;为例，分别进行说明。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;py2+英文(结果相同，不影响使用):&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urllib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pathname2url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;py2+中文(结果不同):&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'你好'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Traceback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;stdin&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;UnicodeDecodeError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ascii'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;codec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;can&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'t decode byte 0xe4 in position 0: ordinal not in range(128)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;gt;&amp;gt;&amp;gt; urllib.pathname2url('&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;你好&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;')	&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;可以看到对中文用&lt;code class=&quot;highlighter-rouge&quot;&gt;str.encode('utf-8')&lt;/code&gt;会直接报错，换成&lt;code class=&quot;highlighter-rouge&quot;&gt;gbk&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;gbk2312&lt;/code&gt;也是一样。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;py3+英文(结果不同)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urllib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;注意到&lt;code class=&quot;highlighter-rouge&quot;&gt;str.encode()&lt;/code&gt;之后的结果中多了一个&lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt;，根据&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431664106267f12e9bef7ee14cf6a8776a479bdec9b9000&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;如果要在网络上传输，或者保存到磁盘上，就需要把str变为以字节为单位的bytes。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;这时如果再用&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'http://dict.youdao.com/fsearch?q='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;也会报错，因为&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;与&lt;code class=&quot;highlighter-rouge&quot;&gt;bytes&lt;/code&gt;类型不能直接拼接。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;py3+中文(结果不同)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'你好'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\xe4\xbd\xa0\xe5\xa5\xbd&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urllib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'你好'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;E4&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;BD&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;A0&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;E5&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;A5&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;BD'&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;不能用&lt;code class=&quot;highlighter-rouge&quot;&gt;str.encode()&lt;/code&gt;，原因同上。另外，同样根据&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431664106267f12e9bef7ee14cf6a8776a479bdec9b9000&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;在bytes中，无法显示为ASCII字符的字节，用 \x## 显示。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;4. 结论&lt;/h2&gt;
+
+&lt;p&gt;如果使用&lt;code class=&quot;highlighter-rouge&quot;&gt;str.encode()&lt;/code&gt;，把不同结果组合成url用于获取资源&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'http://dict.youdao.com/fsearch?q='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;除了&lt;code class=&quot;highlighter-rouge&quot;&gt;py2+英文&lt;/code&gt;的组合无影响，其他三者都不是期望结果。&lt;/p&gt;
+
+&lt;p&gt;因此:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;如果使用&lt;code class=&quot;highlighter-rouge&quot;&gt;str.encode()&lt;/code&gt;，py2英文无影响，中文有影响。py3中英文都有影响。&lt;/li&gt;
+  &lt;li&gt;应使用&lt;code class=&quot;highlighter-rouge&quot;&gt;percent-encoding&lt;/code&gt;。&lt;/li&gt;
+  &lt;li&gt;由于是作为vim插件，环境是&lt;code class=&quot;highlighter-rouge&quot;&gt;py2+英文&lt;/code&gt;(一般不会出现中文)，所以无影响。此条Issue仅作为建议。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;综上可以看出&lt;code class=&quot;highlighter-rouge&quot;&gt;py3&lt;/code&gt;对数据类型和编码的控制更为精细与明确。所以在使用&lt;code class=&quot;highlighter-rouge&quot;&gt;urlopen()&lt;/code&gt;时，如果url中包含了未经编码的中文，是无法正确获取资源的。&lt;/p&gt;
+
+&lt;p&gt;另外，我们可以在浏览器地址栏直接输入中文进行搜索，这是因为浏览器帮我们完成了编码和转换的过程。比如你先输入中文进行搜索，然后再把url复制下来，会发现中文变成了很多&lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt;和英文组成的字符串。&lt;/p&gt;
+
+&lt;p&gt;最后，因为原来的&lt;code class=&quot;highlighter-rouge&quot;&gt;有道api&lt;/code&gt;不知道啥情况不能用了，感谢&lt;a href=&quot;https://github.com/ianva/vim-youdao-translater&quot;&gt;vim-youdao-translater&lt;/a&gt;项目提供了一种获取资源的新思路，我在&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/just%20for%20fun/youdao_translation&quot;&gt;GitHub&lt;/a&gt;上传了不需要key和keyfrom的新版本查词器，代码也精简了不少。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;相关阅读&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://jjayyyyyyy.github.io/2016/10/07/python3%E9%87%8D%E5%86%99SimpleHTTPServerWithUpload.html#section-6&quot;&gt;这篇文章&lt;/a&gt;的&lt;strong&gt;其他内容&lt;/strong&gt;一节&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/35149861/equivalent-urllib-parse-quote-in-python-2-7&quot;&gt;Stack Overflow: Equivalent urllib.parse.quote() in python 2.7&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431664106267f12e9bef7ee14cf6a8776a479bdec9b9000&quot;&gt;字符串和编码&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Fri, 06 Jan 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/01/06/url_encoding.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/06/url_encoding.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>翻译：Leap second briefly catches out computer firm</title>
@@ -975,76 +1134,6 @@ Polyeidos, Fragment 837; Ovid, Metamorphoses 4.627.
         <pubDate>Fri, 16 Dec 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/12/16/Atlas(mythology)_via_wikipedia.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/12/16/Atlas(mythology)_via_wikipedia.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>Is It Okay to Touch Mars?</title>
-        <description>&lt;p&gt;在阿波罗之后的几十年，人类探索太空的热情还在，但各国对此的投入似乎没有美苏争霸时那么疯狂了。不过最近两年，随着SpaceX之类的公司的成功，太空探索的热潮似乎又来了。而探索计划中很重要的一步，就是登陆我们红色的邻居——火星。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E4%B8%AD%E5%9B%BD%E7%81%AB%E6%98%9F%E6%8E%A2%E6%B5%8B%E8%AE%A1%E5%88%92&quot;&gt;中国火星探测计划&lt;/a&gt;于2016年1月11日立项，预计于2020年发送火星探测器。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;欧洲太空总署(ESA)已经发送了火星登陆器(虽然登陆失败)。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;美国早已登陆勇气号、机遇号、好奇号火星车，并展开了一系列研究。SpaceX的埃隆·马斯克和Blue Origin的杰夫·贝佐斯都在发展自己的太空公司，并计划在以后提供火星移民计划。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;…&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;相比于月球，探索火星有更多的意义。比如火星上是否存在液态水，是否有(曾经有)生命，能否改造成适合人类居住的环境，是否可以开采我们急需的资源，能否建立火星基地作为深空探索的跳板，等等。&lt;/p&gt;
-
-&lt;p&gt;不过这两天看到一个视频: 【&lt;a href=&quot;https://www.youtube.com/watch?v=KUddy8RGwns&quot;&gt;Is It Okay to Touch Mars?&lt;/a&gt;】，也就是【我们该不该去火星？】，讲述的内容挺有意思的。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/KUddy8RGwns&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;刚看到标题(+配图)的时候，第一反应是火星上的沙子肯定不能直接碰啊，气压不够氧气不足，脱了宇航服直接捧沙子不就挂了。。&lt;/p&gt;
-
-&lt;p&gt;其实播主Michael是从其他方面进行叙述，火星探测/移民可能造成的影响。我们为何要探索其他星球？原因不外乎之前提到的几点，科研、资源。然而潜在的危害倒是很少有人仔细想过(至少我没有仔细思考过。。。)。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;对人类自身。视频中提到，阿波罗11号回来之后，三位宇航员需要在封闭环境中(这里还有个小故事，详见视频)被观察了三周，看看有没有发生异常，NASA这么做的原因是，他们可能会无意中携带了宇宙中的某些病毒回到地球。月球表面基本是真空的，生命基本没法存活。但是火星有(稀薄的)大气，而且曾经似乎存在液态水，说不定真的有生命存在，不一定是和人一样的大型智能生物，但是微生物的危害有时候也是致命的，尤其是缺少抵抗力的情况下。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;对于火星环境。同样的，航天器、宇航员可能会携带地球上的病菌，对原本脆弱的火星生态环境(如果存在)造成致命打击。最后我们可能会在火星上发现生命，但那可能是人类自己带上去的。土星探测器&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%8D%A1%E8%A5%BF%E5%B0%BC%EF%BC%8D%E6%83%A0%E6%9B%B4%E6%96%AF%E5%8F%B7&quot;&gt;卡西尼－惠更斯号&lt;/a&gt;最后要撞击土星，也有一部分原因是防止对土卫二、土卫六等可能存在生命的星体造成污染。NASA的网站上还有专门的行星保护计划(Planetary Protection Mission)，专门列出可能带去污染的因素，并且有一个Coleman-Sagan Equation，表明给其他星球造成(生物)污染的可能性P&lt;sup&gt;c&lt;/sup&gt;。虽然无法完全避免，但一定要将P&lt;sup&gt;c&lt;/sup&gt;控制在0.001%以下。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;还有人认为，我们就不该去其他星球。人类总是在破坏东西，我们没有权力去改变(破坏)火星。也有人认为，我们有能力帮助火星可能存在的生物，改善它们的生存环境(目前的环境比较恶劣)。而且考虑到地球可能会出现灾难，建立一个备份对于人类来说也是有必要的。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;其他还有比如标准时间不一致、通信延时等等问题，也是需要仔细考虑的，如果真的要进行火星移民。&lt;/p&gt;
-
-&lt;p&gt;视频最后比较哲理，我们探索的意义何在，生命对于宇宙的意义何在，因为不管人类做出什么，甚至全人类、所有生物在这一刻消失了，宇宙还是按照自己的规律运行。然而，然而，宇宙中，也许只有我们，才能真正发现这个问题的答案。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;相关阅读&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://weibo.com/ttarticle/p/show?id=2309614021386820639105&quot;&gt;贝佐斯谈搬去火星上生活：没有威士忌没有熏肉 太无趣了&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 13 Dec 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/12/13/Is_It_Okay_to_Touch_Mars.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/12/13/Is_It_Okay_to_Touch_Mars.html</guid>
         
         
       </item>
