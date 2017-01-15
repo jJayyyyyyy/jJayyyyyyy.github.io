@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 06 Jan 2017 13:03:09 +0800</pubDate>
-    <lastBuildDate>Fri, 06 Jan 2017 13:03:09 +0800</lastBuildDate>
+    <pubDate>Sun, 15 Jan 2017 10:52:27 +0800</pubDate>
+    <lastBuildDate>Sun, 15 Jan 2017 10:52:27 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -775,7 +775,40 @@ decagon 十边形&lt;/p&gt;
 the Middle East, &lt;a href=&quot;https://zh.wikipedia.org/wiki/%E4%B8%AD%E4%B8%9C&quot;&gt;中东&lt;/a&gt;.&lt;br /&gt;
 the Far East, &lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%81%A0%E6%9D%B1&quot;&gt;远东&lt;/a&gt;.&lt;/p&gt;
   &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://jjayyyyyyy.github.io/2016/12/25/Planet.html&quot;&gt;行星&lt;/a&gt;, Planet, 单独写了一篇文章, 主要是其命名与来源.&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://jjayyyyyyy.github.io/2016/12/25/Planet.html&quot;&gt;行星&lt;/a&gt;, Planet, 单独写了一篇文章, 主要是其命名与来源.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;如果一艘船被打翻了，该怎么描述呢？&lt;/p&gt;
+
+    &lt;p&gt;Our sailboat turned turtle during the squall.&lt;/p&gt;
+
+    &lt;p&gt;海龟表示很无奈:)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Apache&lt;/code&gt;原来是美洲一个印第安部落的名字，也是一个被广泛使用的Web服务器软件的名字，美军还有阿帕奇武装直升机，&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;运输层端口号被分为3段，&lt;br /&gt;
+1 - 1023&lt;br /&gt;
+1024 - 49151&lt;br /&gt;
+49152 - 65535&lt;/p&gt;
+
+    &lt;p&gt;1024 = 2&lt;sup&gt;10&lt;/sup&gt;&lt;br /&gt;
+65536 = 2&lt;sup&gt;16&lt;/sup&gt;&lt;br /&gt;
+49152 = 65536*(3/4)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;鸦片音译自opium&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;高清HD，原来是High Definition，高清晰，高分辨率&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;食肉动物是carnivore&lt;br /&gt;
+食草动物是herbivore&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;氦的发现。19实际60年代天文学家在分析太阳光谱的时候，发现了一条从未有过记录的谱线，仔细分析后认为太阳上存在某种物质，而在人们尚未在地球上发现这种物质。后来科学家们将其命名为氦，元素符号是He。氦在空气中含量较少，但在宇宙中是第二丰富的元素，在银河系占24％。氦的英文&lt;code class=&quot;highlighter-rouge&quot;&gt;Helium&lt;/code&gt;来源于希腊语中的&lt;code class=&quot;highlighter-rouge&quot;&gt;太阳&lt;/code&gt;。&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
@@ -810,6 +843,9 @@ the Far East, &lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%81%A0%E6%9D%B1&
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%BB%91%E6%9B%9C%E5%B2%A9&quot;&gt;黑曜石&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%B0%A6#.E5.90.8D.E7.A7.B0.E7.94.B1.E6.9D.A5&quot;&gt;氦&lt;/a&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
 </description>

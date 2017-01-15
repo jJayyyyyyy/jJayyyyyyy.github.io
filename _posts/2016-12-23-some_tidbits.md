@@ -74,6 +74,33 @@ title: 一些有意思的事
 
 *	[行星](https://jjayyyyyyy.github.io/2016/12/25/Planet.html), Planet, 单独写了一篇文章, 主要是其命名与来源.
 
+*	如果一艘船被打翻了，该怎么描述呢？
+
+	Our sailboat turned turtle during the squall.
+
+	海龟表示很无奈:)
+
+*	`Apache`原来是美洲一个印第安部落的名字，也是一个被广泛使用的Web服务器软件的名字，美军还有阿帕奇武装直升机，
+
+*	运输层端口号被分为3段，  
+	1 - 1023  
+	1024 - 49151  
+	49152 - 65535
+	
+	1024 = 2<sup>10</sup>  
+	65536 = 2<sup>16</sup>  
+	49152 = 65536*(3/4)
+
+*	鸦片音译自opium
+
+*	高清HD，原来是High Definition，高清晰，高分辨率
+
+*	食肉动物是carnivore  
+	食草动物是herbivore
+	
+*	氦的发现。19实际60年代天文学家在分析太阳光谱的时候，发现了一条从未有过记录的谱线，仔细分析后认为太阳上存在某种物质，而在人们尚未在地球上发现这种物质。后来科学家们将其命名为氦，元素符号是He。氦在空气中含量较少，但在宇宙中是第二丰富的元素，在银河系占24％。氦的英文`Helium`来源于希腊语中的`太阳`。
+
+
 <br/>
 
 (END)
@@ -97,3 +124,5 @@ title: 一些有意思的事
 *	[滑铁卢战役](https://zh.wikipedia.org/wiki/%E6%BB%91%E9%93%81%E5%8D%A2%E6%88%98%E5%BD%B9)
 
 *	[黑曜石](https://zh.wikipedia.org/wiki/%E9%BB%91%E6%9B%9C%E5%B2%A9)
+
+*	[氦](https://zh.wikipedia.org/wiki/%E6%B0%A6#.E5.90.8D.E7.A7.B0.E7.94.B1.E6.9D.A5)
