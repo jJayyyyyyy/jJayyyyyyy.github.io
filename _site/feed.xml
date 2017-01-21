@@ -5,9 +5,71 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 15 Jan 2017 10:52:27 +0800</pubDate>
-    <lastBuildDate>Sun, 15 Jan 2017 10:52:27 +0800</lastBuildDate>
+    <pubDate>Sat, 21 Jan 2017 23:37:23 +0800</pubDate>
+    <lastBuildDate>Sat, 21 Jan 2017 23:37:23 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>PAT Basic 1001</title>
+        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1002_%E5%86%99%E5%87%BA%E8%BF%99%E4%B8%AA%E6%95%B0&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;httpswwwpatestcncontestspat-b-practise1001-1001-3n1-15&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1001&quot;&gt;原题&lt;/a&gt;： 1001. 害死人不偿命的(3n+1)猜想 (15)&lt;/h2&gt;
+
+&lt;p&gt;卡拉兹(Callatz)猜想：&lt;/p&gt;
+
+&lt;p&gt;对任何一个自然数n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把(3n+1)砍掉一半。这样一直反复砍下去，最后一定在某一步得到n=1。卡拉兹在1950年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学生们无心学业，一心只证(3n+1)，以至于有人说这是一个阴谋，卡拉兹是在蓄意延缓美国数学界教学与科研的进展……&lt;/p&gt;
+
+&lt;p&gt;我们今天的题目不是证明卡拉兹猜想，而是对给定的任一不超过1000的正整数n，简单地数一下，需要多少步（砍几下）才能得到n=1？&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;输入格式：&lt;/h3&gt;
+
+&lt;p&gt;每个测试输入包含1个测试用例，即给出自然数n的值。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;输出格式：&lt;/h3&gt;
+
+&lt;p&gt;输出从n计算到1需要的步数。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;输入样例：&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;输出样例：&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;5
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;注意&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 400 ms
+内存限制： 65536 kB
+代码长度限制： 8000 B
+判题程序： Standard
+作者： CHEN, Yue
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;section-5&quot;&gt;题目分析&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;本题不难，但要注意输入n=1的时候，输出为0.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 21 Jan 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/01/21/PAT_Basic_1001.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/21/PAT_Basic_1001.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>再谈python中的url编码</title>
@@ -945,231 +1007,6 @@ the Far East, &lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%81%A0%E6%9D%B1&
         <pubDate>Sun, 18 Dec 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/12/18/Why_is_the_input_power_of_an_air_conditioner_lower_than_its_output_power.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/12/18/Why_is_the_input_power_of_an_air_conditioner_lower_than_its_output_power.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>翻译：[Atlas(mythology)] via Wikipedia</title>
-        <description>&lt;p&gt;这是&lt;strong&gt;翻译&lt;/strong&gt;系列的一篇文章。原文来自Wikipedia的词条&lt;a href=&quot;https://en.wikipedia.org/wiki/Atlas_(mythology)&quot;&gt;Atlas (mythology)&lt;/a&gt;。要作这篇翻译是因为背单词的时候遇到了&lt;em&gt;atlas&lt;/em&gt;这个词，被译为&lt;em&gt;地图集&lt;/em&gt;，两者之间一直没有建立起很好的联想。于是Google了下atlas，发现这个词来自希腊神话，故事也很有意思。不过在维基百科，Atlas的&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%98%BF%E7%89%B9%E6%8B%89%E6%96%AF&quot;&gt;中文词条&lt;/a&gt;只是一个概述，并不完整(其实看完之后我觉得能有这个中文词条的概述已经很厉害了，因为英文词条对应了很多语言学和历史的东西，涉及的知识面很广，很难完整翻译，而这个简述已经很好地概括了内容)。因此我想试着来把这个英文词条翻译成中文的，由于&lt;em&gt;atlas&lt;/em&gt;还有其他很多意思和词条，本文仅限于神话故事中的&lt;em&gt;Atlas&lt;/em&gt;。此外，因为我对包括希腊神话在内的西方文化不太了解，译文难免存在一些问题，我尽量多查资料逐步改进哈。以下是译文，并参照&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%98%BF%E7%89%B9%E6%8B%89%E6%96%AF&quot;&gt;中文词条&lt;/a&gt;，将&lt;em&gt;Atlas&lt;/em&gt;译作阿特拉斯，其他的神名和人名基本不译。另外，本文排版顺序和维基百科的略有不同。&lt;/p&gt;
-
-&lt;p&gt;ps: 魔兽(电影版)的制作公司之一是&lt;a href=&quot;https://en.wikipedia.org/wiki/Atlas_Entertainment&quot;&gt;Atlas Entertainment&lt;/a&gt;，于片尾出现，是Atlas托着一个光球的形象。&lt;/p&gt;
-
-&lt;p&gt;—更新时间线—&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;2016-12-16-第1次更新-开始写&lt;/li&gt;
-  &lt;li&gt;2016-12-19-第2次更新-格式修改。完成概述。增加图片。&lt;/li&gt;
-  &lt;li&gt;2016-12-20-第3次更新-新增&lt;em&gt;惩罚&lt;/em&gt;一节。&lt;/li&gt;
-  &lt;li&gt;2016-12-21-第4次更新-修改格式与内容。将节名&lt;em&gt;惩罚&lt;/em&gt;改为&lt;em&gt;受罚&lt;/em&gt;。增加4, 5, 6, 7, 8节内容。格式与内容仍需修改。&lt;/li&gt;
-  &lt;li&gt;2016-12-22-第5次更新-修改格式与内容。补充完善&lt;em&gt;注解&lt;/em&gt;和&lt;em&gt;相关阅读&lt;/em&gt;。&lt;/li&gt;
-  &lt;li&gt;2017-01-02-第六次更新。补充增加&lt;em&gt;前言(ps)&lt;/em&gt;。补充&lt;em&gt;注解2(ps)&lt;/em&gt;。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;atlas&quot;&gt;&lt;strong&gt;阿特拉斯(Atlas)&lt;/strong&gt;&lt;/h2&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;维基百科，自由的百科全书。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;其他用法，请参见&lt;a href=&quot;https://
-en.wikipedia.org/wiki/Atlas_(disambiguation)&quot;&gt;Atlas(区分歧义)&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;目录&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#Overview&quot;&gt;概述&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#Etymology&quot;&gt;词源&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#Punishment&quot;&gt;受罚&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#Variation&quot;&gt;其他版本的神话&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#Encounter_with_Heracles&quot;&gt;与Heracles的故事&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#Etruscan_aril&quot;&gt;Etruscan Aril&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#Children&quot;&gt;阿特拉斯的后代&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#Cultural_influence&quot;&gt;文化影响&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;Overview&quot;&gt;1. 概述&lt;/h3&gt;
-
-&lt;p&gt;在&lt;a href=&quot;https://en.wikipedia.org/wiki/Greek_mythology&quot;&gt;希腊神话&lt;/a&gt;中，&lt;a href=&quot;https://en.wikipedia.org/wiki/Atlas_(mythology)&quot;&gt;阿特拉斯&lt;/a&gt;&lt;sup&gt;&lt;a href=&quot;#Atlas_mythology&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;是一个&lt;a href=&quot;https://en.wikipedia.org/wiki/Titan_(mythology)&quot;&gt;泰坦&lt;/a&gt;&lt;sup&gt;&lt;a href=&quot;#Titan&quot;&gt;2&lt;/a&gt;&lt;/sup&gt;。在&lt;a href=&quot;https://en.wikipedia.org/wiki/Titanomachy&quot;&gt;泰坦之战&lt;/a&gt;战败后被众神之王&lt;a href=&quot;https://en.wikipedia.org/wiki/Zeus&quot;&gt;Zeus&lt;/a&gt;降罪，要用双肩支撑苍天直到永远。虽然阿特拉斯这个名字曾出现在很多地方，但通常认为非洲西北部的阿特拉斯山脉&lt;sup&gt;&lt;a href=&quot;#Atlas_Mountains&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;是神话中的阿特拉斯擎天的地方，山的名字也由此而来。阿特拉斯的父亲是泰坦&lt;a href=&quot;https://en.wikipedia.org/wiki/Iapetus_(mythology)&quot;&gt;Iapetus&lt;/a&gt;，母亲是&lt;a href=&quot;https://en.wikipedia.org/wiki/Oceanid&quot;&gt;海之女神&lt;/a&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Asia_(mythology)&quot;&gt;Asia&lt;/a&gt;或者&lt;a href=&quot;https://en.wikipedia.org/wiki/Clymene_(mythology)&quot;&gt;Clymene&lt;/a&gt;。阿特拉斯有很多孩子，大多数是女儿，如&lt;a href=&quot;https://en.wikipedia.org/wiki/Hesperides&quot;&gt;Hesperides&lt;/a&gt;&lt;sup&gt;&lt;a href=&quot;#Hesperides&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Hyades_(mythology)&quot;&gt;Hyades&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Pleiades_(Greek_mythology)&quot;&gt;Pleiades&lt;/a&gt;和住在Ogygia岛上的仙女&lt;a href=&quot;https://en.wikipedia.org/wiki/Calypso_(mythology)&quot;&gt;Calypso&lt;/a&gt;。根据古希腊诗人&lt;a href=&quot;https://en.wikipedia.org/wiki/Hesiod&quot;&gt;Hesiod&lt;/a&gt;的描述，阿特拉斯擎天之处在地球的最西边。&lt;/p&gt;
-
-&lt;p&gt;根据Robert Graves的&lt;a href=&quot;https://en.wikipedia.org/wiki/The_Greek_Myths&quot;&gt;希腊神话&lt;/a&gt;一书，古代的&lt;a href=&quot;https://en.wikipedia.org/wiki/Pelasgians&quot;&gt;Pelasgians&lt;/a&gt;人认为，原始女神&lt;a href=&quot;https://en.wikipedia.org/wiki/Eurynome_(disambiguation)&quot;&gt;Eurynome&lt;/a&gt;曾指派阿特拉斯和&lt;a href=&quot;https://en.wikipedia.org/wiki/Phoebe_(mythology)&quot;&gt;Phoebe&lt;/a&gt;共同管理月球。&lt;/p&gt;
-
-&lt;p&gt;古代拉丁作家&lt;a href=&quot;https://en.wikipedia.org/wiki/Gaius_Julius_Hyginus&quot;&gt;Hyginus&lt;/a&gt;为了强调阿特拉斯的原始天性，把他描写成&lt;a href=&quot;https://en.wikipedia.org/wiki/Aether_(mythology)&quot;&gt;Aether&lt;/a&gt;&lt;sup&gt;&lt;a href=&quot;#Aether&quot;&gt;5&lt;/a&gt;&lt;/sup&gt;和&lt;a href=&quot;https://en.wikipedia.org/wiki/Gaia_(mythology)&quot;&gt;Gaia&lt;/a&gt;&lt;sup&gt;&lt;a href=&quot;#Gaia&quot;&gt;6&lt;/a&gt;&lt;/sup&gt;之子。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Aether_in_battle_with_a_lion-headed_Giant.jpg/440px-Aether_in_battle_with_a_lion-headed_Giant.jpg&quot; alt=&quot;Aether&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;世界第二大洋大西洋的英文名是&lt;a href=&quot;https://en.wikipedia.org/wiki/Atlantic_Ocean&quot;&gt;Atlantic Ocean&lt;/a&gt;，表示阿特拉斯之海(Sea of Atlas)。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/0/06/Atlantic_Ocean.png&quot; alt=&quot;Atlantic Ocean&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;传说中的大西洋之岛——亚特兰蒂斯，英文名是&lt;a href=&quot;https://en.wikipedia.org/wiki/Atlantis&quot;&gt;Atlantis&lt;/a&gt;，意思是阿特拉斯之岛(Island of Atlas)。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Athanasius_Kircher%27s_Atlantis.gif/300px-Athanasius_Kircher%27s_Atlantis.gif&quot; alt=&quot;Atlantis&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;Etymology&quot;&gt;2. 词源&lt;/h3&gt;
-
-&lt;p&gt;暂略…很多地方没搞懂…&lt;/p&gt;
-
-&lt;h3 id=&quot;Punishment&quot;&gt;3. 受罚&lt;/h3&gt;
-
-&lt;p&gt;在&lt;a href=&quot;https://en.wikipedia.org/wiki/Titanomachy&quot;&gt;泰坦之战&lt;/a&gt;中，阿特拉斯和他的兄弟&lt;a href=&quot;https://en.wikipedia.org/wiki/Menoetius_(mythology)&quot;&gt;Menoetius&lt;/a&gt;都站在泰坦一方，与&lt;a href=&quot;https://en.wikipedia.org/wiki/Twelve_Olympians&quot;&gt;奥林匹亚十二主神(Olympians)&lt;/a&gt;对抗。后来泰坦战败，包括Menoetius在内的众多泰坦被关进&lt;a href=&quot;https://en.wikipedia.org/wiki/Tartarus&quot;&gt;塔耳塔罗斯地狱(Tartarus)&lt;/a&gt;。不过宙斯为了惩罚阿特拉斯，便让他站在&lt;a href=&quot;https://en.wikipedia.org/wiki/Gaia_(mythology)&quot;&gt;Gaia&lt;/a&gt;的最西边，用双肩撑起天空，以防天地融合&lt;sup&gt;&lt;a href=&quot;#primordial_embrace&quot;&gt;7&lt;/a&gt;&lt;/sup&gt;(to prevent the two from resuming their primordial embrace)。因此他成为了&lt;em&gt;&lt;a href=&quot;http://atlastelamon.blogspot.jp/2009/05/what-is-atlas-telamon.html&quot;&gt;Atlas Telamon&lt;/a&gt;&lt;/em&gt;，也就是”&lt;em&gt;enduring Atlas&lt;/em&gt;“&lt;sup&gt;&lt;a href=&quot;#enduring-Atlas&quot;&gt;8&lt;/a&gt;&lt;/sup&gt;。此外阿特拉斯还成为了两个&lt;a href=&quot;https://en.wikipedia.org/wiki/Coeus&quot;&gt;Coeus&lt;/a&gt;之一，其中Coeus是天轴的化身，而整个天国绕着天轴旋转(…became a doublet of Coeus, the embodiment of the celestial axis around which the heavens revolve)。&lt;/p&gt;
-
-&lt;p&gt;现今人们经常误以为阿特拉斯肩上扛着的是地球，其实在古代的艺术品上，阿特拉斯扛着的是&lt;a href=&quot;https://en.wikipedia.org/wiki/Celestial_spheres&quot;&gt;天球(celestial spheres)&lt;/a&gt;，而不是&lt;a href=&quot;https://en.wikipedia.org/wiki/Globe&quot;&gt;地球(globe)&lt;/a&gt;。在著名的雕塑作品&lt;a href=&quot;https://en.wikipedia.org/wiki/Farnese_Atlas&quot;&gt;Farnese Atlas&lt;/a&gt;中，阿特拉斯脚下是坚固的大理石。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;http://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/MAN_Atlante_fronte_1040572.JPG/330px-MAN_Atlante_fronte_1040572.JPG&quot; alt=&quot;Farnese Atlas&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;16世纪以来&lt;em&gt;atlas&lt;/em&gt;&lt;sup&gt;&lt;a href=&quot;#atlas_maps&quot;&gt;9&lt;/a&gt;&lt;/sup&gt;一词也逐渐被用于指代&lt;a href=&quot;https://en.wikipedia.org/wiki/Atlas&quot;&gt;地图册(a corpus of terrestrial maps)&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Banduri%2C_Covens_et_Mortier_and_Lisle._Imperii_Orientalis_et_Circumjacentium_Regionum.1742.jpg/500px-Banduri%2C_Covens_et_Mortier_and_Lisle._Imperii_Orientalis_et_Circumjacentium_Regionum.1742.jpg&quot; alt=&quot;a corpus of terrestrial maps&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;Variation&quot;&gt;4. 其他版本的神话&lt;/h3&gt;
-
-&lt;p&gt;在其他版本的神话中&lt;sup&gt;&lt;a href=&quot;#in_a_late_story&quot;&gt;10&lt;/a&gt;&lt;/sup&gt;，&lt;a href=&quot;https://en.wikipedia.org/wiki/Perseus&quot;&gt;Perseus&lt;/a&gt;来到了现在的阿特拉斯山脉&lt;sup&gt;&lt;a href=&quot;#Atlas_Mountains&quot;&gt;3&lt;/a&gt;&lt;/sup&gt;附近，而巨人阿特拉斯想要赶走他。在罗马诗人&lt;a href=&quot;https://en.wikipedia.org/wiki/Ovid&quot;&gt;Ovid&lt;/a&gt;的描述中，阿特拉斯想要赶走Perseus时，后者拿出了蛇妖&lt;a href=&quot;https://en.wikipedia.org/wiki/Medusa&quot;&gt;Medusa&lt;/a&gt;的头，把阿特拉斯变成了石头，形成了后来的阿特拉斯山脉。Perseus只是偶然到那里的，为啥阿特拉斯想要赶走Perseus呢？这是因为曾经有个预言家对阿特拉斯说过，Zeus的一个儿子会来偷走阿特拉斯果园中的金苹果。而Perseus声称自己是Zeus之子，并要求阿特拉斯的款待，所以阿特拉斯非常不爽，然而结果是自己gg了。&lt;/p&gt;
-
-&lt;p&gt;不过相比于这个故事，更为人所接受的神话中的情节是这样的，阿特拉斯遇到的是&lt;a href=&quot;https://en.wikipedia.org/wiki/Heracles&quot;&gt;Heracles&lt;/a&gt;，后者也在寻找金苹果。Heracles也是Zeus的一个儿子，而且是Perseus的曾孙&lt;sup&gt;&lt;a href=&quot;#relationship&quot;&gt;11&lt;/a&gt;&lt;/sup&gt;。&lt;/p&gt;
-
-&lt;p&gt;另外，根据&lt;a href=&quot;https://en.wikipedia.org/wiki/Plato&quot;&gt;Plato&lt;/a&gt;的描述，&lt;a href=&quot;https://en.wikipedia.org/wiki/Atlantis&quot;&gt;亚特兰蒂斯&lt;/a&gt;的第一代国王同样叫做阿特拉斯，不过这个阿特拉斯是&lt;a href=&quot;https://en.wikipedia.org/wiki/Poseidon&quot;&gt;Poseidon&lt;/a&gt;和Cleito的儿子。除此以外，神话即历史论&lt;sup&gt;&lt;a href=&quot;#euhemerist&quot;&gt;12&lt;/a&gt;&lt;/sup&gt;的观点认为，阿特拉斯就是赫赫有名的北非国王兼天文学家&lt;a href=&quot;https://en.wikipedia.org/wiki/Mauretania&quot;&gt;Mauretania&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;Encounter_with_Heracles&quot;&gt;5. 与Heracles的故事&lt;/h3&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Heracles&quot;&gt;Heracles&lt;/a&gt;的&lt;a href=&quot;https://en.wikipedia.org/wiki/The_Twelve_Labours&quot;&gt;十二伟业&lt;/a&gt;&lt;sup&gt;&lt;a href=&quot;#Labours_of_Hercules&quot;&gt;13&lt;/a&gt;&lt;/sup&gt;之一，就是要摘取&lt;a href=&quot;https://en.wikipedia.org/wiki/Hera&quot;&gt;Hera&lt;/a&gt;的花园中生长的金苹果。这个果园由&lt;a href=&quot;https://en.wikipedia.org/wiki/Hesperides&quot;&gt;Hesperides&lt;/a&gt;&lt;sup&gt;&lt;a href=&quot;#Hesperides&quot;&gt;4&lt;/a&gt;&lt;/sup&gt;姐妹照料，另外还有一条叫做&lt;a href=&quot;https://en.wikipedia.org/wiki/Ladon_(mythology)&quot;&gt;Ladon&lt;/a&gt;的龙看守着果园。为了完成任务，Heracles去找阿特拉斯帮忙，并答应在阿特拉斯去找他女儿拿金苹果的时候帮忙扛着天球。&lt;/p&gt;
-
-&lt;p&gt;然而当阿特拉斯带着金苹果回来之后，估计是不打算继续擎天了，阿特拉斯就想骗Heracles说自己会帮他把金苹果带到该去的地方，而让Heracles继续代替自己擎天。另外，除非有人接替，这个天球无法被扔掉。Heracles估摸着阿特拉斯这么一走就肯定不会回来了，于是假装同意，不过说自己这么扛着肩膀会比较难受，所以请阿特拉斯先扛一会，说自己把披风整理一下当做护肩再扛。结果当天真的阿特拉斯放下金苹果，接过天球之后，Heracles拿起金苹果就跑了，只留下阿特拉斯在风中凌乱。&lt;/p&gt;
-
-&lt;p&gt;不过在其他版本的故事中，Heracles帮阿特拉斯造了&lt;a href=&quot;https://en.wikipedia.org/wiki/Pillars_of_Hercules&quot;&gt;两座立柱&lt;/a&gt;&lt;sup&gt;&lt;a href=&quot;#Pillars_of_Hercules&quot;&gt;14&lt;/a&gt;&lt;/sup&gt;来顶天，从而解放了阿特拉斯。后来Heracles也用同样的方法解放了&lt;a href=&quot;https://en.wikipedia.org/wiki/Prometheus&quot;&gt;Prometheus&lt;/a&gt;。&lt;/p&gt;
-
-&lt;h3 id=&quot;Etruscan_aril&quot;&gt;6. Etruscan Aril&lt;/h3&gt;
-
-&lt;p&gt;这一部分也不知道如何翻译，大意是说在&lt;a href=&quot;https://en.wikipedia.org/wiki/Etruria&quot;&gt;伊特鲁里亚(Etruria)&lt;/a&gt;古文明的遗迹中发现了阿特拉斯和Heracles相遇的故事，不过名字不一样，说明伊特鲁里亚神话中引入了希腊神话。&lt;/p&gt;
-
-&lt;h3 id=&quot;Children&quot;&gt;7. 阿特拉斯的后代&lt;/h3&gt;
-
-&lt;p&gt;阿特拉斯有很多孩子，以女儿居多。而不同的神话故事中，他又有不同的女儿。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;与&lt;a href=&quot;https://en.wikipedia.org/wiki/Hesperius&quot;&gt;Hesperius&lt;/a&gt;所生的孩子:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Hesperides&quot;&gt;Hesperides&lt;/a&gt;姐妹&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;与&lt;a href=&quot;https://en.wikipedia.org/wiki/Pleione_(mythology)&quot;&gt;Pleione&lt;/a&gt;所生的孩子:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Hyades_(mythology)&quot;&gt;Hyades&lt;/a&gt;姐妹&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Hyas&quot;&gt;Hyas&lt;/a&gt;(子)&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Pleiades_(Greek_mythology)&quot;&gt;Pleiades&lt;/a&gt;姐妹&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;与其他女神所生的孩子:
-    &lt;ul&gt;
-      &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Calypso_(mythology)&quot;&gt;Calypso&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Dione_(mythology)&quot;&gt;Dione&lt;/a&gt;&lt;/li&gt;
-      &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Maera&quot;&gt;Maera&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&quot;Cultural_influence&quot;&gt;8. 文化影响&lt;/h3&gt;
-
-&lt;p&gt;除了神话故事，阿特拉斯这个词最常见于&lt;a href=&quot;https://en.wikipedia.org/wiki/Cartography&quot;&gt;地图制作学&lt;/a&gt;。法国的&lt;a href=&quot;https://en.wikipedia.org/wiki/Antonio_Lafreri&quot;&gt;Antonio Lafreri&lt;/a&gt;首先将两者相互关联。Antonio Lafreri是个印刷商人，经常活跃于罗马地区。在1570-1572年出版的地图册上，他首次将阿特拉斯的形象印刻在上面，不过他并没有使用”atlas”这个词。后来是发明了麦卡托投影法的地理学家、地图学家&lt;a href=&quot;https://en.wikipedia.org/wiki/Gerardus_Mercator&quot;&gt;Gerardus Mercator&lt;/a&gt;在献辞中引入了”atlas”这个词。献辞的内容是”(用atlas指代地图册，以此)纪念泰坦巨神阿特拉斯，Mauretania之王，一个博识的哲学家，数学家和天文学家”，可见Gerardus Mercator实际上描述的主要是那个喜欢天文学的北非国王Mauretania。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h5&gt;注&lt;/h5&gt;
-
-&lt;ol&gt;&lt;span&gt;
-
-&lt;li id=&quot;Atlas_mythology&quot;&gt;&lt;span&gt;&lt;h5&gt;
-Atlas, 发音: /ˈætləs/, &lt;a href=&quot;https://en.wikipedia.org/wiki/Ancient_Greek&quot;&gt;古希腊语&lt;/a&gt;: Ἄτλας.
-&lt;/h5&gt;&lt;/span&gt;&lt;/li&gt;
-
-&lt;li id=&quot;Titan&quot;&gt;&lt;span&gt;&lt;h5&gt;
-泰坦是在原始神之后出现的神族, 在被奥林匹斯神系取代之前曾经统治世界. 在希腊神话中, &lt;a href=&quot;https://en.wikipedia.org/wiki/Greek_primordial_deities&quot;&gt;原始神&lt;/a&gt;是创世的神祇(qí), 其中天神&lt;a href=&quot;https://en.wikipedia.org/wiki/Uranus_(mythology)&quot;&gt;Uranus&lt;/a&gt;和地神&lt;a href=&quot;https://en.wikipedia.org/wiki/Gaia_(mythology)&quot;&gt;Gaia&lt;/a&gt;生下了最初的12位泰坦, 包括&lt;a href=&quot;https://en.wikipedia.org/wiki/Cronus&quot;&gt;Cronus&lt;/a&gt;和他姐姐——时光女神&lt;a href=&quot;https://en.wikipedia.org/wiki/Rhea_(mythology)&quot;&gt;Rhea&lt;/a&gt;. 而Cronus和Reha生下了后来奥林匹斯神系的众神之王&lt;a href=&quot;https://en.wikipedia.org/wiki/Zeus&quot;&gt;Zeus&lt;/a&gt;.
-&lt;h5&gt;
-ps: 魔兽历史中也有泰坦，如&lt;a href=&quot;http://baike.baidu.com/link?url=WPn6WA7BXPAydNlEJBow0Qo1RwSp6sxo4AgfTk78oqKc43C3sZUaNlxfzyn8FBA5f1DkpGnpT6dOW9GA8brmqMy0TQvP5Z1ce-eikRAC5SmyscHCpCJVsTqgpfI5KSWU&quot;&gt;萨格拉斯&lt;/a&gt;。
-&lt;/h5&gt;
-&lt;/h5&gt;&lt;/span&gt;&lt;/li&gt;
-
-&lt;li id=&quot;Atlas_Mountains&quot;&gt;&lt;span&gt;&lt;h5&gt;
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Atlas_Mountains&quot;&gt;Atlas Mountains&lt;/a&gt;, 在今天的&lt;a href=&quot;https://en.wikipedia.org/wiki/Morocco&quot;&gt;摩洛哥&lt;/a&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Algeria&quot;&gt;阿尔及利亚&lt;/a&gt;和&lt;a href=&quot;https://en.wikipedia.org/wiki/Tunisia&quot;&gt;突尼斯&lt;/a&gt;附近.
-&lt;/h5&gt;&lt;/span&gt;&lt;/li&gt;
-
-&lt;li id=&quot;Hesperides&quot;&gt;&lt;span&gt;&lt;h5&gt;
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Hesperides&quot;&gt;Hesperides&lt;/a&gt;是看守&lt;a href=&quot;https://en.wikipedia.org/wiki/Hera&quot;&gt;Hera&lt;/a&gt;的金苹果圣园的几位仙女. 下面注6中半神英雄&lt;a href=&quot;https://en.wikipedia.org/wiki/Heracles&quot;&gt;赫拉克勒斯&lt;/a&gt;的十二伟业之一就是要摘取金苹果.
-&lt;/h5&gt;&lt;/span&gt;&lt;/li&gt;
-
-&lt;li id=&quot;Aether&quot;&gt;&lt;span&gt;&lt;h5&gt;
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Aether_(mythology)&quot;&gt;Aether&lt;/a&gt;这个词也很有意思, 在希腊神话中他是世界的灵魂, 所有的生命从他而出. &quot;以太&quot;一词来源于他.
-&lt;/h5&gt;&lt;/span&gt;&lt;/li&gt;
-
-&lt;li id=&quot;Gaia&quot;&gt;&lt;span&gt;&lt;h5&gt;
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Gaia_(mythology)&quot;&gt;Gaia&lt;/a&gt;, 常译为盖亚. 如注2所述, Gaia是地神, 即大地之母, 也指地球.
-&lt;/h5&gt;&lt;/span&gt;&lt;/li&gt;
-
-&lt;li id=&quot;primordial_embrace&quot;&gt;&lt;span&gt;&lt;h5&gt;
-为啥要防止天地融合, 或者说是交合? 根据Gaia的中文词条&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E7%9B%96%E4%BA%9A&quot;&gt;盖亚&lt;/a&gt;和&lt;a href=&quot;http://atlastelamon.blogspot.jp/2009/05/what-is-atlas-telamon.html&quot;&gt;这个博客&lt;/a&gt;, 盖亚是大地之母, 乌拉诺斯是天空之父. 乌拉诺斯统治的时代, 天和地没有分界, 会不断交媾生下孩子.
-&lt;/h5&gt;&lt;/span&gt;&lt;/li&gt;
-
-&lt;li id=&quot;enduring-Atlas&quot;&gt;&lt;span&gt;&lt;h5&gt;
-根据这个&lt;a href=&quot;http://atlastelamon.blogspot.jp/2009/05/what-is-atlas-telamon.html&quot;&gt;链接&lt;/a&gt;, Atlas Telamon就是&quot;enduring Atlas&quot;, 指的是希腊神话中擎天的泰坦阿特拉斯. &lt;br /&gt;
-原文: Atlas Telamon means &quot;enduring Atlas&quot;, and refers to the Titan Atlas as he holds the Sky above the Earth in Greek mythology. 
-&lt;/h5&gt;&lt;/span&gt;&lt;/li&gt;
-
-&lt;li id=&quot;atlas_maps&quot;&gt;&lt;span&gt;&lt;h5&gt;
-atlas首字母为小写的时候指的是地图册.
-&lt;/h5&gt;&lt;/span&gt;&lt;/li&gt;
-
-&lt;li id=&quot;in_a_late_story&quot;&gt;&lt;span&gt;&lt;h5&gt;
-Polyeidos, Fragment 837; Ovid, Metamorphoses 4.627.
-&lt;/h5&gt;&lt;/span&gt;&lt;/li&gt;
-
-&lt;li id=&quot;relationship&quot;&gt;&lt;span&gt;&lt;h5&gt;
-看到这儿大家可能对这个家系关系有点搞不懂了, Perseus是Zeus的儿子, Heracles也是Zeus的儿子, 但Heracles又是Perseus的曾孙, 这是什么鬼? 其实结合注7和&lt;a href=&quot;https://en.wikipedia.org/wiki/Perseus&quot;&gt;Perseus的词条&lt;/a&gt;中列出的&lt;b&gt;希腊神话家谱&lt;/b&gt;, 大家就知道怎么回事了. 希腊神话中天神乱伦(如果有这个定义)的情况很多, 尤其是像Zeus之类的大神经常搞事情.
-&lt;/h5&gt;&lt;/span&gt;&lt;/li&gt;
-
-&lt;li id=&quot;euhemerist&quot;&gt;&lt;span&gt;&lt;h5&gt;
-&lt;a href=&quot;http://youdao.com/w/eng/euhemerist/#keyfrom=dict2.index&quot;&gt;euhemerist&lt;/a&gt;, 神话即历史论, 古希腊神话作家欧伊迈罗斯(Euhemerus)的论点. 他认为神话中的神是神化的人, 神话是历史上真实的人事的纪实. 
-&lt;/h5&gt;&lt;/span&gt;&lt;/li&gt;
-
-&lt;li id=&quot;Labours_of_Hercules&quot;&gt;&lt;span&gt;&lt;h5&gt;
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Labours_of_Hercules&quot;&gt;Labours of Heracles&lt;/a&gt;, 希腊神话中Heracles完成的12项英雄事迹. 现在用于指代指艰巨的工作, 费力的工作, 需要费极大精力去完成的工作. 这个词组也经常被写成&lt;b&gt;Labours of Hercules&lt;/b&gt;, &lt;a href=&quot;https://en.wikipedia.org/wiki/Hercules&quot;&gt;Hercules&lt;/a&gt;是Heracles的罗马名. 而根据&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E8%B5%AB%E6%8B%89%E5%85%8B%E5%8B%92%E6%96%AF&quot;&gt;这里&lt;/a&gt;, 希腊神话中的Heracles相当于罗马神话里的赫丘利. 后来的罗马皇帝, 比如康茂德和马克西米安都常常以其自居. 罗马人基本采用希腊人对赫拉克勒斯生活和事迹刻画的版本, 并零星的补充一些罗马风格的细节, 有些甚至将其和统一地中海的英雄联系起来. 在罗马也曾大行对赫丘利的崇拜之风.
-&lt;/h5&gt;&lt;/span&gt;&lt;/li&gt;
-
-&lt;li id=&quot;Pillars_of_Hercules&quot;&gt;&lt;span&gt;&lt;h5&gt;
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Pillars_of_Hercules&quot;&gt;Pillars_of_Hercules&lt;/a&gt;, 可译为&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%B5%B7%E6%A0%BC%E5%8A%9B%E6%96%AF%E4%B9%8B%E6%9F%B1&quot;&gt;海格力斯之柱&lt;/a&gt;, 赫拉克勒斯之柱, 赫丘利之柱等等, 是在西方经典中形容直布罗陀海峡两岸边耸立海岬的短语. 一般认为, 北面一柱是位于英属直布罗陀境内的直布罗陀巨岩, 而南面一柱则在北非, 但确切是哪座山峰一直没有一致说法.
-&lt;/h5&gt;&lt;/span&gt;&lt;/li&gt;
-
-&lt;/span&gt;&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;相关阅读&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Atlas_(mythology)&quot;&gt;Atlas (mythology)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%98%BF%E7%89%B9%E6%8B%89%E6%96%AF&quot;&gt;阿特拉斯&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Titan_(mythology)&quot;&gt;泰坦&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Titanomachy&quot;&gt;泰坦之战&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E8%B5%AB%E6%8B%89%E5%85%8B%E5%8B%92%E6%96%AF&quot;&gt;赫拉克勒斯&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Hera&quot;&gt;赫拉&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%A4%A7%E8%A5%BF%E6%B4%8B&quot;&gt;大西洋&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E4%BA%9A%E7%89%B9%E5%85%B0%E8%92%82%E6%96%AF&quot;&gt;亚特兰蒂斯&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E7%8F%80%E8%80%B3%E4%BF%AE%E6%96%AF&quot;&gt;珀耳修斯&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://youdao.com/w/Labours%20of%20Hercules/#keyfrom=dict2.top&quot;&gt;赫拉克勒斯的12项英雄事迹&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E4%BC%8A%E7%89%B9%E9%B2%81%E9%87%8C%E4%BA%9A&quot;&gt;伊特鲁里亚&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://youdao.com/w/Etruscan/#keyfrom=dict2.top&quot;&gt;伊特鲁里亚的&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%9C%B0%E5%9B%BE%E5%AD%A6&quot;&gt;地图学&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%9D%B0%E6%8B%89%E6%9D%9C%E6%96%AF%C2%B7%E9%BA%A6%E5%8D%A1%E6%89%98&quot;&gt;杰拉杜斯·麦卡托&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 16 Dec 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/12/16/Atlas(mythology)_via_wikipedia.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/12/16/Atlas(mythology)_via_wikipedia.html</guid>
         
         
       </item>

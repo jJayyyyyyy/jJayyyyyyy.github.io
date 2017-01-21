@@ -1,0 +1,39 @@
+---
+layout: default
+---
+<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta"> <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+      <!-- {% if page.author==none %}{% endif %} -->
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ site.author }} • PAT学习笔记</span></span>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <div>
+    <br/><br/>
+    <div align="center">
+
+    <iframe src="https://www.facebook.com/plugins/share_button.php?href={{ site.url }}{{ page.url }}&layout=button" scrolling="no" frameborder="0" allowtransparency="true" style="position: static; visibility: visible; width: 63px; height: 20px;"></iframe>
+
+    <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    
+    </div>
+
+    <div style="border-top: dotted #e8e8e8; border-width: 1px 0; padding-top: 10px;"></div> 
+    <p align="center">
+      <a rel="cc-license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://img.shields.io/badge/%20%20%20CC%20%20%20-BY--NC--SA-brightgreen.svg" /></a>
+      <a rel="mit-license" href="http://opensource.org/licenses/mit-license.php"><img alt="MIT-License" style="border-width:0" src="https://img.shields.io/badge/License-MIT%20License-blue.svg" /></a>
+    </p>
+    <!-- <p>转载请保留作者和出处, 包括以上许可证信息。</p> -->
+  </div>
+
+  {% if site.disqus.shortname %}
+    {% include disqus_comments.html %}
+  {% endif %}
+</article>

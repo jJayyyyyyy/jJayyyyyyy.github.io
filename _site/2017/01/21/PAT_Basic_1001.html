@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="fXCqEVcHdJt50axIq7sCTxtZUh5gDHkj2usDwI_66gE" />
+  <title>PAT Basic 1001</title>
+  <meta name="description" content="本题代码可以参考这里。">
+
+ <!--  
+   -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href= "/">
+  <link rel="alternate" type="application/rss+xml" title="FrozenMap" href="/feed.xml">
+  
+  
+</head>
+
+  <body>
+    <header class="site-header" role="banner" style="border-top:0px">
+  <div class="wrapper">
+    <a class="site-title" href="/">Home</a>
+    <!-- <img src="/assets/Labtocat.png" width="43"> -->
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+      
+      <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <!-- <a class="page-link" href="/donate">Donate</a> -->
+          <a class="page-link" href="/feed.xml">RSS</a>
+      </div>
+    </nav>
+  </div>
+</header>
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">PAT Basic 1001</h1>
+    <p class="post-meta"> <time datetime="2017-01-21T00:00:00+08:00" itemprop="datePublished">Jan 21, 2017</time>
+      <!--  -->
+        • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">FrozenMap • PAT学习笔记</span></span>
+    </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>本题代码可以参考<a href="https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1002_%E5%86%99%E5%87%BA%E8%BF%99%E4%B8%AA%E6%95%B0">这里</a>。</p>
+
+<p><br /></p>
+
+<h2 id="httpswwwpatestcncontestspat-b-practise1001-1001-3n1-15"><a href="https://www.patest.cn/contests/pat-b-practise/1001">原题</a>： 1001. 害死人不偿命的(3n+1)猜想 (15)</h2>
+
+<p>卡拉兹(Callatz)猜想：</p>
+
+<p>对任何一个自然数n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把(3n+1)砍掉一半。这样一直反复砍下去，最后一定在某一步得到n=1。卡拉兹在1950年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学生们无心学业，一心只证(3n+1)，以至于有人说这是一个阴谋，卡拉兹是在蓄意延缓美国数学界教学与科研的进展……</p>
+
+<p>我们今天的题目不是证明卡拉兹猜想，而是对给定的任一不超过1000的正整数n，简单地数一下，需要多少步（砍几下）才能得到n=1？</p>
+
+<h3 id="section">输入格式：</h3>
+
+<p>每个测试输入包含1个测试用例，即给出自然数n的值。</p>
+
+<h3 id="section-1">输出格式：</h3>
+
+<p>输出从n计算到1需要的步数。</p>
+
+<h3 id="section-2">输入样例：</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>3
+</code></pre>
+</div>
+
+<h3 id="section-3">输出样例：</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>5
+</code></pre>
+</div>
+
+<h3 id="section-4">注意</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>时间限制： 400 ms
+内存限制： 65536 kB
+代码长度限制： 8000 B
+判题程序： Standard
+作者： CHEN, Yue
+</code></pre>
+</div>
+
+<h1 id="section-5">题目分析</h1>
+
+<ol>
+  <li>本题不难，但要注意输入n=1的时候，输出为0.</li>
+</ol>
+
+<p><br /></p>
+
+<p>(END)</p>
+
+
+  </div>
+
+  <div>
+    <br/><br/>
+    <div align="center">
+
+    <iframe src="https://www.facebook.com/plugins/share_button.php?href=http://localhost:4000/2017/01/21/PAT_Basic_1001.html&layout=button" scrolling="no" frameborder="0" allowtransparency="true" style="position: static; visibility: visible; width: 63px; height: 20px;"></iframe>
+
+    <a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    
+    </div>
+
+    <div style="border-top: dotted #e8e8e8; border-width: 1px 0; padding-top: 10px;"></div> 
+    <p align="center">
+      <a rel="cc-license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://img.shields.io/badge/%20%20%20CC%20%20%20-BY--NC--SA-brightgreen.svg" /></a>
+      <a rel="mit-license" href="http://opensource.org/licenses/mit-license.php"><img alt="MIT-License" style="border-width:0" src="https://img.shields.io/badge/License-MIT%20License-blue.svg" /></a>
+    </p>
+    <!-- <p>转载请保留作者和出处, 包括以上许可证信息。</p> -->
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+  </body>
+</html>
