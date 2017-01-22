@@ -46,15 +46,10 @@ title: 翻译：China announces ban on ivory trade by end of 2017
 
 ##  相关阅读
 
-[大象之殇](http://www.bbc.co.uk/news/resources/idt-6d40b788-af2f-4646-8177-c8db7ce6a881)
-
-[博兹瓦纳——大象最后的避难所](http://www.bbc.co.uk/news/world-africa-37230700)
-
-[国务院办公厅关于有序停止商业性
+*	[大象之殇](http://www.bbc.co.uk/news/resources/idt-6d40b788-af2f-4646-8177-c8db7ce6a881)
+*	[博兹瓦纳——大象最后的避难所](http://www.bbc.co.uk/news/world-africa-37230700)
+*	[国务院办公厅关于有序停止商业性
 加工销售象牙及制品活动的通知](http://www.gov.cn/zhengce/content/2016-12/30/content_5155017.htm)
-
-[China to ban domestic ivory trade by 2017](http://wwf.panda.org/wwf_news/?288850/China-to-ban-domestic-ivory-trade-by-2017-in-huge-boost-for-Africas-elephants)
-
-[维基百科: WWF, 世界自然基金会](https://zh.wikipedia.org/zh-hans/%E4%B8%96%E7%95%8C%E8%87%AA%E7%84%B6%E5%9F%BA%E9%87%91%E4%BC%9A)
-
-[China Promises to Ban Ivory Trade by December 31, 2017](https://www.nrdc.org/media/2016/161230)
+*	[China to ban domestic ivory trade by 2017](http://wwf.panda.org/wwf_news/?288850/China-to-ban-domestic-ivory-trade-by-2017-in-huge-boost-for-Africas-elephants)
+*	[维基百科: WWF, 世界自然基金会](https://zh.wikipedia.org/zh-hans/%E4%B8%96%E7%95%8C%E8%87%AA%E7%84%B6%E5%9F%BA%E9%87%91%E4%BC%9A)
+*	[China Promises to Ban Ivory Trade by December 31, 2017](https://www.nrdc.org/media/2016/161230)

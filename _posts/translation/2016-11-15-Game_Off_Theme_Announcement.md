@@ -79,10 +79,7 @@ GLHF!<3 (good luck & have fun ≈ gggl, 开心最重要么么大)
 
 ##	相关阅读
 
-[2012的Github Game Off](https://www.douban.com/note/265646157/)
-
-[Global Game Jam的体验和分享](http://www.jianshu.com/p/a776a3e75dd5)
-
-[GAME JAM 求生手册](http://jianzi0307.github.io/2014/01/13/game-jam-e6-b1-82-e7-94-9f-e6-89-8b-e5-86-8c/)
-
-[Global Game Jam 2015 台中會場行前通知](https://gist.github.com/tpai/6da413c2c8f082982c2a)
+*	[2012的Github Game Off](https://www.douban.com/note/265646157/)
+*	[Global Game Jam的体验和分享](http://www.jianshu.com/p/a776a3e75dd5)
+*	[GAME JAM 求生手册](http://jianzi0307.github.io/2014/01/13/game-jam-e6-b1-82-e7-94-9f-e6-89-8b-e5-86-8c/)
+*	[Global Game Jam 2015 台中會場行前通知](https://gist.github.com/tpai/6da413c2c8f082982c2a)

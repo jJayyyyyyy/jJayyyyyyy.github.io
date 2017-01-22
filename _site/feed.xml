@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 22 Jan 2017 10:08:14 +0800</pubDate>
-    <lastBuildDate>Sun, 22 Jan 2017 10:08:14 +0800</lastBuildDate>
+    <pubDate>Sun, 22 Jan 2017 11:48:14 +0800</pubDate>
+    <lastBuildDate>Sun, 22 Jan 2017 11:48:14 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -596,28 +596,14 @@ CDN, Content Delivery Network, 内容分发网络, 可以理解为分布式缓�
 &lt;h2 id=&quot;section-2&quot;&gt;相关阅读&lt;/h2&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%97%B0%E7%A7%92&quot;&gt;闰秒, Leap Second&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%A0%BC%E6%9E%97%E5%B0%BC%E6%B2%BB%E5%B9%B3%E6%97%B6&quot;&gt;格林尼治标准时间, GMT&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%8D%8F%E8%B0%83%E4%B8%96%E7%95%8C%E6%97%B6&quot;&gt;协调世界时, UTC&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=IJhgZBn-LHg&quot;&gt;How Earth Moves&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://www.solidot.org/story?sid=50596&quot;&gt;文章1: Google公共NTP服务器将通过“降速”增加闰秒&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;今年的12月31日将增加一闰秒，也就是说12月31日11点59分59秒之后不是2017年，而是59分60秒。服务器通常无法处理有61秒的一分钟，因此闰秒曾经导致网站的服务器发生问题。Google云平台官方博客介绍了它的NTP时间服务器如何处理闰秒的方法：不是额外增加一秒，而是闰秒引入前后的10小时内让时钟速度减慢0.0014%，此种做法将在二十小时内使得时钟增加1秒。12月31日将和其他日子没有差别。Google的所有服务包括API将使用上面描述的方法同步闰秒。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://www.solidot.org/story?sid=30309&quot;&gt;文章2: 闰秒导致部分Linux服务器高CPU使用率&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;国际地球自转和参考坐标系统服务（IERS）在2012年6月30日午夜(北京时间7月1号7点59分59秒)增加一闰秒（即出现7：59：60）。由于Linux kernel 2.6.29之前版本存在bug，在进行闰秒调整时可能会引起系统时钟服务ntpd进程死锁。Debian Lenny、RHEL/CentOS 5等旧发行版今天仍被广泛使用，部分供应商早已经发布了补丁。但除了Linux服务器外，一些服务器程序也因为闰秒出现了问题，如Reddit、Mozilla、FourSquare、Yelp、LinkedIn和Gawker等网站都短暂遭遇了技术问题，国内的一家云储存供应商发现运行在CentOS 6.2上的Java和MySQL因闰秒出现了不同程度的CPU利用率增长，猜测是JVM和MySQL试图通过CPU硬件晶振的数据获得当前精确的时间，由于闰秒的关系，这个时间和操作系统维持的墙上时间（Wall Time，也就是显示给用户看的时间）不一致，导致了这个问题。简单的修正方法是强制重置系统时间，让系统中所有时间回到同步的状态。&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%97%B0%E7%A7%92&quot;&gt;闰秒, Leap Second&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%A0%BC%E6%9E%97%E5%B0%BC%E6%B2%BB%E5%B9%B3%E6%97%B6&quot;&gt;格林尼治标准时间, GMT&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%8D%8F%E8%B0%83%E4%B8%96%E7%95%8C%E6%97%B6&quot;&gt;协调世界时, UTC&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=IJhgZBn-LHg&quot;&gt;How Earth Moves&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.solidot.org/story?sid=50596&quot;&gt;文章1: Google公共NTP服务器将通过“降速”增加闰秒&lt;/a&gt;&lt;br /&gt;
+今年的12月31日将增加一闰秒，也就是说12月31日11点59分59秒之后不是2017年，而是59分60秒。服务器通常无法处理有61秒的一分钟，因此闰秒曾经导致网站的服务器发生问题。Google云平台官方博客介绍了它的NTP时间服务器如何处理闰秒的方法：不是额外增加一秒，而是闰秒引入前后的10小时内让时钟速度减慢0.0014%，此种做法将在二十小时内使得时钟增加1秒。12月31日将和其他日子没有差别。Google的所有服务包括API将使用上面描述的方法同步闰秒。&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.solidot.org/story?sid=30309&quot;&gt;文章2: 闰秒导致部分Linux服务器高CPU使用率&lt;/a&gt;&lt;br /&gt;
+国际地球自转和参考坐标系统服务（IERS）在2012年6月30日午夜(北京时间7月1号7点59分59秒)增加一闰秒（即出现7：59：60）。由于Linux kernel 2.6.29之前版本存在bug，在进行闰秒调整时可能会引起系统时钟服务ntpd进程死锁。Debian Lenny、RHEL/CentOS 5等旧发行版今天仍被广泛使用，部分供应商早已经发布了补丁。但除了Linux服务器外，一些服务器程序也因为闰秒出现了问题，如Reddit、Mozilla、FourSquare、Yelp、LinkedIn和Gawker等网站都短暂遭遇了技术问题，国内的一家云储存供应商发现运行在CentOS 6.2上的Java和MySQL因闰秒出现了不同程度的CPU利用率增长，猜测是JVM和MySQL试图通过CPU硬件晶振的数据获得当前精确的时间，由于闰秒的关系，这个时间和操作系统维持的墙上时间（Wall Time，也就是显示给用户看的时间）不一致，导致了这个问题。简单的修正方法是强制重置系统时间，让系统中所有时间回到同步的状态。&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
@@ -706,18 +692,15 @@ CDN, Content Delivery Network, 内容分发网络, 可以理解为分布式缓�
 
 &lt;h2 id=&quot;section-1&quot;&gt;相关阅读&lt;/h2&gt;
 
-&lt;p&gt;&lt;a href=&quot;http://www.bbc.co.uk/news/resources/idt-6d40b788-af2f-4646-8177-c8db7ce6a881&quot;&gt;大象之殇&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.bbc.co.uk/news/world-africa-37230700&quot;&gt;博兹瓦纳——大象最后的避难所&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://www.gov.cn/zhengce/content/2016-12/30/content_5155017.htm&quot;&gt;国务院办公厅关于有序停止商业性
-加工销售象牙及制品活动的通知&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;http://wwf.panda.org/wwf_news/?288850/China-to-ban-domestic-ivory-trade-by-2017-in-huge-boost-for-Africas-elephants&quot;&gt;China to ban domestic ivory trade by 2017&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/zh-hans/%E4%B8%96%E7%95%8C%E8%87%AA%E7%84%B6%E5%9F%BA%E9%87%91%E4%BC%9A&quot;&gt;维基百科: WWF, 世界自然基金会&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.nrdc.org/media/2016/161230&quot;&gt;China Promises to Ban Ivory Trade by December 31, 2017&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.bbc.co.uk/news/resources/idt-6d40b788-af2f-4646-8177-c8db7ce6a881&quot;&gt;大象之殇&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.bbc.co.uk/news/world-africa-37230700&quot;&gt;博兹瓦纳——大象最后的避难所&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.gov.cn/zhengce/content/2016-12/30/content_5155017.htm&quot;&gt;国务院办公厅关于有序停止商业性
+加工销售象牙及制品活动的通知&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://wwf.panda.org/wwf_news/?288850/China-to-ban-domestic-ivory-trade-by-2017-in-huge-boost-for-Africas-elephants&quot;&gt;China to ban domestic ivory trade by 2017&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/zh-hans/%E4%B8%96%E7%95%8C%E8%87%AA%E7%84%B6%E5%9F%BA%E9%87%91%E4%BC%9A&quot;&gt;维基百科: WWF, 世界自然基金会&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.nrdc.org/media/2016/161230&quot;&gt;China Promises to Ban Ivory Trade by December 31, 2017&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 </description>
         <pubDate>Sat, 31 Dec 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/12/31/China_announces_ban_on_ivory_trade_by_end_of_2017.html</link>

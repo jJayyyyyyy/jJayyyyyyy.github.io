@@ -65,7 +65,7 @@ title: 翻译：100% renewable energy
 
 ##	相关阅读
 
-1.	[direct contract](http://youdao.com/w/direct%20contract/#keyfrom=dict2.top)
+*	[direct contract](http://youdao.com/w/direct%20contract/#keyfrom=dict2.top)
 
 	The direct purchase contract between the big electricity consumer and the generation company becomes an important trade pattern, because it can avoid price risk.
 
