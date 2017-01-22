@@ -16,6 +16,20 @@ comments:
       print(&apos;hello world&apos;)
       &grave;&grave;&grave;
     date: 2017-01-22T09:44:34.957Z
+  - author:
+      type: github
+      displayName: jJayyyyyyy
+      url: 'https://github.com/jJayyyyyyy'
+      picture: 'https://avatars.githubusercontent.com/u/8694379?v=3&s=73'
+    content: |-
+      another comment test
+
+      markdown test
+
+      &grave;&grave;&grave;python
+      print(&apos;hello world&apos;)
+      &grave;&grave;&grave;
+    date: 2017-01-22T12:11:34.584Z
 
 ---
 
