@@ -12,7 +12,7 @@ comments:
 
       markdown test
 
-      &grave;&grave;&grave;python3
+      &grave;&grave;&grave;python
       print(&apos;hello world&apos;)
       &grave;&grave;&grave;
     date: 2017-01-22T09:44:34.957Z
