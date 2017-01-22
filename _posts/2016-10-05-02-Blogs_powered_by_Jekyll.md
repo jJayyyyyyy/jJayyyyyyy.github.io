@@ -1,6 +1,22 @@
 ---
 layout: post
 title: 使用Jekyll生成博客
+comments:
+  - author:
+      type: full
+      displayName: jJayyyyyyy
+      url: 'https://github.com/jJayyyyyyy'
+      picture: 'https://avatars.githubusercontent.com/u/8694379?v=3&s=73'
+    content: |-
+      comment zone test
+
+      markdown test
+
+      &grave;&grave;&grave;python3
+      print(&apos;hello world&apos;)
+      &grave;&grave;&grave;
+    date: 2017-01-22T09:44:34.957Z
+
 ---
 
 
