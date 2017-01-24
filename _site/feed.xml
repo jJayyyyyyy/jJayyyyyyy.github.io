@@ -5,9 +5,140 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 24 Jan 2017 14:37:05 +0800</pubDate>
-    <lastBuildDate>Tue, 24 Jan 2017 14:37:05 +0800</lastBuildDate>
+    <pubDate>Tue, 24 Jan 2017 14:53:46 +0800</pubDate>
+    <lastBuildDate>Tue, 24 Jan 2017 14:53:46 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>PAT Basic 1003</title>
+        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1003_%E6%88%91%E8%A6%81%E9%80%9A%E8%BF%87&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;httpswwwpatestcncontestspat-b-practise1003-1003-20&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1003&quot;&gt;原题&lt;/a&gt;： 1003. 我要通过！(20)&lt;/h2&gt;
+
+&lt;p&gt;“答案正确”是自动判题系统给出的最令人欢喜的回复。本题属于PAT的“答案正确”大派送 —— 只要读入的字符串满足下列条件，系统就输出“答案正确”，否则输出“答案错误”。&lt;/p&gt;
+
+&lt;p&gt;得到“答案正确”的条件是：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 字符串中必须仅有P, A, T这三种字符，不可以包含其它字符；
+2. 任意形如 xPATx 的字符串都可以获得“答案正确”，其中 x 或者是空字符串，或者是仅由字母 A 组成的字符串；
+3. 如果 aPbTc 是正确的，那么 aPbATca 也是正确的，其中 a, b, c 均或者是空字符串，或者是仅由字母 A 组成的字符串。
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;现在就请你为PAT写一个自动裁判程序，判定哪些字符串是可以获得“答案正确”的。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;输入格式&lt;/h3&gt;
+
+&lt;p&gt;每个测试输入包含1个测试用例。第1行给出一个自然数n (&amp;lt;10)，是需要检测的字符串个数。接下来每个字符串占一行，字符串长度不超过100，且不包含空格。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;输出格式&lt;/h3&gt;
+
+&lt;p&gt;每个字符串的检测结果占一行，如果该字符串可以获得“答案正确”，则输出YES，否则输出NO。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;输入样例&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;8
+PAT
+PAAT
+AAPATAA
+AAPAATAAAA
+xPATx
+PT
+Whatever
+APAAATAA
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;输出样例&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;YES
+YES
+YES
+YES
+NO
+NO
+NO
+NO
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;注意&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 400 ms
+内存限制： 65536 kB
+代码长度限制： 8000 B
+判题程序： Standard
+作者： CHEN, Yue
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;section-5&quot;&gt;题目分析&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;抽象&lt;/p&gt;
+
+    &lt;p&gt;寻找规律。分析后可以总结出题目要求如下&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;输入只能是&lt;code class=&quot;highlighter-rouge&quot;&gt;'P'&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;'A'&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;'T'&lt;/code&gt;。其中有且仅有一个&lt;code class=&quot;highlighter-rouge&quot;&gt;'P'&lt;/code&gt;，有且仅有一个&lt;code class=&quot;highlighter-rouge&quot;&gt;'T'&lt;/code&gt;。&lt;code class=&quot;highlighter-rouge&quot;&gt;'P'&lt;/code&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;'T'&lt;/code&gt;之前。&lt;/li&gt;
+      &lt;li&gt;空字符不是空格。&lt;/li&gt;
+      &lt;li&gt;原题中的&lt;code class=&quot;highlighter-rouge&quot;&gt;条件2&lt;/code&gt;是&lt;code class=&quot;highlighter-rouge&quot;&gt;条件3&lt;/code&gt;的基础。&lt;/li&gt;
+      &lt;li&gt;由上一条可以推出
+        &lt;ul&gt;
+          &lt;li&gt;【 &lt;code class=&quot;highlighter-rouge&quot;&gt;'P'&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;'T'&lt;/code&gt;之间至少有一个&lt;code class=&quot;highlighter-rouge&quot;&gt;'A'&lt;/code&gt; 】&lt;/li&gt;
+          &lt;li&gt;【 N&lt;sub&gt;a&lt;/sub&gt; × N&lt;sub&gt;b&lt;/sub&gt; = N&lt;sub&gt;c&lt;/sub&gt;，其中N&lt;sub&gt;x&lt;/sub&gt;是&lt;code class=&quot;highlighter-rouge&quot;&gt;'A'&lt;/code&gt;的数量 】&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;根据以上规律标准，分别编写子函数进行逻辑判断即可。由于本题的时间要求不高，可以考虑用python快速实现。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-6&quot;&gt;部分测试用例&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;test1&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
+8
+PAT
+PAAT
+AAPATAA
+AAPAATAAAA
+xPATx
+PT
+Whatever
+APAAATAA
+
+输出
+YES
+YES
+YES
+YES
+NO
+NO
+NO
+NO
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+</description>
+        <pubDate>Tue, 24 Jan 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/01/24/PAT_Basic_1003.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/24/PAT_Basic_1003.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>杂想</title>
@@ -1280,96 +1411,6 @@ CDN, Content Delivery Network, 内容分发网络, 可以理解为分布式缓�
         <pubDate>Tue, 27 Dec 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/12/27/Greek_Alphabet.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/12/27/Greek_Alphabet.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>行星</title>
-        <description>&lt;p&gt;如果能够回到一千年前观看未受污染的星空, 我们会发现夜空中的星星都在我们的头顶旋转. 也正是因为如此, 古代的人们一直认为地球是宇宙的中心. 不过在星星堆中似乎有一些家伙的运动轨迹十分异常, 在拉丁文中它们被称作&lt;em&gt;planeta&lt;/em&gt;, 意思是到处游荡的星星(wanderer). 现在英文中的&lt;em&gt;planet&lt;/em&gt;由此而来, 也就是我们所说的&lt;em&gt;行星&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;由于地心说模型的不准确, 与远方的恒星规律的运动轨迹相比, 
-太阳系的行星在夜空中的轨迹就显得异乎寻常. 古代人们也用神话中的人物对其命名. 然而神话终究是神话, 很多人还是心存疑惑, 最终出现了日心说之类的模型, 较好地描述了行星的运动. 后来有了望远镜等设备, 更加证实地球不是宇宙的中心, 并进一步修正了模型.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/b/b8/Solar_System_Template_Final.png&quot; alt=&quot;Planet&quot; /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%B0%B4%E6%98%9F&quot;&gt;水星&lt;/a&gt;, 英语&lt;em&gt;Mercury&lt;/em&gt;, 拉丁语&lt;em&gt;Mercurius&lt;/em&gt;, 由于其飞快的公转速度,它在罗马神话中被称为&lt;em&gt;墨丘利&lt;/em&gt;, 是快速飞行的信使神. 中国古代称其为辰星.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%87%91%E6%98%9F&quot;&gt;金星&lt;/a&gt;, 英文&lt;a href=&quot;https://en.wikipedia.org/wiki/Venus_(mythology)&quot;&gt;&lt;em&gt;Venus&lt;/em&gt;&lt;/a&gt;, 源自罗马神话的爱与美的女神维纳斯. 即希腊神话中爱与美的女神&lt;a href=&quot;https://en.wikipedia.org/wiki/Aphrodite&quot;&gt;&lt;em&gt;Aphrodite&lt;/em&gt;&lt;/a&gt;. 金星的天文符号♀是维纳斯的梳妆镜. 金星在中国古代称为太白, 另外早晨出现在东方称启明, 晚上出现在西方称长庚.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%9C%B0%E7%90%83#.E5.91.BD.E5.90.8D.E5.92.8C.E8.BE.AD.E6.BA.90&quot;&gt;地球&lt;/a&gt;, 英文Earth, 希腊神话中的大地之母&lt;a href=&quot;https://en.wikipedia.org/wiki/Gaia_(mythology)&quot;&gt;Gaia&lt;/a&gt;.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E7%81%AB%E6%98%9F&quot;&gt;火星&lt;/a&gt;, 英文为Mars, 来自罗马神话中的&lt;a href=&quot;https://en.wikipedia.org/wiki/Mars_(mythology)&quot;&gt;战神Mars&lt;/a&gt;. 古汉语中则因为它荧荧如火, 位置亮度时常变动让人无法捉摸而称之为荧惑.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E7%A9%80%E7%A5%9E%E6%98%9F&quot;&gt;谷神星&lt;/a&gt;英文名是Ceres, 代表农业女神&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%88%BB%E7%91%9E%E6%96%AF_(%E7%BE%85%E9%A6%AC%E7%A5%9E%E8%A9%B1)&quot;&gt;刻瑞斯&lt;/a&gt;. 它是一颗矮行星, 是火星和木星轨道之间的主小行星带中最大最亮的天体. 谷神星的有趣之处首先在于它被人们发现的过程. &lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%8F%90%E4%B8%A2%E6%96%AF-%E6%B3%A2%E5%BE%97%E5%AE%9A%E5%88%99&quot;&gt;提丢斯-波得定则(Titius-Bode law)&lt;/a&gt;大致描述了太阳系中行星的运动半径, 不过当时人们并没有发现由此推出的第五行星, 火星和木星之间是空白的. 然而人们观测并定义了天王星是行星之后, 发现其半径仍然符合这个规则. 所以人们重新回到火星和木星之间, 寻找”消失的第五行星”, 最终在更先进的天文望远镜的帮助下找到了谷神星. 不过在后来的定义中, 它因质量体积过小而被归类于矮行星.&lt;/p&gt;
-
-    &lt;p&gt;另外, 数学王子高斯曾帮助天文学家计算了谷神星的轨道, 并准确预测了其运动路径.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%9C%A8%E6%98%9F#.E7.A5.9E.E8.A9.B1&quot;&gt;木星&lt;/a&gt;是太阳系中最大的行星, 英文Jupiter, 来自罗马神话的天神&lt;a href=&quot;https://en.wikipedia.org/wiki/Jupiter_(mythology)&quot;&gt;Jupiter&lt;/a&gt;, 相当于希腊神话中的&lt;a href=&quot;https://en.wikipedia.org/wiki/Zeus&quot;&gt;Zeus&lt;/a&gt;. 木星最大的四颗卫星, 木卫一到木卫四, 也即&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E4%BC%BD%E5%88%A9%E7%95%A5%E8%A1%9B%E6%98%9F&quot;&gt;伽利略卫星&lt;/a&gt;, 是以Zeus的四位情人的名字命名的. 这四颗大型卫星皆与木星形成&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%BD%AE%E6%B1%90%E9%8E%96%E5%AE%9A&quot;&gt;潮汐锁定&lt;/a&gt;, 即皆以同一面半球永远对着木星公转. 其中, 木卫一到木卫三皆与木星形成&lt;a href=&quot;https://en.wikipedia.org/wiki/Orbital_resonance&quot;&gt;轨道共振(orbital resonance)&lt;/a&gt;.&lt;/p&gt;
-
-    &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/8/83/Galilean_moon_Laplace_resonance_animation.gif&quot; alt=&quot;orbital resonance&quot; /&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%9C%A8%E5%8D%AB%E4%B8%80&quot;&gt;木卫一&lt;/a&gt;又称为&lt;em&gt;Io&lt;/em&gt;, 上述的轨道共振加上木星的&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%BD%AE%E6%B1%90%E5%8A%9B&quot;&gt;潮汐力&lt;/a&gt;, 使木卫一在绕木星公转时产生巨大的形变, 并通过摩擦力获得了足够的能量产生地热, 最终形成太阳系中最剧烈的地质活动(火山).&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%9C%A8%E5%8D%AB%E4%BA%8C&quot;&gt;木卫二&lt;/a&gt;又称为&lt;em&gt;Europa&lt;/em&gt;(希腊神话中的腓尼基公主), 被潮汐锁定, 表面光滑, 可能存在液态海洋.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%9C%A8%E5%8D%AB%E4%B8%89&quot;&gt;木卫三&lt;/a&gt;又称为&lt;em&gt;Ganymede&lt;/em&gt;, 是太阳系中最大的卫星, 其直径大于水星, 质量约为水星的一半. 木卫三是太阳系中已知的唯一一颗拥有磁场的卫星, 其磁场可能是由富铁的液态内核的对流运动所产生的.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%9C%9F%E6%98%9F&quot;&gt;土星&lt;/a&gt;, 英文Saturn, 源自罗马神话中的农业之神&lt;a href=&quot;https://en.wikipedia.org/wiki/Saturn_(mythology)&quot;&gt;Saturn&lt;/a&gt;, 土星的天文学符号是农业之神的镰刀♄.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%9C%9F%E5%8D%AB%E5%85%AD&quot;&gt;土卫六&lt;/a&gt;, 英文Titan(可参见&lt;a href=&quot;https://jjayyyyyyy.github.io/2016/12/16/Atlas(mythology)_via_wikipedia.html&quot;&gt;这篇文章&lt;/a&gt;), 拥有明显大气层, 其中的甲烷也可能成为生命形成的基础. 土卫六由&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%85%8B%E9%87%8C%E6%96%AF%E8%92%82%E5%AE%89%C2%B7%E6%83%A0%E6%9B%B4%E6%96%AF&quot;&gt;惠更斯&lt;/a&gt;在17世纪初发现. 由此命名的&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%83%A0%E6%9B%B4%E6%96%AF%E5%8F%B7&quot;&gt;惠更斯号&lt;/a&gt;于2004年12月25日圣诞节与搭载它的&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%8D%A1%E8%A5%BF%E5%B0%BC%EF%BC%8D%E6%83%A0%E6%9B%B4%E6%96%AF%E5%8F%B7&quot;&gt;卡西尼号土星探测器&lt;/a&gt;分离, 近半个月后进入土卫六大气, 最终成功登陆. 惠更斯号在土卫六上进行了约90分钟的探索并传回宝贵的数据之后, 因电池耗尽而结束历史使命.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%A4%A9%E7%8E%8B%E6%98%9F&quot;&gt;天王星&lt;/a&gt;, 英文Uranus, 是希腊神话中的天空之神, Zeus的祖父.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%B5%B7%E7%8E%8B%E6%98%9F&quot;&gt;海王星&lt;/a&gt;, 英文Neptune来自罗马神话中的海神Neptūnus, 对应于希腊神话的Poseidon. Neptune是Jupiter和Pluto的兄弟.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%86%A5%E7%8E%8B%E6%98%9F&quot;&gt;冥王星&lt;/a&gt;, 英文Pluto是罗马神话中的冥王, 对应于希腊神话的Hades. 冥王星是曾经的第九大行星.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;相关阅读&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://www.bilibili.com/video/av4316358/index_2.html&quot;&gt;太阳系的奇迹&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E8%A1%8C%E6%98%9F#.E5.90.8D.E7.A7.B0.E5.8F.8A.E7.94.B1.E4.BE.86&quot;&gt;行星&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E6%BD%AE%E6%B1%90%E5%8A%A0%E7%86%B1&quot;&gt;潮汐加热&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E4%B8%BB%E5%B0%8F%E8%A1%8C%E6%98%9F%E5%B8%B6&quot;&gt;主小行星带&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E8%8B%8F%E6%A2%85%E5%85%8B%EF%BC%8D%E5%88%97%E7%BB%B49%E5%8F%B7%E5%BD%97%E6%98%9F&quot;&gt;苏梅克－列维9号彗星&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%A4%AA%E9%98%B3%E7%B3%BB%E7%9A%84%E5%BD%A2%E6%88%90%E4%B8%8E%E6%BC%94%E5%8C%96&quot;&gt;太阳系的形成与演化&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sun, 25 Dec 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/12/25/Planet.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/12/25/Planet.html</guid>
         
         
       </item>
