@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="fXCqEVcHdJt50axIq7sCTxtZUh5gDHkj2usDwI_66gE" />
+  <title>PAT Basic 1004</title>
+  <meta name="description" content="本题代码可以参考这里。">
+
+ <!--  
+   -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href= "/">
+  <link rel="alternate" type="application/rss+xml" title="FrozenMap" href="/feed.xml">
+  
+  
+</head>
+
+	<body>
+		<header class="site-header" role="banner" style="border-top:0px">
+  <div class="wrapper">
+    <a class="site-title" href="/">Home</a>
+    <!-- <img src="/assets/Labtocat.png" width="43"> -->
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+      
+      <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <!-- <a class="page-link" href="/donate">Donate</a> -->
+          <a class="page-link" href="/feed.xml">RSS</a>
+      </div>
+    </nav>
+  </div>
+</header>
+		<main class="page-content" aria-label="Content">
+			<div class="wrapper">
+				<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<header class="post-header">
+		<h1 class="post-title" itemprop="name headline">
+			PAT Basic 1004
+		</h1>
+		<p class="post-meta">
+			<span><time datetime="2017-01-25T00:00:00+08:00" itemprop="datePublished">
+				Jan 25, 2017</time> • </span>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person"><a href=http://localhost:4000>FrozenMap</a> • </span>
+			<span>PAT学习笔记</span>
+		</p>
+	</header>
+	<div class="post-content" itemprop="articleBody">
+		<p>本题代码可以参考<a href="https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1004_%E6%88%90%E7%BB%A9%E6%8E%92%E5%90%8D">这里</a>。</p>
+
+<p><br /></p>
+
+<h2 id="httpswwwpatestcncontestspat-b-practise1004-1004--20"><a href="https://www.patest.cn/contests/pat-b-practise/1004">原题</a>： 1004. 成绩排名 (20)</h2>
+
+<p>读入n名学生的姓名、学号、成绩，分别输出成绩最高和成绩最低学生的姓名和学号。</p>
+
+<h3 id="section">输入格式</h3>
+
+<p>每个测试输入包含1个测试用例，格式为</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>第1行：正整数n
+第2行：第1个学生的姓名 学号 成绩
+第3行：第2个学生的姓名 学号 成绩
+... ... ...
+第n+1行：第n个学生的姓名 学号 成绩
+</code></pre>
+</div>
+
+<p>其中姓名和学号均为不超过10个字符的字符串，成绩为0到100之间的一个整数，这里保证在一组测试用例中没有两个学生的成绩是相同的。</p>
+
+<h3 id="section-1">输出格式</h3>
+
+<p>对每个测试用例输出2行，第1行是成绩最高学生的姓名和学号，第2行是成绩最低学生的姓名和学号，字符串间有1空格。</p>
+
+<h3 id="section-2">输入样例</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>3
+Joe Math990112 89
+Mike CS991301 100
+Mary EE990830 95
+</code></pre>
+</div>
+
+<h3 id="section-3">输出样例：</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Mike CS991301
+Joe Math990112
+</code></pre>
+</div>
+
+<h3 id="section-4">注意</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>时间限制： 400 ms
+内存限制： 65536 kB
+代码长度限制： 8000 B
+判题程序： Standard
+作者： CHEN, Yue
+</code></pre>
+</div>
+
+<h1 id="section-5">题目分析</h1>
+
+<ol>
+  <li>
+    <p>存储结构</p>
+
+    <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="k">typedef</span> <span class="k">struct</span><span class="p">{</span>
+    <span class="kt">char</span> <span class="n">name</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+    <span class="kt">char</span> <span class="n">id</span><span class="p">[</span><span class="mi">16</span><span class="p">];</span>
+    <span class="kt">int</span> <span class="n">score</span><span class="p">;</span>
+<span class="p">}</span><span class="n">Student</span><span class="p">;</span>
+</code></pre>
+    </div>
+
+    <p>然后申请三块这样的空间，一个是存储输入的临时变量，另外两个分别存储最高分和最低分的学生信息，每次进行比较更新即可。</p>
+  </li>
+  <li>
+    <p>更新1—增加cpp的实现</p>
+
+    <p>根据C++ Primer 4th Edition 中文版:</p>
+
+    <p>关键字【class】和【struct】定义【类】的唯一差别在于默认访问级别。默认情况下，struct的成员为【public】，而class的成员为【private】.</p>
+  </li>
+</ol>
+
+<h1 id="section-6">部分测试用例:</h1>
+
+<ul>
+  <li>
+    <p>test1</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>输入
+3
+Joe Math990112 89
+Mike CS991301 100
+Mary EE990830 95
+
+输出
+Mike CS991301
+Joe Math990112
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p>(END)</p>
+
+	</div>
+
+	<div>
+		<br/>
+		<!-- great thanks to https://www.rrssb.ml/ -->
+		<link rel="stylesheet" href="/css/rrssb/css/rrssb.css" />
+		<ul class="rrssb-buttons clearfix" style="display: flex; justify-content: flex-end;">
+			<li class="rrssb-facebook small" data-initwidth="14.285714285714286" data-size="67" style="width: 42px;">
+				<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2017/01/25/PAT_Basic_1004.html" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+					<span class="rrssb-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="29" height="29" viewBox="0 0 29 29">
+							<path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z" fill-rule="evenodd" class="cls-2"/>
+						</svg>
+					</span>
+					<span class="rrssb-text">facebook</span>
+				</a>
+			</li>
+			<li class="rrssb-twitter small" data-initwidth="14.285714285714286" data-size="53" style="width: 42px;">
+				<a href="https://twitter.com/intent/tweet?text=PAT Basic 1004%20%20http://localhost:4000/2017/01/25/PAT_Basic_1004.html" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+					<span class="rrssb-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+							<path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"/>
+						</svg>
+					</span>
+					<span class="rrssb-text">twitter</span>
+				</a>
+			</li>
+			<li class="rrssb-googleplus small" data-initwidth="14.285714285714286" data-size="59" style="width: 42px;">
+				<a href="https://plus.google.com/share?url=http://localhost:4000/2017/01/25/PAT_Basic_1004.html" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+					<span class="rrssb-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+							<path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/>
+						</svg>
+					</span>
+					<span class="rrssb-text">google+</span>
+				</a>
+			</li>
+		</ul>
+		<br/>
+	</div>
+
+	<div style="border-top: dotted #e8e8e8; border-width: 1px 0; padding-top: 10px;">
+	</div>
+
+	<div align="center">
+		<a rel="cc-license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+			<img alt="Creative Commons License" style="border-width:0" src="https://img.shields.io/badge/%20%20%20CC%20%20%20-BY--NC--SA-brightgreen.svg" /></a>
+		<a rel="mit-license" href="http://opensource.org/licenses/mit-license.php">
+			<img alt="MIT-License" style="border-width:0" src="https://img.shields.io/badge/License-MIT%20License-blue.svg" /></a>
+		<!-- <p>转载请保留作者和出处, 包括以上许可证信息。</p> -->
+		<br/><br/><br/>
+	</div>
+
+	<div>
+		<noscript>Please enable JavaScript to view the comment form powered by <a href="https://commentit.io/">Comm(ent|it)</a></noscript>
+		<div id="commentit"></div>
+		<script type="text/javascript">
+			/** CONFIGURATION VARIABLES **/
+			var commentitUsername = 'jJayyyyyyy';
+			var commentitRepo = 'jJayyyyyyy/jJayyyyyyy.github.io';
+			var commentitPath = '_posts/PAT/2017-01-25-PAT_Basic_1004.md';
+
+			/** DON'T EDIT FOLLOWING LINES **/
+			(function() {
+				var commentit = document.createElement('script');
+				commentit.type = 'text/javascript';
+				commentit.async = true;
+				commentit.src = 'https://commentit.io/static/embed/dist/commentit.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(commentit);
+			})();
+		</script>
+		
+		
+	</div>
+
+<!-- 	 -->
+</article>
+
+			</div>
+		</main>
+	</body>
+</html>
