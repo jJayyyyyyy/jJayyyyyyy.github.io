@@ -5,9 +5,236 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 25 Jan 2017 09:33:12 +0800</pubDate>
-    <lastBuildDate>Wed, 25 Jan 2017 09:33:12 +0800</lastBuildDate>
+    <pubDate>Thu, 26 Jan 2017 23:22:15 +0800</pubDate>
+    <lastBuildDate>Thu, 26 Jan 2017 23:22:15 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>PAT Basic 1005</title>
+        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1005_%E7%BB%A7%E7%BB%AD(3n%2B1)%E7%8C%9C%E6%83%B3&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;httpswwwpatestcncontestspat-b-practise1005-1005-3n1-25&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1005&quot;&gt;原题&lt;/a&gt;： 1005. 继续(3n+1)猜想 (25)&lt;/h2&gt;
+
+&lt;p&gt;卡拉兹(Callatz)猜想已经在1001中给出了描述。在这个题目里，情况稍微有些复杂。&lt;/p&gt;
+
+&lt;p&gt;当我们验证卡拉兹猜想的时候，为了避免重复计算，可以记录下递推过程中遇到的每一个数。例如对n=3进行验证的时候，我们需要计算3、5、8、4、2、1，则当我们对n=5、8、4、2进行验证的时候，就可以直接判定卡拉兹猜想的真伪，而不需要重复计算，因为这4个数已经在验证3的时候遇到过了，我们称5、8、4、2是被3“覆盖”的数。我们称一个数列中的某个数n为“关键数”，如果n不能被数列中的其他数字所覆盖。&lt;/p&gt;
+
+&lt;p&gt;现在给定一系列待验证的数字，我们只需要验证其中的几个关键数，就可以不必再重复验证余下的数字。你的任务就是找出这些关键数字，并按从大到小的顺序输出它们。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;输入格式&lt;/h3&gt;
+
+&lt;p&gt;每个测试输入包含1个测试用例，第1行给出一个正整数K(&amp;lt;100)，第2行给出K个互不相同的待验证的正整数n(1&amp;lt;n&amp;lt;=100)的值，数字间用空格隔开。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;输出格式&lt;/h3&gt;
+
+&lt;p&gt;每个测试用例的输出占一行，按从大到小的顺序输出关键数字。数字间用1个空格隔开，但一行中最后一个数字后没有空格。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;输入样例&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;6
+3 5 6 7 8 11
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;输出样例&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;7 6
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;注意&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 400 ms
+内存限制： 65536 kB
+代码长度限制： 8000 B
+判题程序： Standard
+作者： CHEN, Yue
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;题目分析&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;一种思路&lt;/p&gt;
+
+    &lt;p&gt;抽象结构体，包含两个变量，其一是输入的数字&lt;code class=&quot;highlighter-rouge&quot;&gt;value&lt;/code&gt;，其二是标志符&lt;code class=&quot;highlighter-rouge&quot;&gt;key&lt;/code&gt;，用于标明这个数是否为&lt;code class=&quot;highlighter-rouge&quot;&gt;关键数&lt;/code&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;将输入存为一个数组&lt;code class=&quot;highlighter-rouge&quot;&gt;num[]&lt;/code&gt;。首先假设每个数都是关键数&lt;code class=&quot;highlighter-rouge&quot;&gt;TRUE&lt;/code&gt;，&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;init_num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;us_N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;然后从第一个数开始遍历数组&lt;code class=&quot;highlighter-rouge&quot;&gt;num&lt;/code&gt;，若在&lt;code class=&quot;highlighter-rouge&quot;&gt;卡拉兹&lt;/code&gt;运算过程中，出现的数字与&lt;code class=&quot;highlighter-rouge&quot;&gt;num&lt;/code&gt;中的数字相同，则将该数字的&lt;code class=&quot;highlighter-rouge&quot;&gt;key&lt;/code&gt;标为&lt;code class=&quot;highlighter-rouge&quot;&gt;FALSE&lt;/code&gt;。&lt;/p&gt;
+
+    &lt;p&gt;在第一个数完成&lt;code class=&quot;highlighter-rouge&quot;&gt;卡拉兹&lt;/code&gt;过程后，对第二个数进行同样处理。但若第二个数的&lt;code class=&quot;highlighter-rouge&quot;&gt;key&lt;/code&gt;为&lt;code class=&quot;highlighter-rouge&quot;&gt;FALSE&lt;/code&gt;，则直接跳过。因为根据定义，第二个数不是关键数。后面以此类推。&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;filter_keys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;us_N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;抽象&lt;/p&gt;
+
+    &lt;p&gt;首先是抽象出上述结构体。&lt;/p&gt;
+
+    &lt;p&gt;写完以后发现代码略长，因此可以试着抽象出每一个步骤，成为子函数，便于阅读与思路整理。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;打印输出&lt;/p&gt;
+
+    &lt;p&gt;行尾不能有空格。引入标志位。第一次出现[关键数]时用&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot;%d&quot;&lt;/code&gt;，并把&lt;code class=&quot;highlighter-rouge&quot;&gt;is_start&lt;/code&gt;置零。后续的[关键数]则用&lt;code class=&quot;highlighter-rouge&quot;&gt;&quot; %d&quot;&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;其他&lt;/p&gt;
+
+    &lt;p&gt;利用预定义，使逻辑更清晰&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#define TRUE	1
+#define FALSE	0
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;更新1—增加cpp的实现&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;根据C++ Primer 4th Edition 中文版&lt;/p&gt;
+
+        &lt;p&gt;关键字【class】和【struct】定义【类】的唯一差别在于默认访问级别。默认情况下，struct的成员为【public】，而class的成员为【private】.&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;两种方式进行递减快排：利用兼容C的&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;cstdlib&amp;gt;&lt;/code&gt;之&lt;code class=&quot;highlighter-rouge&quot;&gt;qsort()&lt;/code&gt;；利用&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;algorithm&amp;gt;&lt;/code&gt;之&lt;code class=&quot;highlighter-rouge&quot;&gt;sort()&lt;/code&gt;。&lt;/p&gt;
+
+        &lt;ul&gt;
+          &lt;li&gt;
+            &lt;p&gt;qsort()&lt;/p&gt;
+
+            &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;cstdlib&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//...
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cmp_dec_c_qsort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//...
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;qsort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;us_N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cmp_dec_c_qsort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+            &lt;/div&gt;
+          &lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;sort()&lt;/p&gt;
+
+            &lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;algorithm&amp;gt;
+&lt;/span&gt;&lt;span class=&quot;c1&quot;&gt;//...
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cmp_dec_cpp_sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Number&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;//...
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;us_N&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cmp_dec_cpp_sort&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+            &lt;/div&gt;
+
+            &lt;p&gt;注意到，两个&lt;code class=&quot;highlighter-rouge&quot;&gt;cmp()&lt;/code&gt;不仅返回值相反，对输入参数的要求也不同。此外，两个&lt;code class=&quot;highlighter-rouge&quot;&gt;sort()&lt;/code&gt;的接口也不一样。&lt;/p&gt;
+
+            &lt;p&gt;以上作为&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1015_%E5%BE%B7%E6%89%8D%E8%AE%BA#题目分析&quot;&gt;1015_德才论&lt;/a&gt;
+的补充。&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;section-6&quot;&gt;部分测试用例&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;test1&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
+6
+3 5 6 7 8 11
+
+输出
+7 6
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;section-7&quot;&gt;其他参考&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;free()&lt;/code&gt;一个没有没有&lt;code class=&quot;highlighter-rouge&quot;&gt;malloc()&lt;/code&gt;的指针会出现 &lt;code class=&quot;highlighter-rouge&quot;&gt;Segmentation fault(core dumped)&lt;/code&gt;。小心指针的使用，指向未经授权的地点，很容易出现上述&lt;code class=&quot;highlighter-rouge&quot;&gt;段错误&lt;/code&gt;。必须确保声明了权限，也就是必须分配足够内存。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;char *strcat(char * s1, const char * s2);&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;s2指向的字符串，贴到s1指向字符串的结尾，并覆盖s1所指字符串结尾的空字符。返回值是是s1。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;char *strchr(const char * s, int c);&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;c对应一个字符，该函数在s所指的字符串中寻找c，并返回第一个c的地址。若找不到，则返回空指针。&lt;/p&gt;
+
+    &lt;p&gt;用法：&lt;code class=&quot;highlighter-rouge&quot;&gt;fgets()&lt;/code&gt;会保留行尾输入的&lt;code class=&quot;highlighter-rouge&quot;&gt;'\0'&lt;/code&gt;，可以利用&lt;code class=&quot;highlighter-rouge&quot;&gt;strchr()&lt;/code&gt;将换行符去掉。&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;us_input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;findLF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;fgets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;us_input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;40&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stdin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;findLF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;strchr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;us_input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'\n'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;findLF&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;findLF&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'\0'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://faculty.euc.ac.cy/scharalambous/csc131/books/C%20book%201.pdf&quot;&gt;C Primer Plus&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;—更新cpp参考—&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.cplusplus.com/articles/NhA0RXSz/&quot;&gt;Beginners guide to the std::sort() function&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1015_%E5%BE%B7%E6%89%8D%E8%AE%BA&quot;&gt;1015_德才论&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+</description>
+        <pubDate>Thu, 26 Jan 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/01/26/PAT_Basic_1005.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/26/PAT_Basic_1005.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>PAT Basic 1004</title>
@@ -1289,71 +1516,6 @@ CDN, Content Delivery Network, 内容分发网络, 可以理解为分布式缓�
         <pubDate>Sat, 31 Dec 2016 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2016/12/31/China_announces_ban_on_ivory_trade_by_end_of_2017.html</link>
         <guid isPermaLink="true">http://localhost:4000/2016/12/31/China_announces_ban_on_ivory_trade_by_end_of_2017.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>翻译：NFL Streaming Games in China Through Sina Weibo</title>
-        <description>&lt;p&gt;这是&lt;strong&gt;翻译&lt;/strong&gt;系列的一篇文章。原文来自VOA的新闻&lt;a href=&quot;http://www.voanews.com/a/china-sina-weibo-national-football-league/3654627.html&quot;&gt;NFL Streaming Games in China Through Sina Weibo&lt;/a&gt;，发布于2016年12月28日。以下是译文。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;nfl&quot;&gt;NFL将通过新浪微博进行直播&lt;/h2&gt;
-
-&lt;p&gt;&lt;img alt=&quot;NFL&quot; src=&quot;https://gdb.voanews.com/01CC23DB-CBCC-417D-8EB0-25811ABDE0CA_cx0_cy4_cw0_w987_r1_s_r1.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;h6&gt;图片: 2015年10月23日于北京，NFL超级周末之青少年对抗赛。NFL与微博正式达成合作。目前中国每周有超过150万人在微博上观看NFL比赛。&lt;/h6&gt;
-
-&lt;p&gt;纽约报道——NFL正风靡中国，超级碗也将在中国进行直播。&lt;/p&gt;
-
-&lt;p&gt;NFL联盟在周三宣布，与新浪微博签署合作协议。新浪微博是中国最大的社交平台之一。&lt;/p&gt;
-
-&lt;p&gt;除了最近已经播出的6场常规赛，新浪微博还将直播&lt;a href=&quot;http://www.nflchina.com/team/Packers&quot;&gt;绿湾包装工队&lt;/a&gt;与&lt;a href=&quot;http://www.nflchina.com/team/Lions&quot;&gt;底特律雄狮队&lt;/a&gt;的周日晚间进行的精彩对决，两队将角逐NFC北部分区(NFC-North)的头名。新浪微博也将直播三场季后赛以及超级碗的比赛。&lt;/p&gt;
-
-&lt;p&gt;新浪微博是中国最热门的网站之一，有1亿3200万日活用户和2亿9700万的月活用户，平均每天有1亿条信息通过微博发布，其影响力相当于美国的Twitter和YouTube.&lt;/p&gt;
-
-&lt;p&gt;目前中国每周有超过150万人在微博上观看NFL比赛。&lt;/p&gt;
-
-&lt;p&gt;此外，用户还可以通过新浪微博进行视频点播(VOD, video-on-demand)，观看比赛集锦，十佳球，以及其他NFL的相关内容。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;PS: 最后一段原文如下:&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;Sina Weibo also will have rights to non-game video-on-demand clips, highlights, and other NFL video content.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;video-on-demand 就是VOD，即视频点播，非实时，区别于视频直播。&lt;/p&gt;
-
-&lt;p&gt;新浪科技的&lt;a href=&quot;http://tech.sina.com.cn/i/2016-12-29/doc-ifxzczfc6615164.shtml&quot;&gt;报道&lt;/a&gt;如下:&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;NFL除了会通过微博账号直播比赛外，同时还会发布比赛短视频、集锦以及其他NFL周边视频内容，包括每周10佳球、每周5佳跑球和接球等。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;相关阅读&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E5%9C%8B%E5%AE%B6%E7%BE%8E%E5%BC%8F%E6%A9%84%E6%AC%96%E7%90%83%E8%81%AF%E7%9B%9F&quot;&gt;维基百科: NFL&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.nflchina.com/team&quot;&gt;NFL: 球队&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://tech.sina.com.cn/i/2016-12-29/doc-ifxzczfc6615164.shtml&quot;&gt;新浪科技: NFL成为第一个在中国新浪微博上直播赛事的体育联盟&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.ifanr.com/768733?utm_source=rss&amp;amp;utm_medium=rss&amp;amp;utm_campaign=&quot;&gt;爱范儿: 新浪微博可以看超级碗直播了&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://v.techweb.com.cn/internet/2016-12-30/2464649.shtml&quot;&gt;TechWeb: 新浪微博直播美国春晚&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://sports.sina.com.cn/others/rugby/2015-08-26/doc-ifxhcvry1084611.shtml&quot;&gt;新浪体育(2015): 新赛季NFL强势回归 57个活动日横跨中国助力超级碗&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.morningpost.com.cn/2015/0911/1003215.shtml&quot;&gt;北京晨报(2015): NFL超级周末携至尊奖杯登陆北京&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://sports.sina.com.cn/others/rugby/2015-11-07/doc-ifxkniur2957575.shtml&quot;&gt;新浪体育(2015): 魏江雷出席NFL超级周末 透露未来合作新模式&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E9%9A%A8%E9%81%B8%E8%A6%96%E8%A8%8A&quot;&gt;维基百科: VOD, Video-On-Demand, 视频点播&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Thu, 29 Dec 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/12/29/NFL_streaming_through_weibo.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/12/29/NFL_streaming_through_weibo.html</guid>
         
         
       </item>
