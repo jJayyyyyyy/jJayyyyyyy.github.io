@@ -5,9 +5,113 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 26 Jan 2017 23:22:15 +0800</pubDate>
-    <lastBuildDate>Thu, 26 Jan 2017 23:22:15 +0800</lastBuildDate>
+    <pubDate>Fri, 27 Jan 2017 23:05:11 +0800</pubDate>
+    <lastBuildDate>Fri, 27 Jan 2017 23:05:11 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>PAT Basic 1006</title>
+        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1006_%E6%8D%A2%E4%B8%AA%E6%A0%BC%E5%BC%8F%E8%BE%93%E5%87%BA%E6%95%B4%E6%95%B0&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;httpswwwpatestcncontestspat-b-practise1006-1006--15&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1006&quot;&gt;原题&lt;/a&gt;： 1006. 换个格式输出整数 (15)&lt;/h2&gt;
+
+&lt;p&gt;让我们用字母B来表示“百”、字母S表示“十”，用“12…n”来表示个位数字n（&amp;lt;10），换个格式来输出任一个不超过3位的正整数。例如234应该被输出为BBSSS1234，因为它有2个“百”、3个“十”、以及个位的4。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;输入格式&lt;/h3&gt;
+
+&lt;p&gt;每个测试输入包含1个测试用例，给出正整数n（&amp;lt;1000）。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;输出格式&lt;/h3&gt;
+
+&lt;p&gt;每个测试用例的输出占一行，用规定的格式输出n。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;输入样例1&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;234
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;输出样例1&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;BBSSS1234
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;输入样例2&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;23
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;输出样例2&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SS123
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;注意&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 400 ms
+内存限制： 65536 kB
+代码长度限制： 8000 B
+判题程序： Standard
+作者： CHEN, Yue
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-7&quot;&gt;题目分析&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;高位为零&lt;/p&gt;
+
+    &lt;p&gt;本题唯一的坑已经在样例中明确指出来了，也就是要高位为零的情况。（其他题目，如&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1002_%E5%86%99%E5%87%BA%E8%BF%99%E4%B8%AA%E6%95%B0&quot;&gt;1002&lt;/a&gt;，就要靠自己发现这个坑了）&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;其余按照逻辑编写代码即可。由于本题的时间要求不高，推荐用python快速实现。&lt;/p&gt;
+
+&lt;h1 id=&quot;section-8&quot;&gt;部分测试用例&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;test1&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
+234
+
+输出
+BBSSS1234
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;test2&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
+23
+
+输出
+SS123
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+</description>
+        <pubDate>Thu, 26 Jan 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/01/26/PAT_Basic_1006.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/26/PAT_Basic_1006.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>PAT Basic 1005</title>
@@ -1449,73 +1553,6 @@ CDN, Content Delivery Network, 内容分发网络, 可以理解为分布式缓�
         <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/01/01/Primary_school_children_make_anti-smoking_packaging.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/01/01/Primary_school_children_make_anti-smoking_packaging.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>翻译：China announces ban on ivory trade by end of 2017</title>
-        <description>&lt;p&gt;这是&lt;strong&gt;翻译&lt;/strong&gt;系列的一篇文章。原文来自BBC的新闻&lt;a href=&quot;http://www.bbc.com/news/world-asia-china-38470861&quot;&gt;China announces ban on ivory trade by end of 2017&lt;/a&gt;，发布于2016年12月30日。以下是译文。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;中国政府宣布最迟于2017年底全面禁止象牙制品交易&lt;/h2&gt;
-
-&lt;p&gt;&lt;img alt=&quot;ivory&quot; src=&quot;http://ichef-1.bbci.co.uk/news/660/cpsprodpb/5814/production/_93184522_036625295-1.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;h6&gt;图片: 肯尼亚在4月焚毁105吨象牙，以抵抗违法贸易&lt;/h6&gt;
-
-&lt;p&gt;中国政府宣布，将于2017年底之前全面禁止象牙交易。&lt;/p&gt;
-
-&lt;p&gt;动物保护组织为此欢呼庆祝，称这个决定具有历史意义，并将改变大象的命运。&lt;/p&gt;
-
-&lt;p&gt;今年十月在南非进行的濒危野生动植物种国际贸易公约缔约国大会上，中国宣布了该决定。&lt;/p&gt;
-
-&lt;p&gt;中国的象牙制品交易额约占全球份额的70%，居于世界之首。&lt;/p&gt;
-
-&lt;p&gt;在中国，象牙制品最高可以卖到1100美元(850欧元)每公斤。&lt;/p&gt;
-
-&lt;p&gt;中国国务院在周五宣布了禁令的细节。&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;2017年3月31日前先行停止一批象牙定点加工单位和定点销售场所的加工销售象牙及制品活动，2017年12月31日前全面停止。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;世界自然基金会(WWF)高度赞扬中国的这个决定，称其为“这是一个历史性的决定”，WWF中国总干事&lt;a href=&quot;http://www.wwfchina.org/pressdetail.php?id=1735&quot;&gt;卢思骋&lt;/a&gt;说&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;关闭当今世界上最主要的合法象牙交易市场将有助于遏制中国及中国以外地区的象牙购买行为，并阻断非法象牙的贩运和供应。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;自然资源保护协会(NRDC)副会长Elly Pepper赞扬了中国在保护野生动物方面的带头作用。&lt;/p&gt;
-&lt;blockquote&gt;
-  &lt;p&gt;将立即禁止世界上最大的的象牙贸易市场，这一决定意义重大。
-大象正濒临灭绝，这一决定将成为扭转大象命运的关键。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;虽然在1989年之后象牙贸易的国际市场已经关闭，但是在很多国家内部，象牙制品的交易仍然是合法的，并且一直持续至今。&lt;/p&gt;
-
-&lt;p&gt;根据最近公布的&lt;a href=&quot;http://www.greatelephantcensus.com/&quot;&gt;大象种群数量调查报告&lt;/a&gt;，最近七年对于大象的大量猎杀，已经使得非洲地区的大象数量缩减了1/3。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;相关阅读&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.bbc.co.uk/news/resources/idt-6d40b788-af2f-4646-8177-c8db7ce6a881&quot;&gt;大象之殇&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.bbc.co.uk/news/world-africa-37230700&quot;&gt;博兹瓦纳——大象最后的避难所&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.gov.cn/zhengce/content/2016-12/30/content_5155017.htm&quot;&gt;国务院办公厅关于有序停止商业性
-加工销售象牙及制品活动的通知&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://wwf.panda.org/wwf_news/?288850/China-to-ban-domestic-ivory-trade-by-2017-in-huge-boost-for-Africas-elephants&quot;&gt;China to ban domestic ivory trade by 2017&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/zh-hans/%E4%B8%96%E7%95%8C%E8%87%AA%E7%84%B6%E5%9F%BA%E9%87%91%E4%BC%9A&quot;&gt;维基百科: WWF, 世界自然基金会&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.nrdc.org/media/2016/161230&quot;&gt;China Promises to Ban Ivory Trade by December 31, 2017&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Sat, 31 Dec 2016 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2016/12/31/China_announces_ban_on_ivory_trade_by_end_of_2017.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2016/12/31/China_announces_ban_on_ivory_trade_by_end_of_2017.html</guid>
         
         
       </item>
