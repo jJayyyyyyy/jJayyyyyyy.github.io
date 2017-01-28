@@ -5,9 +5,113 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 27 Jan 2017 23:05:11 +0800</pubDate>
-    <lastBuildDate>Fri, 27 Jan 2017 23:05:11 +0800</lastBuildDate>
+    <pubDate>Sat, 28 Jan 2017 21:34:53 +0800</pubDate>
+    <lastBuildDate>Sat, 28 Jan 2017 21:34:53 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>PAT Basic 1007</title>
+        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1007_%E7%B4%A0%E6%95%B0%E5%AF%B9%E7%8C%9C%E6%83%B3&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;httpswwwpatestcncontestspat-b-practise1007-1007--20&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1007&quot;&gt;原题&lt;/a&gt;： 1007. 素数对猜想 (20)&lt;/h2&gt;
+
+&lt;p&gt;让我们定义 d&lt;sub&gt;n&lt;/sub&gt; 为：d&lt;sub&gt;n&lt;/sub&gt; = p&lt;sub&gt;n+1&lt;/sub&gt; - p&lt;sub&gt;n&lt;/sub&gt;，其中 p&lt;sub&gt;i&lt;/sub&gt; 是第i个素数。显然有 d&lt;sub&gt;1&lt;/sub&gt;=1 且对于n&amp;gt;1有 d&lt;sub&gt;n&lt;/sub&gt; 是偶数。“素数对猜想”认为“存在无穷多对相邻且差为2的素数”。&lt;/p&gt;
+
+&lt;p&gt;现给定任意正整数N (&amp;lt; 10&lt;sup&gt;5&lt;/sup&gt;)，请计算不超过N的满足猜想的素数对的个数。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;输入格式&lt;/h3&gt;
+
+&lt;p&gt;每个测试输入包含1个测试用例，给出正整数N。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;输出格式&lt;/h3&gt;
+
+&lt;p&gt;每个测试用例的输出占一行，不超过N的满足猜想的素数对的个数。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;输入样例1&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;20
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;输出样例1&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;4
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;注意&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 400 ms
+内存限制： 65536 kB
+代码长度限制： 8000 B
+判题程序： Standard
+作者： CHEN, Yue
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-5&quot;&gt;题目分析&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;孪生素数对&lt;/p&gt;
+
+    &lt;p&gt;题目中的素数对，指的是孪生素数对，即差为2的一对素数。结合样例，在N&amp;lt;=20的时候，有如下孪生素数对&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[3 5], [5 7], [11 13], [17 19]
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;寻找素数&lt;/p&gt;
+
+    &lt;p&gt;请参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1013_%E6%95%B0%E7%B4%A0%E6%95%B0#题目分析&quot;&gt;1013_数素数: 题目分析&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;section-6&quot;&gt;部分测试用例&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;test1&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
+20
+
+输出
+4
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;section-7&quot;&gt;其他参考&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/zh-hans/%E5%AD%AA%E7%94%9F%E7%B4%A0%E6%95%B0&quot;&gt;维基百科：孪生素数&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.guokr.com/article/437023/&quot;&gt;果壳：孪生素数猜想—张益唐究竟做了一个什么研究？&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1013_数素数&quot;&gt;1013_数素数&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+</description>
+        <pubDate>Fri, 27 Jan 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/01/27/PAT_Basic_1007.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/27/PAT_Basic_1007.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>PAT Basic 1006</title>
@@ -1525,34 +1629,6 @@ CDN, Content Delivery Network, 内容分发网络, 可以理解为分布式缓�
         <pubDate>Tue, 03 Jan 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/01/03/Leap_second_briefly_catches_out_computer_firm.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/01/03/Leap_second_briefly_catches_out_computer_firm.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>翻译：Primary school children make anti-smoking packaging</title>
-        <description>&lt;p&gt;这是&lt;strong&gt;翻译&lt;/strong&gt;系列的一篇文章。原文来自BBC的新闻&lt;a href=&quot;http://www.bbc.com/news/uk-38460350&quot;&gt;Primary school children make anti-smoking packaging&lt;/a&gt;，发布于2016年12月30日。以下是译文。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;小学生们设计戒烟公益画&lt;/h2&gt;
-
-&lt;p&gt;&lt;img alt=&quot;anti-smoking&quot; src=&quot;http://ichef-1.bbci.co.uk/news/660/cpsprodpb/F36D/production/_93171326_hi037035974.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;h6&gt;图片: Earlsdon小学的同学们和Ranj Singh博士一起，设计戒烟公益画&lt;/h6&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;相关阅读&lt;/h2&gt;
-
-</description>
-        <pubDate>Sun, 01 Jan 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/01/01/Primary_school_children_make_anti-smoking_packaging.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/01/01/Primary_school_children_make_anti-smoking_packaging.html</guid>
         
         
       </item>
