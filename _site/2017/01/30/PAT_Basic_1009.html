@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="fXCqEVcHdJt50axIq7sCTxtZUh5gDHkj2usDwI_66gE" />
+  <title>PAT Basic 1009</title>
+  <meta name="description" content="本题代码可以参考这里。">
+
+ <!--  
+   -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href= "/">
+  <link rel="alternate" type="application/rss+xml" title="FrozenMap" href="/feed.xml">
+  
+  
+</head>
+
+	<body>
+		<header class="site-header" role="banner" style="border-top:0px">
+  <div class="wrapper">
+    <a class="site-title" href="/">Home</a>
+    <!-- <img src="/assets/Labtocat.png" width="43"> -->
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+      
+      <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <!-- <a class="page-link" href="/donate">Donate</a> -->
+          <a class="page-link" href="/feed.xml">RSS</a>
+      </div>
+    </nav>
+  </div>
+</header>
+		<main class="page-content" aria-label="Content">
+			<div class="wrapper">
+				<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<header class="post-header">
+		<h1 class="post-title" itemprop="name headline">
+			PAT Basic 1009
+		</h1>
+		<p class="post-meta">
+			<span><time datetime="2017-01-30T00:00:00+08:00" itemprop="datePublished">
+				Jan 30, 2017</time> • </span>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person"><a href=http://localhost:4000>FrozenMap</a> • </span>
+			<span>PAT学习笔记</span>
+		</p>
+	</header>
+	<div class="post-content" itemprop="articleBody">
+		<p>本题代码可以参考<a href="https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1009_%E8%AF%B4%E5%8F%8D%E8%AF%9D">这里</a>。</p>
+
+<p><br /></p>
+
+<h2 id="httpswwwpatestcncontestspat-b-practise1009-1009--20"><a href="https://www.patest.cn/contests/pat-b-practise/1009">原题</a>： 1009. 数组元素循环右移问题 (20)</h2>
+
+<p>给定一句英语，要求你编写程序，将句中所有单词的顺序颠倒输出。</p>
+
+<h3 id="section">输入格式</h3>
+
+<p>测试输入包含一个测试用例，在一行内给出总长度不超过80的字符串。字符串由若干单词和若干空格组成，其中单词是由英文字母（大小写有区分）组成的字符串，单词之间用1个空格分开，输入保证句子末尾没有多余的空格。</p>
+
+<h3 id="section-1">输出格式</h3>
+
+<p>每个测试用例的输出占一行，输出倒序后的句子。</p>
+
+<h3 id="section-2">输入样例1</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Hello World Here I Come
+</code></pre>
+</div>
+
+<h3 id="section-3">输出样例1</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Come I Here World Hello
+</code></pre>
+</div>
+
+<h3 id="section-4">注意</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>时间限制： 400 ms
+内存限制： 65536 kB
+代码长度限制： 8000 B
+判题程序： Standard
+作者： CHEN, YUE
+</code></pre>
+</div>
+
+<p><br /><br /></p>
+
+<h1 id="section-5">题目分析</h1>
+
+<p>本题时间要求不高，可以考虑用python，配合<code class="highlighter-rouge">split()</code>和<code class="highlighter-rouge">reverse()</code>，4行代码就够了。下面分析一下如何用C完成题目。</p>
+
+<ol>
+  <li>
+    <p>思路</p>
+
+    <p>假设一共有n个空格，我们先找到结束符<code class="highlighter-rouge">'\0'</code>（或<code class="highlighter-rouge">'\n'</code>），将其替换为<code class="highlighter-rouge">'_'</code></p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>Hello World Here I Come_
+</code></pre>
+    </div>
+
+    <p>再向前找到第n个空格<code class="highlighter-rouge">' '</code>，替换为<code class="highlighter-rouge">'_'</code>。然后以下一个<code class="highlighter-rouge">'_'</code>为终点，这样我们就得到了最后一串字符。</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>Hello World Here I_Come_
+</code></pre>
+    </div>
+
+    <p>重复以上步骤。最后再输出第一串字符即可。</p>
+  </li>
+  <li>
+    <p>获取输入</p>
+
+    <p>使用<code class="highlighter-rouge">fgets()</code>来获取整行输入。由于总长度不超过80，我们选取<code class="highlighter-rouge">MAX=81</code></p>
+
+    <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="n">fgets</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="n">stdin</span><span class="p">);</span>
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>获取一个单词</p>
+
+    <ul>
+      <li>
+        <p>起点：空格<code class="highlighter-rouge">' '</code></p>
+
+        <p>我们使用<code class="highlighter-rouge">strrchr()</code>从后往前寻找空格。</p>
+
+        <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="n">strrchr</span><span class="p">(</span><span class="n">str</span><span class="p">,</span> <span class="sc">' '</span><span class="p">);</span>
+</code></pre>
+        </div>
+      </li>
+      <li>
+        <p>终点:下划线<code class="highlighter-rouge">'_'</code></p>
+
+        <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="k">while</span><span class="p">(</span> <span class="sc">'_'</span><span class="o">!=</span><span class="n">p_find</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">)</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"%c"</span><span class="p">,</span> <span class="n">p_find</span><span class="p">[</span><span class="n">i</span><span class="o">++</span><span class="p">]);</span>
+</code></pre>
+        </div>
+      </li>
+      <li>
+        <p>词间空格</p>
+
+        <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="n">printf</span><span class="p">(</span><span class="s">" "</span><span class="p">);</span>
+</code></pre>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>测试点</p>
+
+    <p>至少要对这几种情况进行测试：</p>
+
+    <ul>
+      <li>样例测试</li>
+      <li>只有一个单词，即输入的字符串无空格</li>
+      <li>字符串长度为80</li>
+    </ul>
+
+    <p>注意：因为我们使用的是<code class="highlighter-rouge">fgets()</code>，字符串的结尾可能是<code class="highlighter-rouge">'\n'</code><code class="highlighter-rouge">'\0'</code>，也可能是<code class="highlighter-rouge">'\0'</code>，需要设置对应的判断条件。</p>
+  </li>
+  <li>
+    <p>更新1—增加cpp的实现</p>
+
+    <ul>
+      <li>
+        <p>思路是这样，将输入拆分成字串后，逐个压入stack栈，然后LIFO出栈直到栈为空。压入的操作是<code class="highlighter-rouge">.push()</code>。出栈时先读顶部元素<code class="highlighter-rouge">.top()</code>，然后<code class="highlighter-rouge">.pop()</code>弹出栈顶，以此循环直到栈为空<code class="highlighter-rouge">.empty()</code>。</p>
+      </li>
+      <li>
+        <p><code class="highlighter-rouge">cin</code>和<code class="highlighter-rouge">scanf()</code>一样，如果作为退出循环的条件，本地测试时需要<code class="highlighter-rouge">^+d</code>作为输入流的<code class="highlighter-rouge">EOF</code>。但是OJ上会自动添加结束标志（猜测）。</p>
+
+        <p>我们也可先用<code class="highlighter-rouge">getline()</code>读取整行，再转化为<code class="highlighter-rouge">stringstream ss</code>对象，再次调用等效于split的<code class="highlighter-rouge">getline(ss, sub_str, ' ')</code>，从而取出sub_str。代码段如下</p>
+
+        <div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="n">string</span> <span class="n">us_str</span><span class="p">,</span> <span class="n">sub_str</span><span class="p">;</span>
+<span class="n">getline</span><span class="p">(</span><span class="n">cin</span><span class="p">,</span> <span class="n">us_str</span><span class="p">);</span>
+<span class="n">stringstream</span> <span class="n">ss</span><span class="p">(</span><span class="n">us_str</span><span class="p">);</span>
+
+<span class="k">while</span><span class="p">(</span> <span class="o">!</span><span class="n">ss</span><span class="p">.</span><span class="n">eof</span><span class="p">()</span> <span class="p">){</span>
+    <span class="n">getline</span><span class="p">(</span><span class="n">ss</span><span class="p">,</span> <span class="n">sub_str</span><span class="p">,</span> <span class="sc">' '</span><span class="p">);</span>
+    <span class="n">str_stack</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">sub_str</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h1 id="section-6">部分测试用例</h1>
+
+<ul>
+  <li>
+    <p>test1</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>输入
+Hello World Here I Come
+
+输出
+Come I Here World Hello
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>test2</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>输入
+Hello
+
+输出
+Hello
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h1 id="section-7">其他参考</h1>
+
+<ul>
+  <li>
+    <p><a href="https://www-s.acm.illinois.edu/webmonkeys/book/c_guide/2.12.html#fgets">char *fgets(char *str, int n, FILE *stream);</a></p>
+
+    <p><code class="highlighter-rouge">fgets()</code>最多读取<code class="highlighter-rouge">MAX-1</code>长度的字符串，包括作为输入确认的<code class="highlighter-rouge">'\n'</code>。末尾会和<code class="highlighter-rouge">gets()</code>一样，加上<code class="highlighter-rouge">'\0'</code>。</p>
+
+    <p>由于输入中包含空格，而字符串总段数未知，用<code class="highlighter-rouge">scanf()</code>会比较麻烦。</p>
+
+    <p>为防止内存溢出，尽量不要用<code class="highlighter-rouge">gets()</code>。</p>
+  </li>
+  <li>
+    <p><a href="https://www-s.acm.illinois.edu/webmonkeys/book/c_guide/2.14.html#strrchr">char *strrchr(const char *str, int c);</a></p>
+
+    <p><code class="highlighter-rouge">strrchr()</code>的原型在<code class="highlighter-rouge">string.h</code>中声明。该函数会返回字符串s中最后一次出现字符c的地址。若没找到则返回空指针。</p>
+  </li>
+</ul>
+
+<p>—更新cpp参考—</p>
+
+<ul>
+  <li>
+    <p><a href="http://www.cplusplus.com/faq/sequences/strings/split/">how to split a string in cpp</a></p>
+
+    <p>注意，使用<code class="highlighter-rouge">istringstream</code>和<code class="highlighter-rouge">streamstring</code>类型都需要<code class="highlighter-rouge">#include &lt;sstream&gt;</code></p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p>(END)</p>
+
+	</div>
+
+	<div>
+		<br/>
+		<!-- great thanks to https://www.rrssb.ml/ -->
+		<link rel="stylesheet" href="/css/rrssb/css/rrssb.css" />
+		<ul class="rrssb-buttons clearfix" style="display: flex; justify-content: flex-end;">
+			<li class="rrssb-facebook small" data-initwidth="14.285714285714286" data-size="67" style="width: 42px;">
+				<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2017/01/30/PAT_Basic_1009.html" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+					<span class="rrssb-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="29" height="29" viewBox="0 0 29 29">
+							<path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z" fill-rule="evenodd" class="cls-2"/>
+						</svg>
+					</span>
+					<span class="rrssb-text">facebook</span>
+				</a>
+			</li>
+			<li class="rrssb-twitter small" data-initwidth="14.285714285714286" data-size="53" style="width: 42px;">
+				<a href="https://twitter.com/intent/tweet?text=PAT Basic 1009%20%20http://localhost:4000/2017/01/30/PAT_Basic_1009.html" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+					<span class="rrssb-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+							<path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"/>
+						</svg>
+					</span>
+					<span class="rrssb-text">twitter</span>
+				</a>
+			</li>
+			<li class="rrssb-googleplus small" data-initwidth="14.285714285714286" data-size="59" style="width: 42px;">
+				<a href="https://plus.google.com/share?url=http://localhost:4000/2017/01/30/PAT_Basic_1009.html" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+					<span class="rrssb-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+							<path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/>
+						</svg>
+					</span>
+					<span class="rrssb-text">google+</span>
+				</a>
+			</li>
+		</ul>
+		<br/>
+	</div>
+
+	<div style="border-top: dotted #e8e8e8; border-width: 1px 0; padding-top: 10px;">
+	</div>
+
+	<div align="center">
+		<a rel="cc-license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+			<img alt="Creative Commons License" style="border-width:0" src="https://img.shields.io/badge/%20%20%20CC%20%20%20-BY--NC--SA-brightgreen.svg" /></a>
+		<a rel="mit-license" href="http://opensource.org/licenses/mit-license.php">
+			<img alt="MIT-License" style="border-width:0" src="https://img.shields.io/badge/License-MIT%20License-blue.svg" /></a>
+		<!-- <p>转载请保留作者和出处, 包括以上许可证信息。</p> -->
+		<br/><br/><br/>
+	</div>
+
+	<div>
+		<noscript>Please enable JavaScript to view the comment form powered by <a href="https://commentit.io/">Comm(ent|it)</a></noscript>
+		<div id="commentit"></div>
+		<script type="text/javascript">
+			/** CONFIGURATION VARIABLES **/
+			var commentitUsername = 'jJayyyyyyy';
+			var commentitRepo = 'jJayyyyyyy/jJayyyyyyy.github.io';
+			var commentitPath = '_posts/PAT/2017-01-30-PAT_Basic_1009.md';
+
+			/** DON'T EDIT FOLLOWING LINES **/
+			(function() {
+				var commentit = document.createElement('script');
+				commentit.type = 'text/javascript';
+				commentit.async = true;
+				commentit.src = 'https://commentit.io/static/embed/dist/commentit.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(commentit);
+			})();
+		</script>
+		
+		
+	</div>
+
+<!-- 	 -->
+</article>
+
+			</div>
+		</main>
+	</body>
+</html>

@@ -5,9 +5,219 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 30 Jan 2017 10:29:09 +0800</pubDate>
-    <lastBuildDate>Mon, 30 Jan 2017 10:29:09 +0800</lastBuildDate>
+    <pubDate>Mon, 30 Jan 2017 11:03:20 +0800</pubDate>
+    <lastBuildDate>Mon, 30 Jan 2017 11:03:20 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>PAT Basic 1009</title>
+        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1009_%E8%AF%B4%E5%8F%8D%E8%AF%9D&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;httpswwwpatestcncontestspat-b-practise1009-1009--20&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1009&quot;&gt;原题&lt;/a&gt;： 1009. 数组元素循环右移问题 (20)&lt;/h2&gt;
+
+&lt;p&gt;给定一句英语，要求你编写程序，将句中所有单词的顺序颠倒输出。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;输入格式&lt;/h3&gt;
+
+&lt;p&gt;测试输入包含一个测试用例，在一行内给出总长度不超过80的字符串。字符串由若干单词和若干空格组成，其中单词是由英文字母（大小写有区分）组成的字符串，单词之间用1个空格分开，输入保证句子末尾没有多余的空格。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;输出格式&lt;/h3&gt;
+
+&lt;p&gt;每个测试用例的输出占一行，输出倒序后的句子。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;输入样例1&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hello World Here I Come
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;输出样例1&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Come I Here World Hello
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;注意&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 400 ms
+内存限制： 65536 kB
+代码长度限制： 8000 B
+判题程序： Standard
+作者： CHEN, YUE
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-5&quot;&gt;题目分析&lt;/h1&gt;
+
+&lt;p&gt;本题时间要求不高，可以考虑用python，配合&lt;code class=&quot;highlighter-rouge&quot;&gt;split()&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;reverse()&lt;/code&gt;，4行代码就够了。下面分析一下如何用C完成题目。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;思路&lt;/p&gt;
+
+    &lt;p&gt;假设一共有n个空格，我们先找到结束符&lt;code class=&quot;highlighter-rouge&quot;&gt;'\0'&lt;/code&gt;（或&lt;code class=&quot;highlighter-rouge&quot;&gt;'\n'&lt;/code&gt;），将其替换为&lt;code class=&quot;highlighter-rouge&quot;&gt;'_'&lt;/code&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hello World Here I Come_
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;再向前找到第n个空格&lt;code class=&quot;highlighter-rouge&quot;&gt;' '&lt;/code&gt;，替换为&lt;code class=&quot;highlighter-rouge&quot;&gt;'_'&lt;/code&gt;。然后以下一个&lt;code class=&quot;highlighter-rouge&quot;&gt;'_'&lt;/code&gt;为终点，这样我们就得到了最后一串字符。&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hello World Here I_Come_
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;重复以上步骤。最后再输出第一串字符即可。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;获取输入&lt;/p&gt;
+
+    &lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;fgets()&lt;/code&gt;来获取整行输入。由于总长度不超过80，我们选取&lt;code class=&quot;highlighter-rouge&quot;&gt;MAX=81&lt;/code&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;fgets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;81&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stdin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;获取一个单词&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;起点：空格&lt;code class=&quot;highlighter-rouge&quot;&gt;' '&lt;/code&gt;&lt;/p&gt;
+
+        &lt;p&gt;我们使用&lt;code class=&quot;highlighter-rouge&quot;&gt;strrchr()&lt;/code&gt;从后往前寻找空格。&lt;/p&gt;
+
+        &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;strrchr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;终点:下划线&lt;code class=&quot;highlighter-rouge&quot;&gt;'_'&lt;/code&gt;&lt;/p&gt;
+
+        &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'_'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p_find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%c&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p_find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;词间空格&lt;/p&gt;
+
+        &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot; &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;测试点&lt;/p&gt;
+
+    &lt;p&gt;至少要对这几种情况进行测试：&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;样例测试&lt;/li&gt;
+      &lt;li&gt;只有一个单词，即输入的字符串无空格&lt;/li&gt;
+      &lt;li&gt;字符串长度为80&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;注意：因为我们使用的是&lt;code class=&quot;highlighter-rouge&quot;&gt;fgets()&lt;/code&gt;，字符串的结尾可能是&lt;code class=&quot;highlighter-rouge&quot;&gt;'\n'&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;'\0'&lt;/code&gt;，也可能是&lt;code class=&quot;highlighter-rouge&quot;&gt;'\0'&lt;/code&gt;，需要设置对应的判断条件。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;更新1—增加cpp的实现&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;思路是这样，将输入拆分成字串后，逐个压入stack栈，然后LIFO出栈直到栈为空。压入的操作是&lt;code class=&quot;highlighter-rouge&quot;&gt;.push()&lt;/code&gt;。出栈时先读顶部元素&lt;code class=&quot;highlighter-rouge&quot;&gt;.top()&lt;/code&gt;，然后&lt;code class=&quot;highlighter-rouge&quot;&gt;.pop()&lt;/code&gt;弹出栈顶，以此循环直到栈为空&lt;code class=&quot;highlighter-rouge&quot;&gt;.empty()&lt;/code&gt;。&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cin&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;scanf()&lt;/code&gt;一样，如果作为退出循环的条件，本地测试时需要&lt;code class=&quot;highlighter-rouge&quot;&gt;^+d&lt;/code&gt;作为输入流的&lt;code class=&quot;highlighter-rouge&quot;&gt;EOF&lt;/code&gt;。但是OJ上会自动添加结束标志（猜测）。&lt;/p&gt;
+
+        &lt;p&gt;我们也可先用&lt;code class=&quot;highlighter-rouge&quot;&gt;getline()&lt;/code&gt;读取整行，再转化为&lt;code class=&quot;highlighter-rouge&quot;&gt;stringstream ss&lt;/code&gt;对象，再次调用等效于split的&lt;code class=&quot;highlighter-rouge&quot;&gt;getline(ss, sub_str, ' ')&lt;/code&gt;，从而取出sub_str。代码段如下&lt;/p&gt;
+
+        &lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;us_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sub_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;getline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;us_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;stringstream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;us_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;getline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sub_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;str_stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sub_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;section-6&quot;&gt;部分测试用例&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;test1&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
+Hello World Here I Come
+
+输出
+Come I Here World Hello
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;test2&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
+Hello
+
+输出
+Hello
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;section-7&quot;&gt;其他参考&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www-s.acm.illinois.edu/webmonkeys/book/c_guide/2.12.html#fgets&quot;&gt;char *fgets(char *str, int n, FILE *stream);&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fgets()&lt;/code&gt;最多读取&lt;code class=&quot;highlighter-rouge&quot;&gt;MAX-1&lt;/code&gt;长度的字符串，包括作为输入确认的&lt;code class=&quot;highlighter-rouge&quot;&gt;'\n'&lt;/code&gt;。末尾会和&lt;code class=&quot;highlighter-rouge&quot;&gt;gets()&lt;/code&gt;一样，加上&lt;code class=&quot;highlighter-rouge&quot;&gt;'\0'&lt;/code&gt;。&lt;/p&gt;
+
+    &lt;p&gt;由于输入中包含空格，而字符串总段数未知，用&lt;code class=&quot;highlighter-rouge&quot;&gt;scanf()&lt;/code&gt;会比较麻烦。&lt;/p&gt;
+
+    &lt;p&gt;为防止内存溢出，尽量不要用&lt;code class=&quot;highlighter-rouge&quot;&gt;gets()&lt;/code&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www-s.acm.illinois.edu/webmonkeys/book/c_guide/2.14.html#strrchr&quot;&gt;char *strrchr(const char *str, int c);&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;strrchr()&lt;/code&gt;的原型在&lt;code class=&quot;highlighter-rouge&quot;&gt;string.h&lt;/code&gt;中声明。该函数会返回字符串s中最后一次出现字符c的地址。若没找到则返回空指针。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;—更新cpp参考—&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.cplusplus.com/faq/sequences/strings/split/&quot;&gt;how to split a string in cpp&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;注意，使用&lt;code class=&quot;highlighter-rouge&quot;&gt;istringstream&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;streamstring&lt;/code&gt;类型都需要&lt;code class=&quot;highlighter-rouge&quot;&gt;#include &amp;lt;sstream&amp;gt;&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+</description>
+        <pubDate>Mon, 30 Jan 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/01/30/PAT_Basic_1009.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/30/PAT_Basic_1009.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>PAT Basic 1008</title>
@@ -1582,165 +1792,6 @@ yi ling ba
         <pubDate>Sat, 21 Jan 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/01/21/PAT_Basic_1001.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/01/21/PAT_Basic_1001.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>再谈python中的url编码</title>
-        <description>&lt;p&gt;本文来自&lt;a href=&quot;https://github.com/ianva/vim-youdao-translater&quot;&gt;这个项目&lt;/a&gt;引出的问题。该项目是一个vim插件，可以利用有道词典翻译英文单词。挺棒的一个项目，不过代码中对url进行编码的部分可能存在一些问题，已提交Issue，这里进行记录备份与细节补充。&lt;/p&gt;
-
-&lt;p&gt;文中用&lt;code class=&quot;highlighter-rouge&quot;&gt;py2&lt;/code&gt;指代python2.7，用&lt;code class=&quot;highlighter-rouge&quot;&gt;py3&lt;/code&gt;指代python3.4。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;1. 问题描述&lt;/h2&gt;
-
-&lt;p&gt;对于url的编码，应该进行&lt;code class=&quot;highlighter-rouge&quot;&gt;percent-encoding&lt;/code&gt;，而不是&lt;code class=&quot;highlighter-rouge&quot;&gt;str.encode()&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;py3中应当用&lt;code class=&quot;highlighter-rouge&quot;&gt;urllib.parse.quote()&lt;/code&gt;进行&lt;code class=&quot;highlighter-rouge&quot;&gt;percent-encoding&lt;/code&gt;，py2中对应的方法是&lt;code class=&quot;highlighter-rouge&quot;&gt;urllib.pathname2url()&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;2. 问题定位&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://github.com/ianva/vim-youdao-translater/blob/master/plugin/ydt.vim#LC53&quot;&gt;ydt.vim&lt;/a&gt;的第53行&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;3. 示例&lt;/h2&gt;
-
-&lt;p&gt;原项目中，主要通过&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'http://dict.youdao.com/fsearch?q='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;来获取翻译内容。下面以&lt;code class=&quot;highlighter-rouge&quot;&gt;word='hello'&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;word='你好'&lt;/code&gt;为例，分别进行说明。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;py2+英文(结果相同，不影响使用):&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urllib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pathname2url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;py2+中文(结果不同):&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'你好'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;Traceback&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;most&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;recent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;call&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;last&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;File&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&amp;lt;stdin&amp;gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;UnicodeDecodeError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'ascii'&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;codec&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;can&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'t decode byte 0xe4 in position 0: ordinal not in range(128)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;gt;&amp;gt;&amp;gt; urllib.pathname2url('&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;你好&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;')	&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E4&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BD&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;E5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A5&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BD&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;可以看到对中文用&lt;code class=&quot;highlighter-rouge&quot;&gt;str.encode('utf-8')&lt;/code&gt;会直接报错，换成&lt;code class=&quot;highlighter-rouge&quot;&gt;gbk&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;gbk2312&lt;/code&gt;也是一样。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;py3+英文(结果不同)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urllib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;'hello'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;注意到&lt;code class=&quot;highlighter-rouge&quot;&gt;str.encode()&lt;/code&gt;之后的结果中多了一个&lt;code class=&quot;highlighter-rouge&quot;&gt;b&lt;/code&gt;，根据&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431664106267f12e9bef7ee14cf6a8776a479bdec9b9000&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;如果要在网络上传输，或者保存到磁盘上，就需要把str变为以字节为单位的bytes。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;这时如果再用&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'http://dict.youdao.com/fsearch?q='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;也会报错，因为&lt;code class=&quot;highlighter-rouge&quot;&gt;str&lt;/code&gt;与&lt;code class=&quot;highlighter-rouge&quot;&gt;bytes&lt;/code&gt;类型不能直接拼接。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;py3+中文(结果不同)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'你好'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\xe4\xbd\xa0\xe5\xa5\xbd&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;urllib&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;quote&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'你好'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;E4&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;BD&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;A0&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;E5&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;A5&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;BD'&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;不能用&lt;code class=&quot;highlighter-rouge&quot;&gt;str.encode()&lt;/code&gt;，原因同上。另外，同样根据&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431664106267f12e9bef7ee14cf6a8776a479bdec9b9000&quot;&gt;这里&lt;/a&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;在bytes中，无法显示为ASCII字符的字节，用 \x## 显示。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-3&quot;&gt;4. 结论&lt;/h2&gt;
-
-&lt;p&gt;如果使用&lt;code class=&quot;highlighter-rouge&quot;&gt;str.encode()&lt;/code&gt;，把不同结果组合成url用于获取资源&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;url&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'http://dict.youdao.com/fsearch?q='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;encode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'utf-8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;除了&lt;code class=&quot;highlighter-rouge&quot;&gt;py2+英文&lt;/code&gt;的组合无影响，其他三者都不是期望结果。&lt;/p&gt;
-
-&lt;p&gt;因此:&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;如果使用&lt;code class=&quot;highlighter-rouge&quot;&gt;str.encode()&lt;/code&gt;，py2英文无影响，中文有影响。py3中英文都有影响。&lt;/li&gt;
-  &lt;li&gt;应使用&lt;code class=&quot;highlighter-rouge&quot;&gt;percent-encoding&lt;/code&gt;。&lt;/li&gt;
-  &lt;li&gt;由于是作为vim插件，环境是&lt;code class=&quot;highlighter-rouge&quot;&gt;py2+英文&lt;/code&gt;(一般不会出现中文)，所以无影响。此条Issue仅作为建议。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;综上可以看出&lt;code class=&quot;highlighter-rouge&quot;&gt;py3&lt;/code&gt;对数据类型和编码的控制更为精细与明确。所以在使用&lt;code class=&quot;highlighter-rouge&quot;&gt;urlopen()&lt;/code&gt;时，如果url中包含了未经编码的中文，是无法正确获取资源的。&lt;/p&gt;
-
-&lt;p&gt;另外，我们可以在浏览器地址栏直接输入中文进行搜索，这是因为浏览器帮我们完成了编码和转换的过程。比如你先输入中文进行搜索，然后再把url复制下来，会发现中文变成了很多&lt;code class=&quot;highlighter-rouge&quot;&gt;%&lt;/code&gt;和英文组成的字符串。&lt;/p&gt;
-
-&lt;p&gt;最后，因为原来的&lt;code class=&quot;highlighter-rouge&quot;&gt;有道api&lt;/code&gt;不知道啥情况不能用了，感谢&lt;a href=&quot;https://github.com/ianva/vim-youdao-translater&quot;&gt;vim-youdao-translater&lt;/a&gt;项目提供了一种获取资源的新思路，我在&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/just%20for%20fun/youdao_translation&quot;&gt;GitHub&lt;/a&gt;上传了不需要key和keyfrom的新版本查词器，代码也精简了不少。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section-4&quot;&gt;相关阅读&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://jjayyyyyyy.github.io/2016/10/07/python3%E9%87%8D%E5%86%99SimpleHTTPServerWithUpload.html#section-6&quot;&gt;这篇文章&lt;/a&gt;的&lt;strong&gt;其他内容&lt;/strong&gt;一节&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/35149861/equivalent-urllib-parse-quote-in-python-2-7&quot;&gt;Stack Overflow: Equivalent urllib.parse.quote() in python 2.7&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431664106267f12e9bef7ee14cf6a8776a479bdec9b9000&quot;&gt;字符串和编码&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Fri, 06 Jan 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/01/06/url_encoding.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/01/06/url_encoding.html</guid>
         
         
       </item>
