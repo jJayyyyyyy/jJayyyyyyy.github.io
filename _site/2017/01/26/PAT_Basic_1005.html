@@ -187,7 +187,7 @@
             <div class="language-cpp highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;algorithm&gt;
 </span><span class="c1">//...
 </span>
-<span class="kt">int</span> <span class="n">cmp_dec_cpp_sort</span><span class="p">(</span><span class="k">const</span> <span class="n">Number</span> <span class="o">&amp;</span><span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Number</span> <span class="o">&amp;</span><span class="n">p2</span><span class="p">){</span>
+<span class="kt">int</span> <span class="n">cmp_dec_cpp_sort</span><span class="p">(</span><span class="k">const</span> <span class="n">Number</span> <span class="n">p1</span><span class="p">,</span> <span class="k">const</span> <span class="n">Number</span> <span class="n">p2</span><span class="p">){</span>
     <span class="k">return</span> <span class="n">p1</span><span class="p">.</span><span class="n">value</span> <span class="o">&gt;</span> <span class="n">p2</span><span class="p">.</span><span class="n">value</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="c1">//...
@@ -196,7 +196,15 @@
 </code></pre>
             </div>
 
-            <p>注意到，两个<code class="highlighter-rouge">cmp()</code>不仅返回值相反，对输入参数的要求也不同。此外，两个<code class="highlighter-rouge">sort()</code>的接口也不一样。</p>
+            <p>注意</p>
+
+            <ol>
+              <li>两个<code class="highlighter-rouge">cmp()</code>要求返回值相反。</li>
+              <li>C++的<code class="highlighter-rouge">cmp()</code>要求传递变量的值，而C的<code class="highlighter-rouge">cmp()</code>传入的是指针(地址)。</li>
+              <li><code class="highlighter-rouge">sort()</code>和<code class="highlighter-rouge">qsort()</code>的接口不同。</li>
+            </ol>
+
+            <p>第2点，有的地方会写成引用形参【&amp;】的形式，但由于cmp()的不改变实参的值，所以和只传值效果相同。</p>
 
             <p>以上作为<a href="https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1015_%E5%BE%B7%E6%89%8D%E8%AE%BA#题目分析">1015_德才论</a>
 的补充。</p>
