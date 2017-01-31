@@ -5,9 +5,195 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 31 Jan 2017 23:42:17 +0800</pubDate>
-    <lastBuildDate>Tue, 31 Jan 2017 23:42:17 +0800</lastBuildDate>
+    <pubDate>Tue, 31 Jan 2017 23:44:34 +0800</pubDate>
+    <lastBuildDate>Tue, 31 Jan 2017 23:44:34 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>PAT Basic 1010</title>
+        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1010_%E4%B8%80%E5%85%83%E5%A4%9A%E9%A1%B9%E5%BC%8F%E6%B1%82%E5%AF%BC&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;httpswwwpatestcncontestspat-b-practise1010-1010--25&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1010&quot;&gt;原题&lt;/a&gt;： 1010. 一元多项式求导 (25)&lt;/h2&gt;
+
+&lt;p&gt;设计函数求一元多项式的导数。（注：x&lt;sup&gt;n&lt;/sup&gt;（n为整数）的一阶导数为n*x&lt;sup&gt;n-1&lt;/sup&gt;。）&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;输入格式&lt;/h3&gt;
+
+&lt;p&gt;以指数递降方式输入多项式非零项系数和指数（绝对值均为不超过1000的整数）。数字间以空格分隔。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;输出格式&lt;/h3&gt;
+
+&lt;p&gt;以与输入相同的格式输出导数多项式非零项的系数和指数。数字间以空格分隔，但结尾不能有多余空格。注意“零多项式”的指数和系数都是0，但是表示为“0 0”。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;输入样例1&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;3 4 -5 2 6 1 -2 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;输出样例1&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;12 3 -10 1 6 0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;注意&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 400 ms
+内存限制： 65536 kB
+代码长度限制： 8000 B
+判题程序： Standard
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-5&quot;&gt;题目分析&lt;/h1&gt;
+
+&lt;p&gt;本题的题意不明确，至少题意、输入输出样例与测试点之间有矛盾，不进行过多分析。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;AC代码&lt;/p&gt;
+
+    &lt;p&gt;网上流传的大部分是这个思路的代码(可以通过测试)&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include&amp;lt;stdio.h&amp;gt;
+&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;main&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coe&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;exp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is_start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d%d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;coe&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exp&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is_start&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            	&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot; &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            	&lt;span class=&quot;n&quot;&gt;is_start&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+            &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%d %d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is_start&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;//trick
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;0 0&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;	
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;最后那段应该是个trick，专门应对某个测试用例的。这是我猜的，因为与题目逻辑不符。如有错误请指正。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;section-6&quot;&gt;测试结果描述&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;test1&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;两者非零 打印 [coe*exp, exp-1]，否则打印 [0 0]
+通过测试2 3 5
+//然而这和输入样例明显不符，输入-2 0，输出应该是空。
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;test2&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;exp 非零 就打印 [coe*exp, exp-1]
+通过测试 1 2 4
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;test3&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;两者非零 打印 [coe*exp, exp-1]， 两者全零，打印[0 0]，退出循环后如果发现还没有输出，则打印[0 0]
+通过全部测试
+//然而这也和输入样例不符，输入[-2 0]，输出应该是空。
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;test4(牛客网测试用例)&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
+353 1000 -335 -1000
+
+输出
+353000 999 335000 -1001
+
+输入:
+-2 0
+
+对应输出应该为:
+0 0
+
+//这对应了那个trick。但我觉得明显不符合题目描述啊。。。
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;section-7&quot;&gt;其他参考&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www-s.acm.illinois.edu/webmonkeys/book/c_guide/2.12.html#scanf&quot;&gt;scanf&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scanf(&quot;%s&quot;, str)&lt;/code&gt;直到空格等字符结束，不会读取空格&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gets()&lt;/code&gt;直到换行符才结束，结束时增加&lt;code class=&quot;highlighter-rouge&quot;&gt;\0&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fgets(str, MAX, stdin)&lt;/code&gt;直到换行符才结束，或者读到MAX-1个字符结束，末尾添加&lt;code class=&quot;highlighter-rouge&quot;&gt;\0&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;getchar()&lt;/code&gt;逐个读取字符，不会跳过空格，换行符等字符。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www-s.acm.illinois.edu/webmonkeys/book/c_guide/2.12.html#getchar&quot;&gt;int getchar(void);&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;Gets a character (an unsigned char) from stdin. On success the character is returned. If the end-of-file is encountered, then EOF is returned and the end-of-file indicator is set. If an error occurs then the error indicator for the stream is set and EOF is returned.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www-s.acm.illinois.edu/webmonkeys/book/c_guide/2.13.html#atoi&quot;&gt;int atoi(const char *str);&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;atoi()&lt;/code&gt;的原型在&lt;code class=&quot;highlighter-rouge&quot;&gt;stdlib.h&lt;/code&gt;中声明。将字符串(0-9)转变成数字，可识别负号&lt;code class=&quot;highlighter-rouge&quot;&gt;-&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;The string pointed to by the argument str is converted to an integer (type int). Any initial whitespace characters are skipped (space, tab, carriage return, new line, vertical tab, or formfeed). The number may consist of an optional sign and a string of digits. Conversion stops when the first unrecognized character is reached.
+On success the converted number is returned. If the number cannot be converted, then 0 is returned.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www-s.acm.illinois.edu/webmonkeys/book/c_guide/2.12.html#ungetc&quot;&gt;int ungetc(int char, FILE *stream);&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;将字符char扔回stream流，比如把&lt;code class=&quot;highlighter-rouge&quot;&gt;'a'&lt;/code&gt;放回输入流，这样下次用scanf()，getchar()等函数获取输入的时候首先会读到这个字符。&lt;/p&gt;
+
+    &lt;p&gt;Pushes the character char (an unsigned char) onto the specified stream so that the this is the next character read. The functions fseek, fsetpos, and rewind discard any characters pushed onto the stream.&lt;/p&gt;
+
+    &lt;p&gt;Multiple characters pushed onto the stream are read in a FIFO manner (first in, first out).&lt;/p&gt;
+
+    &lt;p&gt;On success the character pushed is returned. On error EOF is returned.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;似乎不能在无限循环中用&lt;code class=&quot;highlighter-rouge&quot;&gt;scanf()&lt;/code&gt;的返回值决定是否跳出。因为scanf()会自动跳过空格和换行符。&lt;/p&gt;
+
+    &lt;p&gt;gcc 4.8.4，vs2012， vc6.0 的编译器无法跳出循环，除非给一个类似&lt;code class=&quot;highlighter-rouge&quot;&gt;^+d&lt;/code&gt;的EOF输入流结束标志&lt;/p&gt;
+
+    &lt;p&gt;但是pat的gcc 4.7.2可以跳出循环，如上那段程序可以通过所有测试用例。	某个online c complier用的是gcc 5.4.0，也可以跳出循环。是不是测试程序自动加的EOF？还是不同编译器对于C标准的实现不同？&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+</description>
+        <pubDate>Tue, 31 Jan 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/01/31/PAT_Basic_1010.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/01/31/PAT_Basic_1010.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>PAT Basic 1009</title>
@@ -1730,68 +1916,6 @@ yi ling ba
         <pubDate>Sun, 22 Jan 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/01/22/PAT_Basic_1002.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/01/22/PAT_Basic_1002.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>PAT Basic 1001</title>
-        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1002_%E5%86%99%E5%87%BA%E8%BF%99%E4%B8%AA%E6%95%B0&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;httpswwwpatestcncontestspat-b-practise1001-1001-3n1-15&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1001&quot;&gt;原题&lt;/a&gt;： 1001. 害死人不偿命的(3n+1)猜想 (15)&lt;/h2&gt;
-
-&lt;p&gt;卡拉兹(Callatz)猜想：&lt;/p&gt;
-
-&lt;p&gt;对任何一个自然数n，如果它是偶数，那么把它砍掉一半；如果它是奇数，那么把(3n+1)砍掉一半。这样一直反复砍下去，最后一定在某一步得到n=1。卡拉兹在1950年的世界数学家大会上公布了这个猜想，传说当时耶鲁大学师生齐动员，拼命想证明这个貌似很傻很天真的命题，结果闹得学生们无心学业，一心只证(3n+1)，以至于有人说这是一个阴谋，卡拉兹是在蓄意延缓美国数学界教学与科研的进展……&lt;/p&gt;
-
-&lt;p&gt;我们今天的题目不是证明卡拉兹猜想，而是对给定的任一不超过1000的正整数n，简单地数一下，需要多少步（砍几下）才能得到n=1？&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;输入格式：&lt;/h3&gt;
-
-&lt;p&gt;每个测试输入包含1个测试用例，即给出自然数n的值。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;输出格式：&lt;/h3&gt;
-
-&lt;p&gt;输出从n计算到1需要的步数。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;输入样例：&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;3
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;输出样例：&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;5
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;注意&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 400 ms
-内存限制： 65536 kB
-代码长度限制： 8000 B
-判题程序： Standard
-作者： CHEN, Yue
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h1 id=&quot;section-5&quot;&gt;题目分析&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;本题不难，但要注意输入n=1的时候，输出为0.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-
-</description>
-        <pubDate>Sat, 21 Jan 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/01/21/PAT_Basic_1001.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/01/21/PAT_Basic_1001.html</guid>
         
         
       </item>
