@@ -5,9 +5,289 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 10 Feb 2017 21:32:42 +0800</pubDate>
-    <lastBuildDate>Fri, 10 Feb 2017 21:32:42 +0800</lastBuildDate>
+    <pubDate>Sun, 12 Feb 2017 23:01:22 +0800</pubDate>
+    <lastBuildDate>Sun, 12 Feb 2017 23:01:22 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>PAT Basic 1013</title>
+        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1013_%E6%95%B0%E7%B4%A0%E6%95%B0&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;httpswwwpatestcncontestspat-b-practise1013-1013--20&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1013&quot;&gt;原题&lt;/a&gt;： 1013. 数素数 (20)&lt;/h2&gt;
+
+&lt;p&gt;令P&lt;sub&gt;i&lt;/sub&gt;表示第i个素数。现任给两个正整数 M &amp;lt;= N &amp;lt;= 10&lt;sup&gt;4&lt;/sup&gt;，请输出P&lt;sub&gt;M&lt;/sub&gt;到P&lt;sub&gt;N&lt;/sub&gt;的所有素数。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;输入格式&lt;/h3&gt;
+
+&lt;p&gt;输入在一行中给出M和N，其间以空格分隔。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;输出格式&lt;/h3&gt;
+
+&lt;p&gt;输出从P&lt;sub&gt;M&lt;/sub&gt;到P&lt;sub&gt;N&lt;/sub&gt;的所有素数，每10个数字占1行，其间以空格分隔，但行末不得有多余空格。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;输入样例&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;5 27
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;输出样例&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;11 13 17 19 23 29 31 37 41 43
+47 53 59 61 67 71 73 79 83 89
+97 101 103
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;注意&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 100 ms
+内存限制： 65536 kB
+代码长度限制： 8000 B
+判题程序： Standard
+作者： CHEN, Yue
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-5&quot;&gt;题目分析&lt;/h1&gt;
+
+&lt;p&gt;判断某个数是否为素数是一类很重要的题目。可以仅根据素数定义遍历判断，但容易超时。需要对算法进行优化，但又不能太复杂，否则临场容易出错。&lt;/p&gt;
+
+&lt;p&gt;PS：超时的原因 a).取余运算耗时；b).进行了大量取余运算。&lt;/p&gt;
+
+&lt;!-- 优化的意义在于，量少的时候虽然会复杂一些，增加了时间，但是绝对时间仍然很小。量大的时候体现出优化效果，绝对时间远远小于定义法。 --&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;基本优化&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;大于2的素数都是奇数&lt;/li&gt;
+      &lt;li&gt;如果N没有[2, sqrt(N)]之间的素因子，那么N是素数&lt;/li&gt;
+    &lt;/ul&gt;
+
+    &lt;p&gt;基于以上两点，可以节省很多不必要的判断时间。（偶数，(sqrt(N), N) 全部跳过）&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is_prime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;up_bound&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;divisor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;up_bound&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;divisor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;divisor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;up_bound&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;divisor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;divisor&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;这个算法，C可以轻松通过时间限制。python就吃力了，P&lt;sub&gt;N&lt;/sub&gt;较大的时候会超时。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;筛表法&lt;/p&gt;
+
+    &lt;p&gt;筛表法是一种用空间换时间的方法。这个方法不是说给定一个数，然后去取余啥的判断是否为素数，而是首先整理出一定范围内(比如1到1000之间)所有的素数，称为素数表，然后判断给定的数是否在素数表里面。&lt;/p&gt;
+
+    &lt;p&gt;参考这篇&lt;a href=&quot;http://blog.csdn.net/liukehua123/article/details/5482854&quot;&gt;博客&lt;/a&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;素数筛法是这样的：
+1.开一个大的bool型数组prime[]，大小就是n+1就可以了.先把所有的下标为奇数的标为true,下标为偶数的标为false.
+2.然后：
+for( i=3; i&amp;lt;=sqrt(n); i+=2 ){
+    if(prime[i])
+    for( j=i+i; j&amp;lt;=n; j+=i ) prime[j]=false;
+}
+3.最后输出bool数组中的值为true的单元的下标，就是所求的n以内的素数了。
+
+原理很简单：
+当i是质(素)数的时候，i的所有的倍数必然是合数。
+如果i已经被判断不是质数了，那么再找到i后面的质数来把这个质数的倍数筛掉。
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;这个算法有一点需要注意，那就是素数表大小的选择。用&lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;的方法跑一下程序，可以发现题目要求的第&lt;code class=&quot;highlighter-rouge&quot;&gt;10000&lt;/code&gt;个素数是&lt;code class=&quot;highlighter-rouge&quot;&gt;104729&lt;/code&gt;，比例大概是1/11。所以需要大致了解一下一定范围内，素数占自然数的比例。先看代码&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#define MAX 300001
+&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*
+...	
+*/&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prime_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;prime_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;prime_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;up_bound&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;up_bound&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prime_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]){&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;prime_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;MAX不能太小，比如MAX=100001，那么就选不到第10000个素数了。对于C，MAX可以设为很大，比如MAX=300001，程序跑下来时间只有几个ms。&lt;/p&gt;
+
+    &lt;p&gt;但是在用python实现这个算法时，如果选MAX=300001，那么每个测试样例都会超时。我的做法是MAX随输入变化，MAX=P&lt;sub&gt;N&lt;/sub&gt;*10+5001，最大耗时76ms&amp;lt;100ms，按照10000/100000，再加10001大概多10%的时间，比例系数和常数项可以通过本地测试的结果确定，耗时达标即可。&lt;/p&gt;
+
+    &lt;p&gt;对比下可以发现，C的时间效率大概是python的10~20倍，内存效率10倍。&lt;/p&gt;
+
+    &lt;!-- 由于已知第10000个素数是104729
+可设max = n*10+5001
+max为奇数
+104729可以在本地算出来，稍微取多一点+10001也无妨
+python2.7，n*10+5001，在pat测试用例中是76ms，内存足够
+或者优化为素数表只存奇数
+如果不考虑接口变动。。因为输出也要变，输出也比较耗时，
+此项作为TODO
+但是，没做优化的筛表法，用C是绝对够了
+--&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;其他方法&lt;/p&gt;
+
+    &lt;p&gt;2和3非常容易理解与记忆，对于普通OJ已经够用。当然还有更高效但更复杂的方法，但是临场不一定会用，这里就不再班门弄斧了。&lt;/p&gt;
+
+    &lt;p&gt;//另外有一个trick，先本地把一定范围内的素数全部打出来，也就是本地直接生成素数表，然后…&lt;/p&gt;
+
+    &lt;p&gt;//不知道算不算作弊，紧急情况用。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;section-6&quot;&gt;部分测试用例&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;test1&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
+5 27
+
+输出
+11 13 17 19 23 29 31 37 41 43
+47 53 59 61 67 71 73 79 83 89
+97 101 103
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;test2&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
+10000 10000
+
+输出
+104729
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;section-7&quot;&gt;其他参考&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/liukehua123/article/details/5482854&quot;&gt;素数判断算法(高效率）&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/arvonzhang/article/details/8564836&quot;&gt;算法总结：判断一个数是否为素数&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.matrix67.com/blog/archives/234&quot;&gt;数论部分第一节：素数与素性测试&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.osgeo.cn/app/s2711&quot;&gt;在线判断质数（素数）&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.wolframalpha.com/input/?x=0&amp;amp;y=0&amp;amp;i=prime+10000&quot;&gt;WolframAlpha: prime 10000&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E7%AE%97%E6%9C%AF%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86&quot;&gt;算术基本定理&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/blob/master/math/prime/get_factor.c&quot;&gt;分解质因数&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1007_%E7%B4%A0%E6%95%B0%E5%AF%B9%E7%8C%9C%E6%83%B3&quot;&gt;PAT_B_1007: 素数对猜想&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;[题目分析]—[第1节]—[基本优化]中两个前提条件的证明。&lt;/p&gt;
+
+    &lt;p&gt;第一点很好证明。主要证第二点：【如果N没有[2, sqrt(N)]之间的素因子，那么N是素数】&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;首先根据定义，1不是素数。
+其次，我们用反证法证明其逆否命题： 【若N是合数，那么N存在[2, sqrt(N)]之间的素因子】
+
+证明：
+设N=a×b, sq=sqrt(N)
+根据算术基本定理，设a为素数，b是a以外，N的所有素因子之积
+
+由反证法
+i). N的每个素因子都大于sq. ii). a&amp;gt;sq
+==&amp;gt; b&amp;gt;sq，a&amp;gt;sq
+==&amp;gt; N = a×b &amp;gt; sq×sq &amp;gt; N
+等式不成立，原题得证。故其逆否命题也是成立的，即
+
+【如果N没有[2, sqrt(N)]之间的素因子，那么N是素数】
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;[题目分析]—[第2节]—[筛表法]原理的补充证明。&lt;/p&gt;
+
+    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;prime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;为什么 i&amp;lt;=sqrt(N) 作为循环结束？（参考上面的证明）&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;为什么 i&amp;gt;sqrt(N) 后面没筛过的奇数都是素数？&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;证明：
+若sqrt(N)后面的奇数为合数，则其存在 &amp;lt;=sqrt(N)的素因子p。
+但内嵌的for循环
+	
+    for( j=i+i; j&amp;lt;=n; j+=i )
+        prime[j]=false;
+	
+已经确保了含有p这个因子的合数都被标为false，
+也就是 &amp;gt;sqrt(N)的数中合数(奇数+偶数)已经被筛掉了，
+因此循环结束后， &amp;gt;sqrt(N)的奇数都是素数。
+&lt;/code&gt;&lt;/pre&gt;
+        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+</description>
+        <pubDate>Sun, 12 Feb 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/02/12/PAT_Basic_1013.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/02/12/PAT_Basic_1013.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>PAT Basic 1012</title>
@@ -1565,137 +1845,6 @@ Joe Math990112
         <pubDate>Wed, 25 Jan 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/01/25/PAT_Basic_1004.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/01/25/PAT_Basic_1004.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>PAT Basic 1003</title>
-        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1003_%E6%88%91%E8%A6%81%E9%80%9A%E8%BF%87&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;httpswwwpatestcncontestspat-b-practise1003-1003-20&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1003&quot;&gt;原题&lt;/a&gt;： 1003. 我要通过！(20)&lt;/h2&gt;
-
-&lt;p&gt;“答案正确”是自动判题系统给出的最令人欢喜的回复。本题属于PAT的“答案正确”大派送 —— 只要读入的字符串满足下列条件，系统就输出“答案正确”，否则输出“答案错误”。&lt;/p&gt;
-
-&lt;p&gt;得到“答案正确”的条件是：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;1. 字符串中必须仅有P, A, T这三种字符，不可以包含其它字符；
-2. 任意形如 xPATx 的字符串都可以获得“答案正确”，其中 x 或者是空字符串，或者是仅由字母 A 组成的字符串；
-3. 如果 aPbTc 是正确的，那么 aPbATca 也是正确的，其中 a, b, c 均或者是空字符串，或者是仅由字母 A 组成的字符串。
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;现在就请你为PAT写一个自动裁判程序，判定哪些字符串是可以获得“答案正确”的。&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;输入格式&lt;/h3&gt;
-
-&lt;p&gt;每个测试输入包含1个测试用例。第1行给出一个自然数n (&amp;lt;10)，是需要检测的字符串个数。接下来每个字符串占一行，字符串长度不超过100，且不包含空格。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;输出格式&lt;/h3&gt;
-
-&lt;p&gt;每个字符串的检测结果占一行，如果该字符串可以获得“答案正确”，则输出YES，否则输出NO。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;输入样例&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;8
-PAT
-PAAT
-AAPATAA
-AAPAATAAAA
-xPATx
-PT
-Whatever
-APAAATAA
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;输出样例&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;YES
-YES
-YES
-YES
-NO
-NO
-NO
-NO
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;注意&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 400 ms
-内存限制： 65536 kB
-代码长度限制： 8000 B
-判题程序： Standard
-作者： CHEN, Yue
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h1 id=&quot;section-5&quot;&gt;题目分析&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;抽象&lt;/p&gt;
-
-    &lt;p&gt;寻找规律。分析后可以总结出题目要求如下&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;输入只能是&lt;code class=&quot;highlighter-rouge&quot;&gt;'P'&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;'A'&lt;/code&gt;或&lt;code class=&quot;highlighter-rouge&quot;&gt;'T'&lt;/code&gt;。其中有且仅有一个&lt;code class=&quot;highlighter-rouge&quot;&gt;'P'&lt;/code&gt;，有且仅有一个&lt;code class=&quot;highlighter-rouge&quot;&gt;'T'&lt;/code&gt;。&lt;code class=&quot;highlighter-rouge&quot;&gt;'P'&lt;/code&gt;在&lt;code class=&quot;highlighter-rouge&quot;&gt;'T'&lt;/code&gt;之前。&lt;/li&gt;
-      &lt;li&gt;空字符不是空格。&lt;/li&gt;
-      &lt;li&gt;原题中的&lt;code class=&quot;highlighter-rouge&quot;&gt;条件2&lt;/code&gt;是&lt;code class=&quot;highlighter-rouge&quot;&gt;条件3&lt;/code&gt;的基础。&lt;/li&gt;
-      &lt;li&gt;由上一条可以推出
-        &lt;ul&gt;
-          &lt;li&gt;【 &lt;code class=&quot;highlighter-rouge&quot;&gt;'P'&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;'T'&lt;/code&gt;之间至少有一个&lt;code class=&quot;highlighter-rouge&quot;&gt;'A'&lt;/code&gt; 】&lt;/li&gt;
-          &lt;li&gt;【 N&lt;sub&gt;a&lt;/sub&gt; × N&lt;sub&gt;b&lt;/sub&gt; = N&lt;sub&gt;c&lt;/sub&gt;，其中N&lt;sub&gt;x&lt;/sub&gt;是&lt;code class=&quot;highlighter-rouge&quot;&gt;'A'&lt;/code&gt;的数量 】&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;根据以上规律标准，分别编写子函数进行逻辑判断即可。由于本题的时间要求不高，可以考虑用python快速实现。&lt;/p&gt;
-
-&lt;h1 id=&quot;section-6&quot;&gt;部分测试用例&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;test1&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
-8
-PAT
-PAAT
-AAPATAA
-AAPAATAAAA
-xPATx
-PT
-Whatever
-APAAATAA
-
-输出
-YES
-YES
-YES
-YES
-NO
-NO
-NO
-NO
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-</description>
-        <pubDate>Tue, 24 Jan 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/01/24/PAT_Basic_1003.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/01/24/PAT_Basic_1003.html</guid>
         
         
       </item>

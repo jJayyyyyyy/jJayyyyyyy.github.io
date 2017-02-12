@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="fXCqEVcHdJt50axIq7sCTxtZUh5gDHkj2usDwI_66gE" />
+  <title>PAT Basic 1013</title>
+  <meta name="description" content="本题代码可以参考这里。">
+
+ <!--  
+   -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href= "/">
+  <link rel="alternate" type="application/rss+xml" title="FrozenMap" href="/feed.xml">
+  
+  
+</head>
+
+	<body>
+		<header class="site-header" role="banner" style="border-top:0px">
+  <div class="wrapper">
+    <a class="site-title" href="/">Home</a>
+    <!-- <img src="/assets/Labtocat.png" width="43"> -->
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+      
+      <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <!-- <a class="page-link" href="/donate">Donate</a> -->
+          <a class="page-link" href="/feed.xml">RSS</a>
+      </div>
+    </nav>
+  </div>
+</header>
+		<main class="page-content" aria-label="Content">
+			<div class="wrapper">
+				<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<header class="post-header">
+		<h1 class="post-title" itemprop="name headline">
+			PAT Basic 1013
+		</h1>
+		<p class="post-meta">
+			<span><time datetime="2017-02-12T00:00:00+08:00" itemprop="datePublished">
+				Feb 12, 2017</time> • </span>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person"><a href=http://localhost:4000>FrozenMap</a> • </span>
+			<span>PAT学习笔记</span>
+		</p>
+	</header>
+	<div class="post-content" itemprop="articleBody">
+		<p>本题代码可以参考<a href="https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1013_%E6%95%B0%E7%B4%A0%E6%95%B0">这里</a>。</p>
+
+<p><br /></p>
+
+<h2 id="httpswwwpatestcncontestspat-b-practise1013-1013--20"><a href="https://www.patest.cn/contests/pat-b-practise/1013">原题</a>： 1013. 数素数 (20)</h2>
+
+<p>令P<sub>i</sub>表示第i个素数。现任给两个正整数 M &lt;= N &lt;= 10<sup>4</sup>，请输出P<sub>M</sub>到P<sub>N</sub>的所有素数。</p>
+
+<h3 id="section">输入格式</h3>
+
+<p>输入在一行中给出M和N，其间以空格分隔。</p>
+
+<h3 id="section-1">输出格式</h3>
+
+<p>输出从P<sub>M</sub>到P<sub>N</sub>的所有素数，每10个数字占1行，其间以空格分隔，但行末不得有多余空格。</p>
+
+<h3 id="section-2">输入样例</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>5 27
+</code></pre>
+</div>
+
+<h3 id="section-3">输出样例</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>11 13 17 19 23 29 31 37 41 43
+47 53 59 61 67 71 73 79 83 89
+97 101 103
+</code></pre>
+</div>
+
+<h3 id="section-4">注意</h3>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>时间限制： 100 ms
+内存限制： 65536 kB
+代码长度限制： 8000 B
+判题程序： Standard
+作者： CHEN, Yue
+</code></pre>
+</div>
+
+<p><br /><br /></p>
+
+<h1 id="section-5">题目分析</h1>
+
+<p>判断某个数是否为素数是一类很重要的题目。可以仅根据素数定义遍历判断，但容易超时。需要对算法进行优化，但又不能太复杂，否则临场容易出错。</p>
+
+<p>PS：超时的原因 a).取余运算耗时；b).进行了大量取余运算。</p>
+
+<!-- 优化的意义在于，量少的时候虽然会复杂一些，增加了时间，但是绝对时间仍然很小。量大的时候体现出优化效果，绝对时间远远小于定义法。 -->
+
+<ol>
+  <li>
+    <p>基本优化</p>
+
+    <ul>
+      <li>大于2的素数都是奇数</li>
+      <li>如果N没有[2, sqrt(N)]之间的素因子，那么N是素数</li>
+    </ul>
+
+    <p>基于以上两点，可以节省很多不必要的判断时间。（偶数，(sqrt(N), N) 全部跳过）</p>
+
+    <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="n">is_prime</span><span class="p">(</span><span class="kt">int</span> <span class="n">num</span><span class="p">){</span>
+    <span class="kt">int</span> <span class="n">up_bound</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">divisor</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span>
+    <span class="k">if</span><span class="p">(</span> <span class="mi">2</span><span class="o">&lt;</span><span class="n">num</span> <span class="o">&amp;&amp;</span> <span class="n">num</span><span class="o">%</span><span class="mi">2</span><span class="p">){</span>
+        <span class="n">up_bound</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">sqrt</span><span class="p">(</span><span class="n">num</span><span class="p">);</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">divisor</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span> <span class="n">divisor</span><span class="o">&lt;=</span><span class="n">up_bound</span><span class="p">;</span> <span class="n">divisor</span><span class="o">+=</span><span class="mi">2</span><span class="p">){</span>
+            <span class="k">if</span><span class="p">(</span> <span class="mi">0</span> <span class="o">==</span> <span class="n">num</span> <span class="o">%</span> <span class="n">divisor</span> <span class="p">)</span>
+                <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="p">}</span><span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="mi">2</span> <span class="o">==</span> <span class="n">num</span><span class="p">)</span>
+        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+    <span class="k">else</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+
+    <p>这个算法，C可以轻松通过时间限制。python就吃力了，P<sub>N</sub>较大的时候会超时。</p>
+  </li>
+  <li>
+    <p>筛表法</p>
+
+    <p>筛表法是一种用空间换时间的方法。这个方法不是说给定一个数，然后去取余啥的判断是否为素数，而是首先整理出一定范围内(比如1到1000之间)所有的素数，称为素数表，然后判断给定的数是否在素数表里面。</p>
+
+    <p>参考这篇<a href="http://blog.csdn.net/liukehua123/article/details/5482854">博客</a></p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>素数筛法是这样的：
+1.开一个大的bool型数组prime[]，大小就是n+1就可以了.先把所有的下标为奇数的标为true,下标为偶数的标为false.
+2.然后：
+for( i=3; i&lt;=sqrt(n); i+=2 ){
+    if(prime[i])
+    for( j=i+i; j&lt;=n; j+=i ) prime[j]=false;
+}
+3.最后输出bool数组中的值为true的单元的下标，就是所求的n以内的素数了。
+
+原理很简单：
+当i是质(素)数的时候，i的所有的倍数必然是合数。
+如果i已经被判断不是质数了，那么再找到i后面的质数来把这个质数的倍数筛掉。
+</code></pre>
+    </div>
+
+    <p>这个算法有一点需要注意，那就是素数表大小的选择。用<code class="highlighter-rouge">1</code>的方法跑一下程序，可以发现题目要求的第<code class="highlighter-rouge">10000</code>个素数是<code class="highlighter-rouge">104729</code>，比例大概是1/11。所以需要大致了解一下一定范围内，素数占自然数的比例。先看代码</p>
+
+    <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#define MAX 300001
+</span><span class="cm">/*
+...	
+*/</span>
+
+<span class="n">bool</span> <span class="n">prime_list</span><span class="p">[</span><span class="n">MAX</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="nb">false</span><span class="p">,</span> <span class="nb">false</span><span class="p">,</span> <span class="nb">true</span><span class="p">};</span>
+<span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">MAX</span><span class="p">;</span> <span class="n">i</span><span class="o">+=</span><span class="mi">2</span><span class="p">){</span>
+    <span class="n">prime_list</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="n">prime_list</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">up_bound</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="n">sqrt</span><span class="p">(</span><span class="n">MAX</span><span class="p">);</span>
+<span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="n">up_bound</span><span class="p">;</span> <span class="n">i</span><span class="o">+=</span><span class="mi">2</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">prime_list</span><span class="p">[</span><span class="n">i</span><span class="p">]){</span>
+        <span class="k">for</span><span class="p">(</span> <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">MAX</span><span class="p">;</span> <span class="n">j</span><span class="o">+=</span><span class="n">i</span><span class="p">){</span>
+            <span class="n">prime_list</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+
+    <p>MAX不能太小，比如MAX=100001，那么就选不到第10000个素数了。对于C，MAX可以设为很大，比如MAX=300001，程序跑下来时间只有几个ms。</p>
+
+    <p>但是在用python实现这个算法时，如果选MAX=300001，那么每个测试样例都会超时。我的做法是MAX随输入变化，MAX=P<sub>N</sub>*10+5001，最大耗时76ms&lt;100ms，按照10000/100000，再加10001大概多10%的时间，比例系数和常数项可以通过本地测试的结果确定，耗时达标即可。</p>
+
+    <p>对比下可以发现，C的时间效率大概是python的10~20倍，内存效率10倍。</p>
+
+    <!-- 由于已知第10000个素数是104729
+可设max = n*10+5001
+max为奇数
+104729可以在本地算出来，稍微取多一点+10001也无妨
+python2.7，n*10+5001，在pat测试用例中是76ms，内存足够
+或者优化为素数表只存奇数
+如果不考虑接口变动。。因为输出也要变，输出也比较耗时，
+此项作为TODO
+但是，没做优化的筛表法，用C是绝对够了
+-->
+  </li>
+  <li>
+    <p>其他方法</p>
+
+    <p>2和3非常容易理解与记忆，对于普通OJ已经够用。当然还有更高效但更复杂的方法，但是临场不一定会用，这里就不再班门弄斧了。</p>
+
+    <p>//另外有一个trick，先本地把一定范围内的素数全部打出来，也就是本地直接生成素数表，然后…</p>
+
+    <p>//不知道算不算作弊，紧急情况用。</p>
+  </li>
+</ol>
+
+<h1 id="section-6">部分测试用例</h1>
+
+<ul>
+  <li>
+    <p>test1</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>输入
+5 27
+
+输出
+11 13 17 19 23 29 31 37 41 43
+47 53 59 61 67 71 73 79 83 89
+97 101 103
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>test2</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>输入
+10000 10000
+
+输出
+104729
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h1 id="section-7">其他参考</h1>
+
+<ul>
+  <li>
+    <p><a href="http://blog.csdn.net/liukehua123/article/details/5482854">素数判断算法(高效率）</a></p>
+  </li>
+  <li>
+    <p><a href="http://blog.csdn.net/arvonzhang/article/details/8564836">算法总结：判断一个数是否为素数</a></p>
+  </li>
+  <li>
+    <p><a href="http://www.matrix67.com/blog/archives/234">数论部分第一节：素数与素性测试</a></p>
+  </li>
+  <li>
+    <p><a href="http://www.osgeo.cn/app/s2711">在线判断质数（素数）</a></p>
+  </li>
+  <li>
+    <p><a href="http://www.wolframalpha.com/input/?x=0&amp;y=0&amp;i=prime+10000">WolframAlpha: prime 10000</a></p>
+  </li>
+  <li>
+    <p><a href="https://zh.wikipedia.org/wiki/%E7%AE%97%E6%9C%AF%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86">算术基本定理</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/jJayyyyyyy/cs/blob/master/math/prime/get_factor.c">分解质因数</a></p>
+  </li>
+  <li>
+    <p><a href="https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1007_%E7%B4%A0%E6%95%B0%E5%AF%B9%E7%8C%9C%E6%83%B3">PAT_B_1007: 素数对猜想</a></p>
+  </li>
+  <li>
+    <p>[题目分析]—[第1节]—[基本优化]中两个前提条件的证明。</p>
+
+    <p>第一点很好证明。主要证第二点：【如果N没有[2, sqrt(N)]之间的素因子，那么N是素数】</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>首先根据定义，1不是素数。
+其次，我们用反证法证明其逆否命题： 【若N是合数，那么N存在[2, sqrt(N)]之间的素因子】
+
+证明：
+设N=a×b, sq=sqrt(N)
+根据算术基本定理，设a为素数，b是a以外，N的所有素因子之积
+
+由反证法
+i). N的每个素因子都大于sq. ii). a&gt;sq
+==&gt; b&gt;sq，a&gt;sq
+==&gt; N = a×b &gt; sq×sq &gt; N
+等式不成立，原题得证。故其逆否命题也是成立的，即
+
+【如果N没有[2, sqrt(N)]之间的素因子，那么N是素数】
+</code></pre>
+    </div>
+  </li>
+  <li>
+    <p>[题目分析]—[第2节]—[筛表法]原理的补充证明。</p>
+
+    <div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="k">for</span><span class="p">(</span> <span class="n">i</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">);</span> <span class="n">i</span><span class="o">+=</span><span class="mi">2</span> <span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">prime</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="k">for</span><span class="p">(</span> <span class="n">j</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="n">i</span><span class="p">;</span> <span class="n">j</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span> <span class="n">j</span><span class="o">+=</span><span class="n">i</span> <span class="p">)</span>
+        <span class="n">prime</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="nb">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+    </div>
+
+    <ul>
+      <li>
+        <p>为什么 i&lt;=sqrt(N) 作为循环结束？（参考上面的证明）</p>
+      </li>
+      <li>
+        <p>为什么 i&gt;sqrt(N) 后面没筛过的奇数都是素数？</p>
+
+        <div class="highlighter-rouge"><pre class="highlight"><code>证明：
+若sqrt(N)后面的奇数为合数，则其存在 &lt;=sqrt(N)的素因子p。
+但内嵌的for循环
+	
+    for( j=i+i; j&lt;=n; j+=i )
+        prime[j]=false;
+	
+已经确保了含有p这个因子的合数都被标为false，
+也就是 &gt;sqrt(N)的数中合数(奇数+偶数)已经被筛掉了，
+因此循环结束后， &gt;sqrt(N)的奇数都是素数。
+</code></pre>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p>(END)</p>
+
+	</div>
+
+	<div>
+		<br/>
+		<!-- great thanks to https://www.rrssb.ml/ -->
+		<link rel="stylesheet" href="/css/rrssb/css/rrssb.css" />
+		<ul class="rrssb-buttons clearfix" style="display: flex; justify-content: flex-end;">
+			<li class="rrssb-facebook small" data-initwidth="14.285714285714286" data-size="67" style="width: 42px;">
+				<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2017/02/12/PAT_Basic_1013.html" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+					<span class="rrssb-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="29" height="29" viewBox="0 0 29 29">
+							<path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z" fill-rule="evenodd" class="cls-2"/>
+						</svg>
+					</span>
+					<span class="rrssb-text">facebook</span>
+				</a>
+			</li>
+			<li class="rrssb-twitter small" data-initwidth="14.285714285714286" data-size="53" style="width: 42px;">
+				<a href="https://twitter.com/intent/tweet?text=PAT Basic 1013%20%20http://localhost:4000/2017/02/12/PAT_Basic_1013.html" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+					<span class="rrssb-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+							<path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"/>
+						</svg>
+					</span>
+					<span class="rrssb-text">twitter</span>
+				</a>
+			</li>
+			<li class="rrssb-googleplus small" data-initwidth="14.285714285714286" data-size="59" style="width: 42px;">
+				<a href="https://plus.google.com/share?url=http://localhost:4000/2017/02/12/PAT_Basic_1013.html" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+					<span class="rrssb-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+							<path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/>
+						</svg>
+					</span>
+					<span class="rrssb-text">google+</span>
+				</a>
+			</li>
+		</ul>
+		<br/>
+	</div>
+
+	<div style="border-top: dotted #e8e8e8; border-width: 1px 0; padding-top: 10px;">
+	</div>
+
+	<div align="center">
+		<a rel="cc-license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+			<img alt="Creative Commons License" style="border-width:0" src="https://img.shields.io/badge/%20%20%20CC%20%20%20-BY--NC--SA-brightgreen.svg" /></a>
+		<a rel="mit-license" href="http://opensource.org/licenses/mit-license.php">
+			<img alt="MIT-License" style="border-width:0" src="https://img.shields.io/badge/License-MIT%20License-blue.svg" /></a>
+		<!-- <p>转载请保留作者和出处, 包括以上许可证信息。</p> -->
+		<br/><br/><br/>
+	</div>
+
+	<div>
+		<noscript>Please enable JavaScript to view the comment form powered by <a href="https://commentit.io/">Comm(ent|it)</a></noscript>
+		<div id="commentit"></div>
+		<script type="text/javascript">
+			/** CONFIGURATION VARIABLES **/
+			var commentitUsername = 'jJayyyyyyy';
+			var commentitRepo = 'jJayyyyyyy/jJayyyyyyy.github.io';
+			var commentitPath = '_posts/PAT/2017-02-12-PAT_Basic_1013.md';
+
+			/** DON'T EDIT FOLLOWING LINES **/
+			(function() {
+				var commentit = document.createElement('script');
+				commentit.type = 'text/javascript';
+				commentit.async = true;
+				commentit.src = 'https://commentit.io/static/embed/dist/commentit.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(commentit);
+			})();
+		</script>
+		
+		
+	</div>
+
+<!-- 	 -->
+</article>
+
+			</div>
+		</main>
+	</body>
+</html>
