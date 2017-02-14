@@ -5,9 +5,48 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 12 Feb 2017 23:01:22 +0800</pubDate>
-    <lastBuildDate>Sun, 12 Feb 2017 23:01:22 +0800</lastBuildDate>
+    <pubDate>Tue, 14 Feb 2017 21:42:03 +0800</pubDate>
+    <lastBuildDate>Tue, 14 Feb 2017 21:42:03 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>2月14日—计算机时代</title>
+        <description>&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/ENIAC_Penn1.jpg/440px-ENIAC_Penn1.jpg&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2月14日对很多人来说是一个具有特殊意义的日子，因为今天是情人节。不过这个日子对处于信息时代的每一个人来说也是一个意义非凡的日子，因为在1946年2月14日，世界上第一台通用(general-purpose)计算机ENIAC正式对外公布。&lt;/p&gt;
+
+&lt;p&gt;ENIAC为美国陆军的弹道研究实验室（BRL）所使用，最初的目的是计算火炮的火力表。ENIAC在1946年公布的时候，就被当时的新闻赞誉为“巨脑”。它的计算速度比机电机器提高了一千倍。这是一个飞跃，之前没有任何一台单独的机器达到过这个速度。它的数学能力和通用的可编程能力，令当时的科学家和实业家非常激动。&lt;/p&gt;
+
+&lt;p&gt;在二战期间，美国陆军资助了ENIAC的设计和建造。建造合同在1943年6月5日签订，实际的建造在7月以“PX项目”为代号秘密开始，由宾夕法尼亚大学穆尔电气工程学院进行。建造完成的机器在1946年2月14日公布，并于次日在宾夕法尼亚大学正式投入使用(The completed machine was announced to the public the evening of February 14, 1946 and formally dedicated the next day at the University of Pennsylvania)&lt;/p&gt;
+
+&lt;p&gt;ENIAC的研制过程和以往的计算机不同，它的设计不是根据经验来的，而是有明确的计算机理论做指导的，这个理论来自于数学家阿兰-图灵的图灵机理论。在ENIAC造到一半时，另外一位科学家加入了进来，他就是后来被称为“现代计算机之父”的冯-诺依曼。&lt;/p&gt;
+
+&lt;p&gt;ENIAC建好后二战已经结束，于是便被用于计算计算氢弹研制中的数学问题。在1949年美国研制出第二台计算机EDVAC之前，科学家们都依赖ENIAC解决大量的计算问题。ENIAC一天能完成几千万次乘法，一条炮弹的轨道用20喵就能算出来，可以说比炮弹飞信的速度还快。当时英国的Louis Mountbatten元帅将ENIAC誉为“一个电子的大脑”，“电脑”也由此而来。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;ENIAC的诞生，标志着人们从此进入了计算机时代。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;相关阅读&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/ENIAC&quot;&gt;ENIAC&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://book.douban.com/subject/26275177/&quot;&gt;文明之光-第三册&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/55808679/answer/146358736&quot;&gt;知乎&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 14 Feb 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/02/14/ENIAC.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/02/14/ENIAC.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>PAT Basic 1013</title>
@@ -1735,116 +1774,6 @@ SS123
         <pubDate>Thu, 26 Jan 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/01/26/PAT_Basic_1005.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/01/26/PAT_Basic_1005.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>PAT Basic 1004</title>
-        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1004_%E6%88%90%E7%BB%A9%E6%8E%92%E5%90%8D&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;httpswwwpatestcncontestspat-b-practise1004-1004--20&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1004&quot;&gt;原题&lt;/a&gt;： 1004. 成绩排名 (20)&lt;/h2&gt;
-
-&lt;p&gt;读入n名学生的姓名、学号、成绩，分别输出成绩最高和成绩最低学生的姓名和学号。&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;输入格式&lt;/h3&gt;
-
-&lt;p&gt;每个测试输入包含1个测试用例，格式为&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;第1行：正整数n
-第2行：第1个学生的姓名 学号 成绩
-第3行：第2个学生的姓名 学号 成绩
-... ... ...
-第n+1行：第n个学生的姓名 学号 成绩
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;其中姓名和学号均为不超过10个字符的字符串，成绩为0到100之间的一个整数，这里保证在一组测试用例中没有两个学生的成绩是相同的。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;输出格式&lt;/h3&gt;
-
-&lt;p&gt;对每个测试用例输出2行，第1行是成绩最高学生的姓名和学号，第2行是成绩最低学生的姓名和学号，字符串间有1空格。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;输入样例&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;3
-Joe Math990112 89
-Mike CS991301 100
-Mary EE990830 95
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;输出样例：&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Mike CS991301
-Joe Math990112
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;注意&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 400 ms
-内存限制： 65536 kB
-代码长度限制： 8000 B
-判题程序： Standard
-作者： CHEN, Yue
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h1 id=&quot;section-5&quot;&gt;题目分析&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;存储结构&lt;/p&gt;
-
-    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;typedef&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;score&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Student&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;p&gt;然后申请三块这样的空间，一个是存储输入的临时变量，另外两个分别存储最高分和最低分的学生信息，每次进行比较更新即可。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;更新1—增加cpp的实现&lt;/p&gt;
-
-    &lt;p&gt;根据C++ Primer 4th Edition 中文版:&lt;/p&gt;
-
-    &lt;p&gt;关键字【class】和【struct】定义【类】的唯一差别在于默认访问级别。默认情况下，struct的成员为【public】，而class的成员为【private】.&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;section-6&quot;&gt;部分测试用例:&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;test1&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
-3
-Joe Math990112 89
-Mike CS991301 100
-Mary EE990830 95
-
-输出
-Mike CS991301
-Joe Math990112
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-</description>
-        <pubDate>Wed, 25 Jan 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/01/25/PAT_Basic_1004.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/01/25/PAT_Basic_1004.html</guid>
         
         
       </item>
