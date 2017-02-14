@@ -6,6 +6,44 @@
 		<main class="page-content" aria-label="Content">
 			<div class="wrapper">
 				{{ content }}
+				<br/><br/><br/><br/><br/>
+			</div>
+			<div class="wrapper">
+				<noscript>Please enable JavaScript to view the comment form powered by <a href="https://commentit.io/">Comm(ent|it)</a></noscript>
+				<div id="commentit"></div>
+				<script type="text/javascript">
+					/** CONFIGURATION VARIABLES **/
+					var commentitUsername = 'jJayyyyyyy';
+					var commentitRepo = 'jJayyyyyyy/jJayyyyyyy.github.io';
+					var commentitPath = '{{ page.path }}';
+
+					/** DON'T EDIT FOLLOWING LINES **/
+					(function() {
+						var commentit = document.createElement('script');
+						commentit.type = 'text/javascript';
+						commentit.async = true;
+						commentit.src = 'https://commentit.io/static/embed/dist/commentit.js';
+						(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(commentit);
+					})();
+				</script>
+				{%if page.comments %}
+					{% assign sorted_comments = (page.comments | sort: 'date') %}
+				{% endif %}
+				{% for c in sorted_comments %}
+					<div class="media">
+						<div class="media-left">
+							<img src="{{ c.author.picture }}" alt="{{ c.author.displayName}}" height="73" width="73">
+						</div>
+						<div class="media-body">
+							<p class="text-muted">
+								<a href="{{ c.author.url }}">{{ c.author.displayName }}</a> on {{ c.date | date_to_string }}
+							</p>
+							<p>
+								{{ c.content | markdownify }}
+							</p>
+						</div>
+					</div>
+				{% endfor %}
 			</div>
 		</main>
 		{% include footer.html %}
