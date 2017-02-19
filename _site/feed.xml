@@ -5,9 +5,166 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 17 Feb 2017 23:23:15 +0800</pubDate>
-    <lastBuildDate>Fri, 17 Feb 2017 23:23:15 +0800</lastBuildDate>
+    <pubDate>Sun, 19 Feb 2017 22:53:22 +0800</pubDate>
+    <lastBuildDate>Sun, 19 Feb 2017 22:53:22 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>PAT Basic 1016</title>
+        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1016_%E9%83%A8%E5%88%86A%2BB&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;httpswwwpatestcncontestspat-b-practise1016-1016-ab-15&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1016&quot;&gt;原题&lt;/a&gt;： 1016. 部分A+B (15)&lt;/h2&gt;
+
+&lt;p&gt;正整数A的“D&lt;sub&gt;A&lt;/sub&gt;（为1位整数）部分”定义为由A中所有D&lt;sub&gt;A&lt;/sub&gt;组成的新整数P&lt;sub&gt;A&lt;/sub&gt;。例如：给定A = 3862767，D&lt;sub&gt;A&lt;/sub&gt; = 6，则A的“6部分”P&lt;sub&gt;A&lt;/sub&gt;是66，因为A中有2个6。&lt;/p&gt;
+
+&lt;p&gt;现给定A、D&lt;sub&gt;A&lt;/sub&gt;、B、D&lt;sub&gt;B&lt;/sub&gt;，请编写程序计算P&lt;sub&gt;A&lt;/sub&gt; + P&lt;sub&gt;B&lt;/sub&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;输入格式&lt;/h3&gt;
+
+&lt;p&gt;输入在一行中依次给出A、D&lt;sub&gt;A&lt;/sub&gt;、B、D&lt;sub&gt;B&lt;/sub&gt;，中间以空格分隔，其中0 &amp;lt; A, B &amp;lt; 10&lt;sup&gt;10&lt;/sup&gt;。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;输出格式&lt;/h3&gt;
+
+&lt;p&gt;在一行中输出P&lt;sub&gt;A&lt;/sub&gt; + P&lt;sub&gt;B&lt;/sub&gt;的值。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;输入样例1&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;3862767 6 13530293 3
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;输出样例1&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;399
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;输入样例2&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;3862767 1 13530293 8
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;输出样例2&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;注意&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 100 ms
+内存限制： 65536 kB
+代码长度限制： 8000 B
+判题程序： Standard
+作者： CHEN, Yue
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-7&quot;&gt;题目分析&lt;/h1&gt;
+
+&lt;p&gt;先把所有内容当做字符串处理。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Python&lt;/p&gt;
+
+    &lt;p&gt;利用&lt;code class=&quot;highlighter-rouge&quot;&gt;.count()&lt;/code&gt;方法统计出D&lt;sub&gt;A&lt;/sub&gt;出现的次数cnt。&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;cnt_Da&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Da&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;再用&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;直接拼接n次，得到P&lt;sub&gt;A&lt;/sub&gt;，并用&lt;code class=&quot;highlighter-rouge&quot;&gt;int()&lt;/code&gt;将其转为整数。注意cnt为0的情况。&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt_Da&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Pa&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Da&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt_Da&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;Pa&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;对B作相同处理，然后两者相加即可。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;C++&lt;/p&gt;
+
+    &lt;p&gt;引入&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;algorithm&amp;gt;&lt;/code&gt;，即可得到&lt;code class=&quot;highlighter-rouge&quot;&gt;std::count()&lt;/code&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;		&lt;span class=&quot;c1&quot;&gt;//注意a的类型
+//...
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;cnt_a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+
+    &lt;p&gt;接着根据D&lt;sub&gt;A&lt;/sub&gt;和cnt_a计算P&lt;sub&gt;A&lt;/sub&gt;即可。注意cnt_a为0的情况。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;section-8&quot;&gt;部分测试用例&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;test1&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
+3862767 6 13530293 3
+
+输出
+399
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;test2&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
+3862767 1 13530293 8
+
+输出
+0
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h1 id=&quot;section-9&quot;&gt;其他参考&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://www.nowcoder.com/profile/2974017/codeBookDetail?submissionId=8275686&quot;&gt;NobodyKnow提交的代码&lt;/a&gt;&lt;/p&gt;
+
+    &lt;!-- str.count() --&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/stdtypes.html#str.count&quot;&gt;python-docs&lt;/a&gt;&lt;/p&gt;
+
+    &lt;!-- str.count() --&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/3867890/count-character-occurrences-in-a-string&quot;&gt;std::count(), count string&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;http://www.cplusplus.com/reference/algorithm/count/&quot;&gt;std::count() can also count int&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+</description>
+        <pubDate>Sun, 19 Feb 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/02/19/PAT_Basic_1016.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/02/19/PAT_Basic_1016.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>PAT Basic 1015</title>
@@ -1789,110 +1946,6 @@ Hello
         <pubDate>Sun, 29 Jan 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/01/29/PAT_Basic_1008.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/01/29/PAT_Basic_1008.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>PAT Basic 1007</title>
-        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1007_%E7%B4%A0%E6%95%B0%E5%AF%B9%E7%8C%9C%E6%83%B3&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;httpswwwpatestcncontestspat-b-practise1007-1007--20&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1007&quot;&gt;原题&lt;/a&gt;： 1007. 素数对猜想 (20)&lt;/h2&gt;
-
-&lt;p&gt;让我们定义 d&lt;sub&gt;n&lt;/sub&gt; 为：d&lt;sub&gt;n&lt;/sub&gt; = p&lt;sub&gt;n+1&lt;/sub&gt; - p&lt;sub&gt;n&lt;/sub&gt;，其中 p&lt;sub&gt;i&lt;/sub&gt; 是第i个素数。显然有 d&lt;sub&gt;1&lt;/sub&gt;=1 且对于n&amp;gt;1有 d&lt;sub&gt;n&lt;/sub&gt; 是偶数。“素数对猜想”认为“存在无穷多对相邻且差为2的素数”。&lt;/p&gt;
-
-&lt;p&gt;现给定任意正整数N (&amp;lt; 10&lt;sup&gt;5&lt;/sup&gt;)，请计算不超过N的满足猜想的素数对的个数。&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;输入格式&lt;/h3&gt;
-
-&lt;p&gt;每个测试输入包含1个测试用例，给出正整数N。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;输出格式&lt;/h3&gt;
-
-&lt;p&gt;每个测试用例的输出占一行，不超过N的满足猜想的素数对的个数。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;输入样例1&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;20
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;输出样例1&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;4
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;注意&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 400 ms
-内存限制： 65536 kB
-代码长度限制： 8000 B
-判题程序： Standard
-作者： CHEN, Yue
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-5&quot;&gt;题目分析&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;孪生素数对&lt;/p&gt;
-
-    &lt;p&gt;题目中的素数对，指的是孪生素数对，即差为2的一对素数。结合样例，在N&amp;lt;=20的时候，有如下孪生素数对&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[3 5], [5 7], [11 13], [17 19]
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;寻找素数&lt;/p&gt;
-
-    &lt;p&gt;请参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1013_%E6%95%B0%E7%B4%A0%E6%95%B0#题目分析&quot;&gt;1013_数素数: 题目分析&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;section-6&quot;&gt;部分测试用例&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;test1&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
-20
-
-输出
-4
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;section-7&quot;&gt;其他参考&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/zh-hans/%E5%AD%AA%E7%94%9F%E7%B4%A0%E6%95%B0&quot;&gt;维基百科：孪生素数&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://www.guokr.com/article/437023/&quot;&gt;果壳：孪生素数猜想—张益唐究竟做了一个什么研究？&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1013_数素数&quot;&gt;1013_数素数&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-</description>
-        <pubDate>Sat, 28 Jan 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/01/28/PAT_Basic_1007.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/01/28/PAT_Basic_1007.html</guid>
         
         
       </item>
