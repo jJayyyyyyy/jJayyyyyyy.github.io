@@ -5,9 +5,157 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 20 Feb 2017 12:17:09 +0800</pubDate>
-    <lastBuildDate>Mon, 20 Feb 2017 12:17:09 +0800</lastBuildDate>
+    <pubDate>Mon, 27 Feb 2017 22:56:46 +0800</pubDate>
+    <lastBuildDate>Mon, 27 Feb 2017 22:56:46 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>PAT Basic 1019</title>
+        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1019_%E6%95%B0%E5%AD%97%E9%BB%91%E6%B4%9E&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;httpswwwpatestcncontestspat-b-practise1019-1019--20&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1019&quot;&gt;原题&lt;/a&gt;： 1019. 数字黑洞 (20)&lt;/h2&gt;
+
+&lt;p&gt;给定任一个各位数字不完全相同的4位正整数，如果我们先把4个数字按非递增排序，再按非递减排序，然后用第1个数字减第2个数字，将得到一个新的数字。一直重复这样做，我们很快会停在有“数字黑洞”之称的6174，这个神奇的数字也叫Kaprekar常数。&lt;/p&gt;
+
+&lt;p&gt;例如，我们从6767开始，将得到&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;7766 - 6677 = 1089
+9810 - 0189 = 9621
+9621 - 1269 = 8352
+8532 - 2358 = 6174
+7641 - 1467 = 6174
+... ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;现给定任意4位正整数，请编写程序演示到达黑洞的过程。&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;输入格式&lt;/h3&gt;
+
+&lt;p&gt;输入给出一个(0, 10000)区间内的正整数N。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;输出格式&lt;/h3&gt;
+
+&lt;p&gt;如果N的4位数字全相等，则在一行内输出“N - N = 0000”；否则将计算的每一步在一行内输出，直到6174作为差出现，输出格式见样例。注意每个数字按4位数格式输出。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-2&quot;&gt;输入样例1&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;6767
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-3&quot;&gt;输出样例1&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;7766 - 6677 = 1089
+9810 - 0189 = 9621
+9621 - 1269 = 8352
+8532 - 2358 = 6174
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-4&quot;&gt;输入样例2&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2222
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-5&quot;&gt;输出样例2&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;2222 - 2222 = 0000
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&quot;section-6&quot;&gt;注意&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 100 ms
+内存限制： 65536 kB
+代码长度限制： 8000 B
+判题程序： Standard
+作者： CHEN, Yue
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;section-7&quot;&gt;题目分析&lt;/h1&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;输入分类&lt;/p&gt;
+
+    &lt;p&gt;输入分为两类，其一如样例1，四个数字不全相同。其二如样例2，四个数字全都相同。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第一类输入&lt;/p&gt;
+
+    &lt;p&gt;注意输出的时候需要&lt;code class=&quot;highlighter-rouge&quot;&gt;补全&lt;/code&gt;4位数字，比如计算结果是&lt;code class=&quot;highlighter-rouge&quot;&gt;189&lt;/code&gt;，那么需要输出&lt;code class=&quot;highlighter-rouge&quot;&gt;0189&lt;/code&gt;。&lt;/p&gt;
+
+    &lt;p&gt;灵活运用&lt;code class=&quot;highlighter-rouge&quot;&gt;sprintf()&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;atoi()&lt;/code&gt;可以方便地进行【数字】和【字符串】之间的转换。若是用C++，则可以借助&lt;code class=&quot;highlighter-rouge&quot;&gt;stringstream&lt;/code&gt;类作为过渡。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;第二类输入&lt;/p&gt;
+
+    &lt;p&gt;直接输出&lt;code class=&quot;highlighter-rouge&quot;&gt;N - N = 0000&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;section-8&quot;&gt;部分测试用例&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;test1&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
+6767
+
+输出
+7766 - 6677 = 1089
+9810 - 0189 = 9621
+9621 - 1269 = 8352
+8532 - 2358 = 6174
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;test2&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
+2222
+
+输出
+2222 - 2222 = 0000
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;test3&lt;/p&gt;
+
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
+1
+
+输出
+1000 - 0001 = 0999
+9990 - 0999 = 8991
+9981 - 1899 = 8082
+8820 - 0288 = 8532
+8532 - 2358 = 6174
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 Feb 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/02/27/PAT_Basic_1019.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/02/27/PAT_Basic_1019.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>PAT Basic 1017</title>
@@ -1716,216 +1864,6 @@ On success the converted number is returned. If the number cannot be converted, 
         <pubDate>Tue, 31 Jan 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/01/31/PAT_Basic_1010.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/01/31/PAT_Basic_1010.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>PAT Basic 1009</title>
-        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1009_%E8%AF%B4%E5%8F%8D%E8%AF%9D&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;httpswwwpatestcncontestspat-b-practise1009-1009--20&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1009&quot;&gt;原题&lt;/a&gt;： 1009. 说反话 (20)&lt;/h2&gt;
-
-&lt;p&gt;给定一句英语，要求你编写程序，将句中所有单词的顺序颠倒输出。&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;输入格式&lt;/h3&gt;
-
-&lt;p&gt;测试输入包含一个测试用例，在一行内给出总长度不超过80的字符串。字符串由若干单词和若干空格组成，其中单词是由英文字母（大小写有区分）组成的字符串，单词之间用1个空格分开，输入保证句子末尾没有多余的空格。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;输出格式&lt;/h3&gt;
-
-&lt;p&gt;每个测试用例的输出占一行，输出倒序后的句子。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;输入样例1&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hello World Here I Come
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;输出样例1&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Come I Here World Hello
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;注意&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 400 ms
-内存限制： 65536 kB
-代码长度限制： 8000 B
-判题程序： Standard
-作者： CHEN, YUE
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-5&quot;&gt;题目分析&lt;/h1&gt;
-
-&lt;p&gt;本题时间要求不高，可以考虑用python，配合&lt;code class=&quot;highlighter-rouge&quot;&gt;split()&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;reverse()&lt;/code&gt;，4行代码就够了。下面分析一下如何用C完成题目。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;思路&lt;/p&gt;
-
-    &lt;p&gt;假设一共有n个空格，我们先找到结束符&lt;code class=&quot;highlighter-rouge&quot;&gt;'\0'&lt;/code&gt;（或&lt;code class=&quot;highlighter-rouge&quot;&gt;'\n'&lt;/code&gt;），将其替换为&lt;code class=&quot;highlighter-rouge&quot;&gt;'_'&lt;/code&gt;&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hello World Here I Come_
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;p&gt;再向前找到第n个空格&lt;code class=&quot;highlighter-rouge&quot;&gt;' '&lt;/code&gt;，替换为&lt;code class=&quot;highlighter-rouge&quot;&gt;'_'&lt;/code&gt;。然后以下一个&lt;code class=&quot;highlighter-rouge&quot;&gt;'_'&lt;/code&gt;为终点，这样我们就得到了最后一串字符。&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hello World Here I_Come_
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;p&gt;重复以上步骤。最后再输出第一串字符即可。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;获取输入&lt;/p&gt;
-
-    &lt;p&gt;使用&lt;code class=&quot;highlighter-rouge&quot;&gt;fgets()&lt;/code&gt;来获取整行输入。由于总长度不超过80，我们选取&lt;code class=&quot;highlighter-rouge&quot;&gt;MAX=81&lt;/code&gt;&lt;/p&gt;
-
-    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;fgets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;81&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;stdin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;获取一个单词&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;起点：空格&lt;code class=&quot;highlighter-rouge&quot;&gt;' '&lt;/code&gt;&lt;/p&gt;
-
-        &lt;p&gt;我们使用&lt;code class=&quot;highlighter-rouge&quot;&gt;strrchr()&lt;/code&gt;从后往前寻找空格。&lt;/p&gt;
-
-        &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;strrchr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-        &lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;终点:下划线&lt;code class=&quot;highlighter-rouge&quot;&gt;'_'&lt;/code&gt;&lt;/p&gt;
-
-        &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'_'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p_find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%c&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;p_find&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-        &lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;词间空格&lt;/p&gt;
-
-        &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot; &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;测试点&lt;/p&gt;
-
-    &lt;p&gt;至少要对这几种情况进行测试：&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;样例测试&lt;/li&gt;
-      &lt;li&gt;只有一个单词，即输入的字符串无空格&lt;/li&gt;
-      &lt;li&gt;字符串长度为80&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;注意：因为我们使用的是&lt;code class=&quot;highlighter-rouge&quot;&gt;fgets()&lt;/code&gt;，字符串的结尾可能是&lt;code class=&quot;highlighter-rouge&quot;&gt;'\n'&lt;/code&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;'\0'&lt;/code&gt;，也可能是&lt;code class=&quot;highlighter-rouge&quot;&gt;'\0'&lt;/code&gt;，需要设置对应的判断条件。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;更新1—增加cpp的实现&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;思路是这样，将输入拆分成字串后，逐个压入stack栈，然后LIFO出栈直到栈为空。压入的操作是&lt;code class=&quot;highlighter-rouge&quot;&gt;.push()&lt;/code&gt;。出栈时先读顶部元素&lt;code class=&quot;highlighter-rouge&quot;&gt;.top()&lt;/code&gt;，然后&lt;code class=&quot;highlighter-rouge&quot;&gt;.pop()&lt;/code&gt;弹出栈顶，以此循环直到栈为空&lt;code class=&quot;highlighter-rouge&quot;&gt;.empty()&lt;/code&gt;。&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cin&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;scanf()&lt;/code&gt;一样，如果作为退出循环的条件，本地测试时需要&lt;code class=&quot;highlighter-rouge&quot;&gt;^+d&lt;/code&gt;作为输入流的&lt;code class=&quot;highlighter-rouge&quot;&gt;EOF&lt;/code&gt;。但是OJ上会自动添加结束标志（猜测）。&lt;/p&gt;
-
-        &lt;p&gt;我们也可先用&lt;code class=&quot;highlighter-rouge&quot;&gt;getline()&lt;/code&gt;读取整行，再转化为&lt;code class=&quot;highlighter-rouge&quot;&gt;stringstream ss&lt;/code&gt;对象，再次调用等效于split的&lt;code class=&quot;highlighter-rouge&quot;&gt;getline(ss, sub_str, ' ')&lt;/code&gt;，从而取出sub_str。代码段如下&lt;/p&gt;
-
-        &lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;us_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sub_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;getline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;us_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;stringstream&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;us_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-
-&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;eof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;getline&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sub_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;str_stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;push&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sub_str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;section-6&quot;&gt;部分测试用例&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;test1&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
-Hello World Here I Come
-
-输出
-Come I Here World Hello
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;test2&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
-Hello
-
-输出
-Hello
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;section-7&quot;&gt;其他参考&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www-s.acm.illinois.edu/webmonkeys/book/c_guide/2.12.html#fgets&quot;&gt;char *fgets(char *str, int n, FILE *stream);&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fgets()&lt;/code&gt;最多读取&lt;code class=&quot;highlighter-rouge&quot;&gt;MAX-1&lt;/code&gt;长度的字符串，包括作为输入确认的&lt;code class=&quot;highlighter-rouge&quot;&gt;'\n'&lt;/code&gt;。末尾会和&lt;code class=&quot;highlighter-rouge&quot;&gt;gets()&lt;/code&gt;一样，加上&lt;code class=&quot;highlighter-rouge&quot;&gt;'\0'&lt;/code&gt;。&lt;/p&gt;
-
-    &lt;p&gt;由于输入中包含空格，而字符串总段数未知，用&lt;code class=&quot;highlighter-rouge&quot;&gt;scanf()&lt;/code&gt;会比较麻烦。&lt;/p&gt;
-
-    &lt;p&gt;为防止内存溢出，尽量不要用&lt;code class=&quot;highlighter-rouge&quot;&gt;gets()&lt;/code&gt;。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www-s.acm.illinois.edu/webmonkeys/book/c_guide/2.14.html#strrchr&quot;&gt;char *strrchr(const char *str, int c);&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;strrchr()&lt;/code&gt;的原型在&lt;code class=&quot;highlighter-rouge&quot;&gt;string.h&lt;/code&gt;中声明。该函数会返回字符串s中最后一次出现字符c的地址。若没找到则返回空指针。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;—更新cpp参考—&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://www.cplusplus.com/faq/sequences/strings/split/&quot;&gt;how to split a string in cpp&lt;/a&gt;&lt;/p&gt;
-
-    &lt;p&gt;注意，使用&lt;code class=&quot;highlighter-rouge&quot;&gt;istringstream&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;streamstring&lt;/code&gt;类型都需要&lt;code class=&quot;highlighter-rouge&quot;&gt;#include &amp;lt;sstream&amp;gt;&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-</description>
-        <pubDate>Mon, 30 Jan 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/01/30/PAT_Basic_1009.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/01/30/PAT_Basic_1009.html</guid>
         
         
       </item>
