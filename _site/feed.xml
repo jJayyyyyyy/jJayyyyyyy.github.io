@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 13 Mar 2017 21:35:15 +0800</pubDate>
-    <lastBuildDate>Mon, 13 Mar 2017 21:35:15 +0800</lastBuildDate>
+    <pubDate>Mon, 13 Mar 2017 22:43:26 +0800</pubDate>
+    <lastBuildDate>Mon, 13 Mar 2017 22:43:26 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -166,6 +166,11 @@
     &lt;ul&gt;
       &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/11590538/dpi-value-of-default-large-medium-and-small-text-views-android&quot;&gt;Stack Overflow, setTextSize()&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;http://www.cnblogs.com/duanweishi/p/4449588.html&quot;&gt;马会东, setTextSize()&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;URLEncoding
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;https://docs.oracle.com/javase/7/docs/api/java/net/URLEncoder.html&quot;&gt;Oracle Docs, URLEncoder&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
 &lt;/ul&gt;
