@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="fXCqEVcHdJt50axIq7sCTxtZUh5gDHkj2usDwI_66gE" />
+  <title>Lit</title>
+  <meta name="description" content="Lit是我的第一个安卓应用。">
+
+ <!--  
+   -->
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href= "/">
+  <link rel="alternate" type="application/rss+xml" title="FrozenMap" href="/feed.xml">
+  
+  
+</head>
+
+	<body>
+		<header class="site-header" role="banner" style="border-top:0px">
+  <div class="wrapper">
+    <a class="site-title" href="/">Home</a>
+    <!-- <img src="/assets/Labtocat.png" width="43"> -->
+    <nav class="site-nav">
+      <span class="menu-icon">
+        <svg viewBox="0 0 18 15" width="18px" height="15px">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </span>
+      
+      <div class="trigger">
+          <a class="page-link" href="/about/">About</a>
+          <!-- <a class="page-link" href="/donate">Donate</a> -->
+          <a class="page-link" href="/feed.xml">RSS</a>
+      </div>
+    </nav>
+  </div>
+</header>
+		<main class="page-content" aria-label="Content">
+			<div class="wrapper">
+				<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<header class="post-header">
+		<h1 class="post-title" itemprop="name headline">
+			Lit
+		</h1>
+		<p class="post-meta">
+			<span><time datetime="2017-03-12T00:00:00+08:00" itemprop="datePublished">
+				Mar 12, 2017</time> • </span>
+			<span itemprop="author" itemscope itemtype="http://schema.org/Person"><a href=http://localhost:4000>FrozenMap</a></span>
+		</p>
+	</header>
+	<div class="post-content" itemprop="articleBody">
+		<p><strong><a href="https://github.com/jJayyyyyyy/Lit">Lit</a></strong><img alt="ic_launcher" src="https://github.com/jJayyyyyyy/Lit/raw/master/assets/ic_launcher.png" width="24" />是我的第一个安卓应用。</p>
+
+<p><br /></p>
+
+<h3 id="section">起源</h3>
+
+<p>以前用Python写过一些小脚本，然而只能在电脑上用。身处移动时代，觉着不如造个轮子，把这些功能集成为一个应用，于是<strong>Lit</strong>就诞生了。</p>
+
+<p>一开始它还叫做mToolKit，其中m既可以表示my，也有驼峰命名法中，private变量前加m的命名习惯，表示这是一个DIY定制的应用。不过AS提示说APP的名字一般都是开头大写。。。经过一番对宇宙哲学的思考，最后决定改名为<strong>Lit</strong>，其英文可以解释为燃烧的。另外也取义<code class="highlighter-rouge">lite</code>，表示这是一个轻量级的工具，用尽量少的资源获取需要的信息。同时想要模仿一下递归命名，于是在描述中还中二地加了这么一句</p>
+
+<p><code class="highlighter-rouge">Lit is a Lite Info Toolkit.</code></p>
+
+<p>-( ゜- ゜)つロ</p>
+
+<p><br /></p>
+
+<h3 id="section-1">布局设计</h3>
+
+<p>根据AS提供的空工程，初步的布局设计大致是这样的</p>
+
+<p><img src="https://github.com/jJayyyyyyy/Lit/raw/master/assets/lit_sketch_1.png" width="240" /></p>
+
+<p>点击每一项会触发相应功能。最后出来的activity_main.xml可以参见<a href="https://github.com/jJayyyyyyy/Lit">这里</a>，不能算是美观，但是作为自用工具，尽量减少额外的性能开销也是我比较看重的。若作为展示作品，倒是可以进一步修改UI。比如下面是一个草图</p>
+
+<p><img src="https://github.com/jJayyyyyyy/Lit/raw/master/assets/lit_sketch_2.png" width="320" /></p>
+
+<h3 id="section-2">功能</h3>
+
+<ul>
+  <li>
+    <p>天气查询</p>
+
+    <p>查询某个城市的天气，数据来自<a href="http://m.weather.com.cn/">中国天气网</a>。</p>
+  </li>
+  <li>
+    <p>Dict</p>
+
+    <p>中英互译，数据来自<a href="http://dict.youdao.com/">有道词典</a>。</p>
+  </li>
+  <li>
+    <p>Hacker News</p>
+
+    <p>获取<a href="https://news.ycombinator.com/">Hacker News</a>首页的所有标题</p>
+  </li>
+  <li>
+    <p>Solidot</p>
+
+    <p>获取<a href="http://www.solidot.org/">Solidot</a>首页的所有标题。</p>
+  </li>
+  <li>
+    <p>Newsflash</p>
+
+    <p>获取<a href="http://36kr.com/newsflashes">36kr Newsflash</a>首页的所有标题。</p>
+  </li>
+</ul>
+
+<h3 id="section-3">知识点</h3>
+
+<ul>
+  <li>
+    <p>基本布局</p>
+  </li>
+  <li>
+    <p>获取用户输入，包括<code class="highlighter-rouge">View.OnClickListener()</code>之类的事件</p>
+  </li>
+  <li>
+    <p>Java基本语法</p>
+  </li>
+  <li>
+    <p>ArrayAdapter</p>
+  </li>
+  <li>
+    <p>AsyncTask</p>
+  </li>
+  <li>
+    <p>网络</p>
+  </li>
+  <li>
+    <p>Json</p>
+  </li>
+  <li>
+    <p>正则表达式</p>
+  </li>
+</ul>
+
+<h3 id="section-4">其他</h3>
+
+<ul>
+  <li>
+    <p>为避免AsyncTask的许多缺点, 同时不想纠结于Loader的复杂, 直接在manifests里面禁用了横屏（</p>
+  </li>
+  <li>
+    <p>关于天气查询，在v1.0之后增加了了一个<code class="highlighter-rouge">Spinner</code>，以便查询多个城市的天气情况。</p>
+  </li>
+  <li>
+    <p>从零开始到现在大概3周吧，中间还有很多其他事情。<br />
+潜台词：《Android应用开发：21天从入门到放弃》</p>
+  </li>
+</ul>
+
+<p><br /></p>
+
+<p>(END)</p>
+
+<hr />
+
+<h2 id="section-5">相关阅读</h2>
+
+<ul>
+  <li>Badge
+    <ul>
+      <li><a href="http://shields.io/">Shields, make nice badge</a></li>
+    </ul>
+  </li>
+  <li>Basics
+    <ul>
+      <li><a href="https://www.udacity.com/courses/android">Udacity, Android Basics</a></li>
+      <li><a href="https://developer.android.com/index.html">Android Devloper Doc</a></li>
+      <li><a href="http://cn-static.udacity.com/nd801/Common_Android_Views_Cheat_Sheet.pdf">Common_Android_Views_Cheat_Sheet</a></li>
+      <li><a href="https://material.io/">Material Design</a></li>
+    </ul>
+  </li>
+  <li>Json
+    <ul>
+      <li><a href="https://www.tutorialspoint.com/android/android_json_parser.htm">TutorialsPoint, Android JSON Parser</a></li>
+      <li><a href="https://jsonformatter.curiousconcept.com/">CuriousConcept, json formatter</a></li>
+    </ul>
+  </li>
+  <li>Manifests
+    <ul>
+      <li><a href="http://stackoverflow.com/a/582585/5584850">Stack Overflow, disable landscpe mode</a></li>
+    </ul>
+  </li>
+  <li>Regular Expression
+    <ul>
+      <li><a href="http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html">Oracle Docs, Class Pattern</a></li>
+      <li><a href="https://www.tutorialspoint.com/java/java_regular_expressions.htm">TutorialsPoint, Java Regex</a></li>
+      <li><a href="http://blog.csdn.net/csr0312/article/details/17016709">CSDN leesren, Java正则表达式转义</a></li>
+    </ul>
+  </li>
+  <li>Spinner
+    <ul>
+      <li><a href="http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0105/2264.html">泡网, Android Spinner控件详解</a></li>
+    </ul>
+  </li>
+  <li>TextView
+    <ul>
+      <li><a href="http://stackoverflow.com/questions/11590538/dpi-value-of-default-large-medium-and-small-text-views-android">Stack Overflow, setTextSize()</a></li>
+      <li><a href="http://www.cnblogs.com/duanweishi/p/4449588.html">马会东, setTextSize()</a></li>
+    </ul>
+  </li>
+</ul>
+
+	</div>
+
+	<div>
+		<br/>
+		<!-- great thanks to https://www.rrssb.ml/ -->
+		<link rel="stylesheet" href="/css/rrssb/css/rrssb.css" />
+		<ul class="rrssb-buttons clearfix" style="display: flex; justify-content: flex-end;">
+			<li class="rrssb-facebook small" data-initwidth="14.285714285714286" data-size="67" style="width: 42px;">
+				<a href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2017/03/12/Lit.html" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+					<span class="rrssb-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="29" height="29" viewBox="0 0 29 29">
+							<path d="M26.4 0H2.6C1.714 0 0 1.715 0 2.6v23.8c0 .884 1.715 2.6 2.6 2.6h12.393V17.988h-3.996v-3.98h3.997v-3.062c0-3.746 2.835-5.97 6.177-5.97 1.6 0 2.444.173 2.845.226v3.792H21.18c-1.817 0-2.156.9-2.156 2.168v2.847h5.045l-.66 3.978h-4.386V29H26.4c.884 0 2.6-1.716 2.6-2.6V2.6c0-.885-1.716-2.6-2.6-2.6z" fill-rule="evenodd" class="cls-2"/>
+						</svg>
+					</span>
+					<span class="rrssb-text">facebook</span>
+				</a>
+			</li>
+			<li class="rrssb-twitter small" data-initwidth="14.285714285714286" data-size="53" style="width: 42px;">
+				<a href="https://twitter.com/intent/tweet?text=Lit%20%20http://localhost:4000/2017/03/12/Lit.html" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+					<span class="rrssb-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
+							<path d="M24.253 8.756C24.69 17.08 18.297 24.182 9.97 24.62c-3.122.162-6.22-.646-8.86-2.32 2.702.18 5.375-.648 7.507-2.32-2.072-.248-3.818-1.662-4.49-3.64.802.13 1.62.077 2.4-.154-2.482-.466-4.312-2.586-4.412-5.11.688.276 1.426.408 2.168.387-2.135-1.65-2.73-4.62-1.394-6.965C5.574 7.816 9.54 9.84 13.802 10.07c-.842-2.738.694-5.64 3.434-6.48 2.018-.624 4.212.043 5.546 1.682 1.186-.213 2.318-.662 3.33-1.317-.386 1.256-1.248 2.312-2.4 2.942 1.048-.106 2.07-.394 3.02-.85-.458 1.182-1.343 2.15-2.48 2.71z"/>
+						</svg>
+					</span>
+					<span class="rrssb-text">twitter</span>
+				</a>
+			</li>
+			<li class="rrssb-googleplus small" data-initwidth="14.285714285714286" data-size="59" style="width: 42px;">
+				<a href="https://plus.google.com/share?url=http://localhost:4000/2017/03/12/Lit.html" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;">
+					<span class="rrssb-icon">
+						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+							<path d="M21 8.29h-1.95v2.6h-2.6v1.82h2.6v2.6H21v-2.6h2.6v-1.885H21V8.29zM7.614 10.306v2.925h3.9c-.26 1.69-1.755 2.925-3.9 2.925-2.34 0-4.29-2.016-4.29-4.354s1.885-4.353 4.29-4.353c1.104 0 2.014.326 2.794 1.105l2.08-2.08c-1.3-1.17-2.924-1.883-4.874-1.883C3.65 4.586.4 7.835.4 11.8s3.25 7.212 7.214 7.212c4.224 0 6.953-2.988 6.953-7.082 0-.52-.065-1.104-.13-1.624H7.614z"/>
+						</svg>
+					</span>
+					<span class="rrssb-text">google+</span>
+				</a>
+			</li>
+		</ul>
+		<br/>
+	</div>
+
+	<div style="border-top: dotted #e8e8e8; border-width: 1px 0; padding-top: 10px;">
+	</div>
+
+	<div align="center">
+		<a rel="cc-license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+			<img alt="Creative Commons License" style="border-width:0" src="https://img.shields.io/badge/%20%20%20CC%20%20%20-BY--NC--SA-brightgreen.svg" /></a>
+		<a rel="mit-license" href="http://opensource.org/licenses/mit-license.php">
+			<img alt="MIT-License" style="border-width:0" src="https://img.shields.io/badge/License-MIT%20License-blue.svg" /></a>
+		<!-- <p>转载请保留作者和出处, 包括以上许可证信息。</p> -->
+		<br/><br/><br/>
+	</div>
+
+	<div>
+		<noscript>Please enable JavaScript to view the comment form powered by <a href="https://commentit.io/">Comm(ent|it)</a></noscript>
+		<div id="commentit"></div>
+		<script type="text/javascript">
+			/** CONFIGURATION VARIABLES **/
+			var commentitUsername = 'jJayyyyyyy';
+			var commentitRepo = 'jJayyyyyyy/jJayyyyyyy.github.io';
+			var commentitPath = '_posts/2017-03-12-Lit.md';
+
+			/** DON'T EDIT FOLLOWING LINES **/
+			(function() {
+				var commentit = document.createElement('script');
+				commentit.type = 'text/javascript';
+				commentit.async = true;
+				commentit.src = 'https://commentit.io/static/embed/dist/commentit.js';
+				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(commentit);
+			})();
+		</script>
+		
+		
+	</div>
+
+</article>
+
+			</div>
+		</main>
+	</body>
+</html>
