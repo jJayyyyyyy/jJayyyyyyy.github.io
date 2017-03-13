@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 13 Mar 2017 20:46:44 +0800</pubDate>
-    <lastBuildDate>Mon, 13 Mar 2017 20:46:44 +0800</lastBuildDate>
+    <pubDate>Mon, 13 Mar 2017 21:35:15 +0800</pubDate>
+    <lastBuildDate>Mon, 13 Mar 2017 21:35:15 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -149,6 +149,12 @@
       &lt;li&gt;&lt;a href=&quot;http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html&quot;&gt;Oracle Docs, Class Pattern&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;https://www.tutorialspoint.com/java/java_regular_expressions.htm&quot;&gt;TutorialsPoint, Java Regex&lt;/a&gt;&lt;/li&gt;
       &lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/csr0312/article/details/17016709&quot;&gt;CSDN leesren, Java正则表达式转义&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Release
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/3997748/how-can-i-create-a-keystore&quot;&gt;Stack Overflow, create a keystore&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://developer.android.com/studio/publish/app-signing.html&quot;&gt;Android Devloper Doc, publish/app-signing&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
   &lt;/li&gt;
   &lt;li&gt;Spinner
