@@ -150,15 +150,13 @@
 </code></pre>
 </div>
 
-<p>这样拆解之后，结构是不是清晰了很多呢？如果要画出另外的文字，只需要修改第3节中对应的部分即可。需要注意的是，width应取4的整数倍。而在RGB空间中，每个像素pixel为3个字节（红+蓝+绿，各占一字节），因此<code class="highlighter-rouge">raw_size</code>应该是<code class="highlighter-rouge">12</code>的整数倍，补齐的方法可以是在末尾添加<code class="highlighter-rouge"> </code>或者<code class="highlighter-rouge">\n</code></p>
+<p>这样拆解之后，结构是不是清晰了很多呢？如果要画出另外的文字，只需要修改第3节中对应的部分即可。需要注意的是，width应取4的整数倍。而在RGB空间中，每个像素pixel为3个字节（红+蓝+绿，各占一字节）。因此<code class="highlighter-rouge">raw_size</code>是<code class="highlighter-rouge">12</code>的整数倍，否则需要补齐。本文采用的补齐方法是在末尾添加<code class="highlighter-rouge"> </code>或者<code class="highlighter-rouge">\n</code>。</p>
 
 <p><br /></p>
 
 <h2 id="section-4">5.跋</h2>
 
-<p>偷偷地告诉你一个秘密，中文博大精深，其色彩亦是绚烂多姿。</p>
-
-<p>最后，有一篇文章的颜色是这样的(未放大的图像在<a href="https://github.com/jJayyyyyyy/bmp_maker/blob/master/assets/demo3.bmp">这里</a>)</p>
+<p>偷偷地告诉你一个秘密，中文博大精深，其色彩亦是绚烂多姿。最后，有一篇文章的颜色是这样的(未放大的图像在<a href="https://github.com/jJayyyyyyy/bmp_maker/blob/master/assets/demo3.bmp">这里</a>):</p>
 
 <p><img src="https://raw.githubusercontent.com/jJayyyyyyy/bmp_maker/master/assets/expanded_demo3.bmp" alt="guess it" /></p>
 
