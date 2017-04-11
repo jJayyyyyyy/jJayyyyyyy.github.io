@@ -5,9 +5,159 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 13 Mar 2017 22:43:26 +0800</pubDate>
-    <lastBuildDate>Mon, 13 Mar 2017 22:43:26 +0800</lastBuildDate>
+    <pubDate>Tue, 11 Apr 2017 22:19:54 +0800</pubDate>
+    <lastBuildDate>Tue, 11 Apr 2017 22:19:54 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>文字的颜色</title>
+        <description>&lt;p&gt;本文代码在这里 &lt;a href=&quot;https://github.com/jJayyyyyyy/bmp_maker&quot;&gt;https://github.com/jJayyyyyyy/bmp_maker&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;1.序&lt;/h2&gt;
+
+&lt;p&gt;无论什么语言，每一段文字都有自己的颜色。比如程序员最熟悉的&lt;code class=&quot;highlighter-rouge&quot;&gt;hello world.&lt;/code&gt;，它的颜色是这样的：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/jJayyyyyyy/bmp_maker/master/assets/expanded_demo1.bmp&quot; alt=&quot;hello world&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;又比如&lt;a href=&quot;https://github.com/jJayyyyyyy/bmp_maker/blob/master/assets/ym_face.txt&quot;&gt;这个&lt;/a&gt;由字符搭出来的姚明脸，其颜色是这样的&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/jJayyyyyyy/bmp_maker/master/assets/expanded_demo2.bmp&quot; alt=&quot;ym face&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;是不是很神奇lol&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;2.原理&lt;/h2&gt;
+
+&lt;p&gt;创意来自&lt;a href=&quot;https://www.zhihu.com/question/51314788/answer/155265634&quot;&gt;KaitoHH&lt;/a&gt;，这哥们写了一个&lt;a href=&quot;https://github.com/KaitoHH/AnyCodeToBmp&quot;&gt;AnyCodeToBmp&lt;/a&gt;，根据名字可以看出，这是一个把代码变成BMP图像的工具。&lt;/p&gt;
+
+&lt;p&gt;我们知道，在计算机中可以有很多种方式来表示颜色（如本文用到的&lt;code class=&quot;highlighter-rouge&quot;&gt;RGB&lt;/code&gt;颜色空间），也有很多种图像格式（如JPEG, PNG, 本文用到的是BMP格式）。如果用文本编辑器打开一张图片，可以看到里面是一连串的十六进制的数字，这就是图片在计算机里保存的形式。当我们换用&lt;code class=&quot;highlighter-rouge&quot;&gt;画图&lt;/code&gt;或者其他软件打开它，就相当于把这些数字解码，还原成图片。&lt;/p&gt;
+
+&lt;p&gt;因此，我们要做的就是把代码文字当成了RGB颜色，然后在文件开头写上必要的信息，将该文件标识为BMP图像，让看图软件能够识别并呈现我们的“图片”。&lt;/p&gt;
+
+&lt;p&gt;更为神奇的是，如果我们用文本编辑器打开这些“图片”，除了开头的乱码，剩下的就是我们原来写入的文字！&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/KaitoHH/AnyCodeToBmp&quot;&gt;KaitoHH&lt;/a&gt;的工具是用C写的，既然知道了原理，我们不妨用Python来重写一遍。值得注意的是，C可以很方便的操作底层的bit啊byte啊，而Python本来不是干这个的，所以我们不必局限于原来的实现方法，参考原理和思路即可。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;3.实现&lt;/h2&gt;
+
+&lt;p&gt;BMP图像可以简单地由两部分组成：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;文件头，&lt;code class=&quot;highlighter-rouge&quot;&gt;Headers(54bytes)&lt;/code&gt; = &lt;code class=&quot;highlighter-rouge&quot;&gt;BMP Header(14 bytes)&lt;/code&gt; + &lt;code class=&quot;highlighter-rouge&quot;&gt;DIB(40 bytes)&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;图片数据，&lt;code class=&quot;highlighter-rouge&quot;&gt;Pixel Array&lt;/code&gt;, 也即&lt;code class=&quot;highlighter-rouge&quot;&gt;Bitmap Data&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;具体的对应关系可以查看&lt;a href=&quot;https://en.wikipedia.org/wiki/BMP_file_format&quot;&gt;wikipedia: BMP file format&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;我们需要在文件头中写入以下信息：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;文件总大小&lt;code class=&quot;highlighter-rouge&quot;&gt;total_size&lt;/code&gt;，对应的Offset是&lt;code class=&quot;highlighter-rouge&quot;&gt;0x02&lt;/code&gt;，长度4字节&lt;/li&gt;
+  &lt;li&gt;图片宽度&lt;code class=&quot;highlighter-rouge&quot;&gt;width&lt;/code&gt;，对应Offset是&lt;code class=&quot;highlighter-rouge&quot;&gt;0x12&lt;/code&gt;，长度4字节&lt;/li&gt;
+  &lt;li&gt;图片高度&lt;code class=&quot;highlighter-rouge&quot;&gt;height&lt;/code&gt;，对应Offset是&lt;code class=&quot;highlighter-rouge&quot;&gt;0x16&lt;/code&gt;，长度4字节&lt;/li&gt;
+  &lt;li&gt;图片数据大小&lt;code class=&quot;highlighter-rouge&quot;&gt;raw_size&lt;/code&gt;，对应&lt;code class=&quot;highlighter-rouge&quot;&gt;0x22&lt;/code&gt;，长度4字节&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;这些也就是可变的部分，其他地方写入固定数值即可，注意BMP采用&lt;a href=&quot;https://en.wikipedia.org/wiki/Endianness&quot;&gt;小端序(little-endian)&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;然后将编码后的文字写到文件头后面，就可以得到计算机能够识别的BMP图像了。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;4.实例&lt;/h2&gt;
+
+&lt;p&gt;看完3是不是觉得还有点抽象？没关系，下面我们来看一个实例。简单起见，我们来“画出”一开始的&lt;code class=&quot;highlighter-rouge&quot;&gt;hello world.&lt;/code&gt;（注意，这段字符串长度为&lt;code class=&quot;highlighter-rouge&quot;&gt;10&lt;/code&gt;）。&lt;/p&gt;
+
+&lt;p&gt;首先，用十六进制打开图像后，我们将看到以下内容：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;424d 4200 0000 0000 0000 3600 0000 2800
+0000 0400 0000 0100 0000 0100 1800 0000
+0000 0c00 0000 0000 0000 0000 0000 0000
+0000 0000 0000 6865 6c6c 6f20 776f 726c
+642e 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;然后我们来分段说明：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;424d		#固定，用ascii表示的&quot;BM&quot;
+4200 0000	#total_size, 0x42 = 66 = 54 + 12(字符串长度10)
+0000		#固定
+0000		#固定
+3600 0000	#固定, header_size, 0x36 = 54 = 14 + 40
+2800 0000	#DIB_size, 0x28 = 40
+0400 0000	#width, 0x04 = 4, 注意width取4的整数倍
+0100 0000	#height, 0x01 = 1
+0100		#固定
+1800		#固定
+0000 0000	#固定
+0c00 0000	#raw_size, 0x0c = 12
+0000 0000	#固定
+0000 0000	#固定
+0000 0000	#固定
+0000 0000	#固定
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;以上就是整个&lt;code class=&quot;highlighter-rouge&quot;&gt;Headers&lt;/code&gt;的内容。剩下的就是颜色信息，逐个对应了字符串”hello world.”的ASCII码。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;6865 6c6c 6f20 776f 726c 642e
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;这样拆解之后，结构是不是清晰了很多呢？如果要画出另外的文字，只需要修改第3节中对应的部分即可。需要注意的是，width应取4的整数倍。而在RGB空间中，每个像素pixel为3个字节（红+蓝+绿，各占一字节），因此&lt;code class=&quot;highlighter-rouge&quot;&gt;raw_size&lt;/code&gt;应该是&lt;code class=&quot;highlighter-rouge&quot;&gt;12&lt;/code&gt;的整数倍，补齐的方法可以是在末尾添加&lt;code class=&quot;highlighter-rouge&quot;&gt; &lt;/code&gt;或者&lt;code class=&quot;highlighter-rouge&quot;&gt;\n&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-4&quot;&gt;5.跋&lt;/h2&gt;
+
+&lt;p&gt;偷偷地告诉你一个秘密，中文博大精深，其色彩亦是绚烂多姿。&lt;/p&gt;
+
+&lt;p&gt;最后，有一篇文章的颜色是这样的(未放大的图像在&lt;a href=&quot;https://github.com/jJayyyyyyy/bmp_maker/blob/master/assets/demo3.bmp&quot;&gt;这里&lt;/a&gt;)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/jJayyyyyyy/bmp_maker/master/assets/expanded_demo3.bmp&quot; alt=&quot;guess it&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;你能猜出这是哪一篇文章吗-( ゜- ゜)つロ&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section-5&quot;&gt;相关阅读&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;BMP means BitMap&lt;/li&gt;
+  &lt;li&gt;DIB means Device Independent Bitmap&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/KaitoHH/AnyCodeToBmp&quot;&gt;KaitoHH: AnyCodeToBmp&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/BMP_file_format&quot;&gt;Wikipedia: BMP&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.96yx.com/tool/ASC2.htm&quot;&gt;ASCII&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;bytes
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/21017698/converting-int-to-bytes-in-python-3&quot;&gt;Stack Overflow: int_to_bytes&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://docs.python.org/3/library/functions.html#bytes&quot;&gt;Python Docs: bytes&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;others
+    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/001431918785710e86a1a120ce04925bae155012c7fc71e000&quot;&gt;liaoxuefeng: 字符串和编码&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;https://en.wikibooks.org/wiki/Python_Imaging_Library/Editing_Pixels&quot;&gt;PIL: Editing_Pixels&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/0014320027235877860c87af5544f25a8deeb55141d60c5000#0&quot;&gt;liaoxuefeng: PIL&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;http://www.zxjsq.net/&quot;&gt;在线计算器&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 10 Apr 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/04/10/bmp_maker.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/04/10/bmp_maker.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Lit</title>
@@ -1640,217 +1790,6 @@ do sth
         <pubDate>Fri, 10 Feb 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/02/10/PAT_Basic_1012.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/02/10/PAT_Basic_1012.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>PAT Basic 1011</title>
-        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1011_A%2BB%E5%92%8CC&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;httpswwwpatestcncontestspat-b-practise1011-1011-abc-15&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1011&quot;&gt;原题&lt;/a&gt;： 1011. A+B和C (15)&lt;/h1&gt;
-
-&lt;p&gt;给定区间[-2&lt;sup&gt;31&lt;/sup&gt;, 2&lt;sup&gt;31&lt;/sup&gt;]内的三个整数A，B，C，请判断A+B&amp;gt;C是否成立。&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;输入格式&lt;/h3&gt;
-
-&lt;p&gt;输入第1行给出正整数T(&amp;lt;=10)，是测试用例的个数。随后给出T组测试用例，每组占一行，顺序给出A、B和C。整数间以空格分隔。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;输出格式&lt;/h3&gt;
-
-&lt;p&gt;对每组测试用例，在一行中输出“Case #X: true”如果A+B&amp;gt;C，否则输出“Case #X: false”，其中X是测试用例的编号（从1开始）。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;输入样例&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;4
-1 2 3
-2 3 4
-2147483647 0 2147483646
-0 -2147483648 -2147483647
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;输出样例&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Case #1: false
-Case #2: true
-Case #3: true
-Case #4: false
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;注意&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 150 ms
-内存限制： 65536 kB
-代码长度限制： 8000 B
-判题程序： Standard
-作者： HOU, Qiming
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-5&quot;&gt;考察点&lt;/h1&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;审题&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;[-2&lt;sup&gt;31&lt;/sup&gt;, &lt;strong&gt;2&lt;sup&gt;31&lt;/sup&gt;]&lt;/strong&gt;，其中的&lt;strong&gt;2&lt;sup&gt;31&lt;/sup&gt;&lt;/strong&gt;超出int范围，因此变量应该用&lt;code class=&quot;highlighter-rouge&quot;&gt;long int&lt;/code&gt;。&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;应当考虑到把测试输入限制在区间内，否则视作&lt;code class=&quot;highlighter-rouge&quot;&gt;false&lt;/code&gt;。&lt;/p&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;编译&lt;/p&gt;
-
-    &lt;p&gt;gcc abc.c -o abc&lt;/p&gt;
-
-    &lt;p&gt;make abc&lt;/p&gt;
-
-    &lt;p&gt;vs2012, &lt;code class=&quot;highlighter-rouge&quot;&gt;F7&lt;/code&gt;编译, &lt;code class=&quot;highlighter-rouge&quot;&gt;^+F5&lt;/code&gt;运行&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;确定int位数&lt;/p&gt;
-
-    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdlib.h&amp;gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%ld&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;sizeof&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;C&lt;/code&gt;, 输入输出&lt;/p&gt;
-
-    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;stdio.h&amp;gt;
-&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%ld%ld%ld&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%ld %ld %ld&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;python&lt;/code&gt;, 输入输出&lt;/p&gt;
-
-    &lt;p&gt;考虑到考场环境，如无特殊说明，以后均以&lt;code class=&quot;highlighter-rouge&quot;&gt;python2.7&lt;/code&gt;为例。&lt;/p&gt;
-
-    &lt;p&gt;若一行内有多个输入，则用&lt;code class=&quot;highlighter-rouge&quot;&gt;split()&lt;/code&gt;方法&lt;/p&gt;
-
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;raw_input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt;原型如下&lt;/p&gt;
-
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;__future__&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;print_function&lt;/span&gt;	
-	
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;objects&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;file&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stdout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;返回值&lt;/p&gt;
-
-    &lt;p&gt;主函数返回值应为&lt;code class=&quot;highlighter-rouge&quot;&gt;0&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;section-6&quot;&gt;部分测试用例&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;test1&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
-4
-1 2 3
-2 3 4
-2147483647 0 2147483646
-0 -2147483648 -2147483647
-
-输出
-Case #1: false
-Case #2: true
-Case #3: true
-Case #4: false
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;test2&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
-2
-546 647 78767
-353456 75656757 3342542356
-
-输出
-Case #1: false
-Case #2: false
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;test3&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
-1
-2147483648 2147483648 2147483648
-
-输出
-Case #1: true
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;test4&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
-3
-1 2 3
-2 3 4
-2147483647 0 2147483646
-
-输出
-Case #1: false
-Case #2: true
-Case #3: true
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;section-7&quot;&gt;其他&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;本页内包含的&lt;strong&gt;.c&lt;/strong&gt;，&lt;strong&gt;.py&lt;/strong&gt;为通过测试的代码。另外由于测试用的&lt;a href=&quot;https://www.nowcoder.com/pat&quot;&gt;牛客网&lt;/a&gt;和&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise&quot;&gt;pat官网&lt;/a&gt;服务器不一样，用时和内存标准也不同，因此&lt;code class=&quot;highlighter-rouge&quot;&gt;尽量选C&lt;/code&gt;以防超时。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;65536*65536/2 = 2147483648&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;section-8&quot;&gt;参考&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://docs.python.org/2.7/library/functions.html#print&quot;&gt;python-docs&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-</description>
-        <pubDate>Wed, 01 Feb 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/02/01/PAT_Basic_1011.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/02/01/PAT_Basic_1011.html</guid>
         
         
       </item>
