@@ -76,7 +76,7 @@
 <p>SSL剥离来自SSL Strip，这个名字初看非常高深，而实际中也会引发很多的安全问题。那么什么是SSL剥离？它有什么危害呢？其实SSL剥离就是将HTTPS连接降级到HTTP连接，从而截获用户的传输内容。</p>
 
 <div align="center">
-<img src="http://www.aqniu.com/wp-content/uploads/2014/06/SSLStripping.png" alt="SSL_Strip" width="480" />
+<img src="http://www.aqniu.com/wp-content/uploads/2014/06/SSLStripping.png" alt="SSL_Strip" width="400" />
 </div>
 <p><br /></p>
 
@@ -85,7 +85,7 @@
 <p>SSL剥离攻击其实是中间人攻击的一种，顾名思义，就是指攻击者插入到原本直接通信的双方，让双方以为还在直接跟对方通讯，但实际上双方的通信对方已变成了中间人，信息已经是被中间人获取或篡改。</p>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/jJayyyyyyy/jjayyyyyyy.github.io/master/assets/post_images/2017-04-27/HSTS_man_in_the_middle_attack.png" alt="man in the middle attack" width="480" />
+<img src="https://raw.githubusercontent.com/jJayyyyyyy/jjayyyyyyy.github.io/master/assets/post_images/2017-04-27/HSTS_man_in_the_middle_attack.png" alt="man in the middle attack" width="360" />
 </div>
 <p><br /></p>
 
@@ -102,7 +102,7 @@
 <p>这种机制就让攻击者有了可趁之机，进行SSL剥离攻击，也就是在第一次80请求的地方做手脚。攻击者首先劫持用户的80端口，当用户向目标页发起请求时，劫持者模拟正常的HTTPS请求向源服务器获取数据，然后通过80端口返回给用户。也就是下图的过程：</p>
 
 <div align="center">
-<img src="http://www.barretlee.com/blogimgs/2015/10/20151004_f70b86fd.jpg" alt="strip" width="480" /></div>
+<img src="http://www.barretlee.com/blogimgs/2015/10/20151004_f70b86fd.jpg" alt="strip" width="400" /></div>
 <p><br /></p>
 
 <p>由于HTTP是明文的，上面的这个过程也就相当于：你先把银行卡帐号密码用大家都看得懂的文字给我，然后我去银行拿钱。也就是你与我之间是没有加密的，我与银行之间是加密的，但是因为我有帐号密码，所以我知道如何解密，照样可以拿到钱。当然拿到钱以后，我可以把钱给你，也可以顺便在里面夹杂一些广告，当然也可以拿了钱直接逃之夭夭。</p>
@@ -110,7 +110,7 @@
 <p>因此如果是与钱相关的帐号密码信息被攻击者拿到了，可不只是小红与小明之间产生误会这么简单了，还可能造成财产损失，因此SSL剥离攻击是相当危险的。</p>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/jJayyyyyyy/jjayyyyyyy.github.io/master/assets/post_images/2017-04-27/passsword.jpg" alt="passsword" width="480" />
+<img src="https://raw.githubusercontent.com/jJayyyyyyy/jjayyyyyyy.github.io/master/assets/post_images/2017-04-27/passsword.jpg" alt="passsword" width="360" />
 </div>
 <p><br /></p>
 
@@ -182,7 +182,7 @@ preload;
 <p>最后，HSTS要起作用首先需要需要浏览器的支持。不过目前主流的浏览器，如Chrome, Safari, Firefox, IE, Opera，其最新版本均已支持HSTS。</p>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/jJayyyyyyy/jjayyyyyyy.github.io/master/assets/post_images/2017-04-27/browsers.jpg" alt="browsers" width="480" />
+<img src="https://raw.githubusercontent.com/jJayyyyyyy/jjayyyyyyy.github.io/master/assets/post_images/2017-04-27/browsers.jpg" alt="browsers" width="360" />
 </div>
 <p><br /></p>
 
@@ -227,7 +227,7 @@ preload;
 <p>利用HSTS，还可以节省一次302/301跳转请求。如果浏览器已经记住对应网址的HSTS规则，每次对其进行http访问时，都会在浏览器内部直接307跳转到https，不用先80到服务器然后再被告知443端口访问，节省资源和时间。</p>
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/jJayyyyyyy/jjayyyyyyy.github.io/master/assets/post_images/2017-04-27/307.bmp" alt="307" width="480" />
+<img src="https://raw.githubusercontent.com/jJayyyyyyy/jjayyyyyyy.github.io/master/assets/post_images/2017-04-27/307.bmp" alt="307" />
 </div>
 <p><br /></p>
 
