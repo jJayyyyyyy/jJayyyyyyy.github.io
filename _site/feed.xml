@@ -5,15 +5,13 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 27 Apr 2017 12:09:35 +0800</pubDate>
-    <lastBuildDate>Thu, 27 Apr 2017 12:09:35 +0800</lastBuildDate>
+    <pubDate>Thu, 27 Apr 2017 12:13:55 +0800</pubDate>
+    <lastBuildDate>Thu, 27 Apr 2017 12:13:55 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
         <title>HSTS学习笔记</title>
-        <description>&lt;h6&gt;接下来一段时间会整理原来的一些学习笔记。&lt;/h6&gt;
-
-&lt;h3 align=&quot;center&quot;&gt;摘要&lt;/h3&gt;
+        <description>&lt;h3 align=&quot;center&quot;&gt;摘要&lt;/h3&gt;
 
 &lt;p&gt;       本文首先介绍SSL剥离攻击的危害，接着以此为背景引出其防御方法HSTS(HTTP Strict Transport Security)，并对其概念、原理、作用及优缺点进行了介绍，继而简述其配置方法，并进行了初步测试。最后是本文的参考文献。&lt;/p&gt;
 
@@ -269,7 +267,7 @@ $HTTP[&quot;scheme&quot;] == &quot;https&quot; {
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;h6&gt;注：原笔记整理时间为20160802&lt;/h6&gt;
+&lt;h6&gt;注：本文最初整理于20160802。接下来将会陆续整理一些以前的学习笔记。&lt;/h6&gt;
 
 &lt;p&gt;(END)&lt;/p&gt;
 
