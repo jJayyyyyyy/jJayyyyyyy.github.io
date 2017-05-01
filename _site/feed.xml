@@ -5,9 +5,245 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 27 Apr 2017 12:13:55 +0800</pubDate>
-    <lastBuildDate>Thu, 27 Apr 2017 12:13:55 +0800</lastBuildDate>
+    <pubDate>Mon, 01 May 2017 10:32:15 +0800</pubDate>
+    <lastBuildDate>Mon, 01 May 2017 10:32:15 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>HTTP与缓存相关的头部信息</title>
+        <description>&lt;h1 id=&quot;http-headers&quot;&gt;1. HTTP headers简介&lt;/h1&gt;
+
+&lt;p&gt;HTTP是一个应用层协议，由请求和响应构成。和其他很多数据格式一样，请求和响应由&lt;strong&gt;头部&lt;/strong&gt;和&lt;strong&gt;数据&lt;/strong&gt;组成，&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;常见请求头&lt;/th&gt;
+      &lt;th&gt;意义&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Accept: text/html; image/webp; &lt;em&gt;/&lt;/em&gt;	浏览器可接收的类型&lt;/td&gt;
+      &lt;td&gt;Accept-Encoding: gzip,compress 	浏览器可接收的压缩编码类型&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;If-Modified-Since: Mon, 1 Aug 2016 18:23:51 GMT&lt;/td&gt;
+      &lt;td&gt;页面缓存时间&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Cache-Control：max-age=300&lt;/td&gt;
+      &lt;td&gt;缓存的最长时间 300s&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;常见响应头&lt;/th&gt;
+      &lt;th&gt;意义&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Content-Encoding: gzip&lt;/td&gt;
+      &lt;td&gt;服务器发送的压缩编码方式&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Content-Length: 80&lt;/td&gt;
+      &lt;td&gt;服务器发送显示的字节码长度&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Content-Type: text/html; charset=UTF-8&lt;/td&gt;
+      &lt;td&gt;服务器发送内容的类型和编码类型&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Last-Modified: Tue, 11 Jul 2000 18:23:51GMT&lt;/td&gt;
+      &lt;td&gt;服务器最后一次修改的时间&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Date:Mon, 01 Aug 2016 13:38:43 GMT&lt;/td&gt;
+      &lt;td&gt;资源起始时间&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Expires:Mon, 01 Aug 2016 13:38:53 GMT&lt;/td&gt;
+      &lt;td&gt;资源过期时间&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;ETag:W/”578303987844e7989822712c1e153fc9”&lt;/td&gt;
+      &lt;td&gt;资源实体的标识(唯一标识，类似md5值，文件有修改md5就不一样)&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Cache-Control: max-age=10&lt;/td&gt;
+      &lt;td&gt;缓存时间&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;2. 与缓存相关的头部信息&lt;/h2&gt;
+
+&lt;p&gt;在请求静态文件的时候，由于这些文件不经常变化，因此把静态文件储起来是一种优化用户浏览体验的方法，同时也可以释放链路资源，缓解网络压力。&lt;/p&gt;
+
+&lt;p&gt;那么，应当如何确定缓存文件的有效时间呢？对此，我们需要用到HTTP头中的Expires和Cache-Control。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2.1.1 Expires&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;当客户端第一次访问一个文件资源的时候，服务端在返回资源内容的同时也返回了：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Expires: Mon, 1 Aug 2016 22:43:02 GMT
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;也就是服务端告诉浏览器，先把这个文件缓存起来，在这个过期时间之前，该文件都不会变化了。&lt;/p&gt;
+
+&lt;p&gt;下一次浏览器又要访问这个资源，并且访问的时间在&lt;code class=&quot;highlighter-rouge&quot;&gt;Mon, 1 Aug 2016 22:43:02 GMT&lt;/code&gt;之前，那浏览器就不去服务器那边获取文件了，而是直接从缓存中取文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2.1.2 Cache-Control&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;由于Expires给定的是绝对时间，而客户端的系统时间可以由用户任意修改，比如Expires设定的过期时间是&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Mon, 1 Aug 2016 22:43:02 GMT
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;现在用户把系统时间改为&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Tue, 2 Aug 2016 22:43:02 GMT
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;则缓存会被判为过期（虽然实际上还没到那个时间）。因此在HTTP1.1中引入了Cache-Control，这就是一个相对时间，比如&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Cache-Control: max-age=80
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;那就是说这份缓存的有效期是80秒，而没有给定过期的绝对时间。&lt;/p&gt;
+
+&lt;p&gt;由于Cache-Control是HTTP1.1中才有的，因此可能会有Expires和Cache-Control同时出现的情况，这时以Cache-Control为准。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2.2 Last-Modified / If-Modified-Since&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;现在有另外一个问题，服务端有个文件可能会更新，因此希望客户端时不时过来问一下这个文件是否过期。&lt;/p&gt;
+
+&lt;p&gt;如果没有过期，服务端不返回数据给浏览器，只返回304状态码，告诉浏览器目前的缓存还没有过期，然后浏览器继续使用已有缓存。&lt;/p&gt;
+
+&lt;p&gt;这个就叫做条件请求。这里就要用到以下两个头部信息&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Last-Modified	(response header)&lt;/li&gt;
+  &lt;li&gt;If-Modified-Since	(request header)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;以上一小节的响应头和请求头为例，浏览器第一次请求资源的时候，服务端返回资源内容，同时也返回了&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Last-Modified:Mon, 01 Aug 2016 13:48:44 GMT
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;也就是服务端在告诉客户端这个文件在服务器上的最后修改时间。&lt;/p&gt;
+
+&lt;p&gt;浏览器第二次访问的时候（假设这里没有设置Expires或者Cache-Control）。那么浏览器在访问资源的时候会在请求头上带上&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;If-Modified-Since:Mon, 01 Aug 2016 13:48:44 GMT
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;服务端收到后对比目前文件的最后修改时间和该请求头的信息，如果没有修改，那就直接返回304给浏览器，而不返回实际资源。如果有变化了，就返回200，并且带上新的资源内容。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2.3 Etag / If-None-Match&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;条件请求还有另外一种方法——打标签，也就是使用Etag。&lt;/p&gt;
+
+&lt;p&gt;道理和上一小节类似：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;第一次拿到资源的时候，服务器的响应头中包含了Etag，用来作为时间标签&lt;/li&gt;
+  &lt;li&gt;下一次浏览器再次请求资源的时候会把原来的Etag标签带上（在请求头中变成了If-None-Match）作为校验标准，&lt;/li&gt;
+  &lt;li&gt;若这个文件如果发生了改变，则Etag也会改变。&lt;/li&gt;
+  &lt;li&gt;服务器对比浏览器请求头中的的If-None-Match：
+    &lt;ul&gt;
+      &lt;li&gt;如果相同就返回304，而不返回实际资源&lt;/li&gt;
+      &lt;li&gt;如果不同，就返回200和新的资源。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;由于Etag需要通过服务器计算得出，每次都进行计算需要额外的开销，有时候这也是一种负担。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;3. 实例&lt;/h2&gt;
+
+&lt;p&gt;下面以第2篇参考资料为例。在chrome中打开开发者工具的Network，然后进入&lt;a href=&quot;http://www.cnblogs.com/yjf512/p/3244882.html&quot;&gt;http://www.cnblogs.com/yjf512/p/3244882.html&lt;/a&gt;，选择名为&lt;code class=&quot;highlighter-rouge&quot;&gt;3244882.html&lt;/code&gt;的文件，可以看到其Response Headers中有如下内容：&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Cache-Control:private, max-age=10
+Connection:keep-alive
+Content-Encoding:gzip
+Content-Type:text/html; charset=utf-8
+Date:Mon, 01 Aug 2016 13:48:44 GMT
+Expires:Mon, 01 Aug 2016 13:48:54 GMT
+Last-Modified:Mon, 01 Aug 2016 13:48:44 GMT
+Transfer-Encoding:chunked
+Vary:Accept-Encoding
+X-UA-Compatible:IE=10
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;第1行的&lt;code class=&quot;highlighter-rouge&quot;&gt;Cache-Control:private, max-age=10&lt;/code&gt;，表示有效时间为10s，且其优先级高于&lt;code class=&quot;highlighter-rouge&quot;&gt;Expires&lt;/code&gt;。响应头中出现了&lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt;，其作用是通知浏览器只针对单个用户进行缓存，且可以具体指定某个字段，如&lt;code class=&quot;highlighter-rouge&quot;&gt;private–&quot;username&quot;&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;第2行的&lt;code class=&quot;highlighter-rouge&quot;&gt;Keep-Alive&lt;/code&gt;功能使客户端到服务器端的连接持续有效。当出现对服务器的后继请求时，&lt;code class=&quot;highlighter-rouge&quot;&gt;Keep-Alive&lt;/code&gt;功能避免了重新建立连接，即认为之前的连接还是有效的。&lt;/p&gt;
+
+&lt;p&gt;第3行表示响应的压缩方式。压缩后再传输可以提高效率。&lt;/p&gt;
+
+&lt;p&gt;第4行表示响应的文件类型和字符编码方式。&lt;/p&gt;
+
+&lt;p&gt;第5行的&lt;code class=&quot;highlighter-rouge&quot;&gt;Date&lt;/code&gt;表示生成文件的绝对时间。&lt;/p&gt;
+
+&lt;p&gt;第6行&lt;code class=&quot;highlighter-rouge&quot;&gt;Expires&lt;/code&gt;表示文件过期的绝对时间。同时上面也提到了，其优先级低于&lt;code class=&quot;highlighter-rouge&quot;&gt;Cache-Control&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;第7行的&lt;code class=&quot;highlighter-rouge&quot;&gt;Last-Modified&lt;/code&gt;是服务器告诉浏览器该文件的最后修改时间。&lt;/p&gt;
+
+&lt;p&gt;综上可以看出，该页面的缓存有效时间是10秒。如果不清空缓存，在2016.08.01的13:48:44~13:48:54这个时间段中再次访问服务器，则不会再得到新的页面，而是直接呈现本地缓存。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;4.参考文献&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/zhsh87/article/details/8186753&quot;&gt;HTTP缓存相关的概念&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.cnblogs.com/yjf512/p/3244882.html&quot;&gt;HTTP缓存相关头&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;本文地址：&lt;a href=&quot;https://jjayyyyyyy.github.io/2017/05/01/http_headers.html&quot;&gt;https://jjayyyyyyy.github.io/2017/05/01/http_headers.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h6&gt;注：本文最初整理于20160801。接下来将会陆续整理一些以前的学习笔记。&lt;/h6&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;相关阅读&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://book.douban.com/subject/10746113/&quot;&gt;HTTP权威指南&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Mon, 01 May 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/05/01/HTTP_headers.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/05/01/HTTP_headers.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>HSTS学习笔记</title>
@@ -1562,286 +1798,6 @@ FRI 14:04
         <pubDate>Tue, 14 Feb 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/02/14/ENIAC.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/02/14/ENIAC.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>PAT Basic 1013</title>
-        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1013_%E6%95%B0%E7%B4%A0%E6%95%B0&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;httpswwwpatestcncontestspat-b-practise1013-1013--20&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1013&quot;&gt;原题&lt;/a&gt;： 1013. 数素数 (20)&lt;/h2&gt;
-
-&lt;p&gt;令P&lt;sub&gt;i&lt;/sub&gt;表示第i个素数。现任给两个正整数 M &amp;lt;= N &amp;lt;= 10&lt;sup&gt;4&lt;/sup&gt;，请输出P&lt;sub&gt;M&lt;/sub&gt;到P&lt;sub&gt;N&lt;/sub&gt;的所有素数。&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;输入格式&lt;/h3&gt;
-
-&lt;p&gt;输入在一行中给出M和N，其间以空格分隔。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;输出格式&lt;/h3&gt;
-
-&lt;p&gt;输出从P&lt;sub&gt;M&lt;/sub&gt;到P&lt;sub&gt;N&lt;/sub&gt;的所有素数，每10个数字占1行，其间以空格分隔，但行末不得有多余空格。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;输入样例&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;5 27
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;输出样例&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;11 13 17 19 23 29 31 37 41 43
-47 53 59 61 67 71 73 79 83 89
-97 101 103
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;注意&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 100 ms
-内存限制： 65536 kB
-代码长度限制： 8000 B
-判题程序： Standard
-作者： CHEN, Yue
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-5&quot;&gt;题目分析&lt;/h1&gt;
-
-&lt;p&gt;判断某个数是否为素数是一类很重要的题目。可以仅根据素数定义遍历判断，但容易超时。需要对算法进行优化，但又不能太复杂，否则临场容易出错。&lt;/p&gt;
-
-&lt;p&gt;PS：超时的原因 a).取余运算耗时；b).进行了大量取余运算。&lt;/p&gt;
-
-&lt;!-- 优化的意义在于，量少的时候虽然会复杂一些，增加了时间，但是绝对时间仍然很小。量大的时候体现出优化效果，绝对时间远远小于定义法。 --&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;基本优化&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;大于2的素数都是奇数&lt;/li&gt;
-      &lt;li&gt;如果N没有[2, sqrt(N)]之间的素因子，那么N是素数&lt;/li&gt;
-    &lt;/ul&gt;
-
-    &lt;p&gt;基于以上两点，可以节省很多不必要的判断时间。（偶数，(sqrt(N), N) 全部跳过）&lt;/p&gt;
-
-    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;is_prime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;up_bound&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;divisor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;up_bound&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;divisor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;divisor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;up_bound&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;divisor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;divisor&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-                &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;p&gt;这个算法，C可以轻松通过时间限制。python就吃力了，P&lt;sub&gt;N&lt;/sub&gt;较大的时候会超时。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;筛表法&lt;/p&gt;
-
-    &lt;p&gt;筛表法是一种用空间换时间的方法。这个方法不是说给定一个数，然后去取余啥的判断是否为素数，而是首先整理出一定范围内(比如1到1000之间)所有的素数，称为素数表，然后判断给定的数是否在素数表里面。&lt;/p&gt;
-
-    &lt;p&gt;参考这篇&lt;a href=&quot;http://blog.csdn.net/liukehua123/article/details/5482854&quot;&gt;博客&lt;/a&gt;&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;素数筛法是这样的：
-1.开一个大的bool型数组prime[]，大小就是n+1就可以了.先把所有的下标为奇数的标为true,下标为偶数的标为false.
-2.然后：
-for( i=3; i&amp;lt;=sqrt(n); i+=2 ){
-    if(prime[i])
-    for( j=i+i; j&amp;lt;=n; j+=i ) prime[j]=false;
-}
-3.最后输出bool数组中的值为true的单元的下标，就是所求的n以内的素数了。
-
-原理很简单：
-当i是质(素)数的时候，i的所有的倍数必然是合数。
-如果i已经被判断不是质数了，那么再找到i后面的质数来把这个质数的倍数筛掉。
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;p&gt;这个算法有一点需要注意，那就是素数表大小的选择。用&lt;code class=&quot;highlighter-rouge&quot;&gt;1&lt;/code&gt;的方法跑一下程序，可以发现题目要求的第&lt;code class=&quot;highlighter-rouge&quot;&gt;10000&lt;/code&gt;个素数是&lt;code class=&quot;highlighter-rouge&quot;&gt;104729&lt;/code&gt;，比例大概是1/11。所以需要大致了解一下一定范围内，素数占自然数的比例。先看代码&lt;/p&gt;
-
-    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#define MAX 300001
-&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/*
-...	
-*/&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;bool&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;prime_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;prime_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;prime_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;up_bound&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;up_bound&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prime_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]){&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;MAX&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;prime_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;p&gt;MAX不能太小，比如MAX=100001，那么就选不到第10000个素数了。对于C，MAX可以设为很大，比如MAX=300001，程序跑下来时间只有几个ms。&lt;/p&gt;
-
-    &lt;p&gt;但是在用python实现这个算法时，如果选MAX=300001，那么每个测试样例都会超时。我的做法是MAX随输入变化，MAX=P&lt;sub&gt;N&lt;/sub&gt;*10+5001，最大耗时76ms&amp;lt;100ms，按照10000/100000，再加10001大概多10%的时间，比例系数和常数项可以通过本地测试的结果确定，耗时达标即可。&lt;/p&gt;
-
-    &lt;p&gt;对比下可以发现，C的时间效率大概是python的10~20倍，内存效率10倍。&lt;/p&gt;
-
-    &lt;!-- 由于已知第10000个素数是104729
-可设max = n*10+5001
-max为奇数
-104729可以在本地算出来，稍微取多一点+10001也无妨
-python2.7，n*10+5001，在pat测试用例中是76ms，内存足够
-或者优化为素数表只存奇数
-如果不考虑接口变动。。因为输出也要变，输出也比较耗时，
-此项作为TODO
-但是，没做优化的筛表法，用C是绝对够了
---&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;其他方法&lt;/p&gt;
-
-    &lt;p&gt;2和3非常容易理解与记忆，对于普通OJ已经够用。当然还有更高效但更复杂的方法，但是临场不一定会用，这里就不再班门弄斧了。&lt;/p&gt;
-
-    &lt;p&gt;//另外有一个trick，先本地把一定范围内的素数全部打出来，也就是本地直接生成素数表，然后…&lt;/p&gt;
-
-    &lt;p&gt;//不知道算不算作弊，紧急情况用。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;section-6&quot;&gt;部分测试用例&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;test1&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
-5 27
-
-输出
-11 13 17 19 23 29 31 37 41 43
-47 53 59 61 67 71 73 79 83 89
-97 101 103
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;test2&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
-10000 10000
-
-输出
-104729
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;section-7&quot;&gt;其他参考&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/liukehua123/article/details/5482854&quot;&gt;素数判断算法(高效率）&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/arvonzhang/article/details/8564836&quot;&gt;算法总结：判断一个数是否为素数&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://www.matrix67.com/blog/archives/234&quot;&gt;数论部分第一节：素数与素性测试&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://www.osgeo.cn/app/s2711&quot;&gt;在线判断质数（素数）&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://www.wolframalpha.com/input/?x=0&amp;amp;y=0&amp;amp;i=prime+10000&quot;&gt;WolframAlpha: prime 10000&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/%E7%AE%97%E6%9C%AF%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86&quot;&gt;算术基本定理&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/blob/master/math/prime/get_factor.c&quot;&gt;分解质因数&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1007_%E7%B4%A0%E6%95%B0%E5%AF%B9%E7%8C%9C%E6%83%B3&quot;&gt;PAT_B_1007: 素数对猜想&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;[题目分析]—[第1节]—[基本优化]中两个前提条件的证明。&lt;/p&gt;
-
-    &lt;p&gt;第一点很好证明。主要证第二点：【如果N没有[2, sqrt(N)]之间的素因子，那么N是素数】&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;首先根据定义，1不是素数。
-其次，我们用反证法证明其逆否命题： 【若N是合数，那么N存在[2, sqrt(N)]之间的素因子】
-
-证明：
-设N=a×b, sq=sqrt(N)
-根据算术基本定理，设a为素数，b是a以外，N的所有素因子之积
-
-由反证法
-i). N的每个素因子都大于sq. ii). a&amp;gt;sq
-==&amp;gt; b&amp;gt;sq，a&amp;gt;sq
-==&amp;gt; N = a×b &amp;gt; sq×sq &amp;gt; N
-等式不成立，原题得证。故其逆否命题也是成立的，即
-
-【如果N没有[2, sqrt(N)]之间的素因子，那么N是素数】
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;[题目分析]—[第2节]—[筛表法]原理的补充证明。&lt;/p&gt;
-
-    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sqrt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;prime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;prime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;为什么 i&amp;lt;=sqrt(N) 作为循环结束？（参考上面的证明）&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;为什么 i&amp;gt;sqrt(N) 后面没筛过的奇数都是素数？&lt;/p&gt;
-
-        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;证明：
-若sqrt(N)后面的奇数为合数，则其存在 &amp;lt;=sqrt(N)的素因子p。
-但内嵌的for循环
-	
-    for( j=i+i; j&amp;lt;=n; j+=i )
-        prime[j]=false;
-	
-已经确保了含有p这个因子的合数都被标为false，
-也就是 &amp;gt;sqrt(N)的数中合数(奇数+偶数)已经被筛掉了，
-因此循环结束后， &amp;gt;sqrt(N)的奇数都是素数。
-&lt;/code&gt;&lt;/pre&gt;
-        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-</description>
-        <pubDate>Sun, 12 Feb 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/02/12/PAT_Basic_1013.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/02/12/PAT_Basic_1013.html</guid>
         
         
       </item>
