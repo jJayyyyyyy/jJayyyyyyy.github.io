@@ -16,7 +16,7 @@ SSL证书需要向国际公认的证书证书认证机构（简称CA，Certifica
 
 #	2. HTTPS证书分类
 
-2.1 按验证等级
+**2.1 按验证等级**
 
 *	域名型SSL证书，DVSSL，Domain Validation SSL Certificate
 
@@ -40,7 +40,7 @@ SSL证书需要向国际公认的证书证书认证机构（简称CA，Certifica
 
 <br/>
 
-2.2 按保护域名数量
+**2.2 按保护域名数量**
 
 *	单域名型证书, Single Domain SSL Certificates
 
