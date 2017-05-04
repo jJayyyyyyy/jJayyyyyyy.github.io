@@ -5,9 +5,167 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 01 May 2017 10:32:15 +0800</pubDate>
-    <lastBuildDate>Mon, 01 May 2017 10:32:15 +0800</lastBuildDate>
+    <pubDate>Thu, 04 May 2017 10:19:12 +0800</pubDate>
+    <lastBuildDate>Thu, 04 May 2017 10:19:12 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>HTTPS证书，类型及特点</title>
+        <description>&lt;h1 id=&quot;section&quot;&gt;1. 简介&lt;/h1&gt;
+
+&lt;p&gt;HTTPS即Hypertext Transfer Protocol Secure。由于其安全层使用的是TLS/SSL，因此HTTPS也可以称为HTTP over TLS或HTTP over SSL。&lt;/p&gt;
+
+&lt;p&gt;“HTTPS证书”又叫“SSL证书”、“SSL安全证书”、“SSL数字证书”，目前应用广泛，发展迅速。&lt;/p&gt;
+
+&lt;p&gt;SSL证书需要向国际公认的证书证书认证机构（简称CA，Certificate Authority）申请。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;https&quot;&gt;2. HTTPS证书分类&lt;/h1&gt;
+
+&lt;p&gt;2.1 按验证等级&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;域名型SSL证书，DVSSL，Domain Validation SSL Certificate&lt;/p&gt;
+
+    &lt;p&gt;信任等级普通，只需验证网站的真实性便可颁发证书保护网站。无需人工审核，快速颁发。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;企业组织型SSL证书，OVSSL，Organization Validation SSL Certificate&lt;/p&gt;
+
+    &lt;p&gt;信任等级强，须要验证企业的身份，审核严格，安全性更高。需要人工审核，证书包含企业认证信息。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;增强扩展型SSL证书，EVSSL，Extended Validation SSL Certificate&lt;/p&gt;
+
+    &lt;p&gt;信任等级最高，一般用于银行证券等金融机构，人工审核，审核严格，颁发之后可以使网站域名在浏览器地址栏变成绿色。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;DVSSL&lt;/th&gt;
+      &lt;th&gt;OVSSL&lt;/th&gt;
+      &lt;th&gt;EVSSL&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;信任等级普通，只需验证网站的真实性便可颁发证书保护网站&lt;/td&gt;
+      &lt;td&gt;信任等级强，须要验证企业的身份，审核严格，安全性更高&lt;/td&gt;
+      &lt;td&gt;信任等级最高，一般用于银行证券等金融机构&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;无需人工审核，快速颁发&lt;/td&gt;
+      &lt;td&gt;需要人工审核，证书包含企业认证信息&lt;/td&gt;
+      &lt;td&gt;人工严格审核，颁发之后可以使网站域名在浏览器地址栏变成绿色&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;2.2 按保护域名数量&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;单域名型证书, Single Domain SSL Certificates&lt;/p&gt;
+
+    &lt;p&gt;一张SSL证书保护一个域名，一个网站的安全。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;多域名型证书 	Multi Domain SSL Certificates&lt;/p&gt;
+
+    &lt;p&gt;一张SSL证书可以保护多个域名，多个网站的安全，多域型SSL证书。支持任何域名，可以是不同的顶级域名（如：hello.com, tv.com, example.com）。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;通配符型证书, Wildcard SSL Certificates&lt;/p&gt;
+
+    &lt;p&gt;一张SSL证书可以保护相同主域名下所有的子域名的安全。通配型证书只支持*.domain.com通配符子域名（如：a.hello.com, b.hello.com、c.hello.com）。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;其中，单域名型证书和多域名证书分为三种验证等级：DV, OV, EV。
+而通配符型证书只有DV和OV两种。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;单域名型证书&lt;/th&gt;
+      &lt;th&gt;多域名型证书&lt;/th&gt;
+      &lt;th&gt;通配符型证书&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;一张SSL证书保护一个域名，一个网站的安全&lt;/td&gt;
+      &lt;td&gt;一张SSL证书可以保护多个域名，多个网站的安全，多域型SSL证书。支持任何域名，可以是不同的顶级域名&lt;/td&gt;
+      &lt;td&gt;一张SSL证书可以保护相同主域名下所有的子域名的安全&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;仅支持1个域名&lt;/td&gt;
+      &lt;td&gt;最多支持50个域名&lt;/td&gt;
+      &lt;td&gt;不限制子域名数量&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+      &lt;td&gt; &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;可选DV, OV, EV三种等级&lt;/td&gt;
+      &lt;td&gt;可选DV, OV, EV三种等级&lt;/td&gt;
+      &lt;td&gt;可选DV, OV两种等级&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;3.参考文献&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://baike.baidu.com/view/5262561.htm&quot;&gt;baike&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/19578422/answer/114210307&quot;&gt;zhihu&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.sslzhengshu.com/article/post-36.html&quot;&gt;SSLzhengshu-SD_MD_Wildcard&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.sslzhengshu.com/article/post-35.html&quot;&gt;SSLzhengshu-DV_OV_EV&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.evtrust.com/ssl.html&quot;&gt;EVTrust&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;本文地址：&lt;a href=&quot;https://jjayyyyyyy.github.io/2017/05/04/https_certificates.html&quot;&gt;https://jjayyyyyyy.github.io/2017/05/04/https_certificates.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h6&gt;注：本文最初整理于20161018。接下来将会陆续整理一些以前的学习笔记。&lt;/h6&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;相关阅读&lt;/h2&gt;
+</description>
+        <pubDate>Thu, 04 May 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/05/04/https_certificates.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/05/04/https_certificates.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>HTTP与缓存相关的头部信息</title>
@@ -1759,45 +1917,6 @@ FRI 14:04
         <pubDate>Thu, 16 Feb 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/02/16/PAT_Basic_1014.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/02/16/PAT_Basic_1014.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>2月14日—计算机时代</title>
-        <description>&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/ENIAC_Penn1.jpg/440px-ENIAC_Penn1.jpg&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;2月14日对很多人来说是一个具有特殊意义的日子，因为今天是情人节。不过这个日子对处于信息时代的每一个人来说也是一个意义非凡的日子，因为在1946年2月14日，世界上第一台通用(general-purpose)计算机ENIAC正式对外公布。&lt;/p&gt;
-
-&lt;p&gt;ENIAC为美国陆军的弹道研究实验室（BRL）所使用，最初的目的是计算火炮的火力表。ENIAC在1946年公布的时候，就被当时的新闻赞誉为“巨脑”。它的计算速度比机电机器提高了一千倍。这是一个飞跃，之前没有任何一台单独的机器达到过这个速度。它的数学能力和通用的可编程能力，令当时的科学家和实业家非常激动。&lt;/p&gt;
-
-&lt;p&gt;在二战期间，美国陆军资助了ENIAC的设计和建造。建造合同在1943年6月5日签订，实际的建造在7月以“PX项目”为代号秘密开始，由宾夕法尼亚大学穆尔电气工程学院进行。建造完成的机器在1946年2月14日公布，并于次日在宾夕法尼亚大学正式投入使用(The completed machine was announced to the public the evening of February 14, 1946 and formally dedicated the next day at the University of Pennsylvania)&lt;/p&gt;
-
-&lt;p&gt;ENIAC的研制过程和以往的计算机不同，它的设计不是根据经验来的，而是有明确的计算机理论做指导的，这个理论来自于数学家阿兰-图灵的图灵机理论。在ENIAC造到一半时，另外一位科学家加入了进来，他就是后来被称为“现代计算机之父”的冯-诺依曼。&lt;/p&gt;
-
-&lt;p&gt;ENIAC建好后二战已经结束，于是便被用于计算计算氢弹研制中的数学问题。在1949年美国研制出第二台计算机EDVAC之前，科学家们都依赖ENIAC解决大量的计算问题。ENIAC一天能完成几千万次乘法，一条炮弹的轨道用20喵就能算出来，可以说比炮弹飞信的速度还快。当时英国的Louis Mountbatten元帅将ENIAC誉为“一个电子的大脑”，“电脑”也由此而来。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;ENIAC的诞生，标志着人们从此进入了计算机时代。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;相关阅读&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/ENIAC&quot;&gt;ENIAC&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://book.douban.com/subject/26275177/&quot;&gt;文明之光-第三册&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/55808679/answer/146358736&quot;&gt;知乎&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Tue, 14 Feb 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/02/14/ENIAC.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/02/14/ENIAC.html</guid>
         
         
       </item>
