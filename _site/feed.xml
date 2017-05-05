@@ -5,9 +5,61 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Thu, 04 May 2017 10:24:26 +0800</pubDate>
-    <lastBuildDate>Thu, 04 May 2017 10:24:26 +0800</lastBuildDate>
+    <pubDate>Fri, 05 May 2017 12:52:51 +0800</pubDate>
+    <lastBuildDate>Fri, 05 May 2017 12:52:51 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>为什么要把【generic】翻译成【泛型】呢？</title>
+        <description>&lt;p&gt;一直以来，我对于 泛型 这个词都是一知半解。当然，我自己比较懒，也没有仔细去研究过这个词。但是另一方面，我觉得这个翻译也有问题。不知道有多少新手在初次看到这个翻译时和我一样是云里雾里的。&lt;/p&gt;
+
+&lt;p&gt;今天，在cppp上，看到了对 泛型 的进一步解释，我觉得把 generic 翻译成泛型，有点古代文人舞文弄墨的味道。其实把它平实地翻译成【通用的】，就已经很好了。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;generic指的是两个方面：这些算法可作用于不同的容器类型，而这些容器又可以容纳多种不同类型的元素。
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;也就是说，算法和容器都有通用接口，具有通用性，而不是针对一个容器定义一种操作。&lt;/p&gt;
+
+&lt;p&gt;这样解释多容易理解啊。有些翻译者，总是为了翻译而翻译，如此”信达雅”还不如直接通俗化。&lt;/p&gt;
+
+&lt;p&gt;最后附上有道词典的generic翻译。学好英语是值得的。边学边看即可，没那么吓人。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;generic [dʒi'nerik]
+
+adj.
+一般的，普通的；通用的，不专用的；非专用装置的；非特有的
+【语言学】全称的；通有的；
+
+n.
+通名，通称；通用术语
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;参考文献&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://book.douban.com/subject/1415354/&quot;&gt;C++ Primer, 4th Edition&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;本文地址：&lt;a href=&quot;https://jjayyyyyyy.github.io/2017/05/05/generic.html&quot;&gt;https://jjayyyyyyy.github.io/2017/05/05/generic.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;相关阅读&lt;/h2&gt;
+</description>
+        <pubDate>Fri, 05 May 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/05/05/generic.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/05/05/generic.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>HTTPS证书，类型及特点</title>
@@ -1751,172 +1803,6 @@ $HTTP[&quot;scheme&quot;] == &quot;https&quot; {
         <pubDate>Fri, 17 Feb 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/02/17/PAT_Basic_1015.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/02/17/PAT_Basic_1015.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>PAT Basic 1014</title>
-        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1014_%E7%A6%8F%E5%B0%94%E6%91%A9%E6%96%AF%E7%9A%84%E7%BA%A6%E4%BC%9A&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;httpswwwpatestcncontestspat-b-practise1014-1014--20&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1014&quot;&gt;原题&lt;/a&gt;： 1014. 福尔摩斯的约会 (20)&lt;/h2&gt;
-
-&lt;p&gt;大侦探福尔摩斯接到一张奇怪的字条：“我们约会吧！ 3485djDkxh4hhGE 2984akDfkkkkggEdsb s&amp;amp;hgsfdk d&amp;amp;Hyscvnm”。大侦探很快就明白了，字条上奇怪的乱码实际上就是约会的时间“星期四 14:04”，因为前面两字符串中第1对相同的大写英文字母（大小写有区分）是第4个字母’D’，代表星期四；第2对相同的字符是’E’，那是第5个英文字母，代表一天里的第14个钟头（于是一天的0点到23点由数字0到9、以及大写字母A到N表示）；后面两字符串第1对相同的英文字母’s’出现在第4个位置（从0开始计数）上，代表第4分钟。现给定两对字符串，请帮助福尔摩斯解码得到约会的时间。&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;输入格式&lt;/h3&gt;
-
-&lt;p&gt;输入在4行中分别给出4个非空、不包含空格、且长度不超过60的字符串。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;输出格式&lt;/h3&gt;
-
-&lt;p&gt;在一行中输出约会的时间，格式为“DAY HH:MM”，其中“DAY”是某星期的3字符缩写，即MON表示星期一，TUE表示星期二，WED表示星期三，THU表示星期四，FRI表示星期五，SAT表示星期六，SUN表示星期日。题目输入保证每个测试存在唯一解。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;输入样例&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;3485djDkxh4hhGE 
-2984akDfkkkkggEdsb 
-s&amp;amp;hgsfdk 
-d&amp;amp;Hyscvnm
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;输出样例&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;THU 14:04
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;注意&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 100 ms
-内存限制： 65536 kB
-代码长度限制： 8000 B
-判题程序： Standard
-作者： CHEN, Yue
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-5&quot;&gt;题目分析&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;星期几&lt;/p&gt;
-
-    &lt;p&gt;对比第一行和第二行，找到第一对【下标相同】的【大写】字母。&lt;/p&gt;
-
-    &lt;p&gt;注意大写字母的范围在 &lt;code class=&quot;highlighter-rouge&quot;&gt;'A' ~ 'G'&lt;/code&gt; 之间，分别对应 &lt;code class=&quot;highlighter-rouge&quot;&gt;星期一 ~ 星期日&lt;/code&gt;。&lt;/p&gt;
-
-    &lt;p&gt;同时记录此时的下标&lt;code class=&quot;highlighter-rouge&quot;&gt;ix&lt;/code&gt;，下一步寻找【钟头】应该从这个下标往后数。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;钟头&lt;/p&gt;
-
-    &lt;p&gt;基本与第1点相同，注意【大写】字母范围在 &lt;code class=&quot;highlighter-rouge&quot;&gt;'A' ~ 'N'&lt;/code&gt; 之间，分别对应 10点~23点。&lt;/p&gt;
-
-    &lt;p&gt;还有一种情况，&lt;code class=&quot;highlighter-rouge&quot;&gt;ix&lt;/code&gt;之后第一对相同的字符是数字，这也是一种合法的情况， &lt;code class=&quot;highlighter-rouge&quot;&gt;'0' ~ '9'&lt;/code&gt;分别对应 &lt;code class=&quot;highlighter-rouge&quot;&gt;0点 ~ 9点&lt;/code&gt;。此时为了格式化输出，还要在前面加上字符&lt;code class=&quot;highlighter-rouge&quot;&gt;'0'&lt;/code&gt;。&lt;/p&gt;
-
-    &lt;p&gt;此外，钟头后面还要输出 冒号&lt;code class=&quot;highlighter-rouge&quot;&gt;':'&lt;/code&gt;，作为分隔符。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;分钟&lt;/p&gt;
-
-    &lt;p&gt;对比第三行和第四行，寻找第一对【下标相同】的【英文字符】，将其下标作为分钟。&lt;/p&gt;
-
-    &lt;p&gt;注意分钟在 &lt;code class=&quot;highlighter-rouge&quot;&gt;0 ~ 9&lt;/code&gt; 时，需要在前面补&lt;code class=&quot;highlighter-rouge&quot;&gt;'0'&lt;/code&gt;。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;section-6&quot;&gt;部分测试用例&lt;/h2&gt;
-
-&lt;p&gt;养成好的测试习惯&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;test1&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
-3485djDkxh4hhGE 
-2984akDfkkkkggEdsb 
-s&amp;amp;hgsfdk 
-d&amp;amp;Hyscvnm
-
-输出
-THU 14:04
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;test2&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
-3485djEkxh4hhGE 
-2984akEfkkkkggEdsb 
-s&amp;amp;hgsfdk 
-d&amp;amp;Hyscvnm
-
-输出
-FRI 14:04
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;section-7&quot;&gt;其他参考&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;字符处理函数&lt;/p&gt;
-
-    &lt;ul&gt;
-      &lt;li&gt;
-        &lt;p&gt;C&lt;/p&gt;
-
-        &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cp&quot;&gt;#include &amp;lt;ctype.h&amp;gt;
-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isalnum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isdigit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isalpha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;islower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;isupper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;tolower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;toupper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-        &lt;/div&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;C++&lt;/p&gt;
-
-        &lt;p&gt;同C，将头文件换成&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;cctype&amp;gt;&lt;/code&gt;即可&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-        &lt;p&gt;Python&lt;/p&gt;
-
-        &lt;p&gt;字符串的成员函数&lt;/p&gt;
-
-        &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isalnum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isdigit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isalpha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;islower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isupper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;lower&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;upper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-        &lt;/div&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-</description>
-        <pubDate>Thu, 16 Feb 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/02/16/PAT_Basic_1014.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/02/16/PAT_Basic_1014.html</guid>
         
         
       </item>
