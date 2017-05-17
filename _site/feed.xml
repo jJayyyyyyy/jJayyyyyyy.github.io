@@ -5,9 +5,191 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 16 May 2017 15:16:40 +0800</pubDate>
-    <lastBuildDate>Tue, 16 May 2017 15:16:40 +0800</lastBuildDate>
+    <pubDate>Wed, 17 May 2017 19:28:54 +0800</pubDate>
+    <lastBuildDate>Wed, 17 May 2017 19:28:54 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>全局负载均衡GSLB学习笔记</title>
+        <description>&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 align=&quot;center&quot;&gt;摘要&lt;/h3&gt;
+
+&lt;p&gt;       &lt;strong&gt;GSLB&lt;/strong&gt; 是 &lt;em&gt;Global Server Load Balance&lt;/em&gt; 的缩写，即全局负载均衡。本文首先介绍了什么是负载均衡 &lt;strong&gt;SLB&lt;/strong&gt; ，以及为什么要使用 &lt;strong&gt;SLB&lt;/strong&gt; 。接着引出全局负载均衡 &lt;strong&gt;GSLB&lt;/strong&gt; 的概念和作用。为此介绍了其基于 &lt;strong&gt;DNS&lt;/strong&gt; 进行解析和分配负载的实现，包括 &lt;strong&gt;DNS&lt;/strong&gt; 的原理简介、应用部署中的基本概念、分配负载的决策条件等内容。以外，本文还简单介绍了通过 &lt;strong&gt;HTTP&lt;/strong&gt; 和 &lt;strong&gt;IP&lt;/strong&gt; 实现 &lt;strong&gt;GSLB&lt;/strong&gt; 的方式，并对三者的优缺点进行了简单对比。最后是本文的参考文献。&lt;/p&gt;
+
+&lt;p&gt;关键词: &lt;strong&gt;GSLB&lt;/strong&gt; , &lt;strong&gt;DNS&lt;/strong&gt;, &lt;strong&gt;CDN&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;目录&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#SLB&quot;&gt;1. 负载均衡 SLB&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;1.1 SLB的简介与作用&lt;/li&gt;
+      &lt;li&gt;1.2 SLB关键技术&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#GSLB&quot;&gt;2. 全局负载均衡 GSLB&lt;/a&gt;
+    &lt;ul&gt;
+      &lt;li&gt;2.1 GSLB的简介与作用&lt;/li&gt;
+      &lt;li&gt;2.2 DNS原理简介&lt;/li&gt;
+      &lt;li&gt;2.3 基于DNS的GSLB&lt;/li&gt;
+      &lt;li&gt;2.4 GSLB的其他实现方式&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#Reference&quot;&gt;3. 参考文献&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;SLB&quot; align=&quot;center&quot;&gt;1. 负载均衡 SLB&lt;/h3&gt;
+
+&lt;h4 id=&quot;section-1&quot;&gt;&lt;strong&gt;1.1 负载均衡及其作用&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;负载均衡(Server Load Balance, SLB)，其含义是将负载(工作任务)平衡分散到多个服务器上。&lt;strong&gt;CDN&lt;/strong&gt;是典型的负载均衡集群系统。&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;图1.1&lt;/em&gt;是负载均衡的示意图。从图中可以看出，负载均衡设备可以在用户请求到达服务器之前将其截获，然后将其分发到合适的后端服务器。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;&quot; alt=&quot;SLB&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;也就是说，客户端发出的请求，首先会到负载均衡设备的IP地址上。因为该IP地址并不负责处理实际的业务，所以通常将该地址称为【虚拟IP】(Virtual IP, &lt;strong&gt;VIP&lt;/strong&gt;)。&lt;/p&gt;
+
+&lt;p&gt;后端真正的业务服务器被称为【真实服务器】(Real Server, &lt;strong&gt;RS&lt;/strong&gt;)，其IP地址被称为【真实IP】(Real IP, &lt;strong&gt;RIP&lt;/strong&gt;)，负责处理业务。&lt;/p&gt;
+
+&lt;p&gt;举个例子，VIP 就像是前台招待，会告诉你办什么事该去哪个房间。而RIP是内部实际办业务的房间号。&lt;/p&gt;
+
+&lt;p&gt;利用负载均衡，很大程度上可以避免单个服务器过载或者闲置，前者会引起服务能力下降，后者则没有充分利用资源。因此，为了达到更好的系统处理能力，需要进行以下两个步骤：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;在集群前端部署负载均衡设备&lt;/li&gt;
+  &lt;li&gt;根据预先配置的均衡策略，在集群中智能分发用户请求&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;section-2&quot;&gt;&lt;strong&gt;1.2 负载均衡关键技术&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;要做到负载均衡，需要的问题包括但不限于以下几个方面&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;请求的分发&lt;/li&gt;
+  &lt;li&gt;会话保持&lt;/li&gt;
+  &lt;li&gt;服务健康监测&lt;/li&gt;
+  &lt;li&gt;故障隔离&lt;/li&gt;
+  &lt;li&gt;自动恢复&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;1.2.1 请求分发算法&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;请求分发算法，可以分为【静态算法】和【动态算法】两大类。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;静态算法&lt;/p&gt;
+
+    &lt;p&gt;静态算法是指按照预先设置好的策略进行分发，而不考虑服务器当前的实际负载状况。&lt;/p&gt;
+
+    &lt;p&gt;这类算法包括轮询、加权轮询、基于源IP或目的IP的&lt;strong&gt;hash&lt;/strong&gt;算法等等，优点是简单快捷。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;动态算法&lt;/p&gt;
+
+    &lt;p&gt;动态算法指的是能够根据当前服务器状况进行分发，包括最小连接，加权最小连接等。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;1.2.2 会话保持&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;出于一些业务的特殊要求，有时候需要进行会话保持，以保证一段时间内，某一个用户与系统的交互（会话），只交给同一台服务器处理。&lt;/p&gt;
+
+&lt;p&gt;例如，大多数电商应用需要用户认证，而一次交易需要与服务器多次交互才能完成。这几次交互必须由同一台服务器处理，而不能被分散到不同服务器上。&lt;/p&gt;
+
+&lt;p&gt;会话保持有以下几种方法：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;源IP地址的持续性保持&lt;/li&gt;
+  &lt;li&gt;cookie 持续性保持&lt;/li&gt;
+  &lt;li&gt;基于HTTP报文头的持续性保持&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;1.2.3 服务器健康检测&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;为了保证服务质量，需要定时进行健康检测。我们可以利用ICMP、TCP、HTTP、FTP等协议进行检测，即主要是在传输层和应用层进行检测。&lt;/p&gt;
+
+&lt;p&gt;应用层的检测颗粒更细，但对系统的要求也比较高，因为需要针对应用层的不同的协议做不同的识别分发机制。应用层检测用的比较多的就是HTTP协议，比如先和集群中的设备建立连接，然后发出请求，如果收到正确应答，则说明HTTP处理正常。&lt;/p&gt;
+
+&lt;p&gt;传输层的检测，主要在于能否建立TCP连接，回响是否正常，等等。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;GSLB&quot; align=&quot;center&quot;&gt;2. 全局负载均衡GSLB&lt;/h3&gt;
+
+&lt;h4 id=&quot;gslb&quot;&gt;&lt;strong&gt;2.1 GSLB的简介与作用&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;GSLB, Global Server Load Balance, 即全局负载均衡。&lt;/p&gt;
+
+&lt;p&gt;由于现实中存在各种不稳定因素，比如某个服务器集群所在的数据中心断电，洪水或者地震造成数据中心瘫痪等等。在一个数据中心内，无论采用怎样的技术，总可能存在一些不可抗因素，导致其瘫痪。所以通常会把服务器分散部署到多个数据中心，以最大程度减小灾害对服务质量产生影响的概率和程度。&lt;/p&gt;
+
+&lt;p&gt;另外，&lt;strong&gt;CDN&lt;/strong&gt;系统总是希望用距离用户最近的设备为其提供服务，这也需要在不同地域部署多个节点。&lt;/p&gt;
+
+&lt;p&gt;GSLB系统就是针对这个问题的。它负责多个CDN节点之间相互协作，将各节点和设备的负载保持在一个有利于提供优质服务的水平。GSLB的负载均衡结果可能直接将用户分配到RS，也可能将用户交付到下一层次的负载均衡系统。&lt;/p&gt;
+
+&lt;p&gt;经过多年发展，已有多种调度机制可实现CDN的全局负载均衡。其中最常用的是基于DNS的GSLB。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;dns&quot;&gt;&lt;strong&gt;2.2 DNS简介&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;2.2.1 DNS工作流程&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;DNS是一个应用层协议，但它通常被其他的应用层协议使用，以便将主机名(host)解析为IP地址。DNS的工作流程如图2.1&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;&quot; alt=&quot;DNS workflow&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;在第4步中,本地DNS服务器(&lt;code class=&quot;highlighter-rouge&quot;&gt;Local DNS, LDNS&lt;/code&gt;)在得到浏览器解析的域名请求后，会采用迭代或递归查询的方式，向DNS 系统中其他远程域名服务器提出查询请求，如图 2.2 所示。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;&quot; alt=&quot;iterative query&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;如果&lt;code class=&quot;highlighter-rouge&quot;&gt;LDNS&lt;/code&gt;中没有关于这个域名的缓存，则首先会去根域名服务器请求解析&lt;code class=&quot;highlighter-rouge&quot;&gt;.root&lt;/code&gt;，收到其返回的&lt;code class=&quot;highlighter-rouge&quot;&gt;.com&lt;/code&gt;域的域名服务器列表。LDNS在该列表中选出一个域名服务器，对其发出域名解析请求。&lt;/p&gt;
+
+&lt;p&gt;被请求的&lt;code class=&quot;highlighter-rouge&quot;&gt;.com&lt;/code&gt;域的域名会查找&lt;code class=&quot;highlighter-rouge&quot;&gt;CDNbook.com&lt;/code&gt;的权威域名服务器的IP，并将其返回给LDNS。&lt;/p&gt;
+
+&lt;p&gt;由于这个权威域名服务器是&lt;code class=&quot;highlighter-rouge&quot;&gt;CDNbook.com&lt;/code&gt;这个域名授权的，所以&lt;code class=&quot;highlighter-rouge&quot;&gt;LDNS&lt;/code&gt;对权威域名服务器请求后就能得到&lt;code class=&quot;highlighter-rouge&quot;&gt;www.CDNbook.com&lt;/code&gt;的IP地址，并将其返回给客户端。&lt;/p&gt;
+
+&lt;p&gt;另一方面，如果在&lt;code class=&quot;highlighter-rouge&quot;&gt;LDNS&lt;/code&gt;上有&amp;lt;&lt;code class=&quot;highlighter-rouge&quot;&gt;www.CDNbook.com&lt;/code&gt;—&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;&amp;gt;的缓存记录，就可以直接把这个结果返回给客户 端，节省了中间的递归查找步骤时间和资源开销。&lt;/p&gt;
+
+&lt;p&gt;//未完待续&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;Reference&quot;&gt;3. 参考文献&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;雷葆华. CDN技术详解[M]. 电子工业出版社, 2014.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://jaseywang.me/2012/12/13/cdn-%E7%AE%80%E4%BB%8B%E4%B8%89/#more-3661&quot;&gt;CDN简介&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2016/06/dns.html&quot;&gt;DNS原理入门&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Content_delivery_network&quot;&gt;Content Delivery Network - wikipedia&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;本文地址：&lt;a href=&quot;https://jjayyyyyyy.github.io/2017/05/17/GSLB.html&quot;&gt;https://jjayyyyyyy.github.io/2017/05/17/GSLB.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;h6&gt;注：本文最初整理于20160908。接下来将会陆续整理一些以前的学习笔记。&lt;/h6&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;相关阅读&lt;/h2&gt;
+</description>
+        <pubDate>Wed, 17 May 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/05/17/GSLB.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/05/17/GSLB.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>opposition</title>
@@ -1455,163 +1637,6 @@ $HTTP[&quot;scheme&quot;] == &quot;https&quot; {
         <pubDate>Sun, 19 Feb 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/02/19/PAT_Basic_1017.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/02/19/PAT_Basic_1017.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>PAT Basic 1016</title>
-        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1016_%E9%83%A8%E5%88%86A%2BB&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;httpswwwpatestcncontestspat-b-practise1016-1016-ab-15&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1016&quot;&gt;原题&lt;/a&gt;： 1016. 部分A+B (15)&lt;/h2&gt;
-
-&lt;p&gt;正整数A的“D&lt;sub&gt;A&lt;/sub&gt;（为1位整数）部分”定义为由A中所有D&lt;sub&gt;A&lt;/sub&gt;组成的新整数P&lt;sub&gt;A&lt;/sub&gt;。例如：给定A = 3862767，D&lt;sub&gt;A&lt;/sub&gt; = 6，则A的“6部分”P&lt;sub&gt;A&lt;/sub&gt;是66，因为A中有2个6。&lt;/p&gt;
-
-&lt;p&gt;现给定A、D&lt;sub&gt;A&lt;/sub&gt;、B、D&lt;sub&gt;B&lt;/sub&gt;，请编写程序计算P&lt;sub&gt;A&lt;/sub&gt; + P&lt;sub&gt;B&lt;/sub&gt;。&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;输入格式&lt;/h3&gt;
-
-&lt;p&gt;输入在一行中依次给出A、D&lt;sub&gt;A&lt;/sub&gt;、B、D&lt;sub&gt;B&lt;/sub&gt;，中间以空格分隔，其中0 &amp;lt; A, B &amp;lt; 10&lt;sup&gt;10&lt;/sup&gt;。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;输出格式&lt;/h3&gt;
-
-&lt;p&gt;在一行中输出P&lt;sub&gt;A&lt;/sub&gt; + P&lt;sub&gt;B&lt;/sub&gt;的值。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;输入样例1&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;3862767 6 13530293 3
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;输出样例1&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;399
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;输入样例2&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;3862767 1 13530293 8
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-5&quot;&gt;输出样例2&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;0
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-6&quot;&gt;注意&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 100 ms
-内存限制： 65536 kB
-代码长度限制： 8000 B
-判题程序： Standard
-作者： CHEN, Yue
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-7&quot;&gt;题目分析&lt;/h1&gt;
-
-&lt;p&gt;先把所有内容当做字符串处理。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;Python&lt;/p&gt;
-
-    &lt;p&gt;利用&lt;code class=&quot;highlighter-rouge&quot;&gt;.count()&lt;/code&gt;方法统计出D&lt;sub&gt;A&lt;/sub&gt;出现的次数cnt。&lt;/p&gt;
-
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;cnt_Da&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Da&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;p&gt;再用&lt;code class=&quot;highlighter-rouge&quot;&gt;*&lt;/code&gt;直接拼接n次，得到P&lt;sub&gt;A&lt;/sub&gt;，并用&lt;code class=&quot;highlighter-rouge&quot;&gt;int()&lt;/code&gt;将其转为整数。注意cnt为0的情况。&lt;/p&gt;
-
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt_Da&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;Pa&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Da&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cnt_Da&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;Pa&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;p&gt;对B作相同处理，然后两者相加即可。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;C++&lt;/p&gt;
-
-    &lt;p&gt;引入&lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;algorithm&amp;gt;&lt;/code&gt;，即可得到&lt;code class=&quot;highlighter-rouge&quot;&gt;std::count()&lt;/code&gt;&lt;/p&gt;
-
-    &lt;div class=&quot;language-cpp highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;string&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;		&lt;span class=&quot;c1&quot;&gt;//注意a的类型
-//...
-&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;cnt_a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;begin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;end&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;p&gt;接着根据D&lt;sub&gt;A&lt;/sub&gt;和cnt_a计算P&lt;sub&gt;A&lt;/sub&gt;即可。注意cnt_a为0的情况。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;section-8&quot;&gt;部分测试用例&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;test1&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
-3862767 6 13530293 3
-
-输出
-399
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;test2&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
-3862767 1 13530293 8
-
-输出
-0
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;section-9&quot;&gt;其他参考&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://www.nowcoder.com/profile/2974017/codeBookDetail?submissionId=8275686&quot;&gt;NobodyKnow提交的代码&lt;/a&gt;&lt;/p&gt;
-
-    &lt;!-- str.count() --&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/stdtypes.html#str.count&quot;&gt;python-docs&lt;/a&gt;&lt;/p&gt;
-
-    &lt;!-- str.count() --&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://stackoverflow.com/questions/3867890/count-character-occurrences-in-a-string&quot;&gt;std::count(), count string&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;a href=&quot;http://www.cplusplus.com/reference/algorithm/count/&quot;&gt;std::count() can also count int&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-</description>
-        <pubDate>Sun, 19 Feb 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/02/19/PAT_Basic_1016.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/02/19/PAT_Basic_1016.html</guid>
         
         
       </item>
