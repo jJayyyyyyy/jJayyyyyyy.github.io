@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 17 May 2017 19:28:54 +0800</pubDate>
-    <lastBuildDate>Wed, 17 May 2017 19:28:54 +0800</lastBuildDate>
+    <pubDate>Wed, 24 May 2017 21:43:12 +0800</pubDate>
+    <lastBuildDate>Wed, 24 May 2017 21:43:12 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -158,6 +158,59 @@
 &lt;p&gt;由于这个权威域名服务器是&lt;code class=&quot;highlighter-rouge&quot;&gt;CDNbook.com&lt;/code&gt;这个域名授权的，所以&lt;code class=&quot;highlighter-rouge&quot;&gt;LDNS&lt;/code&gt;对权威域名服务器请求后就能得到&lt;code class=&quot;highlighter-rouge&quot;&gt;www.CDNbook.com&lt;/code&gt;的IP地址，并将其返回给客户端。&lt;/p&gt;
 
 &lt;p&gt;另一方面，如果在&lt;code class=&quot;highlighter-rouge&quot;&gt;LDNS&lt;/code&gt;上有&amp;lt;&lt;code class=&quot;highlighter-rouge&quot;&gt;www.CDNbook.com&lt;/code&gt;—&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;&amp;gt;的缓存记录，就可以直接把这个结果返回给客户 端，节省了中间的递归查找步骤时间和资源开销。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2.2.2 DNS记录的类型&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;DNS服务器是根据资源记录来对DNS请求进行应答的。其中，最常见的是&lt;code class=&quot;highlighter-rouge&quot;&gt;Internet&lt;/code&gt;类的记录(&lt;code class=&quot;highlighter-rouge&quot;&gt;Class IN&lt;/code&gt;)。&lt;code class=&quot;highlighter-rouge&quot;&gt;Internet&lt;/code&gt;类的记录主要有以下几种类型(&lt;code class=&quot;highlighter-rouge&quot;&gt;Type&lt;/code&gt;):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;记录&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;记录即地址&lt;code class=&quot;highlighter-rouge&quot;&gt;Address&lt;/code&gt;记录，对应的&lt;code class=&quot;highlighter-rouge&quot;&gt;value&lt;/code&gt;是域名的&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;地址。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;NS&lt;/code&gt;记录&lt;/p&gt;
+
+    &lt;p&gt;域名服务器&lt;code class=&quot;highlighter-rouge&quot;&gt;Name Server&lt;/code&gt;记录，保存了下一级域名信息的服务器地址。该记录只能设置为域名,不能设置为&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;地址。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CNAME&lt;/code&gt;记录&lt;/p&gt;
+
+    &lt;p&gt;规范名称记录&lt;code class=&quot;highlighter-rouge&quot;&gt;Canonical Name for an alias&lt;/code&gt;，也称为别名记录，其&lt;code class=&quot;highlighter-rouge&quot;&gt;value&lt;/code&gt;是另一个域名。也就是说，将原域名&lt;code class=&quot;highlighter-rouge&quot;&gt;key&lt;/code&gt;映射到了另一个域名&lt;code class=&quot;highlighter-rouge&quot;&gt;value&lt;/code&gt;。&lt;/p&gt;
+
+    &lt;p&gt;举个栗子。百度的域名是&lt;code class=&quot;highlighter-rouge&quot;&gt;www.baidu.com&lt;/code&gt;，它的&lt;code class=&quot;highlighter-rouge&quot;&gt;cname&lt;/code&gt;是&lt;code class=&quot;highlighter-rouge&quot;&gt;www.a.shifen.com&lt;/code&gt;。&lt;/p&gt;
+
+    &lt;p&gt;那么，我们已经有了一个域名了，为什么还要设置cname呢？假设有&lt;code class=&quot;highlighter-rouge&quot;&gt;www.domain.com&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;mail.domain.com&lt;/code&gt;，其cname都指向&lt;code class=&quot;highlighter-rouge&quot;&gt;host.domain.cdnxxx.com&lt;/code&gt;。&lt;/p&gt;
+
+    &lt;p&gt;然后某一天，我们的服务器地址(A记录对应的IP地址)可能要变了。由于www和mail都会被引导到&lt;code class=&quot;highlighter-rouge&quot;&gt;www.domain.wscdn.com&lt;/code&gt;，所以这时我们只需修改&lt;code class=&quot;highlighter-rouge&quot;&gt;host.domain.wscdn.com&lt;/code&gt;的A记录，而不必把www和mail的A记录都改一遍。&lt;/p&gt;
+
+    &lt;p&gt;因此cname增加了灵活性，在子域多的时候更为明显，相当于进行了批量管理。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;RR&lt;/code&gt;记录&lt;/p&gt;
+
+    &lt;p&gt;资源记录&lt;code class=&quot;highlighter-rouge&quot;&gt;Resource Record&lt;/code&gt;。一个主机名可以对应多个IP地址，在一个DNS应答报文中可能含有多条&lt;code class=&quot;highlighter-rouge&quot;&gt;RR&lt;/code&gt;信息。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;下面我们使用&lt;code class=&quot;highlighter-rouge&quot;&gt;nslookup&lt;/code&gt;来对上述的几个定义进行具体说明。&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ nslookup www.baidu.com
+
+# 返回如下响应
+Non-authoritative answer:
+www.baidu.com canonical name = www.a.shifen.com.
+Name: www.a.shifen.com
+Address: 112.80.248.74
+Name: www.a.shifen.com
+Address: 112.80.248.73
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;首先，&lt;code class=&quot;highlighter-rouge&quot;&gt;www.baidu.com&lt;/code&gt;没有A记录，但是通过&lt;code class=&quot;highlighter-rouge&quot;&gt;cname&lt;/code&gt;被引导到了&lt;code class=&quot;highlighter-rouge&quot;&gt;www.a.shifen.com.&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;其次，&lt;code class=&quot;highlighter-rouge&quot;&gt;www.a.shifen.com&lt;/code&gt;有2条A记录，也就是一个主机对应了2个IP。实际上，如过在不同地区进行DNS请求，则最后得到的这2条A记录也不同。采用某国外VPS进行请求的结果是&lt;code class=&quot;highlighter-rouge&quot;&gt;14.215.177.38&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;14.215.177.37&lt;/code&gt;。这么做是为了将不同地区的用户分配其最近的服务节点，以便快速访问。后面的内容将会解释这一点。&lt;/p&gt;
 
 &lt;p&gt;//未完待续&lt;/p&gt;
 

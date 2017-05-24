@@ -201,6 +201,59 @@
 
 <p>另一方面，如果在<code class="highlighter-rouge">LDNS</code>上有&lt;<code class="highlighter-rouge">www.CDNbook.com</code>—<code class="highlighter-rouge">IP</code>&gt;的缓存记录，就可以直接把这个结果返回给客户 端，节省了中间的递归查找步骤时间和资源开销。</p>
 
+<p><strong>2.2.2 DNS记录的类型</strong></p>
+
+<p>DNS服务器是根据资源记录来对DNS请求进行应答的。其中，最常见的是<code class="highlighter-rouge">Internet</code>类的记录(<code class="highlighter-rouge">Class IN</code>)。<code class="highlighter-rouge">Internet</code>类的记录主要有以下几种类型(<code class="highlighter-rouge">Type</code>):</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">A</code>记录</p>
+
+    <p><code class="highlighter-rouge">A</code>记录即地址<code class="highlighter-rouge">Address</code>记录，对应的<code class="highlighter-rouge">value</code>是域名的<code class="highlighter-rouge">IP</code>地址。</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">NS</code>记录</p>
+
+    <p>域名服务器<code class="highlighter-rouge">Name Server</code>记录，保存了下一级域名信息的服务器地址。该记录只能设置为域名,不能设置为<code class="highlighter-rouge">IP</code>地址。</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">CNAME</code>记录</p>
+
+    <p>规范名称记录<code class="highlighter-rouge">Canonical Name for an alias</code>，也称为别名记录，其<code class="highlighter-rouge">value</code>是另一个域名。也就是说，将原域名<code class="highlighter-rouge">key</code>映射到了另一个域名<code class="highlighter-rouge">value</code>。</p>
+
+    <p>举个栗子。百度的域名是<code class="highlighter-rouge">www.baidu.com</code>，它的<code class="highlighter-rouge">cname</code>是<code class="highlighter-rouge">www.a.shifen.com</code>。</p>
+
+    <p>那么，我们已经有了一个域名了，为什么还要设置cname呢？假设有<code class="highlighter-rouge">www.domain.com</code>和<code class="highlighter-rouge">mail.domain.com</code>，其cname都指向<code class="highlighter-rouge">host.domain.cdnxxx.com</code>。</p>
+
+    <p>然后某一天，我们的服务器地址(A记录对应的IP地址)可能要变了。由于www和mail都会被引导到<code class="highlighter-rouge">www.domain.wscdn.com</code>，所以这时我们只需修改<code class="highlighter-rouge">host.domain.wscdn.com</code>的A记录，而不必把www和mail的A记录都改一遍。</p>
+
+    <p>因此cname增加了灵活性，在子域多的时候更为明显，相当于进行了批量管理。</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">RR</code>记录</p>
+
+    <p>资源记录<code class="highlighter-rouge">Resource Record</code>。一个主机名可以对应多个IP地址，在一个DNS应答报文中可能含有多条<code class="highlighter-rouge">RR</code>信息。</p>
+  </li>
+</ul>
+
+<p>下面我们使用<code class="highlighter-rouge">nslookup</code>来对上述的几个定义进行具体说明。</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>$ nslookup www.baidu.com
+
+# 返回如下响应
+Non-authoritative answer:
+www.baidu.com canonical name = www.a.shifen.com.
+Name: www.a.shifen.com
+Address: 112.80.248.74
+Name: www.a.shifen.com
+Address: 112.80.248.73
+</code></pre>
+</div>
+
+<p>首先，<code class="highlighter-rouge">www.baidu.com</code>没有A记录，但是通过<code class="highlighter-rouge">cname</code>被引导到了<code class="highlighter-rouge">www.a.shifen.com.</code>。</p>
+
+<p>其次，<code class="highlighter-rouge">www.a.shifen.com</code>有2条A记录，也就是一个主机对应了2个IP。实际上，如过在不同地区进行DNS请求，则最后得到的这2条A记录也不同。采用某国外VPS进行请求的结果是<code class="highlighter-rouge">14.215.177.38</code>和<code class="highlighter-rouge">14.215.177.37</code>。这么做是为了将不同地区的用户分配其最近的服务节点，以便快速访问。后面的内容将会解释这一点。</p>
+
 <p>//未完待续</p>
 
 <p><br /></p>
