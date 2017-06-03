@@ -5,9 +5,62 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 24 May 2017 21:43:12 +0800</pubDate>
-    <lastBuildDate>Wed, 24 May 2017 21:43:12 +0800</lastBuildDate>
+    <pubDate>Sat, 03 Jun 2017 08:12:52 +0800</pubDate>
+    <lastBuildDate>Sat, 03 Jun 2017 08:12:52 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>wc</title>
+        <description>&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;今天我们要讲的&lt;code class=&quot;highlighter-rouge&quot;&gt;wc&lt;/code&gt;不是&lt;em&gt;water closet&lt;/em&gt;，而是&lt;code class=&quot;highlighter-rouge&quot;&gt;linux/unix&lt;/code&gt;里面的&lt;code class=&quot;highlighter-rouge&quot;&gt;wc&lt;/code&gt;，也就是&lt;strong&gt;word count&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wc&lt;/code&gt;是一个统计工具&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;whatis wc
+wc &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;		- print newline, word, and byte counts &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;each file
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;它的常见用法如下&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;cat test.cpp | wc -c
+1143	&lt;span class=&quot;c&quot;&gt;# test.cpp 的文件大小为 1143 bytes&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;cat test.cpp | wc -l
+73	&lt;span class=&quot;c&quot;&gt;# test.cpp 文件内一共有73行&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ls -1 | wc -l
+63	&lt;span class=&quot;c&quot;&gt;# 当前目录下有63个文件/文件夹. 注意使用 ls -1 (数字1), 这样就ls的每一项输出就会占据一行了&lt;/span&gt;
+&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ls -1 | grep &lt;span class=&quot;s1&quot;&gt;'^m'&lt;/span&gt; | wc -l
+2	&lt;span class=&quot;c&quot;&gt;# 该目录下, 名字以'm'开头的文件/文件夹一共有2个&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;参考文献&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.computerhope.com/issues/ch001326.htm&quot;&gt;How to count how many files are in a folder or directory&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/3137094/how-to-count-lines-in-a-document&quot;&gt;How to count lines in a document?&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://linux.die.net/man/1/wc&quot;&gt;man: wc&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;本文地址：&lt;a href=&quot;https://jjayyyyyyy.github.io/2017/06/03/wc.html&quot;&gt;https://jjayyyyyyy.github.io/2017/06/03/wc.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;相关阅读&lt;/h2&gt;
+</description>
+        <pubDate>Sat, 03 Jun 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/06/03/wc.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/06/03/wc.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>全局负载均衡GSLB学习笔记</title>
@@ -211,6 +264,10 @@ Address: 112.80.248.73
 &lt;p&gt;首先，&lt;code class=&quot;highlighter-rouge&quot;&gt;www.baidu.com&lt;/code&gt;没有A记录，但是通过&lt;code class=&quot;highlighter-rouge&quot;&gt;cname&lt;/code&gt;被引导到了&lt;code class=&quot;highlighter-rouge&quot;&gt;www.a.shifen.com.&lt;/code&gt;。&lt;/p&gt;
 
 &lt;p&gt;其次，&lt;code class=&quot;highlighter-rouge&quot;&gt;www.a.shifen.com&lt;/code&gt;有2条A记录，也就是一个主机对应了2个IP。实际上，如过在不同地区进行DNS请求，则最后得到的这2条A记录也不同。采用某国外VPS进行请求的结果是&lt;code class=&quot;highlighter-rouge&quot;&gt;14.215.177.38&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;14.215.177.37&lt;/code&gt;。这么做是为了将不同地区的用户分配其最近的服务节点，以便快速访问。后面的内容将会解释这一点。&lt;/p&gt;
+
+&lt;h4 id=&quot;dnsgslb&quot;&gt;&lt;strong&gt;2.3 基于DNS的GSLB&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;p&gt;基于DNS的GSLB，实际上就是把负载均衡设备部署在DNS系统中。在用户发出任何应用连接请求时，首先必须通过DNS系统得到目标服务器的IP。基于DNS的GSLB就是在返回DNS解析结果的时候，进行智能调度，从而将用户分配到最佳(一般是最近的)的服务器。在具体应用中,基于 DNS 解析 来实现 GSLB 有几种方法,下面分别说明。&lt;/p&gt;
 
 &lt;p&gt;//未完待续&lt;/p&gt;
 
@@ -1529,167 +1586,6 @@ $HTTP[&quot;scheme&quot;] == &quot;https&quot; {
         <pubDate>Mon, 27 Feb 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/02/27/PAT_Basic_1019.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/02/27/PAT_Basic_1019.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>PAT Basic 1017</title>
-        <description>&lt;p&gt;本题代码可以参考&lt;a href=&quot;https://github.com/jJayyyyyyy/cs/tree/master/OJ/PAT/basic_level/1017_A%E9%99%A4%E4%BB%A5B&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;httpswwwpatestcncontestspat-b-practise1017-1017-ab-20&quot;&gt;&lt;a href=&quot;https://www.patest.cn/contests/pat-b-practise/1017&quot;&gt;原题&lt;/a&gt;： 1017. A除以B (20)&lt;/h2&gt;
-
-&lt;p&gt;本题要求计算A/B，其中A是不超过1000位的正整数，B是1位正整数。&lt;br /&gt;
-你需要输出商数Q和余数R，使得A = B * Q + R成立。&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;输入格式&lt;/h3&gt;
-
-&lt;p&gt;输入在1行中依次给出A和B，中间以1空格分隔。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-1&quot;&gt;输出格式&lt;/h3&gt;
-
-&lt;p&gt;在1行中依次输出Q和R，中间以1空格分隔。&lt;/p&gt;
-
-&lt;h3 id=&quot;section-2&quot;&gt;输入样例&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;123456789050987654321 7
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-3&quot;&gt;输出样例&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;17636684150141093474 3
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h3 id=&quot;section-4&quot;&gt;注意&lt;/h3&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;时间限制： 100 ms
-内存限制： 65536 kB
-代码长度限制： 8000 B
-判题程序： Standard
-作者： CHEN, Yue
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;section-5&quot;&gt;题目分析&lt;/h1&gt;
-
-&lt;p&gt;把草稿纸上的除法算法抽象成为程序语言。&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;输入&lt;/p&gt;
-
-    &lt;p&gt;输入的A和B作为字符串处理。&lt;/p&gt;
-
-    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;char&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;us_a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1001&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;			&lt;span class=&quot;c1&quot;&gt;//用unsigned 避免溢出
-&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;scanf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%s %d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;us_a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;取余&lt;/p&gt;
-
-    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;// int a=0, b=0, q=0, r=0, i=0, j=0;//注意初始化为零
-&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;us_a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'\0'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;us_a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'0'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;		&lt;span class=&quot;c1&quot;&gt;//r是被除数的高位余数
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;						&lt;span class=&quot;c1&quot;&gt;//a是被除数,b是除数,q是商
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;						&lt;span class=&quot;c1&quot;&gt;//r是余数
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;ans_q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;++&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;q&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'0'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;			&lt;span class=&quot;c1&quot;&gt;//在数组中保存商
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;ans_q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;sc&quot;&gt;'\0'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;					&lt;span class=&quot;c1&quot;&gt;//字符数组结束标志
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;输出&lt;/p&gt;
-
-    &lt;p&gt;商的位数小于等于被除数的位数。本题算法可能导致&lt;code class=&quot;highlighter-rouge&quot;&gt;ans_q&lt;/code&gt;的最高位为0，因此需要对其进行判断与处理，以符合输出要求。&lt;/p&gt;
-
-    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;||&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans_q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt;&lt;span class=&quot;sc&quot;&gt;'0'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;		&lt;span class=&quot;c1&quot;&gt;//被除数与商，位数相同
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%s %d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans_q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;%s %d&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ans_q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;	&lt;span class=&quot;c1&quot;&gt;//位数不同，从下标1开始打印
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-
-    &lt;p&gt;可以根据下面的测试用例，观察对比直接打印的区别&lt;/p&gt;
-
-    &lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;printf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;%s %d&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ans_q&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h1 id=&quot;section-6&quot;&gt;部分测试用例&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;test1&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
-123456789050987654321 7
-
-输出
-17636684150141093474 3
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;test2&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
-20 2
-
-输出
-10 0
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;test3&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
-25 2
-
-输出
-12 1
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;test3&lt;/p&gt;
-
-    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;输入
-13 6
-
-输出	
-2 1
-&lt;/code&gt;&lt;/pre&gt;
-    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h1 id=&quot;section-7&quot;&gt;其他参考&lt;/h1&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;cpp对于string s，也可以用cout«&amp;amp;s[1]，从第二个元素开始输出。需要的是地址，把s当作指针。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-</description>
-        <pubDate>Sun, 19 Feb 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/02/19/PAT_Basic_1017.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/02/19/PAT_Basic_1017.html</guid>
         
         
       </item>
