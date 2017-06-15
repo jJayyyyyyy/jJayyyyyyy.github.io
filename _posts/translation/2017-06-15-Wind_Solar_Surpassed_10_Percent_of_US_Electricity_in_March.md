@@ -1,6 +1,6 @@
 ---
 layout: translation
-title: 翻译：
+title: 翻译：三月份，风能和太阳能提供的电能超过了美国总发电量的10%
 ---
 
 
@@ -18,13 +18,15 @@ title: 翻译：
 
 根据EIA的报道，德克萨斯州贡献了最多的风能和太阳能。
 
-同时，在爱荷华州，可再生能源在电力使用中所占的比例最高，约37%的电能来自风能和太阳能。
+而在爱荷华州，可再生能源在电力使用中所占的比例最高，大约37%的电能来自风能和太阳能。
+
+德勤(Deloitte)在周三发布了一份独立报告，从中可以看出消费者和企业(对可再生能源)的偏好将会继续推动可再生能源的发展(对可再生能源的需求有增无减)。
+
+德勤的报告指出，61%的消费者希望电力由可再生能源组成。
 
 <br/>
 
 本文地址：[https://jjayyyyyyy.github.io/2017/06/15/Wind_Solar_Surpassed_10_Percent_of_US_Electricity_in_March.html](https://jjayyyyyyy.github.io/2017/06/15/Wind_Solar_Surpassed_10_Percent_of_US_Electricity_in_March.html)
-
-
 
 (END)
 
@@ -33,3 +35,5 @@ title: 翻译：
 ##  相关阅读
 
 *	[100% renewable energy](https://jjayyyyyyy.github.io/2016/12/07/100_percent_renewable_energy.html)
+
+*	[Goodyear, 嘉年](https://zh.wikipedia.org/wiki/%E5%98%89%E5%B9%B4_(%E4%BA%9A%E5%88%A9%E6%A1%91%E9%82%A3%E5%B7%9E))
