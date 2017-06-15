@@ -4,7 +4,7 @@ title: 翻译：16/17赛季NBA总决赛第三场赛后采访
 ---
 
 
-这是**翻译**系列的一篇文章。素材来自的新闻[Steve Kerr Postgame Interview \| Game 3 \| Warriors vs Cavaliers \| June 7, 2017 \| 2017 NBA Finals](https://www.youtube.com/watch?v=crtN_2IXEZU)，视频发布于2017年6月7日，是总决赛第三场结束后对科尔的采访。赛后看到一篇文章，其中有这样一段话：
+这是**翻译**系列的一篇文章。素材来自[Steve Kerr Postgame Interview \| Game 3 \| Warriors vs Cavaliers \| June 7, 2017 \| 2017 NBA Finals](https://www.youtube.com/watch?v=crtN_2IXEZU)，视频发布于2017年6月7日，是总决赛第三场结束后对科尔的采访。赛后看到一篇文章，其中有这样一段话：
 
 >	科尔认为：“...但是，我觉得在经验上我们比去年更好，当你夺冠后又以心碎的方式丢掉冠军，在那个时刻你几乎就是见识过了一切...”
 

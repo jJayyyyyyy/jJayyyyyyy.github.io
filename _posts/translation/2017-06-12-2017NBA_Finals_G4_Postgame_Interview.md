@@ -4,7 +4,7 @@ title: 翻译：16/17赛季NBA总决赛第四场赛后采访
 ---
 
 
-这是**翻译**系列的一篇文章。素材来自的新闻[Steve Kerr Postgame Interview \| Game 4 \| Warriors vs Cavaliers \| June 9, 2017 \| 2017 NBA Finals](https://www.youtube.com/watch?v=K2ld4KddNYc)，视频发布于2017年6月9日，是总决赛第四场结束后对科尔的采访。以下是根据视频整理的听力译文。
+这是**翻译**系列的一篇文章。素材来自[Steve Kerr Postgame Interview \| Game 4 \| Warriors vs Cavaliers \| June 9, 2017 \| 2017 NBA Finals](https://www.youtube.com/watch?v=K2ld4KddNYc)，视频发布于2017年6月9日，是总决赛第四场结束后对科尔的采访。以下是根据视频整理的听力译文。
 
 <br/>
 

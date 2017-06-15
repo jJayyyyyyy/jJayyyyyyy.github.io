@@ -4,7 +4,7 @@ title: 翻译：16/17赛季NBA总决赛第五场赛后采访
 ---
 
 
-这是**翻译**系列的一篇文章。素材来自的新闻[Steve Kerr Postgame Interview \| Game 5 \| Warriors vs Cavaliers \| June 12, 2017 \| 2017 NBA Finals](https://www.youtube.com/watch?v=0wKAMpcXTH4)，视频发布于2017年6月12日，是总决赛第五场结束后对科尔的采访。比赛最终结果是勇士4-1战胜骑士赢得总冠军。以下是根据视频整理的听力译文。
+这是**翻译**系列的一篇文章。素材来自[Steve Kerr Postgame Interview \| Game 5 \| Warriors vs Cavaliers \| June 12, 2017 \| 2017 NBA Finals](https://www.youtube.com/watch?v=0wKAMpcXTH4)，视频发布于2017年6月12日，是总决赛第五场结束后对科尔的采访。比赛最终结果是勇士4-1战胜骑士赢得总冠军。以下是根据视频整理的听力译文。
 
 <br/>
 
