@@ -160,7 +160,7 @@ X-UA-Compatible:IE=10
 
 <br/>
 
-本文地址：[https://jjayyyyyyy.github.io/2017/05/01/http_headers.html](https://jjayyyyyyy.github.io/2017/05/01/http_headers.html)
+本文地址：[https://jjayyyyyyy.github.io/2017/05/01/HTTP_headers.html](https://jjayyyyyyy.github.io/2017/05/01/HTTP_headers.html)
 
 <h6>注：本文最初整理于20160801。接下来将会陆续整理一些以前的学习笔记。</h6>
 
