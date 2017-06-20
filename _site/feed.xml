@@ -5,9 +5,184 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 18 Jun 2017 15:34:53 +0800</pubDate>
-    <lastBuildDate>Sun, 18 Jun 2017 15:34:53 +0800</lastBuildDate>
+    <pubDate>Tue, 20 Jun 2017 12:08:42 +0800</pubDate>
+    <lastBuildDate>Tue, 20 Jun 2017 12:08:42 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>Python课程基础测试</title>
+        <description>&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;说明&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;在课程开始之前，请先完成一些Python的基础测试题，以便我们更好地安排小朋友的课程计划。课程使用的是&lt;code class=&quot;highlighter-rouge&quot;&gt;Python3.6&lt;/code&gt;，所以请升级Python到该版本，下载地址请点击&lt;a href=&quot;https://www.python.org/downloads/release/python-361/&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;对于每一个题目，首先请&lt;strong&gt;仔细阅读代码&lt;/strong&gt;，然后在纸上&lt;strong&gt;写下逻辑和过程&lt;/strong&gt;，以及你所&lt;strong&gt;预期的结果&lt;/strong&gt;。最后，请&lt;strong&gt;手动输入代码(不是复制粘贴)&lt;/strong&gt;并运行该程序，然后检查你预期的答案。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;注意，测试题中可能存在一些&lt;strong&gt;陷阱和错误&lt;/strong&gt;。请在阅读代码时记录并改正错误，或者在运行代码发生错误时进行debug，并做好相关记录。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;请认真完成这些题目，并&lt;strong&gt;记录&lt;/strong&gt;答题情况和答题时间。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;知识点&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;判断&lt;/li&gt;
+  &lt;li&gt;循环&lt;/li&gt;
+  &lt;li&gt;字符串&lt;/li&gt;
+  &lt;li&gt;列表&lt;/li&gt;
+  &lt;li&gt;函数&lt;/li&gt;
+  &lt;li&gt;模块&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;题目&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Test00&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 请输入自己的信息，然后查看运行结果。&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Please input your info and check out the output.&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Please input your name: '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Please input your gender(boy or girl): '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;capitalize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'boy'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s] is a brave boy!'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;gender&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'girl'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;s] is a pretty girl!'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Welcome!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Test01&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 请问运行结果是什么?&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# What's the output of this program?&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;top&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Test02&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 请问运行结果是什么?&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# What's the output of this program?&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;weight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Please input your weight(kg): '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;length&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;weight&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Your weight is a &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;d digit number.&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;%&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;length&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;weight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'You&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\'&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;d better do some exercises everyday!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Test03&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 请问运行结果是什么? 如何得到所有人的名字(去掉数字)? 如何按照字典序输出所有姓名?&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# What's the output of this program? How to output only the names and skip all the numbers? And then, how to output the list of names in alphabet order?&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;friends&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Ann'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Chris'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Dobby'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Bob'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Emma'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;friends&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Frederick'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;friends&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;friends&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Test04&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 请问运行结果是什么?&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# What's the output of this program?&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_cakes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;cakes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;cakes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'cake'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cakes&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;cakes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;get_cakes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cakes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Test05(&lt;code class=&quot;highlighter-rouge&quot;&gt;time&lt;/code&gt;模块的相关知识可以查看&lt;a href=&quot;https://docs.python.org/3/library/time.html?highlight=time#time.localtime&quot;&gt;Python Docs: time.localtime()&lt;/a&gt;)&lt;/p&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 运行结果是什么? &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# What's the output of this program?&lt;/span&gt;
+
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ctime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;localtime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;本文地址：&lt;a href=&quot;https://jjayyyyyyy.github.io/2017/06/20/pre_tests_for_python.html&quot;&gt;https://jjayyyyyyy.github.io/2017/06/20/pre_tests_for_python.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;相关阅读&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.python.org/3/library/functions.html&quot;&gt;Python Docs&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 20 Jun 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/06/20/basic_python_tests.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/06/20/basic_python_tests.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>翻译：三月份，风能和太阳能提供的电能超过了美国总发电量的10%</title>
@@ -897,242 +1072,6 @@ n.
         <pubDate>Thu, 04 May 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/05/04/https_certificates.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/05/04/https_certificates.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>HTTP与缓存相关的头部信息</title>
-        <description>&lt;h1 id=&quot;http-headers&quot;&gt;1. HTTP headers简介&lt;/h1&gt;
-
-&lt;p&gt;HTTP是一个应用层协议，由请求和响应构成。和其他很多数据格式一样，请求和响应由&lt;strong&gt;头部&lt;/strong&gt;和&lt;strong&gt;数据&lt;/strong&gt;组成，&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;常见请求头&lt;/th&gt;
-      &lt;th&gt;意义&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Accept: text/html; image/webp; &lt;em&gt;/&lt;/em&gt;	浏览器可接收的类型&lt;/td&gt;
-      &lt;td&gt;Accept-Encoding: gzip,compress 	浏览器可接收的压缩编码类型&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;If-Modified-Since: Mon, 1 Aug 2016 18:23:51 GMT&lt;/td&gt;
-      &lt;td&gt;页面缓存时间&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Cache-Control：max-age=300&lt;/td&gt;
-      &lt;td&gt;缓存的最长时间 300s&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;常见响应头&lt;/th&gt;
-      &lt;th&gt;意义&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Content-Encoding: gzip&lt;/td&gt;
-      &lt;td&gt;服务器发送的压缩编码方式&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Content-Length: 80&lt;/td&gt;
-      &lt;td&gt;服务器发送显示的字节码长度&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Content-Type: text/html; charset=UTF-8&lt;/td&gt;
-      &lt;td&gt;服务器发送内容的类型和编码类型&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Last-Modified: Tue, 11 Jul 2000 18:23:51GMT&lt;/td&gt;
-      &lt;td&gt;服务器最后一次修改的时间&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Date:Mon, 01 Aug 2016 13:38:43 GMT&lt;/td&gt;
-      &lt;td&gt;资源起始时间&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Expires:Mon, 01 Aug 2016 13:38:53 GMT&lt;/td&gt;
-      &lt;td&gt;资源过期时间&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;ETag:W/”578303987844e7989822712c1e153fc9”&lt;/td&gt;
-      &lt;td&gt;资源实体的标识(唯一标识，类似md5值，文件有修改md5就不一样)&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;Cache-Control: max-age=10&lt;/td&gt;
-      &lt;td&gt;缓存时间&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;2. 与缓存相关的头部信息&lt;/h2&gt;
-
-&lt;p&gt;在请求静态文件的时候，由于这些文件不经常变化，因此把静态文件储起来是一种优化用户浏览体验的方法，同时也可以释放链路资源，缓解网络压力。&lt;/p&gt;
-
-&lt;p&gt;那么，应当如何确定缓存文件的有效时间呢？对此，我们需要用到HTTP头中的Expires和Cache-Control。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2.1.1 Expires&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;当客户端第一次访问一个文件资源的时候，服务端在返回资源内容的同时也返回了：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Expires: Mon, 1 Aug 2016 22:43:02 GMT
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;也就是服务端告诉浏览器，先把这个文件缓存起来，在这个过期时间之前，该文件都不会变化了。&lt;/p&gt;
-
-&lt;p&gt;下一次浏览器又要访问这个资源，并且访问的时间在&lt;code class=&quot;highlighter-rouge&quot;&gt;Mon, 1 Aug 2016 22:43:02 GMT&lt;/code&gt;之前，那浏览器就不去服务器那边获取文件了，而是直接从缓存中取文件。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2.1.2 Cache-Control&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;由于Expires给定的是绝对时间，而客户端的系统时间可以由用户任意修改，比如Expires设定的过期时间是&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Mon, 1 Aug 2016 22:43:02 GMT
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;现在用户把系统时间改为&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Tue, 2 Aug 2016 22:43:02 GMT
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;则缓存会被判为过期（虽然实际上还没到那个时间）。因此在HTTP1.1中引入了Cache-Control，这就是一个相对时间，比如&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Cache-Control: max-age=80
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;那就是说这份缓存的有效期是80秒，而没有给定过期的绝对时间。&lt;/p&gt;
-
-&lt;p&gt;由于Cache-Control是HTTP1.1中才有的，因此可能会有Expires和Cache-Control同时出现的情况，这时以Cache-Control为准。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2.2 Last-Modified / If-Modified-Since&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;现在有另外一个问题，服务端有个文件可能会更新，因此希望客户端时不时过来问一下这个文件是否过期。&lt;/p&gt;
-
-&lt;p&gt;如果没有过期，服务端不返回数据给浏览器，只返回304状态码，告诉浏览器目前的缓存还没有过期，然后浏览器继续使用已有缓存。&lt;/p&gt;
-
-&lt;p&gt;这个就叫做条件请求。这里就要用到以下两个头部信息&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Last-Modified	(response header)&lt;/li&gt;
-  &lt;li&gt;If-Modified-Since	(request header)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;以上一小节的响应头和请求头为例，浏览器第一次请求资源的时候，服务端返回资源内容，同时也返回了&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Last-Modified:Mon, 01 Aug 2016 13:48:44 GMT
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;也就是服务端在告诉客户端这个文件在服务器上的最后修改时间。&lt;/p&gt;
-
-&lt;p&gt;浏览器第二次访问的时候（假设这里没有设置Expires或者Cache-Control）。那么浏览器在访问资源的时候会在请求头上带上&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;If-Modified-Since:Mon, 01 Aug 2016 13:48:44 GMT
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;服务端收到后对比目前文件的最后修改时间和该请求头的信息，如果没有修改，那就直接返回304给浏览器，而不返回实际资源。如果有变化了，就返回200，并且带上新的资源内容。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2.3 Etag / If-None-Match&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;条件请求还有另外一种方法——打标签，也就是使用Etag。&lt;/p&gt;
-
-&lt;p&gt;道理和上一小节类似：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;第一次拿到资源的时候，服务器的响应头中包含了Etag，用来作为时间标签&lt;/li&gt;
-  &lt;li&gt;下一次浏览器再次请求资源的时候会把原来的Etag标签带上（在请求头中变成了If-None-Match）作为校验标准，&lt;/li&gt;
-  &lt;li&gt;若这个文件如果发生了改变，则Etag也会改变。&lt;/li&gt;
-  &lt;li&gt;服务器对比浏览器请求头中的的If-None-Match：
-    &lt;ul&gt;
-      &lt;li&gt;如果相同就返回304，而不返回实际资源&lt;/li&gt;
-      &lt;li&gt;如果不同，就返回200和新的资源。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;由于Etag需要通过服务器计算得出，每次都进行计算需要额外的开销，有时候这也是一种负担。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;3. 实例&lt;/h2&gt;
-
-&lt;p&gt;下面以第2篇参考资料为例。在chrome中打开开发者工具的Network，然后进入&lt;a href=&quot;http://www.cnblogs.com/yjf512/p/3244882.html&quot;&gt;http://www.cnblogs.com/yjf512/p/3244882.html&lt;/a&gt;，选择名为&lt;code class=&quot;highlighter-rouge&quot;&gt;3244882.html&lt;/code&gt;的文件，可以看到其Response Headers中有如下内容：&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Cache-Control:private, max-age=10
-Connection:keep-alive
-Content-Encoding:gzip
-Content-Type:text/html; charset=utf-8
-Date:Mon, 01 Aug 2016 13:48:44 GMT
-Expires:Mon, 01 Aug 2016 13:48:54 GMT
-Last-Modified:Mon, 01 Aug 2016 13:48:44 GMT
-Transfer-Encoding:chunked
-Vary:Accept-Encoding
-X-UA-Compatible:IE=10
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;第1行的&lt;code class=&quot;highlighter-rouge&quot;&gt;Cache-Control:private, max-age=10&lt;/code&gt;，表示有效时间为10s，且其优先级高于&lt;code class=&quot;highlighter-rouge&quot;&gt;Expires&lt;/code&gt;。响应头中出现了&lt;code class=&quot;highlighter-rouge&quot;&gt;private&lt;/code&gt;，其作用是通知浏览器只针对单个用户进行缓存，且可以具体指定某个字段，如&lt;code class=&quot;highlighter-rouge&quot;&gt;private–&quot;username&quot;&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;第2行的&lt;code class=&quot;highlighter-rouge&quot;&gt;Keep-Alive&lt;/code&gt;功能使客户端到服务器端的连接持续有效。当出现对服务器的后继请求时，&lt;code class=&quot;highlighter-rouge&quot;&gt;Keep-Alive&lt;/code&gt;功能避免了重新建立连接，即认为之前的连接还是有效的。&lt;/p&gt;
-
-&lt;p&gt;第3行表示响应的压缩方式。压缩后再传输可以提高效率。&lt;/p&gt;
-
-&lt;p&gt;第4行表示响应的文件类型和字符编码方式。&lt;/p&gt;
-
-&lt;p&gt;第5行的&lt;code class=&quot;highlighter-rouge&quot;&gt;Date&lt;/code&gt;表示生成文件的绝对时间。&lt;/p&gt;
-
-&lt;p&gt;第6行&lt;code class=&quot;highlighter-rouge&quot;&gt;Expires&lt;/code&gt;表示文件过期的绝对时间。同时上面也提到了，其优先级低于&lt;code class=&quot;highlighter-rouge&quot;&gt;Cache-Control&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;第7行的&lt;code class=&quot;highlighter-rouge&quot;&gt;Last-Modified&lt;/code&gt;是服务器告诉浏览器该文件的最后修改时间。&lt;/p&gt;
-
-&lt;p&gt;综上可以看出，该页面的缓存有效时间是10秒。如果不清空缓存，在2016.08.01的13:48:44~13:48:54这个时间段中再次访问服务器，则不会再得到新的页面，而是直接呈现本地缓存。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;4.参考文献&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://blog.csdn.net/zhsh87/article/details/8186753&quot;&gt;HTTP缓存相关的概念&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.cnblogs.com/yjf512/p/3244882.html&quot;&gt;HTTP缓存相关头&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;本文地址：&lt;a href=&quot;https://jjayyyyyyy.github.io/2017/05/01/HTTP_headers.html&quot;&gt;https://jjayyyyyyy.github.io/2017/05/01/HTTP_headers.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;h6&gt;注：本文最初整理于20160801。接下来将会陆续整理一些以前的学习笔记。&lt;/h6&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section-3&quot;&gt;相关阅读&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://book.douban.com/subject/10746113/&quot;&gt;HTTP权威指南&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-        <pubDate>Mon, 01 May 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/05/01/HTTP_headers.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/05/01/HTTP_headers.html</guid>
         
         
       </item>
