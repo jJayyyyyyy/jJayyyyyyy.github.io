@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 20 Jun 2017 15:26:33 +0800</pubDate>
-    <lastBuildDate>Tue, 20 Jun 2017 15:26:33 +0800</lastBuildDate>
+    <pubDate>Tue, 20 Jun 2017 20:20:31 +0800</pubDate>
+    <lastBuildDate>Tue, 20 Jun 2017 20:20:31 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -17,13 +17,13 @@
 
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;p&gt;在课程开始之前，请先完成一些Python的基础测试题，以便我们更好地安排小朋友的课程计划。课程使用的是&lt;code class=&quot;highlighter-rouge&quot;&gt;Python3.6&lt;/code&gt;，所以请升级Python到该版本，下载地址请点击&lt;a href=&quot;https://www.python.org/downloads/release/python-361/&quot;&gt;这里&lt;/a&gt;。&lt;/p&gt;
+    &lt;p&gt;在课程开始之前，请先完成一些Python的基础测试题，以便我们更好地安排小朋友的课程计划。课程使用的是&lt;code class=&quot;highlighter-rouge&quot;&gt;Python3.6&lt;/code&gt;，所以请升级Python到该版本，下载地址请点击 &lt;strong&gt;&lt;a href=&quot;https://www.python.org/downloads/release/python-361/&quot;&gt;这里&lt;/a&gt;&lt;/strong&gt;。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;对于每一个题目，首先请&lt;strong&gt;仔细阅读代码&lt;/strong&gt;，然后在纸上&lt;strong&gt;写下逻辑和过程&lt;/strong&gt;，以及你所&lt;strong&gt;预期的结果&lt;/strong&gt;。最后，请&lt;strong&gt;手动输入代码(不是复制粘贴)&lt;/strong&gt;并运行该程序，然后检查你预期的答案。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;注意，测试题中可能存在一些&lt;strong&gt;陷阱和错误&lt;/strong&gt;。请在阅读代码时记录并改正错误，或者在运行代码发生错误时进行debug，并做好相关记录。这部分内容可能存在一定的难度，所以需要鼓励小朋友勇敢尝试，不用担心做不出来。&lt;/p&gt;
+    &lt;p&gt;注意，测试题中可能存在一些&lt;strong&gt;陷阱和错误&lt;/strong&gt;。请在阅读代码时记录并改正错误，或者在运行代码发生错误时进行debug，并做好相关记录。这部分内容不多，但可能存在一定的难度，所以需要鼓励小朋友勇敢尝试，不用担心做不出来。&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;请认真完成这些题目，并&lt;strong&gt;记录&lt;/strong&gt;答题情况和答题时间。&lt;/p&gt;
@@ -71,7 +71,7 @@
   &lt;li&gt;
     &lt;p&gt;Test01&lt;/p&gt;
 
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 请问运行结果是什么?&lt;/span&gt;
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 请写出运行结果。&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# Please write down the output of this program.&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
@@ -90,7 +90,7 @@
   &lt;li&gt;
     &lt;p&gt;Test02&lt;/p&gt;
 
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 请问运行结果是什么?&lt;/span&gt;
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 请写出运行结果。&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# Please write down the output of this program.&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;weight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Please input your weight(kg): '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -111,18 +111,18 @@
   &lt;li&gt;
     &lt;p&gt;Test03&lt;/p&gt;
 
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 1. 请问运行结果是什么?&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 1. Please write down the output of this program.&lt;/span&gt;
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 1. 请写出运行结果。&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#    Please write down the output of this program.&lt;/span&gt;
 	
 &lt;span class=&quot;c&quot;&gt;# 2. 如何得到所有人的名字(去掉数字)?&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 2. How to output only the names and skip all the numbers?&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#    How to output only the names and skip all the numbers?&lt;/span&gt;
 	
 &lt;span class=&quot;c&quot;&gt;# 3. 如何按照字典序输出所有姓名?&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# 3. And then, how to output this list of names in alphabet order?&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#    And then, how to output this list of names in alphabet order?&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;friends&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Ann'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Chris'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Dobby'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Bob'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Emma'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;friends&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Frederick'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;friends&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pop&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# friends.pop()&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;friends&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[:])&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -136,7 +136,7 @@
   &lt;li&gt;
     &lt;p&gt;Test04&lt;/p&gt;
 
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 请问运行结果是什么?&lt;/span&gt;
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 请写出运行结果。&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# Please write down the output of this program.&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_cakes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
@@ -158,7 +158,7 @@
   &lt;li&gt;
     &lt;p&gt;Test05(&lt;code class=&quot;highlighter-rouge&quot;&gt;time&lt;/code&gt;模块的相关知识可以查看&lt;a href=&quot;https://docs.python.org/3/library/time.html?highlight=time#time.localtime&quot;&gt;Python Docs: time.localtime()&lt;/a&gt;)&lt;/p&gt;
 
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 请问运行结果是什么? &lt;/span&gt;
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 请写出运行结果。&lt;/span&gt;
 &lt;span class=&quot;c&quot;&gt;# Please write down the output of this program.&lt;/span&gt;
 
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt;

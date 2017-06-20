@@ -7,11 +7,11 @@ title: Python课程基础测试
 
 ##	说明
 
-*	在课程开始之前，请先完成一些Python的基础测试题，以便我们更好地安排小朋友的课程计划。课程使用的是`Python3.6`，所以请升级Python到该版本，下载地址请点击[这里](https://www.python.org/downloads/release/python-361/)。
+*	在课程开始之前，请先完成一些Python的基础测试题，以便我们更好地安排小朋友的课程计划。课程使用的是`Python3.6`，所以请升级Python到该版本，下载地址请点击 **[这里](https://www.python.org/downloads/release/python-361/)**。
 
 *	对于每一个题目，首先请**仔细阅读代码**，然后在纸上**写下逻辑和过程**，以及你所**预期的结果**。最后，请**手动输入代码(不是复制粘贴)**并运行该程序，然后检查你预期的答案。
 
-*	注意，测试题中可能存在一些**陷阱和错误**。请在阅读代码时记录并改正错误，或者在运行代码发生错误时进行debug，并做好相关记录。这部分内容可能存在一定的难度，所以需要鼓励小朋友勇敢尝试，不用担心做不出来。
+*	注意，测试题中可能存在一些**陷阱和错误**。请在阅读代码时记录并改正错误，或者在运行代码发生错误时进行debug，并做好相关记录。这部分内容不多，但可能存在一定的难度，所以需要鼓励小朋友勇敢尝试，不用担心做不出来。
 
 *	请认真完成这些题目，并**记录**答题情况和答题时间。
 
@@ -49,7 +49,7 @@ title: Python课程基础测试
 *	Test01
 
 	```python
-	# 请问运行结果是什么?
+	# 请写出运行结果。
 	# Please write down the output of this program.
 
 	num = 0
@@ -64,7 +64,7 @@ title: Python课程基础测试
 *	Test02
 
 	```python
-	# 请问运行结果是什么?
+	# 请写出运行结果。
 	# Please write down the output of this program.
 
 	weight = input('Please input your weight(kg): ')
@@ -81,18 +81,18 @@ title: Python课程基础测试
 *	Test03
 
 	```python
-	# 1. 请问运行结果是什么?
-	# 1. Please write down the output of this program.
+	# 1. 请写出运行结果。
+	#    Please write down the output of this program.
 	
 	# 2. 如何得到所有人的名字(去掉数字)?
-	# 2. How to output only the names and skip all the numbers?
+	#    How to output only the names and skip all the numbers?
 	
 	# 3. 如何按照字典序输出所有姓名?
-	# 3. And then, how to output this list of names in alphabet order?
+	#    And then, how to output this list of names in alphabet order?
 
 	friends = [1, 'Ann', 'Chris', 'Dobby', 'Bob', 'Emma', 100]
 	friends.append('Frederick')
-	friends.pop()
+	# friends.pop()
 
 	print(friends[:])
 	```
@@ -102,7 +102,7 @@ title: Python课程基础测试
 *	Test04
 
 	```python
-	# 请问运行结果是什么?
+	# 请写出运行结果。
 	# Please write down the output of this program.
 
 	def get_cakes(num=1):
@@ -120,7 +120,7 @@ title: Python课程基础测试
 *	Test05(`time`模块的相关知识可以查看[Python Docs: time.localtime()](https://docs.python.org/3/library/time.html?highlight=time#time.localtime))
 
 	```python
-	# 请问运行结果是什么? 
+	# 请写出运行结果。
 	# Please write down the output of this program.
 
 	import time
