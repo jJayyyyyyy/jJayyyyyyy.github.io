@@ -132,7 +132,7 @@ title: Python课程基础测试
 
 <br/>
 
-本文地址：[https://jjayyyyyyy.github.io/2017/06/20/pre_tests_for_python.html](https://jjayyyyyyy.github.io/2017/06/20/pre_tests_for_python.html)
+本文地址：[https://jjayyyyyyy.github.io/2017/06/20/basic_python_tests.html](https://jjayyyyyyy.github.io/2017/06/20/basic_python_tests.html)
 
 (END)
 
