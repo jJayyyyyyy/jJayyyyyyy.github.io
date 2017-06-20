@@ -50,7 +50,7 @@ title: Python课程基础测试
 
 	```python
 	# 请问运行结果是什么?
-	# What's the output of this program?
+	# Please write down the output of this program.
 
 	num = 0
 	top = 10
@@ -65,7 +65,7 @@ title: Python课程基础测试
 
 	```python
 	# 请问运行结果是什么?
-	# What's the output of this program?
+	# Please write down the output of this program.
 
 	weight = input('Please input your weight(kg): ')
 
@@ -81,8 +81,14 @@ title: Python课程基础测试
 *	Test03
 
 	```python
-	# 请问运行结果是什么? 如何得到所有人的名字(去掉数字)? 如何按照字典序输出所有姓名?
-	# What's the output of this program? How to output only the names and skip all the numbers? And then, how to output the list of names in alphabet order?
+	# 1. 请问运行结果是什么?
+	# 1. Please write down the output of this program.
+	
+	# 2. 如何得到所有人的名字(去掉数字)?
+	# 2. How to output only the names and skip all the numbers?
+	
+	# 3. 如何按照字典序输出所有姓名?
+	# 3. And then, how to output this list of names in alphabet order?
 
 	friends = [1, 'Ann', 'Chris', 'Dobby', 'Bob', 'Emma', 100]
 	friends.append('Frederick')
@@ -97,7 +103,7 @@ title: Python课程基础测试
 
 	```python
 	# 请问运行结果是什么?
-	# What's the output of this program?
+	# Please write down the output of this program.
 
 	def get_cakes(num=1):
 	    cakes = []
@@ -114,8 +120,8 @@ title: Python课程基础测试
 *	Test05(`time`模块的相关知识可以查看[Python Docs: time.localtime()](https://docs.python.org/3/library/time.html?highlight=time#time.localtime))
 
 	```python
-	# 运行结果是什么? 
-	# What's the output of this program?
+	# 请问运行结果是什么? 
+	# Please write down the output of this program.
 
 	import time
 	print(time.ctime())

@@ -5,8 +5,8 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 20 Jun 2017 12:08:42 +0800</pubDate>
-    <lastBuildDate>Tue, 20 Jun 2017 12:08:42 +0800</lastBuildDate>
+    <pubDate>Tue, 20 Jun 2017 12:13:55 +0800</pubDate>
+    <lastBuildDate>Tue, 20 Jun 2017 12:13:55 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
@@ -72,7 +72,7 @@
     &lt;p&gt;Test01&lt;/p&gt;
 
     &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 请问运行结果是什么?&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# What's the output of this program?&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Please write down the output of this program.&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;num&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;top&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;
@@ -91,7 +91,7 @@
     &lt;p&gt;Test02&lt;/p&gt;
 
     &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 请问运行结果是什么?&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# What's the output of this program?&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Please write down the output of this program.&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;weight&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Please input your weight(kg): '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
@@ -111,8 +111,14 @@
   &lt;li&gt;
     &lt;p&gt;Test03&lt;/p&gt;
 
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 请问运行结果是什么? 如何得到所有人的名字(去掉数字)? 如何按照字典序输出所有姓名?&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# What's the output of this program? How to output only the names and skip all the numbers? And then, how to output the list of names in alphabet order?&lt;/span&gt;
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 1. 请问运行结果是什么?&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 1. Please write down the output of this program.&lt;/span&gt;
+	
+&lt;span class=&quot;c&quot;&gt;# 2. 如何得到所有人的名字(去掉数字)?&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 2. How to output only the names and skip all the numbers?&lt;/span&gt;
+	
+&lt;span class=&quot;c&quot;&gt;# 3. 如何按照字典序输出所有姓名?&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# 3. And then, how to output this list of names in alphabet order?&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;friends&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Ann'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Chris'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Dobby'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Bob'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'Emma'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;friends&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Frederick'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -131,7 +137,7 @@
     &lt;p&gt;Test04&lt;/p&gt;
 
     &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 请问运行结果是什么?&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# What's the output of this program?&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Please write down the output of this program.&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_cakes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;num&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;cakes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
@@ -152,8 +158,8 @@
   &lt;li&gt;
     &lt;p&gt;Test05(&lt;code class=&quot;highlighter-rouge&quot;&gt;time&lt;/code&gt;模块的相关知识可以查看&lt;a href=&quot;https://docs.python.org/3/library/time.html?highlight=time#time.localtime&quot;&gt;Python Docs: time.localtime()&lt;/a&gt;)&lt;/p&gt;
 
-    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 运行结果是什么? &lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;# What's the output of this program?&lt;/span&gt;
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 请问运行结果是什么? &lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Please write down the output of this program.&lt;/span&gt;
 
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;time&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;time&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ctime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;())&lt;/span&gt;
