@@ -22,6 +22,14 @@ title: FFMPEG学习笔记
 	$ ffmpeg -i I_do.mp3 -ss 25 -to 85 -acodec copy I_do__snippet.mp3
 	```
 
+*	格式转换
+
+	通过Mac中的`quickTime Player`可以录制声音，不过输出是`m4a`格式的音频。我们可以用ffmpeg将其转为`mp3`格式的音频。
+
+	```
+	ffmpeg -i bingo.m4a -acodec libmp3lame -ab 128k bingo.mp3
+	```
+
 ##	视频
 
 *	分离音频和图像
@@ -43,3 +51,5 @@ title: FFMPEG学习笔记
 1.	[通过 ffmpeg 无损剪切/拼接视频](https://segmentfault.com/a/1190000000414341)
 
 2.	[Useful FFmpeg Commands](http://www.labnol.org/internet/useful-ffmpeg-commands/28490/)
+
+3.	[Convert M4A to MP3 using FFMPEG](https://ubuntuforums.org/showthread.php?t=1614765)

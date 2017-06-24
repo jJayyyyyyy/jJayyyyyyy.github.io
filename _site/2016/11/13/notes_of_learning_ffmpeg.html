@@ -73,6 +73,15 @@
 </code></pre>
     </div>
   </li>
+  <li>
+    <p>格式转换</p>
+
+    <p>通过Mac中的<code class="highlighter-rouge">quickTime Player</code>可以录制声音，不过输出是<code class="highlighter-rouge">m4a</code>格式的音频。我们可以用ffmpeg将其转为<code class="highlighter-rouge">mp3</code>格式的音频。</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>ffmpeg -i bingo.m4a -acodec libmp3lame -ab 128k bingo.mp3
+</code></pre>
+    </div>
+  </li>
 </ul>
 
 <h2 id="section-1">视频</h2>
@@ -103,6 +112,9 @@
   </li>
   <li>
     <p><a href="http://www.labnol.org/internet/useful-ffmpeg-commands/28490/">Useful FFmpeg Commands</a></p>
+  </li>
+  <li>
+    <p><a href="https://ubuntuforums.org/showthread.php?t=1614765">Convert M4A to MP3 using FFMPEG</a></p>
   </li>
 </ol>
 
