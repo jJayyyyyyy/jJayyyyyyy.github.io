@@ -5,9 +5,49 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 24 Jun 2017 09:01:41 +0800</pubDate>
-    <lastBuildDate>Sat, 24 Jun 2017 09:01:41 +0800</lastBuildDate>
+    <pubDate>Mon, 26 Jun 2017 09:12:35 +0800</pubDate>
+    <lastBuildDate>Mon, 26 Jun 2017 09:12:35 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>魔术师约翰逊与保罗乔治</title>
+        <description>&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;NBA的自由市场马上就要打开了，去年KD进入勇士，今年又有海沃德、CP3、格里芬等，而明年将要成为自由球员的保罗乔治也已经表示，除了湖人哪儿也不去。由于魔术师约翰逊现在是湖人的总经理，MJ自然也不会闲着。而且湖人也是希望能够尽早得到PG，毕竟有那么大的转播合同，总是摆烂也不好。&lt;/p&gt;
+
+&lt;p&gt;前两天在&lt;a href=&quot;https://www.youtube.com/watch?v=wDVT_koK26o&quot;&gt;这里&lt;/a&gt;看到了一个对PG的采访，其中夹带了一段对MJ的采访，MJ很好玩很幽默。我们先来看看视频吧。&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/wDVT_koK26o&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;NBA似乎有个规定，就是在自由市场开启之前，不允许球队经理和其他球队的球员进行私人接触。&lt;/p&gt;
+
+&lt;p&gt;所以主持人问了个问题：假如你在度假的时候偶遇了PG，你是不是连话都不能和他说呢？&lt;/p&gt;
+
+&lt;p&gt;MJ：不不不，我们肯定会互相打招呼，因为我俩认识。我只是不能说，“嘿PG，来湖人打球吧！”尽管如此，我仍然可以对他眨眼、使眼色（虽然不说，但意图也够明显了对吧），你肯定知道这是什么意思对吧😉，哈哈哈哈哈&lt;/p&gt;
+
+&lt;p&gt;视频肯定比文字更加生动，而且就算英文不好，但是如果对事情的背景有所了解，那肯定能够猜出来魔术师说的是什么意思，MJ确实是一个幽默的人。&lt;/p&gt;
+
+&lt;p&gt;当然，步行者也不愿意明年白白损失球队核心，肯定会寻求交易，以便帮助球队重建。而对于PG，一方面由于球队这几年的补强工作一直不尽如人意，在东部一直无法突破LBJ，更不用说总决赛了。另一方面，能回到家乡打球，对他来说也是一件非常令人激动的事情。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;本文地址：&lt;a href=&quot;https://jjayyyyyyy.github.io/2017/06/25/magic_johnson_paul_george.html&quot;&gt;https://jjayyyyyyy.github.io/2017/06/25/magic_johnson_paul_george.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;相关阅读&lt;/h2&gt;
+
+</description>
+        <pubDate>Sun, 25 Jun 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/06/25/magic_johnson_paul_george.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/06/25/magic_johnson_paul_george.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>Python课程基础测试</title>
@@ -923,164 +963,6 @@ n.
         <pubDate>Fri, 05 May 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/05/05/generic.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/05/05/generic.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>HTTPS证书，类型及特点</title>
-        <description>&lt;h1 id=&quot;section&quot;&gt;1. 简介&lt;/h1&gt;
-
-&lt;p&gt;HTTPS即Hypertext Transfer Protocol Secure。由于其安全层使用的是TLS/SSL，因此HTTPS也可以称为HTTP over TLS或HTTP over SSL。&lt;/p&gt;
-
-&lt;p&gt;“HTTPS证书”又叫“SSL证书”、“SSL安全证书”、“SSL数字证书”，目前应用广泛，发展迅速。&lt;/p&gt;
-
-&lt;p&gt;SSL证书需要向国际公认的证书证书认证机构（简称CA，Certificate Authority）申请。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h1 id=&quot;https&quot;&gt;2. HTTPS证书分类&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;2.1 按验证等级&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;域名型SSL证书，DVSSL，Domain Validation SSL Certificate&lt;/p&gt;
-
-    &lt;p&gt;信任等级普通，只需验证网站的真实性便可颁发证书保护网站。无需人工审核，快速颁发。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;企业组织型SSL证书，OVSSL，Organization Validation SSL Certificate&lt;/p&gt;
-
-    &lt;p&gt;信任等级强，须要验证企业的身份，审核严格，安全性更高。需要人工审核，证书包含企业认证信息。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;增强扩展型SSL证书，EVSSL，Extended Validation SSL Certificate&lt;/p&gt;
-
-    &lt;p&gt;信任等级最高，一般用于银行证券等金融机构，人工审核，审核严格，颁发之后可以使网站域名在浏览器地址栏变成绿色。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;DVSSL&lt;/th&gt;
-      &lt;th&gt;OVSSL&lt;/th&gt;
-      &lt;th&gt;EVSSL&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;信任等级普通，只需验证网站的真实性便可颁发证书保护网站&lt;/td&gt;
-      &lt;td&gt;信任等级强，须要验证企业的身份，审核严格，安全性更高&lt;/td&gt;
-      &lt;td&gt;信任等级最高，一般用于银行证券等金融机构&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;无需人工审核，快速颁发&lt;/td&gt;
-      &lt;td&gt;需要人工审核，证书包含企业认证信息&lt;/td&gt;
-      &lt;td&gt;人工严格审核，颁发之后可以使网站域名在浏览器地址栏变成绿色&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2.2 按保护域名数量&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;单域名型证书, Single Domain SSL Certificates&lt;/p&gt;
-
-    &lt;p&gt;一张SSL证书保护一个域名，一个网站的安全。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;多域名型证书 	Multi Domain SSL Certificates&lt;/p&gt;
-
-    &lt;p&gt;一张SSL证书可以保护多个域名，多个网站的安全，多域型SSL证书。支持任何域名，可以是不同的顶级域名（如：hello.com, tv.com, example.com）。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;通配符型证书, Wildcard SSL Certificates&lt;/p&gt;
-
-    &lt;p&gt;一张SSL证书可以保护相同主域名下所有的子域名的安全。通配型证书只支持*.domain.com通配符子域名（如：a.hello.com, b.hello.com、c.hello.com）。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;其中，单域名型证书和多域名证书分为三种验证等级：DV, OV, EV。
-而通配符型证书只有DV和OV两种。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;单域名型证书&lt;/th&gt;
-      &lt;th&gt;多域名型证书&lt;/th&gt;
-      &lt;th&gt;通配符型证书&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;一张SSL证书保护一个域名，一个网站的安全&lt;/td&gt;
-      &lt;td&gt;一张SSL证书可以保护多个域名，多个网站的安全，多域型SSL证书。支持任何域名，可以是不同的顶级域名&lt;/td&gt;
-      &lt;td&gt;一张SSL证书可以保护相同主域名下所有的子域名的安全&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;仅支持1个域名&lt;/td&gt;
-      &lt;td&gt;最多支持50个域名&lt;/td&gt;
-      &lt;td&gt;不限制子域名数量&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-      &lt;td&gt; &lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;可选DV, OV, EV三种等级&lt;/td&gt;
-      &lt;td&gt;可选DV, OV, EV三种等级&lt;/td&gt;
-      &lt;td&gt;可选DV, OV两种等级&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;3.参考文献&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://baike.baidu.com/view/5262561.htm&quot;&gt;baike&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.zhihu.com/question/19578422/answer/114210307&quot;&gt;zhihu&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.sslzhengshu.com/article/post-36.html&quot;&gt;SSLzhengshu-SD_MD_Wildcard&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.sslzhengshu.com/article/post-35.html&quot;&gt;SSLzhengshu-DV_OV_EV&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.evtrust.com/ssl.html&quot;&gt;EVTrust&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;本文地址：&lt;a href=&quot;https://jjayyyyyyy.github.io/2017/05/04/https_certificates.html&quot;&gt;https://jjayyyyyyy.github.io/2017/05/04/https_certificates.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;h6&gt;注：本文最初整理于20161018。接下来将会陆续整理一些以前的学习笔记。&lt;/h6&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section-2&quot;&gt;相关阅读&lt;/h2&gt;
-</description>
-        <pubDate>Thu, 04 May 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/05/04/https_certificates.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/05/04/https_certificates.html</guid>
         
         
       </item>
