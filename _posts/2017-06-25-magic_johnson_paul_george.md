@@ -34,3 +34,5 @@ MJ：不不不，我们肯定会互相打招呼，因为我俩认识。我只是
 
 ##	相关阅读
 
+*	[禁止球队经理私下接触它队球员，这种规定的意义何在？](https://bbs.hupu.com/18272250.html)
+*	[Magic Johnson on Making Lakers Great Again](https://www.youtube.com/watch?v=4HN0caXjW3s)
