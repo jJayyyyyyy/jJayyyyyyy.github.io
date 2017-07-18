@@ -5,9 +5,51 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 11 Jul 2017 08:52:16 +0800</pubDate>
-    <lastBuildDate>Tue, 11 Jul 2017 08:52:16 +0800</lastBuildDate>
+    <pubDate>Tue, 18 Jul 2017 21:00:12 +0800</pubDate>
+    <lastBuildDate>Tue, 18 Jul 2017 21:00:12 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>利用深度学习完成专业级摄影</title>
+        <description>&lt;p&gt;这是&lt;strong&gt;翻译&lt;/strong&gt;系列的一篇文章。原文来自Nature的新闻&lt;a href=&quot;https://research.googleblog.com/2017/07/using-deep-learning-to-create.html&quot;&gt;Using Deep Learning to Create Professional-Level Photographs&lt;/a&gt;，发布于2017年7月13日。先放上链接，慢慢填坑。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/jJayyyyyyy/jjayyyyyyy.github.io/master/assets/post_images/2017-07-18/photograph_Jasper_National_Park_Canada.jpg&quot; alt=&quot;A professional(?) photograph of Jasper National Park, Canada.&quot; /&gt;
+&lt;h6&gt;A professional(?) photograph of Jasper National Park, Canada.&lt;/h6&gt;
+&lt;/div&gt;
+
+&lt;!-- TODO: 以下是译文。 --&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;本文地址：&lt;a href=&quot;https://jjayyyyyyy.github.io/2017/07/18/Using_Deep_Learning_to_Create_Professional-Level_Photographs.html&quot;&gt;https://jjayyyyyyy.github.io/2017/07/18/Using_Deep_Learning_to_Create_Professional-Level_Photographs.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;相关阅读&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://google.github.io/creatism/&quot;&gt;creatism&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1707.03491&quot;&gt;paper&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://9to5google.com/2017/07/14/google-using-ai-to-turn-street-view-images-into-professional-quality-photos/&quot;&gt;Google using AI to turn Street View images into professional-quality photos&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Tue, 18 Jul 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/07/18/Using_Deep_Learning_to_Create_Professional-Level_Photographs.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/07/18/Using_Deep_Learning_to_Create_Professional-Level_Photographs.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>古罗马的混泥土为何能保持坚固耐用？</title>
@@ -875,107 +917,6 @@ Address: 112.80.248.73
         <pubDate>Wed, 17 May 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/05/17/GSLB.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/05/17/GSLB.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>opposition</title>
-        <description>&lt;p&gt;对于&lt;code class=&quot;highlighter-rouge&quot;&gt;opposition&lt;/code&gt;这个词，以前只知道是&lt;code class=&quot;highlighter-rouge&quot;&gt;反对&lt;/code&gt;的意思。&lt;/p&gt;
-
-&lt;p&gt;今天，偶然发现，它还有一个意思——&lt;code class=&quot;highlighter-rouge&quot;&gt;在野党&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;一直不明白这些政治词汇是什么意思，查了一下，得到以下几条信息：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/zh-hans/%E5%9C%A8%E9%87%8E%E9%BB%A8&quot;&gt;维基百科(中文)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;在野党，也称为反对党、反对派，也表示政党政治民主国家内未执政的政党，和执政党是互斥的集合，通常亦是反对党。特别是在议会民主国家中，最大在野党常以执政预备（在野）的身份提出和执政党竞争的政策。
-在野党有监督在朝执政党的责任，可避免执政党一意孤行或不理会在野党的利益及立场，反映社会不同地域及阶层的意见；民主国家的在野党在野时，如果努力地为国家尽力，获得选民支持，可能将会在下次的选举中，击败原执政党，成为新的执政党。这种情况称为政党轮替，要注意的是这时执政党与在野党的角色会互换，直到下一次的政党轮替发生。
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/div&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Opposition_(parliamentary)&quot;&gt;维基百科(英文)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Parliamentary opposition is a form of political opposition to a designated government, particularly in a Westminster-based parliamentary system.
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/div&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://baike.baidu.com/item/%E5%9C%A8%E9%87%8E%E5%85%9A&quot;&gt;度娘百科&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;在野党，即多党执政国家（或地区）中没有执掌或没有参与执掌国家行政权力的政党。
-在野党是指政党政治国家内未执政的政党，和执政党是互斥的集合，通常也称反对党。
-特别是在民主国家中，主要在野党常以执政预备军的身分提出和执政党竞争的政策。 在野党有监督在朝执政党的责任，可避免执政党一意孤行，反应社会不同地域人民的意见；民主国家的在野党在野时，如果努力的为国家尽力，可能将会在下次的选举中，击败原执政党，成为新的执政党。这种情况称为政党轮替，要注意的是这时执政党与在野党的角色会互换，直到下一次政党轮替发生。
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/div&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;http://iask.sina.com.cn/b/4816644.html&quot;&gt;新浪爱问&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;“在野党”是对资本主义国家执政党以外的政党的称谓。在内阁制国家，控制议会多数席位的党为执政党，其他党即为在野党，即“不在台上”的意思。在多数资本主义国家，在野党即反对党，而在英国等实行反对党制度的国家，在野党不一定是法定反对党。
-所谓在野党，是指另一个或另一些由于在竞选中没有获得多数议席或总统职位，不能组织政府、执掌国家行政权力或没有参加政府内阁的政党。由于没有执掌国家政权，在野党对政府推选的政策不承担任何责任，可以放任自由地指责、抨击政府的各项政策，在各种场合、通过各种手段牵制和监督执政党的活动，要求执政党采取符合他们利益的政策，甚至可以通过法定程序实行倒阁，使自己取而代之。
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/div&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;这样就大致明白了，为啥opposition会有在野党的意思。因为它是反对/监督执政党的。&lt;/p&gt;
-
-&lt;p&gt;另外，对于什么是&lt;code class=&quot;highlighter-rouge&quot;&gt;在野&lt;/code&gt;，或者什么是&lt;code class=&quot;highlighter-rouge&quot;&gt;野&lt;/code&gt;，在另一条&lt;a href=&quot;http://iask.sina.com.cn/b/1902237.html&quot;&gt;新浪爱问&lt;/a&gt;中，指出了&lt;code class=&quot;highlighter-rouge&quot;&gt;野&lt;/code&gt;就是&lt;code class=&quot;highlighter-rouge&quot;&gt;民间&lt;/code&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;在中国，有一句话叫做朝野上下，即执政的在朝，不执政在野。
-朝野清晏，国富兵强。——《晋书》中野的意思就是指民间。与朝廷相对。
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/div&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;在&lt;a href=&quot;http://baike.baidu.com/item/%E6%9C%9D%E9%87%8E&quot;&gt;度娘百科&lt;/a&gt;中，朝野是这样解释的&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;朝野，原指朝廷和民间，现指政府方面和非政府方面。
-&lt;/code&gt;&lt;/pre&gt;
-  &lt;/div&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;参考文献&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://zh.wikipedia.org/zh-hans/%E5%9C%A8%E9%87%8E%E9%BB%A8&quot;&gt;维基百科(中文)：在野党&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Opposition_(parliamentary)&quot;&gt;维基百科(英文)：opposition_(parliamentary)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://baike.baidu.com/item/%E5%9C%A8%E9%87%8E%E5%85%9A&quot;&gt;度娘百科：在野党&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://iask.sina.com.cn/b/4816644.html&quot;&gt;新浪爱问：在野党1&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://iask.sina.com.cn/b/1902237.html&quot;&gt;新浪爱问：在野党2&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://baike.baidu.com/item/%E6%9C%9D%E9%87%8E&quot;&gt;度娘百科：朝野&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;本文地址：&lt;a href=&quot;https://jjayyyyyyy.github.io/2017/05/16/opposition.html&quot;&gt;https://jjayyyyyyy.github.io/2017/05/16/opposition.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;相关阅读&lt;/h2&gt;
-</description>
-        <pubDate>Tue, 16 May 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/05/16/opposition.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/05/16/opposition.html</guid>
         
         
       </item>
