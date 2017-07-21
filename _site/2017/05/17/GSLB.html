@@ -93,7 +93,10 @@
 
 <p><em>图1.1</em>是负载均衡的示意图。从图中可以看出，负载均衡设备可以在用户请求到达服务器之前将其截获，然后将其分发到合适的后端服务器。</p>
 
-<p><img src="" alt="SLB" /></p>
+<div align="center">
+<img src="https://raw.githubusercontent.com/jJayyyyyyy/jjayyyyyyy.github.io/master/assets/post_images/2017-05-17/SLB.png" alt="SLB" />
+<h6>图1.1 SLB示意图</h6>
+</div>
 
 <p>也就是说，客户端发出的请求，首先会到负载均衡设备的IP地址上。因为该IP地址并不负责处理实际的业务，所以通常将该地址称为【虚拟IP】(Virtual IP, <strong>VIP</strong>)。</p>
 
@@ -187,11 +190,17 @@
 
 <p>DNS是一个应用层协议，但它通常被其他的应用层协议使用，以便将主机名(host)解析为IP地址。DNS的工作流程如图2.1</p>
 
-<p><img src="" alt="DNS workflow" /></p>
+<div align="center">
+<img src="https://raw.githubusercontent.com/jJayyyyyyy/jjayyyyyyy.github.io/master/assets/post_images/2017-05-17/DNS_workflow.png" alt="DNS_workflow" />
+<h6>图2.1 DNS的基本工作流程</h6>
+</div>
 
 <p>在第4步中,本地DNS服务器(<code class="highlighter-rouge">Local DNS, LDNS</code>)在得到浏览器解析的域名请求后，会采用迭代或递归查询的方式，向DNS 系统中其他远程域名服务器提出查询请求，如图 2.2 所示。</p>
 
-<p><img src="" alt="iterative query" /></p>
+<div align="center">
+<img src="https://raw.githubusercontent.com/jJayyyyyyy/jjayyyyyyy.github.io/master/assets/post_images/2017-05-17/DNS_iterative_query.png" alt="iterative_query" />
+<h6>图2.2 域名解析</h6>
+</div>
 
 <p>如果<code class="highlighter-rouge">LDNS</code>中没有关于这个域名的缓存，则首先会去根域名服务器请求解析<code class="highlighter-rouge">.root</code>，收到其返回的<code class="highlighter-rouge">.com</code>域的域名服务器列表。LDNS在该列表中选出一个域名服务器，对其发出域名解析请求。</p>
 
@@ -351,6 +360,21 @@ Address: 112.80.248.73
 			})();
 		</script>
 		
+		
+			<div class="media">
+				<div class="media-left">
+					<img src="https://avatars2.githubusercontent.com/u/9337766?v=4&s=73" alt="jingb" height="73" width="73">
+				</div>
+				<div class="media-body">
+					<p class="text-muted">
+						<a href="https://github.com/jingb">jingb</a> on 21 Jul 2017
+					</p>
+					<p>
+						<p>图片加载不出呀</p>
+
+					</p>
+				</div>
+			</div>
 		
 	</div>
 

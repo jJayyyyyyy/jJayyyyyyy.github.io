@@ -5,13 +5,55 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 18 Jul 2017 21:00:12 +0800</pubDate>
-    <lastBuildDate>Tue, 18 Jul 2017 21:00:12 +0800</lastBuildDate>
+    <pubDate>Fri, 21 Jul 2017 21:20:42 +0800</pubDate>
+    <lastBuildDate>Fri, 21 Jul 2017 21:20:42 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
     
       <item>
+        <title>来自太空的8张图片</title>
+        <description>&lt;p&gt;这是&lt;strong&gt;翻译&lt;/strong&gt;系列的一篇文章。原文来自 Google 的新闻&lt;a href=&quot;https://www.google.com/culturalinstitute/beta/theme/0QLyZrtnt4d2Iw&quot;&gt;8 Photos from Space that will Blow your Mind&lt;/a&gt;，发布于20xx年xx月xx日。先放上链接，慢慢填坑。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;div align=&quot;center&quot;&gt;
+&lt;img src=&quot;https://raw.githubusercontent.com/jJayyyyyyy/jjayyyyyyy.github.io/master/assets/post_images/2017-07-18/photograph_Jasper_National_Park_Canada.jpg&quot; alt=&quot;A professional(?) photograph of Jasper National Park, Canada.&quot; /&gt;
+&lt;h6&gt;A professional(?) photograph of Jasper National Park, Canada.&lt;/h6&gt;
+&lt;/div&gt;
+
+&lt;!-- TODO: 以下是译文。 --&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;本文地址：&lt;a href=&quot;https://jjayyyyyyy.github.io/2017/07/18/Using_Deep_Learning_to_Create_Professional-Level_Photographs.html&quot;&gt;https://jjayyyyyyy.github.io/2017/07/18/Using_Deep_Learning_to_Create_Professional-Level_Photographs.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;相关阅读&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://google.github.io/creatism/&quot;&gt;creatism&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://arxiv.org/abs/1707.03491&quot;&gt;paper&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;a href=&quot;https://9to5google.com/2017/07/14/google-using-ai-to-turn-street-view-images-into-professional-quality-photos/&quot;&gt;Google using AI to turn Street View images into professional-quality photos&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Thu, 20 Jul 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/07/20/8_photos_from_space.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/07/20/8_photos_from_space.html</guid>
+        
+        
+      </item>
+    
+      <item>
         <title>利用深度学习完成专业级摄影</title>
-        <description>&lt;p&gt;这是&lt;strong&gt;翻译&lt;/strong&gt;系列的一篇文章。原文来自Nature的新闻&lt;a href=&quot;https://research.googleblog.com/2017/07/using-deep-learning-to-create.html&quot;&gt;Using Deep Learning to Create Professional-Level Photographs&lt;/a&gt;，发布于2017年7月13日。先放上链接，慢慢填坑。&lt;/p&gt;
+        <description>&lt;p&gt;这是&lt;strong&gt;翻译&lt;/strong&gt;系列的一篇文章。原文来自 Google 的新闻&lt;a href=&quot;https://research.googleblog.com/2017/07/using-deep-learning-to-create.html&quot;&gt;Using Deep Learning to Create Professional-Level Photographs&lt;/a&gt;，发布于2017年7月13日。先放上链接，慢慢填坑。&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
@@ -678,245 +720,6 @@ wc &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1&lt;span class=&quot;o&quot;&g
         <pubDate>Sat, 03 Jun 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/06/03/wc.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/06/03/wc.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>全局负载均衡GSLB学习笔记</title>
-        <description>&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 align=&quot;center&quot;&gt;摘要&lt;/h3&gt;
-
-&lt;p&gt;       &lt;strong&gt;GSLB&lt;/strong&gt; 是 &lt;em&gt;Global Server Load Balance&lt;/em&gt; 的缩写，即全局负载均衡。本文首先介绍了什么是负载均衡 &lt;strong&gt;SLB&lt;/strong&gt; ，以及为什么要使用 &lt;strong&gt;SLB&lt;/strong&gt; 。接着引出全局负载均衡 &lt;strong&gt;GSLB&lt;/strong&gt; 的概念和作用。为此介绍了其基于 &lt;strong&gt;DNS&lt;/strong&gt; 进行解析和分配负载的实现，包括 &lt;strong&gt;DNS&lt;/strong&gt; 的原理简介、应用部署中的基本概念、分配负载的决策条件等内容。以外，本文还简单介绍了通过 &lt;strong&gt;HTTP&lt;/strong&gt; 和 &lt;strong&gt;IP&lt;/strong&gt; 实现 &lt;strong&gt;GSLB&lt;/strong&gt; 的方式，并对三者的优缺点进行了简单对比。最后是本文的参考文献。&lt;/p&gt;
-
-&lt;p&gt;关键词: &lt;strong&gt;GSLB&lt;/strong&gt; , &lt;strong&gt;DNS&lt;/strong&gt;, &lt;strong&gt;CDN&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;section&quot;&gt;目录&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;#SLB&quot;&gt;1. 负载均衡 SLB&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;1.1 SLB的简介与作用&lt;/li&gt;
-      &lt;li&gt;1.2 SLB关键技术&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#GSLB&quot;&gt;2. 全局负载均衡 GSLB&lt;/a&gt;
-    &lt;ul&gt;
-      &lt;li&gt;2.1 GSLB的简介与作用&lt;/li&gt;
-      &lt;li&gt;2.2 DNS原理简介&lt;/li&gt;
-      &lt;li&gt;2.3 基于DNS的GSLB&lt;/li&gt;
-      &lt;li&gt;2.4 GSLB的其他实现方式&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;#Reference&quot;&gt;3. 参考文献&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;SLB&quot; align=&quot;center&quot;&gt;1. 负载均衡 SLB&lt;/h3&gt;
-
-&lt;h4 id=&quot;section-1&quot;&gt;&lt;strong&gt;1.1 负载均衡及其作用&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;负载均衡(Server Load Balance, SLB)，其含义是将负载(工作任务)平衡分散到多个服务器上。&lt;strong&gt;CDN&lt;/strong&gt;是典型的负载均衡集群系统。&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;图1.1&lt;/em&gt;是负载均衡的示意图。从图中可以看出，负载均衡设备可以在用户请求到达服务器之前将其截获，然后将其分发到合适的后端服务器。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;&quot; alt=&quot;SLB&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;也就是说，客户端发出的请求，首先会到负载均衡设备的IP地址上。因为该IP地址并不负责处理实际的业务，所以通常将该地址称为【虚拟IP】(Virtual IP, &lt;strong&gt;VIP&lt;/strong&gt;)。&lt;/p&gt;
-
-&lt;p&gt;后端真正的业务服务器被称为【真实服务器】(Real Server, &lt;strong&gt;RS&lt;/strong&gt;)，其IP地址被称为【真实IP】(Real IP, &lt;strong&gt;RIP&lt;/strong&gt;)，负责处理业务。&lt;/p&gt;
-
-&lt;p&gt;举个例子，VIP 就像是前台招待，会告诉你办什么事该去哪个房间。而RIP是内部实际办业务的房间号。&lt;/p&gt;
-
-&lt;p&gt;利用负载均衡，很大程度上可以避免单个服务器过载或者闲置，前者会引起服务能力下降，后者则没有充分利用资源。因此，为了达到更好的系统处理能力，需要进行以下两个步骤：&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;在集群前端部署负载均衡设备&lt;/li&gt;
-  &lt;li&gt;根据预先配置的均衡策略，在集群中智能分发用户请求&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;section-2&quot;&gt;&lt;strong&gt;1.2 负载均衡关键技术&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;要做到负载均衡，需要的问题包括但不限于以下几个方面&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;请求的分发&lt;/li&gt;
-  &lt;li&gt;会话保持&lt;/li&gt;
-  &lt;li&gt;服务健康监测&lt;/li&gt;
-  &lt;li&gt;故障隔离&lt;/li&gt;
-  &lt;li&gt;自动恢复&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;1.2.1 请求分发算法&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;请求分发算法，可以分为【静态算法】和【动态算法】两大类。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;静态算法&lt;/p&gt;
-
-    &lt;p&gt;静态算法是指按照预先设置好的策略进行分发，而不考虑服务器当前的实际负载状况。&lt;/p&gt;
-
-    &lt;p&gt;这类算法包括轮询、加权轮询、基于源IP或目的IP的&lt;strong&gt;hash&lt;/strong&gt;算法等等，优点是简单快捷。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;动态算法&lt;/p&gt;
-
-    &lt;p&gt;动态算法指的是能够根据当前服务器状况进行分发，包括最小连接，加权最小连接等。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;1.2.2 会话保持&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;出于一些业务的特殊要求，有时候需要进行会话保持，以保证一段时间内，某一个用户与系统的交互（会话），只交给同一台服务器处理。&lt;/p&gt;
-
-&lt;p&gt;例如，大多数电商应用需要用户认证，而一次交易需要与服务器多次交互才能完成。这几次交互必须由同一台服务器处理，而不能被分散到不同服务器上。&lt;/p&gt;
-
-&lt;p&gt;会话保持有以下几种方法：&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;源IP地址的持续性保持&lt;/li&gt;
-  &lt;li&gt;cookie 持续性保持&lt;/li&gt;
-  &lt;li&gt;基于HTTP报文头的持续性保持&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;1.2.3 服务器健康检测&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;为了保证服务质量，需要定时进行健康检测。我们可以利用ICMP、TCP、HTTP、FTP等协议进行检测，即主要是在传输层和应用层进行检测。&lt;/p&gt;
-
-&lt;p&gt;应用层的检测颗粒更细，但对系统的要求也比较高，因为需要针对应用层的不同的协议做不同的识别分发机制。应用层检测用的比较多的就是HTTP协议，比如先和集群中的设备建立连接，然后发出请求，如果收到正确应答，则说明HTTP处理正常。&lt;/p&gt;
-
-&lt;p&gt;传输层的检测，主要在于能否建立TCP连接，回响是否正常，等等。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;GSLB&quot; align=&quot;center&quot;&gt;2. 全局负载均衡GSLB&lt;/h3&gt;
-
-&lt;h4 id=&quot;gslb&quot;&gt;&lt;strong&gt;2.1 GSLB的简介与作用&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;GSLB, Global Server Load Balance, 即全局负载均衡。&lt;/p&gt;
-
-&lt;p&gt;由于现实中存在各种不稳定因素，比如某个服务器集群所在的数据中心断电，洪水或者地震造成数据中心瘫痪等等。在一个数据中心内，无论采用怎样的技术，总可能存在一些不可抗因素，导致其瘫痪。所以通常会把服务器分散部署到多个数据中心，以最大程度减小灾害对服务质量产生影响的概率和程度。&lt;/p&gt;
-
-&lt;p&gt;另外，&lt;strong&gt;CDN&lt;/strong&gt;系统总是希望用距离用户最近的设备为其提供服务，这也需要在不同地域部署多个节点。&lt;/p&gt;
-
-&lt;p&gt;GSLB系统就是针对这个问题的。它负责多个CDN节点之间相互协作，将各节点和设备的负载保持在一个有利于提供优质服务的水平。GSLB的负载均衡结果可能直接将用户分配到RS，也可能将用户交付到下一层次的负载均衡系统。&lt;/p&gt;
-
-&lt;p&gt;经过多年发展，已有多种调度机制可实现CDN的全局负载均衡。其中最常用的是基于DNS的GSLB。&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h4 id=&quot;dns&quot;&gt;&lt;strong&gt;2.2 DNS简介&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;&lt;strong&gt;2.2.1 DNS工作流程&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;DNS是一个应用层协议，但它通常被其他的应用层协议使用，以便将主机名(host)解析为IP地址。DNS的工作流程如图2.1&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;&quot; alt=&quot;DNS workflow&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;在第4步中,本地DNS服务器(&lt;code class=&quot;highlighter-rouge&quot;&gt;Local DNS, LDNS&lt;/code&gt;)在得到浏览器解析的域名请求后，会采用迭代或递归查询的方式，向DNS 系统中其他远程域名服务器提出查询请求，如图 2.2 所示。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;&quot; alt=&quot;iterative query&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;如果&lt;code class=&quot;highlighter-rouge&quot;&gt;LDNS&lt;/code&gt;中没有关于这个域名的缓存，则首先会去根域名服务器请求解析&lt;code class=&quot;highlighter-rouge&quot;&gt;.root&lt;/code&gt;，收到其返回的&lt;code class=&quot;highlighter-rouge&quot;&gt;.com&lt;/code&gt;域的域名服务器列表。LDNS在该列表中选出一个域名服务器，对其发出域名解析请求。&lt;/p&gt;
-
-&lt;p&gt;被请求的&lt;code class=&quot;highlighter-rouge&quot;&gt;.com&lt;/code&gt;域的域名会查找&lt;code class=&quot;highlighter-rouge&quot;&gt;CDNbook.com&lt;/code&gt;的权威域名服务器的IP，并将其返回给LDNS。&lt;/p&gt;
-
-&lt;p&gt;由于这个权威域名服务器是&lt;code class=&quot;highlighter-rouge&quot;&gt;CDNbook.com&lt;/code&gt;这个域名授权的，所以&lt;code class=&quot;highlighter-rouge&quot;&gt;LDNS&lt;/code&gt;对权威域名服务器请求后就能得到&lt;code class=&quot;highlighter-rouge&quot;&gt;www.CDNbook.com&lt;/code&gt;的IP地址，并将其返回给客户端。&lt;/p&gt;
-
-&lt;p&gt;另一方面，如果在&lt;code class=&quot;highlighter-rouge&quot;&gt;LDNS&lt;/code&gt;上有&amp;lt;&lt;code class=&quot;highlighter-rouge&quot;&gt;www.CDNbook.com&lt;/code&gt;—&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;&amp;gt;的缓存记录，就可以直接把这个结果返回给客户 端，节省了中间的递归查找步骤时间和资源开销。&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2.2.2 DNS记录的类型&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;DNS服务器是根据资源记录来对DNS请求进行应答的。其中，最常见的是&lt;code class=&quot;highlighter-rouge&quot;&gt;Internet&lt;/code&gt;类的记录(&lt;code class=&quot;highlighter-rouge&quot;&gt;Class IN&lt;/code&gt;)。&lt;code class=&quot;highlighter-rouge&quot;&gt;Internet&lt;/code&gt;类的记录主要有以下几种类型(&lt;code class=&quot;highlighter-rouge&quot;&gt;Type&lt;/code&gt;):&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;记录&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;A&lt;/code&gt;记录即地址&lt;code class=&quot;highlighter-rouge&quot;&gt;Address&lt;/code&gt;记录，对应的&lt;code class=&quot;highlighter-rouge&quot;&gt;value&lt;/code&gt;是域名的&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;地址。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;NS&lt;/code&gt;记录&lt;/p&gt;
-
-    &lt;p&gt;域名服务器&lt;code class=&quot;highlighter-rouge&quot;&gt;Name Server&lt;/code&gt;记录，保存了下一级域名信息的服务器地址。该记录只能设置为域名,不能设置为&lt;code class=&quot;highlighter-rouge&quot;&gt;IP&lt;/code&gt;地址。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;CNAME&lt;/code&gt;记录&lt;/p&gt;
-
-    &lt;p&gt;规范名称记录&lt;code class=&quot;highlighter-rouge&quot;&gt;Canonical Name for an alias&lt;/code&gt;，也称为别名记录，其&lt;code class=&quot;highlighter-rouge&quot;&gt;value&lt;/code&gt;是另一个域名。也就是说，将原域名&lt;code class=&quot;highlighter-rouge&quot;&gt;key&lt;/code&gt;映射到了另一个域名&lt;code class=&quot;highlighter-rouge&quot;&gt;value&lt;/code&gt;。&lt;/p&gt;
-
-    &lt;p&gt;举个栗子。百度的域名是&lt;code class=&quot;highlighter-rouge&quot;&gt;www.baidu.com&lt;/code&gt;，它的&lt;code class=&quot;highlighter-rouge&quot;&gt;cname&lt;/code&gt;是&lt;code class=&quot;highlighter-rouge&quot;&gt;www.a.shifen.com&lt;/code&gt;。&lt;/p&gt;
-
-    &lt;p&gt;那么，我们已经有了一个域名了，为什么还要设置cname呢？假设有&lt;code class=&quot;highlighter-rouge&quot;&gt;www.domain.com&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;mail.domain.com&lt;/code&gt;，其cname都指向&lt;code class=&quot;highlighter-rouge&quot;&gt;host.domain.cdnxxx.com&lt;/code&gt;。&lt;/p&gt;
-
-    &lt;p&gt;然后某一天，我们的服务器地址(A记录对应的IP地址)可能要变了。由于www和mail都会被引导到&lt;code class=&quot;highlighter-rouge&quot;&gt;www.domain.wscdn.com&lt;/code&gt;，所以这时我们只需修改&lt;code class=&quot;highlighter-rouge&quot;&gt;host.domain.wscdn.com&lt;/code&gt;的A记录，而不必把www和mail的A记录都改一遍。&lt;/p&gt;
-
-    &lt;p&gt;因此cname增加了灵活性，在子域多的时候更为明显，相当于进行了批量管理。&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;RR&lt;/code&gt;记录&lt;/p&gt;
-
-    &lt;p&gt;资源记录&lt;code class=&quot;highlighter-rouge&quot;&gt;Resource Record&lt;/code&gt;。一个主机名可以对应多个IP地址，在一个DNS应答报文中可能含有多条&lt;code class=&quot;highlighter-rouge&quot;&gt;RR&lt;/code&gt;信息。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;下面我们使用&lt;code class=&quot;highlighter-rouge&quot;&gt;nslookup&lt;/code&gt;来对上述的几个定义进行具体说明。&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ nslookup www.baidu.com
-
-# 返回如下响应
-Non-authoritative answer:
-www.baidu.com canonical name = www.a.shifen.com.
-Name: www.a.shifen.com
-Address: 112.80.248.74
-Name: www.a.shifen.com
-Address: 112.80.248.73
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;首先，&lt;code class=&quot;highlighter-rouge&quot;&gt;www.baidu.com&lt;/code&gt;没有A记录，但是通过&lt;code class=&quot;highlighter-rouge&quot;&gt;cname&lt;/code&gt;被引导到了&lt;code class=&quot;highlighter-rouge&quot;&gt;www.a.shifen.com.&lt;/code&gt;。&lt;/p&gt;
-
-&lt;p&gt;其次，&lt;code class=&quot;highlighter-rouge&quot;&gt;www.a.shifen.com&lt;/code&gt;有2条A记录，也就是一个主机对应了2个IP。实际上，如过在不同地区进行DNS请求，则最后得到的这2条A记录也不同。采用某国外VPS进行请求的结果是&lt;code class=&quot;highlighter-rouge&quot;&gt;14.215.177.38&lt;/code&gt;和&lt;code class=&quot;highlighter-rouge&quot;&gt;14.215.177.37&lt;/code&gt;。这么做是为了将不同地区的用户分配其最近的服务节点，以便快速访问。后面的内容将会解释这一点。&lt;/p&gt;
-
-&lt;h4 id=&quot;dnsgslb&quot;&gt;&lt;strong&gt;2.3 基于DNS的GSLB&lt;/strong&gt;&lt;/h4&gt;
-
-&lt;p&gt;基于DNS的GSLB，实际上就是把负载均衡设备部署在DNS系统中。在用户发出任何应用连接请求时，首先必须通过DNS系统得到目标服务器的IP。基于DNS的GSLB就是在返回DNS解析结果的时候，进行智能调度，从而将用户分配到最佳(一般是最近的)的服务器。在具体应用中,基于 DNS 解析 来实现 GSLB 有几种方法,下面分别说明。&lt;/p&gt;
-
-&lt;p&gt;//未完待续&lt;/p&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;Reference&quot;&gt;3. 参考文献&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;雷葆华. CDN技术详解[M]. 电子工业出版社, 2014.&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://jaseywang.me/2012/12/13/cdn-%E7%AE%80%E4%BB%8B%E4%B8%89/#more-3661&quot;&gt;CDN简介&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;http://www.ruanyifeng.com/blog/2016/06/dns.html&quot;&gt;DNS原理入门&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Content_delivery_network&quot;&gt;Content Delivery Network - wikipedia&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;本文地址：&lt;a href=&quot;https://jjayyyyyyy.github.io/2017/05/17/GSLB.html&quot;&gt;https://jjayyyyyyy.github.io/2017/05/17/GSLB.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;h6&gt;注：本文最初整理于20160908。接下来将会陆续整理一些以前的学习笔记。&lt;/h6&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section-3&quot;&gt;相关阅读&lt;/h2&gt;
-</description>
-        <pubDate>Wed, 17 May 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/05/17/GSLB.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/05/17/GSLB.html</guid>
         
         
       </item>
