@@ -5,9 +5,52 @@
     <description></description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 21 Jul 2017 21:20:42 +0800</pubDate>
-    <lastBuildDate>Fri, 21 Jul 2017 21:20:42 +0800</lastBuildDate>
+    <pubDate>Mon, 14 Aug 2017 20:46:31 +0800</pubDate>
+    <lastBuildDate>Mon, 14 Aug 2017 20:46:31 +0800</lastBuildDate>
     <generator>Jekyll v3.3.0</generator>
+    
+      <item>
+        <title>说吧</title>
+        <description>&lt;p&gt;这是&lt;strong&gt;翻译&lt;/strong&gt;系列的一篇文章。原文来自 Google 的新闻&lt;a href=&quot;https://www.blog.google/products/search/type-less-talk-more/&quot;&gt;Type less, talk more&lt;/a&gt;，发布于2018年8月14日。今天Google更新了自己的产品，其语音助手可以识别更多语言了。以下是译文。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;使用语音可以很快捷地完成信息的输入，有时甚至比打字速度快三倍。我们更新了Gboard, Voice Search等产品的语音输入和识别的功能，目前支持119种不同的语言。而且如果你身处美国，你还可以用英语告诉语音助手，让它发送emoji表情。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section&quot;&gt;将语音输入带给全球用户&lt;/h3&gt;
+
+&lt;p&gt;更新后的语音识别功能将会支持很多古老的语言，比如拥有1000多年历史的 Georgian ，还有非洲的两种通用语言 Swahili 和 Amharic ，以及很多印第安语言。我们希望通过这种方式来纪念世界各地的语言，并且增加互联网的包容性和多样性。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://storage.googleapis.com/gweb-uniblog-publish-prod/original_images/speech_recognition%2520%25281%2529.gif&quot; alt=&quot;speech recognition&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;另外Google原文还列出了一个新增语言的清单，如果有兴趣可以参考原文~&lt;/p&gt;
+
+&lt;p&gt;为了提高机器的理解能力和准确性，我们请当地人朗读常用词汇，收集了他们的语言样本，用来训练机器学习的模型。&lt;/p&gt;
+
+&lt;p&gt;从今天开始，我们的&lt;a href=&quot;https://cloudplatform.googleblog.com/2017/08/Cloud-Speech-API-improves-longform-audio-recognition-and-adds-30-new-language-variants.html&quot;&gt;Cloud Speech API (语言云接口)&lt;/a&gt;也将同步支持这些新增语言。其他产品，如Google Translate，也将陆续更新。为了使用语言输入功能，请从Play Store下载安装Gboard，并选择你使用的语言。接着，你只需要按下麦克风的图标，对着手机说话就可以了。如果要使用语言搜索，可以打开Google，在功能设置里选择你使用的语言，然后进行类似的操作即可。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;说出你的表情&lt;/h3&gt;
+
+&lt;p&gt;现在，我们不仅可以画出或者搜索emoji表情，还可以对着Google说出你的emoji表情，比如说 &lt;code class=&quot;highlighter-rouge&quot;&gt;winky face emoji&lt;/code&gt;，屏幕上就会自动出现😉。本功能目前仅支持美国地区的英文语音输入。&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;本文地址：&lt;a href=&quot;https://jjayyyyyyy.github.io/2017/08/14/type_less_talk_more.html&quot;&gt;https://jjayyyyyyy.github.io/2017/08/14/type_less_talk_more.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;(END)&lt;/p&gt;
+
+&lt;hr /&gt;
+</description>
+        <pubDate>Mon, 14 Aug 2017 00:00:00 +0800</pubDate>
+        <link>http://localhost:4000/2017/08/14/type_less_talk_more.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/08/14/type_less_talk_more.html</guid>
+        
+        
+      </item>
     
       <item>
         <title>来自太空的8张图片</title>
@@ -667,59 +710,6 @@
         <pubDate>Mon, 12 Jun 2017 00:00:00 +0800</pubDate>
         <link>http://localhost:4000/2017/06/12/2017NBA_Finals_G4_Postgame_Interview.html</link>
         <guid isPermaLink="true">http://localhost:4000/2017/06/12/2017NBA_Finals_G4_Postgame_Interview.html</guid>
-        
-        
-      </item>
-    
-      <item>
-        <title>wc</title>
-        <description>&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;今天我们要讲的&lt;code class=&quot;highlighter-rouge&quot;&gt;wc&lt;/code&gt;不是&lt;em&gt;water closet&lt;/em&gt;，而是&lt;code class=&quot;highlighter-rouge&quot;&gt;linux/unix&lt;/code&gt;里面的&lt;code class=&quot;highlighter-rouge&quot;&gt;wc&lt;/code&gt;，也就是&lt;strong&gt;word count&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;wc&lt;/code&gt;是一个统计工具&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;whatis wc
-wc &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;1&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;		- print newline, word, and byte counts &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;each file
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;它的常见用法如下&lt;/p&gt;
-
-&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;cat test.cpp | wc -c
-1143	&lt;span class=&quot;c&quot;&gt;# test.cpp 的文件大小为 1143 bytes&lt;/span&gt;
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;cat test.cpp | wc -l
-73	&lt;span class=&quot;c&quot;&gt;# test.cpp 文件内一共有73行&lt;/span&gt;
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ls -1 | wc -l
-63	&lt;span class=&quot;c&quot;&gt;# 当前目录下有63个文件/文件夹. 注意使用 ls -1 (数字1), 这样就ls的每一项输出就会占据一行了&lt;/span&gt;
-&lt;span class=&quot;gp&quot;&gt;$ &lt;/span&gt;ls -1 | grep &lt;span class=&quot;s1&quot;&gt;'^m'&lt;/span&gt; | wc -l
-2	&lt;span class=&quot;c&quot;&gt;# 该目录下, 名字以'm'开头的文件/文件夹一共有2个&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;section&quot;&gt;参考文献&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;a href=&quot;https://www.computerhope.com/issues/ch001326.htm&quot;&gt;How to count how many files are in a folder or directory&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://stackoverflow.com/questions/3137094/how-to-count-lines-in-a-document&quot;&gt;How to count lines in a document?&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;a href=&quot;https://linux.die.net/man/1/wc&quot;&gt;man: wc&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
-
-&lt;p&gt;本文地址：&lt;a href=&quot;https://jjayyyyyyy.github.io/2017/06/03/wc.html&quot;&gt;https://jjayyyyyyy.github.io/2017/06/03/wc.html&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;(END)&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2 id=&quot;section-1&quot;&gt;相关阅读&lt;/h2&gt;
-</description>
-        <pubDate>Sat, 03 Jun 2017 00:00:00 +0800</pubDate>
-        <link>http://localhost:4000/2017/06/03/wc.html</link>
-        <guid isPermaLink="true">http://localhost:4000/2017/06/03/wc.html</guid>
         
         
       </item>
