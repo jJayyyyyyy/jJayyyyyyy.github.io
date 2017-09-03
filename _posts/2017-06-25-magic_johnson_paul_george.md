@@ -26,6 +26,16 @@ MJ：不不不，我们肯定会互相打招呼，因为我俩认识。我只是
 
 <br/><br/>
 
+---
+
+*	20170903更新
+
+	[NBA fines Lakers for violating league's tampering rule](http://www.espn.com/nba/story/_/id/20520132/los-angeles-lakers-fined-500000-tampering-nba)
+
+	湖人还真因为这个被处罚了，不过如果PG明年能来湖人，这500k也是值的。
+	
+<br/><br/>
+
 本文地址：[https://jjayyyyyyy.github.io/2017/06/25/magic_johnson_paul_george.html](https://jjayyyyyyy.github.io/2017/06/25/magic_johnson_paul_george.html)
 
 (END)
