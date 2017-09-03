@@ -50,9 +50,9 @@ Please report a bug if this causes problems.
 
 *	Liquid 语法升级了，可能需要修改 commentit 的模板。我是把下面这一行的小括号去掉就好了。
 
-```
-{% assign sorted_comments = (page.comments | sort: 'date') %}
-```
+	```
+	assign sorted_comments = (page.comments | sort: 'date')
+	```
 
 
 <br/><br/>
