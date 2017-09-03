@@ -77,7 +77,7 @@
 
 <p><br /><br /></p>
 
-<h2 id="section">1. 分析网页</h2>
+<h2 id="1-分析网页">1. 分析网页</h2>
 
 <p>这次的脚本也是一个Spider，所以第一步当然也是分析网页结构。打开<a href="http://www.weather.com.cn/">中国天气网</a></p>
 
@@ -102,9 +102,9 @@
 
 <p><br /><br /></p>
 
-<h2 id="section-1">2. 获取网页内容</h2>
+<h2 id="2-获取网页内容">2. 获取网页内容</h2>
 
-<h4 id="section-2">2.1 利用正则表达式</h4>
+<h4 id="21-利用正则表达式">2.1 利用正则表达式</h4>
 
 <p>我们利用<code class="highlighter-rouge">urllib.request</code>获取网页内容，然后用<a href="https://jjayyyyyyy.github.io/2016/10/30/36kr_newsflash_reader.html">36kr新闻阅读器</a>中提到的<code class="highlighter-rouge">re</code>模块来”暴力”提取关键信息。所谓<code class="highlighter-rouge">re</code>，就是Regular Expression，即正则表达式。它可以被分为很多类，差异比较可以看<a href="http://www.cnblogs.com/chengmo/archive/2010/10/10/1847287.html">这里</a>。对于python所用的正则表达式，可以参考<a href="https://docs.python.org/3/library/re.html">官方文档</a>，以及<a href="http://www.liaoxuefeng.com/wiki/0014316089557264a6b348958f449949df42a6d3a2e542c000/00143193331387014ccd1040c814dee8b2164bb4f064cff000">这里</a>。</p>
 
@@ -156,7 +156,7 @@
 
 <p><br /><br /></p>
 
-<h4 id="beautifulsoup">2.2 使用BeautifulSoup</h4>
+<h4 id="22-使用beautifulsoup">2.2 使用BeautifulSoup</h4>
 
 <p>此外，还可以使用<a href="https://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a>这一利器来帮我们解析html，进而得到我们想要的内容。 <code class="highlighter-rouge">BeautifulSoup</code>的特点就是直观，可以通过标签类别、名字和属性等方式获得内容。</p>
 
@@ -222,7 +222,7 @@
 
 <p><br /><br /></p>
 
-<h4 id="section-3">2.3 练习</h4>
+<h4 id="23-练习">2.3 练习</h4>
 
 <p>以上，我们用两种方式完成了获取天气预报的小程序，作为脚本它是足够用了，不过我们还可以稍作改进，在参考github上的代码之前，以下几点就作为练习啦~</p>
 
@@ -241,7 +241,7 @@
 
 <hr />
 
-<h2 id="section-4">参考资料</h2>
+<h2 id="参考资料">参考资料</h2>
 
 <ol>
   <li>

@@ -53,7 +53,7 @@
 		</p>
 	</header>
 	<div class="post-content" itemprop="articleBody">
-		<h2 id="section">注意</h2>
+		<h2 id="注意">注意</h2>
 
 <ul>
   <li>
@@ -66,7 +66,7 @@
 
 <p><br /></p>
 
-<h2 id="section-1">摘要</h2>
+<h2 id="摘要">摘要</h2>
 
 <p><a href="http://luy.li/2010/05/15/simplehttpserverwithupload/">bones7456</a>同学和<a href="http://buptguo.com/2015/11/07/simplehttpserver-with-upload-file/">BUPTGuo</a>同学制作和完善了<code class="highlighter-rouge">SimpleHTTPServerWithUpload</code>的<code class="highlighter-rouge">py2</code>版本。由于python的2.7和3.4有较多不同特性，因此我根据以上两位同学的思路，重写了很多函数，制作了基于<code class="highlighter-rouge">py3</code>的版本。主要改动如下：</p>
 
@@ -84,9 +84,9 @@
 
 <p><br /></p>
 
-<h2 id="section-2">正文</h2>
+<h2 id="正文">正文</h2>
 
-<h2 id="section-3">1. 背景介绍</h2>
+<h2 id="1-背景介绍">1. 背景介绍</h2>
 
 <p>如同<a href="http://coolshell.cn/articles/1480.html">这篇文章</a>所说</p>
 
@@ -114,13 +114,13 @@
 
 <p><br /></p>
 
-<h2 id="py3">2. 基于py3的模块</h2>
+<h2 id="2-基于py3的模块">2. 基于py3的模块</h2>
 
 <p>经过以上两位同学改造的模块是基于<code class="highlighter-rouge">py2</code>的，由于<code class="highlighter-rouge">py2</code>和<code class="highlighter-rouge">py3</code>有较多不同特性，直接用<code class="highlighter-rouge">$ python3 xxx</code>运行会产生很多错误。所以，让我们撸起袖子开始改造轮子吧~</p>
 
 <p>改造过程从分析输出的错误信息开始。先把<code class="highlighter-rouge">py2</code>的代码全部复制到一个文件<code class="highlighter-rouge">py3server.py</code>，然后根据错误信息一步步修改：</p>
 
-<h3 id="section-4">2.1 实现访问和下载</h3>
+<h3 id="21-实现访问和下载">2.1 实现访问和下载</h3>
 
 <ul>
   <li>
@@ -296,7 +296,7 @@ TypeError: <span class="s1">'str'</span> does not support the buffer interface
 
 <p>如果抛开这个问题不管，现在介个基于<code class="highlighter-rouge">py3</code>的<code class="highlighter-rouge">py3server_v2.py</code>服务端已经可以用浏览器正常访问和下载了。还有一些细节，比如<code class="highlighter-rouge">fs = os.fstat(f.fileno())</code>，这里不再详细描述，通过搜索引擎可以很快了解。让我们先去吃点东西。下一节，我们通过重写<code class="highlighter-rouge">do_POST()</code>来实现上传功能。</p>
 
-<h3 id="section-5">2.2 实现上传</h3>
+<h3 id="22-实现上传">2.2 实现上传</h3>
 
 <p>有了上面一节的说明，又有前面两位同学的思路和框架，重写上传功能应该是驾轻就熟了。所以下面直接进入重点。</p>
 
@@ -343,7 +343,7 @@ TypeError: <span class="s1">'str'</span> does not support the buffer interface
 
 <p>至此，我们完成了上传功能的重写。<code class="highlighter-rouge">py3_SimpleHTTPServerWithUpload.py</code>大功告成。我们也可以像<a href="http://luy.li/2010/05/15/simplehttpserverwithupload/">bones7456</a>同学一样，喂它做一个<code class="highlighter-rouge">alias</code>，以后就可以方便地在局域网中共享文件了～</p>
 
-<h2 id="section-6">3. 其他内容</h2>
+<h2 id="3-其他内容">3. 其他内容</h2>
 
 <ul>
   <li>
@@ -443,7 +443,7 @@ TypeError: <span class="s1">'str'</span> does not support the buffer interface
 
 <p><br /><br /></p>
 
-<h2 id="section-7">4. 参考</h2>
+<h2 id="4-参考">4. 参考</h2>
 
 <p><a href="http://luy.li/2010/05/15/simplehttpserverwithupload/">bones7456</a>同学</p>
 
@@ -473,14 +473,14 @@ TypeError: <span class="s1">'str'</span> does not support the buffer interface
 
 <p><br /><br /></p>
 
-<h2 id="section-8">后记(20161009 更新)</h2>
+<h2 id="后记20161009-更新">后记(20161009 更新)</h2>
 
 <p><del><code class="highlighter-rouge">Jekyll</code>默认使用的<code class="highlighter-rouge">kramdown</code>并不能很好地支持<code class="highlighter-rouge">markdown</code>的代码段，也就是类似下面这种形式的<code class="highlighter-rouge">code block</code>。</del></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code> ```
- code
- ```
-</code></pre>
+<div class="highlighter-rouge"><pre class="highlight"><code></code></pre>
+</div>
+<p>code</p>
+<div class="highlighter-rouge"><pre class="highlight"><code></code></pre>
 </div>
 
 <p>一番寻觅之后找到了<a href="https://george-hawkins.github.io/basic-gfm-jekyll/redcarpet-extensions.html">Redcarpet</a>， 食用方式如下：</p>
@@ -502,7 +502,7 @@ TypeError: <span class="s1">'str'</span> does not support the buffer interface
 
 <p><br /></p>
 
-<h2 id="section-9">后后记(2016.10.10 00:12更新)</h2>
+<h2 id="后后记20161010-0012更新">后后记(2016.10.10 00:12更新)</h2>
 
 <p>替换为<code class="highlighter-rouge">Redcarpet</code>后，GitHub竟然给我发来一封邮件说不再支持<code class="highlighter-rouge">Redcarpet</code>，而且可能随时停用这个markdown的渲染引擎，让我使用默认的<code class="highlighter-rouge">kramdown</code>，因为它已经支持了全部特效(包括我需要的<code class="highlighter-rouge">code block</code>)。无语了，难道要我全都使用Liquid的<code class="highlighter-rouge">highlight-code-language</code>这样的语法吗(这在原生的markdown语法中是没有的)。。。</p>
 
