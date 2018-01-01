@@ -30,5 +30,5 @@ author: FrozenMap
 markdown: kramdown
 
 # markdown: redcarpet
-theme: jekyll-theme-cayman
+theme: minima
 # pageinate: 3
