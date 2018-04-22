@@ -48,7 +48,7 @@ title: 鹈鹕横扫开拓者，提前进入西部半决赛
 
 *	[Pelicans Alvin Gentry, "Thanks Kobe Bryant for Jrue Holiday!" ADVANCES TO 2ND ROUND!](https://www.youtube.com/watch?v=FNWu2r4HHSE)
 
-*	[AD, Jrue Holiday & Rondo Postgame Interview | Blazers vs Pelicans - Game 4 | 2018 NBA Playoffs](https://www.youtube.com/watch?v=z-auLJpr0K4)
+*	[AD, Jrue Holiday, Rondo Postgame Interview.](https://www.youtube.com/watch?v=z-auLJpr0K4)
 
 *	[Pelicans complete the sweep with a 131-123 win over Portland.](http://www.espn.com/espn/now?nowId=21-40019835-4)
 
