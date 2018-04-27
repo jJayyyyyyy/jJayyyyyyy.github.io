@@ -42,10 +42,6 @@ title: 库里状态良好，可能出战与鹈鹕的第一场比赛
 
 本赛季常规赛，两队曾4次交手，勇士的战绩为3胜1负。而在勇士与鹈鹕的所有比赛中，库里参战时，勇士的战绩是25胜5负。
 
-下面是库里训练的视频片段。
-
-<iframe width="640" height="360" src="http://www.espn.com/core/video/iframe?id=23328041&endcard=false" allowfullscreen frameborder="0"></iframe>
-
 <br><br>
 
 本文地址：[https://jjayyyyyyy.github.io/2018/04/27/Stephen_Curry_is_almost_back.html](https://jjayyyyyyy.github.io/2018/04/27/Stephen_Curry_is_almost_back.html)
@@ -55,3 +51,7 @@ title: 库里状态良好，可能出战与鹈鹕的第一场比赛
 ---
 
 ### 相关阅读
+
+*	下面的链接是库里训练的视频片段。（由于espn的链接是http，本页面是https，因此无法直接嵌入http的iframe，另外大家可以点击espn文章进行观看）
+
+	http://www.espn.com/core/video/iframe?id=23328041&endcard=false
