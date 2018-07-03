@@ -144,7 +144,7 @@ title: GMS初体验
 
 <br><br>
 
-本文地址：[https://jjayyyyyyy.github.io/2018/07/03/TakeABiteOfGMS.html](https://jjayyyyyyy.github.io/2018/07/03/TakeABiteOfGMS.html)
+本文地址：[https://jjayyyyyyy.github.io/2018/07/01/TakeABiteOfGMS.html](https://jjayyyyyyy.github.io/2018/07/01/TakeABiteOfGMS.html)
 
 (END)
 
