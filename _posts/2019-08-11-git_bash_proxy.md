@@ -56,19 +56,21 @@ Host github.com
 151.101.185.194   github.global.ssl.fastly.net
 ```
 
-为了找到这俩域名的 `IP`，我们可以访问 `https://ipaddress.com/`
+为了找到这俩域名的 `IP`，我们可以通过 [https://ipaddress.com/](https://ipaddress.com/) 获取
 
 <br>
 
 ##	参考资料
 
-*	https://imciel.com/2016/06/28/git-proxy/
+*	[设置 Git 代理](https://imciel.com/2016/06/28/git-proxy/)
 
-*	https://stackoverflow.com/questions/5103083/ssh-in-git-behind-proxy-on-windows-7
+*	[SSH in git behind proxy on windows 7](https://stackoverflow.com/questions/5103083/ssh-in-git-behind-proxy-on-windows-7)
 
-*	https://help.github.com/en/articles/using-ssh-over-the-https-port
+*	[Using SSH over the HTTPS port](https://help.github.com/en/articles/using-ssh-over-the-https-port)
 
-*	https://www.liaoxuefeng.com/wiki/896043488029600/898732792973664
+*	[connect.c](https://web.archive.org/web/20130731110457/http://www.meadowy.org/~gotoh/ssh/connect.c)
+
+*	[从远程库克隆](https://www.liaoxuefeng.com/wiki/896043488029600/898732792973664)
 
 <br><br>
 
